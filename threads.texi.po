@@ -1,0 +1,461 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-10-19 06:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: original_texis/threads.texi:9
+msgid ""
+"@c -*-texinfo-*- @c This is part of the GNU Emacs Lisp Reference Manual.  @c "
+"Copyright (C) 2012-2019 Free Software Foundation, Inc.  @c See the file "
+"elisp.texi for copying conditions.  @node Threads @chapter Threads @cindex "
+"threads @cindex concurrency"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:17
+#, no-wrap
+msgid ""
+"  Emacs Lisp provides a limited form of concurrency, called\n"
+"@dfn{threads}.  All the threads in a given instance of Emacs share the\n"
+"same memory.  Concurrency in Emacs Lisp is ``mostly cooperative'',\n"
+"meaning that Emacs will only switch execution between threads at\n"
+"well-defined times.  However, the Emacs thread support has been\n"
+"designed in a way to later allow more fine-grained concurrency, and\n"
+"correct programs should not rely on cooperative threading.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:23
+#, no-wrap
+msgid ""
+"  Currently, thread switching will occur upon explicit request via\n"
+"@code{thread-yield}, when waiting for keyboard input or for process\n"
+"output from asynchronous processes (e.g., during\n"
+"@code{accept-process-output}), or during blocking operations relating\n"
+"to threads, such as mutex locking or @code{thread-join}.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:27
+#, no-wrap
+msgid ""
+"  Emacs Lisp provides primitives to create and control threads, and\n"
+"also to create and control mutexes and condition variables, useful for\n"
+"thread synchronization.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:32
+#, no-wrap
+msgid ""
+"  While global variables are shared among all Emacs Lisp threads,\n"
+"local variables are not---a dynamic @code{let} binding is local.  Each\n"
+"thread also has its own current buffer (@pxref{Current Buffer}) and\n"
+"its own match data (@pxref{Match Data}).\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:39
+#, no-wrap
+msgid ""
+"  Note that @code{let} bindings are treated specially by the Emacs\n"
+"Lisp implementation.  There is no way to duplicate this unwinding and\n"
+"rewinding behavior other than by using @code{let}.  For example, a\n"
+"manual implementation of @code{let} written using\n"
+"@code{unwind-protect} cannot arrange for variable values to be\n"
+"thread-specific.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:43
+#, no-wrap
+msgid ""
+"  In the case of lexical bindings (@pxref{Variable Scoping}), a\n"
+"closure is an object like any other in Emacs Lisp, and bindings in a\n"
+"closure are shared by any threads invoking the closure.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:49
+#, no-wrap
+msgid ""
+"@menu\n"
+"* Basic Thread Functions::      Basic thread functions.\n"
+"* Mutexes::                     Mutexes allow exclusive access to data.\n"
+"* Condition Variables::         Inter-thread events.\n"
+"@end menu\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:52
+msgid "@node Basic Thread Functions @section Basic Thread Functions"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:56
+#, no-wrap
+msgid ""
+"  Threads can be created and waited for.  A thread cannot be exited\n"
+"directly, but the current thread can be exited implicitly, and other\n"
+"threads can be signaled.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:60
+msgid ""
+"@defun make-thread function &optional name Create a new thread of execution "
+"which invokes @var{function}.  When @var{function} returns, the thread "
+"exits."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:63
+msgid ""
+"The new thread is created with no local variable bindings in effect.  The "
+"new thread's current buffer is inherited from the current thread."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:67
+msgid ""
+"@var{name} can be supplied to give a name to the thread.  The name is used "
+"for debugging and informational purposes only; it has no meaning to Emacs.  "
+"If @var{name} is provided, it must be a string."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:70
+msgid "This function returns the new thread.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:75
+msgid ""
+"@defun threadp object This function returns @code{t} if @var{object} "
+"represents an Emacs thread, @code{nil} otherwise.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:81
+msgid ""
+"@defun thread-join thread Block until @var{thread} exits, or until the "
+"current thread is signaled.  If @var{thread} has already exited, this "
+"returns immediately.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:91
+msgid ""
+"@defun thread-signal thread error-symbol data Like @code{signal} "
+"(@pxref{Signaling Errors}), but the signal is delivered in the thread "
+"@var{thread}.  If @var{thread} is the current thread, then this just calls "
+"@code{signal} immediately.  Otherwise, @var{thread} will receive the signal "
+"as soon as it becomes current.  If @var{thread} was blocked by a call to "
+"@code{mutex-lock}, @code{condition-wait}, or @code{thread-join}; "
+"@code{thread-signal} will unblock it.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:95
+msgid "@defun thread-yield Yield execution to the next runnable thread.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:99
+msgid ""
+"@defun thread-name thread Return the name of @var{thread}, as specified to "
+"@code{make-thread}.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:104
+msgid ""
+"@defun thread-live-p thread Return @code{t} if @var{thread} is alive, or "
+"@code{nil} if it is not.  A thread is alive as long as its function is still "
+"executing.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:109
+msgid ""
+"@defun thread--blocker thread Return the object that @var{thread} is waiting "
+"on.  This function is primarily intended for debugging, and is given a "
+"``double hyphen'' name to indicate that."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:112
+msgid ""
+"If @var{thread} is blocked in @code{thread-join}, this returns the thread "
+"for which it is waiting."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:114
+msgid "If @var{thread} is blocked in @code{mutex-lock}, this returns the mutex."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:117
+msgid ""
+"If @var{thread} is blocked in @code{condition-wait}, this returns the "
+"condition variable."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:120
+msgid "Otherwise, this returns @code{nil}.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:124
+msgid "@defun current-thread Return the current thread.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:129
+msgid ""
+"@defun all-threads Return a list of all the live thread objects.  A new list "
+"is returned by each invocation.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:133
+msgid ""
+"When code run by a thread signals an error that is unhandled, the thread "
+"exits.  Other threads can access the error form which caused the thread to "
+"exit using the following function."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:140
+msgid ""
+"@defun thread-last-error This function returns the last error form recorded "
+"when a thread exited due to an error.  Each thread that exits abnormally "
+"overwrites the form stored by the previous thread's error with a new value, "
+"so only the last one can be accessed.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:143
+msgid "@node Mutexes @section Mutexes"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:148
+#, no-wrap
+msgid ""
+"  A @dfn{mutex} is an exclusive lock.  At any moment, zero or one\n"
+"threads may own a mutex.  If a thread attempts to acquire a mutex, and\n"
+"the mutex is already owned by some other thread, then the acquiring\n"
+"thread will block until the mutex becomes available.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:155
+#, no-wrap
+msgid ""
+"  Emacs Lisp mutexes are of a type called @dfn{recursive}, which means\n"
+"that a thread can re-acquire a mutex it owns any number of times.  A\n"
+"mutex keeps a count of how many times it has been acquired, and each\n"
+"acquisition of a mutex must be paired with a release.  The last\n"
+"release by a thread of a mutex reverts it to the unowned state,\n"
+"potentially allowing another thread to acquire the mutex.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:160
+msgid ""
+"@defun mutexp object This function returns @code{t} if @var{object} "
+"represents an Emacs mutex, @code{nil} otherwise.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:166
+msgid ""
+"@defun make-mutex &optional name Create a new mutex and return it.  If "
+"@var{name} is specified, it is a name given to the mutex.  It must be a "
+"string.  The name is for debugging purposes only; it has no meaning to "
+"Emacs.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:170
+msgid ""
+"@defun mutex-name mutex Return the name of @var{mutex}, as specified to "
+"@code{make-mutex}.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:176
+msgid ""
+"@defun mutex-lock mutex This will block until this thread acquires "
+"@var{mutex}, or until this thread is signaled using @code{thread-signal}.  "
+"If @var{mutex} is already owned by this thread, this simply returns.  @end "
+"defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:181
+msgid ""
+"@defun mutex-unlock mutex Release @var{mutex}.  If @var{mutex} is not owned "
+"by this thread, this will signal an error.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:187
+msgid ""
+"@defmac with-mutex mutex body@dots{} This macro is the simplest and safest "
+"way to evaluate forms while holding a mutex.  It acquires @var{mutex}, "
+"invokes @var{body}, and then releases @var{mutex}.  It returns the result of "
+"@var{body}.  @end defmac"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:190
+msgid "@node Condition Variables @section Condition Variables"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:194
+#, no-wrap
+msgid ""
+"  A @dfn{condition variable} is a way for a thread to block until some\n"
+"event occurs.  A thread can wait on a condition variable, to be woken\n"
+"up when some other thread notifies the condition.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:199
+#, no-wrap
+msgid ""
+"  A condition variable is associated with a mutex and, conceptually,\n"
+"with some condition.  For proper operation, the mutex must be\n"
+"acquired, and then a waiting thread must loop, testing the condition\n"
+"and waiting on the condition variable.  For example:\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:205
+#, no-wrap
+msgid ""
+"@example\n"
+"(with-mutex mutex\n"
+"  (while (not global-variable)\n"
+"    (condition-wait cond-var)))\n"
+"@end example\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:208
+#, no-wrap
+msgid ""
+"  The mutex ensures atomicity, and the loop is for robustness---there\n"
+"may be spurious notifications.\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:212
+#, no-wrap
+msgid ""
+"  Similarly, the mutex must be held before notifying the condition.\n"
+"The typical, and best, approach is to acquire the mutex, make the\n"
+"changes associated with this condition, and then notify it:\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:218
+#, no-wrap
+msgid ""
+"@example\n"
+"(with-mutex mutex\n"
+"  (setq global-variable (some-computation))\n"
+"  (condition-notify cond-var))\n"
+"@end example\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:225
+msgid ""
+"@defun make-condition-variable mutex &optional name Make a new condition "
+"variable associated with @var{mutex}.  If @var{name} is specified, it is a "
+"name given to the condition variable.  It must be a string.  The name is for "
+"debugging purposes only; it has no meaning to Emacs.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:230
+msgid ""
+"@defun condition-variable-p object This function returns @code{t} if "
+"@var{object} represents a condition variable, @code{nil} otherwise.  @end "
+"defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:235
+msgid ""
+"@defun condition-wait cond Wait for another thread to notify @var{cond}, a "
+"condition variable.  This function will block until the condition is "
+"notified, or until a signal is delivered to this thread using "
+"@code{thread-signal}."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:238
+msgid ""
+"It is an error to call @code{condition-wait} without holding the condition's "
+"associated mutex."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:243
+msgid ""
+"@code{condition-wait} releases the associated mutex while waiting.  This "
+"allows other threads to acquire the mutex in order to notify the condition.  "
+"@end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:249
+msgid ""
+"@defun condition-notify cond &optional all Notify @var{cond}.  The mutex "
+"with @var{cond} must be held before calling this.  Ordinarily a single "
+"waiting thread is woken by @code{condition-notify}; but if @var{all} is not "
+"@code{nil}, then all threads waiting on @var{cond} are notified."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:255
+msgid ""
+"@code{condition-notify} releases the associated mutex while waiting.  This "
+"allows other threads to acquire the mutex in order to wait on the "
+"condition.  @c why bother? @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:260
+msgid ""
+"@defun condition-name cond Return the name of @var{cond}, as passed to "
+"@code{make-condition-variable}.  @end defun"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/threads.texi:264
+msgid ""
+"@defun condition-mutex cond Return the mutex associated with @var{cond}.  "
+"Note that the associated mutex cannot be changed.  @end defun"
+msgstr ""
