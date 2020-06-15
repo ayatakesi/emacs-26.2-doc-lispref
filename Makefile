@@ -114,6 +114,7 @@ elisp-ja.html: $(TEXIS)
 
 html/index.html: $(TEXIS)
 	makeinfo -o html/ --html \
+-c CASE_INSENSITIVE_FILENAMES=1 \
 -c NODE_NAME_IN_INDEX=0 \
 -c NODE_NAME_IN_MENU=0 \
 elisp-ja.texi
