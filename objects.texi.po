@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-03-08 22:56+0900\n"
+"PO-Revision-Date: 2020-06-15 13:52+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -241,17 +241,14 @@ msgstr "comments"
 
 #. type: cindex
 #: original_texis/objects.texi:112
-#, fuzzy, no-wrap
-#| msgid "@samp{;} in comment"
+#, no-wrap
 msgid "@samp{;} for commenting"
-msgstr "@samp{;} in comment"
+msgstr "@samp{;} for commenting"
 
 #. type: Plain text
 #: original_texis/objects.texi:121
-#, fuzzy
-#| msgid "A @dfn{comment} is text that is written in a program only for the sake of humans that read the program, and that has no effect on the meaning of the program.  In Lisp, a semicolon (@samp{;}) starts a comment if it is not within a string or character constant.  The comment continues to the end of line.  The Lisp reader discards comments; they do not become part of the Lisp objects which represent the program within the Lisp system."
 msgid "A @dfn{comment} is text that is written in a program only for the sake of humans that read the program, and that has no effect on the meaning of the program.  In Lisp, an unescaped semicolon (@samp{;})  starts a comment if it is not within a string or character constant.  The comment continues to the end of line.  The Lisp reader discards comments; they do not become part of the Lisp objects which represent the program within the Lisp system."
-msgstr "@dfn{コメント(comment)}はプログラム中に記述されたテキストであり、そのプログラムを読む人間ためだけに存在するもので、プログラムの意味には何の影響ももちません。Lispではそれが文字列や文字定数にある場合をのぞき、セミコロン(@samp{;})でコメントが開始されます。行の終端までがコメントになります。Lispリーダーはコメントを破棄します。コメントはLispシステム内でプログラムを表すLispオブジェクトの一部にはなりません。"
+msgstr "@dfn{コメント(comment)}はプログラム中に記述されたテキストであり、そのプログラムを読む人間ためだけに存在するものであって、プログラムの意味には何の影響ももちません。Lispではそれが文字列や文字定数にある場合をのぞき、エスケープされていないセミコロン(@samp{;})でコメントが開始されます。行の終端までがコメントになります。Lispリーダーはコメントを破棄します。コメントはLispシステム内でプログラムを表すLispオブジェクトの一部にはなりません。"
 
 #. type: Plain text
 #: original_texis/objects.texi:126
@@ -3706,18 +3703,18 @@ msgstr ""
 #: original_texis/objects.texi:2149
 #, no-wrap
 msgid "identical-contents objects, and byte-compiler"
-msgstr ""
+msgstr "identical-contents objects, and byte-compiler"
 
 #. type: cindex
 #: original_texis/objects.texi:2150
 #, no-wrap
 msgid "objects with identical contents, and byte-compiler"
-msgstr ""
+msgstr "objects with identical contents, and byte-compiler"
 
 #. type: defun
 #: original_texis/objects.texi:2162
 msgid "The Emacs Lisp byte compiler may collapse identical literal objects, such as literal strings, into references to the same object, with the effect that the byte-compiled code will compare such objects as @code{eq}, while the interpreted version of the same code will not.  Therefore, your code should never rely on objects with the same literal contents being either @code{eq} or not @code{eq}, it should instead use functions that compare object contents such as @code{equal}, described below.  Similarly, your code should not modify literal objects (e.g., put text properties on literal strings), since doing that might affect other literal objects of the same contents, if the byte compiler collapses them."
-msgstr ""
+msgstr "Emacs Lispバイトコンパイラーはリテラル文字列のような等価なリテラルオブジェクトを同一オブジェクトにたいする参照に落し込む(collapse into)かもしれない。バイトコンパイルされたコードはそのようなオブジェクトを@code{eq}で比較するだろうが、そうでないコードは異なるという効果がある。したがってコードではオブジェクトのリテラルコンテンツが@code{eq}か否かではなく、以下に説明する@code{equal}のような関数でオブジェクトの関数を使用すること。同様にコードではリテラルオブジェクトを変更(たとえばリテラル文字列へのテキストプロパティのput)しないこと。バイトコンパイラーがそれらの落し込みを行っていたら、同一コンテンツをもつ別のリテラルオブジェクトに影響があるかもしれない。"
 
 #. type: defun
 #: original_texis/objects.texi:2164
