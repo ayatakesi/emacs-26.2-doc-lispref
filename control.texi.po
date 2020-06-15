@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-03-15 05:37+0900\n"
+"PO-Revision-Date: 2020-06-15 21:08+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -29,10 +29,9 @@ msgstr "special forms for control structures"
 
 #. type: cindex
 #: original_texis/control.texi:9
-#, fuzzy, no-wrap
-#| msgid "special forms for control structures"
+#, no-wrap
 msgid "forms for control structures"
-msgstr "special forms for control structures"
+msgstr "forms for control structures"
 
 #. type: cindex
 #: original_texis/control.texi:10
@@ -106,12 +105,12 @@ msgstr "@code{and}、@code{or}、@code{not}。"
 #: original_texis/control.texi:423
 #, no-wrap
 msgid "Pattern-Matching Conditional"
-msgstr ""
+msgstr "Pattern-Matching Conditional"
 
 #. type: menuentry
 #: original_texis/control.texi:46
 msgid "How to use @code{pcase} and friends."
-msgstr ""
+msgstr "@code{pcase}類の使用方法。"
 
 #. type: section
 #: original_texis/control.texi:46 original_texis/control.texi:1275
@@ -163,10 +162,9 @@ msgstr "sequential execution"
 
 #. type: cindex
 #: original_texis/control.texi:52
-#, fuzzy, no-wrap
-#| msgid "sequential execution"
+#, no-wrap
 msgid "forms for sequential execution"
-msgstr "sequential execution"
+msgstr "forms for sequential execution"
 
 #. type: Plain text
 #: original_texis/control.texi:59
@@ -319,14 +317,12 @@ msgstr "conditional evaluation"
 #: original_texis/control.texi:151
 #, no-wrap
 msgid "forms, conditional"
-msgstr ""
+msgstr "forms, conditional"
 
 #. type: Plain text
 #: original_texis/control.texi:159
-#, fuzzy
-#| msgid "Conditional control structures choose among alternatives.  Emacs Lisp has four conditional forms: @code{if}, which is much the same as in other languages; @code{when} and @code{unless}, which are variants of @code{if}; and @code{cond}, which is a generalized case statement."
 msgid "Conditional control structures choose among alternatives.  Emacs Lisp has five conditional forms: @code{if}, which is much the same as in other languages; @code{when} and @code{unless}, which are variants of @code{if}; @code{cond}, which is a generalized case statement; and @code{pcase}, which is a generalization of @code{cond} (@pxref{Pattern-Matching Conditional})."
-msgstr "条件による制御構造は、候補の中から選択を行ないます。Emacs Lispは4つの条件フォームをもちます。@code{if}は他の言語のものとほとんど同じです。@code{when}と@code{unless}は、@code{if}の変種です。@code{cond}は一般化されたcase命令です。"
+msgstr "条件による制御構造は候補の中から選択を行ないます。Emacs Lispは5つの条件フォームをもちます。@code{if}は他の言語のものとほとんど同じです。@code{when}と@code{unless}は@code{if}の変種です。@code{cond}は一般化されたcase命令です。@code{cond}を汎用化したものが@code{pcase}です(@ref{Pattern-Matching Conditional}を参照)。"
 
 #. type: defspec
 #: original_texis/control.texi:160
@@ -722,121 +718,117 @@ msgstr "pcase"
 
 #. type: cindex
 #: original_texis/control.texi:425
-#, fuzzy, no-wrap
-#| msgid "Pattern matching case statement"
+#, no-wrap
 msgid "pattern matching, programming style"
-msgstr "Pattern matching case statement"
+msgstr "pattern matching, programming style"
 
 #. type: Plain text
 #: original_texis/control.texi:434
 msgid "Aside from the four basic conditional forms, Emacs Lisp also has a pattern-matching conditional form, the @code{pcase} macro, a hybrid of @code{cond} and @code{cl-case} (@pxref{Conditionals,,,cl,Common Lisp Extensions})  that overcomes their limitations and introduces the @dfn{pattern matching programming style}.  The limitations that @code{pcase} overcomes are:"
-msgstr ""
+msgstr "4つの基本的な条件フォームとは別に、Emacs Lispには@code{cond}と@code{cl-case} (@ref{Conditionals,,,cl,Common Lisp Extensions}を参照)の合成物とも言うべき、@code{pcase}マクロというパターンマッチングによる条件フォームがあります。これは@code{cond}と@code{cl-case}の制限を克服して、@dfn{パターンマッチングによるプログラミングスタイル(pattern matching programming style)}を導入するものです。その@code{pcase}が克服する制限とは:"
 
 #. type: itemize
 #: original_texis/control.texi:442
 msgid "The @code{cond} form chooses among alternatives by evaluating the predicate @var{condition} of each of its clauses (@pxref{Conditionals}).  The primary limitation is that variables let-bound in @var{condition} are not available to the clause's @var{body-forms}."
-msgstr ""
+msgstr "@code{cond}フォームはclauseそれぞれにたいして述語@var{condition}を評価して候補から選択を行う(@ref{Conditionals}を参照)。@var{condition}内でのletバインドされた変数がclauseの@var{body-forms}で利用できないのが主な制限。"
 
 #. type: itemize
 #: original_texis/control.texi:447
 msgid "Another annoyance (more an inconvenience than a limitation)  is that when a series of @var{condition} predicates implement equality tests, there is a lot of repeated code.  (@code{cl-case} solves this inconvenience.)"
-msgstr ""
+msgstr "もう1つの煩しい(制限というより不便な)点は一連の@var{condition}述語が等価なテストを実装する際にはコードが多数回繰り返されること(@code{cl-case}はこの不便さを解決している)。"
 
 #. type: itemize
 #: original_texis/control.texi:452
 msgid "The @code{cl-case} macro chooses among alternatives by evaluating the equality of its first argument against a set of specific values."
-msgstr ""
+msgstr "@code{cl-case}マクロは最初の引数と特定の値セットの等価性を評価することにより候補から選択を行う。"
 
 #. type: itemize
 #: original_texis/control.texi:454
 msgid "Its limitations are two-fold:"
-msgstr ""
+msgstr "制限は2つ:"
 
 #. type: enumerate
 #: original_texis/control.texi:458
 msgid "The equality tests use @code{eql}."
-msgstr ""
+msgstr "等価性のテストに@code{eql}を使用。"
 
 #. type: enumerate
 #: original_texis/control.texi:460
 msgid "The values must be known and written in advance."
-msgstr ""
+msgstr "値は既知でありあらかじめ記述されていなければならない。"
 
 #. type: itemize
 #: original_texis/control.texi:466
 msgid "These render @code{cl-case} unsuitable for strings or compound data structures (e.g., lists or vectors).  (@code{cond} doesn't have these limitations, but it has others, see above.)"
-msgstr ""
+msgstr "これらの制限は文字列や複合データ構造にたいして@code{cl-case}を不適格にする(このような制限は@code{cond}にはないが上述のように別の制限をもつ)。"
 
 #. type: Plain text
 #: original_texis/control.texi:476
 msgid "Conceptually, the @code{pcase} macro borrows the first-arg focus of @code{cl-case} and the clause-processing flow of @code{cond}, replacing @var{condition} with a generalization of the equality test which is a variant of @dfn{pattern matching}, and adding facilities so that you can concisely express a clause's predicate, and arrange to share let-bindings between a clause's predicate and @var{body-forms}."
-msgstr ""
+msgstr "@code{pcase}マクロは@dfn{パターンマッチング(pattern matching)}の変種であるような等価性テストを汎化したものによる@var{condition}の置き換え、clauseの述語を簡潔に表現できるような機能の追加、clauseの述語と@var{body-forms}の間でletバインディングを共有するようなアレンジにより、概念的には最初の引数のフォーカスでは@code{cl-case}、clauseの処理フローでは@code{cond}を借用しています。"
 
 #. type: Plain text
 #: original_texis/control.texi:481
 msgid "The concise expression of a predicate is known as a @dfn{pattern}.  When the predicate, called on the value of the first arg, returns non-@code{nil}, we say that ``the pattern matches the value'' (or sometimes ``the value matches the pattern'')."
-msgstr ""
+msgstr "この述語の簡潔な表現は@dfn{パターン(pattern)}として知られています。最初の引数の値にたいして呼び出される述語が非@code{nil}をリターンしたときには、``パターンが値にマッチした''といいます(``値がパターンにマッチした''ということもある)。"
 
 #. type: menuentry
 #: original_texis/control.texi:487
 msgid "The @code{pcase} macro: pcase Macro"
-msgstr ""
+msgstr "The @code{pcase} macro: pcase Macro"
 
 #. type: menuentry
 #: original_texis/control.texi:487
 msgid "Includes examples and caveats."
-msgstr ""
+msgstr "例と注意を含む。"
 
 #. type: menuentry
 #: original_texis/control.texi:487
 msgid "Extending @code{pcase}: Extending pcase"
-msgstr ""
+msgstr "Extending @code{pcase}: Extending pcase"
 
 #. type: menuentry
 #: original_texis/control.texi:487
 msgid "Define new kinds of patterns."
-msgstr ""
+msgstr "新種パターンの定義。"
 
 #. type: menuentry
 #: original_texis/control.texi:487
 msgid "Backquote-Style Patterns: Backquote Patterns"
-msgstr ""
+msgstr "Backquote-Style Patterns: Backquote Patterns"
 
 #. type: menuentry
 #: original_texis/control.texi:487
-#, fuzzy
-#| msgid "pattern matching"
 msgid "Structural patterns matching."
-msgstr "pattern matching"
+msgstr "構造的パターンマッチング。"
 
 #. type: node
 #: original_texis/control.texi:487 original_texis/control.texi:1176
 #, no-wrap
 msgid "Destructuring with pcase Patterns"
-msgstr ""
+msgstr "Destructuring with pcase Patterns"
 
 #. type: menuentry
 #: original_texis/control.texi:487
 msgid "Using pcase patterns to extract subfields."
-msgstr ""
+msgstr "pcaseパターンによるサブフィールド抽出。"
 
 #. type: node
 #: original_texis/control.texi:489
-#, fuzzy, no-wrap
-#| msgid "pcase"
+#, no-wrap
 msgid "pcase Macro"
-msgstr "pcase"
+msgstr "pcase Macro"
 
 #. type: subsection
 #: original_texis/control.texi:490
 #, no-wrap
 msgid "The @code{pcase} macro"
-msgstr ""
+msgstr "The @code{pcase} macro"
 
 #. type: Plain text
 #: original_texis/control.texi:493
 msgid "For background, @xref{Pattern-Matching Conditional}."
-msgstr ""
+msgstr "背景は@ref{Pattern-Matching Conditional}を参照してください。"
 
 #. type: defmac
 #: original_texis/control.texi:494
@@ -847,33 +839,33 @@ msgstr "pcase expression &rest clauses"
 #. type: defmac
 #: original_texis/control.texi:497
 msgid "Each clause in @var{clauses} has the form: @w{@code{(@var{pattern} @var{body-forms}@dots{})}}."
-msgstr ""
+msgstr "@var{clauses}内のclauseは@w{@code{(@var{pattern} @var{body-forms}@dots{})}}という形式をもつ。"
 
 #. type: defmac
 #: original_texis/control.texi:501
 msgid "Evaluate @var{expression} to determine its value, @var{expval}.  Find the first clause in @var{clauses} whose @var{pattern} matches @var{expval} and pass control to that clause's @var{body-forms}."
-msgstr ""
+msgstr "@var{expression}の値( @var{expval} )を決定するために評価する。@var{pattern}が@var{expval}にマッチするような最初のclauseを探して、そのclauseの@var{body-forms}に制御を渡す。"
 
 #. type: defmac
 #: original_texis/control.texi:505
 msgid "If there is a match, the value of @code{pcase} is the value of the last of @var{body-forms} in the successful clause.  Otherwise, @code{pcase} evaluates to @code{nil}."
-msgstr ""
+msgstr "マッチが存在すれば@code{pcase}の値はマッチが成功したclauseの@var{body-forms}の最後の値、それ以外なら@code{pcase}は@code{nil}に評価される。"
 
 #. type: cindex
 #: original_texis/control.texi:507
 #, no-wrap
 msgid "pcase pattern"
-msgstr ""
+msgstr "pcase pattern"
 
 #. type: Plain text
 #: original_texis/control.texi:511
 msgid "Each @var{pattern} has to be a @dfn{pcase pattern}, which can use either one of the core patterns defined below, or one of the patterns defined via @code{pcase-defmacro} (@pxref{Extending pcase})."
-msgstr ""
+msgstr "各@var{pattern}は@dfn{pcaseパターン(pcase pattern)}である必要があります。これは以下に定義されるコアパターンのいずれか、または@code{pcase-defmacro} (@ref{Extending pcase}を参照)を通じて定義されるパターンの1つを使用できます。"
 
 #. type: Plain text
 #: original_texis/control.texi:516
 msgid "The rest of this subsection describes different forms of core patterns, presents some examples, and concludes with important caveats on using the let-binding facility provided by some pattern forms.  A core pattern can have the following forms:"
-msgstr ""
+msgstr "このサブセクションの残りの部分ではコアパターンの異なるフォームをいくつかの例を交えて説明して、いくつかのパターンフォームが提供するletバイディング機能を使用する上で重要な注意点で締めくくります。コアパターンは以下のフォームをもつことができます:"
 
 #. type: item
 #: original_texis/control.texi:519
@@ -884,7 +876,7 @@ msgstr "_"
 #. type: table
 #: original_texis/control.texi:522
 msgid "Matches any @var{expval}.  This is also known as @dfn{don't care} or @dfn{wildcard}."
-msgstr ""
+msgstr "任意の@var{expval}にマッチ。これは@dfn{don't care}、あるいは@dfn{ワイルドカード(wildcard)}としても知られる。"
 
 #. type: item
 #: original_texis/control.texi:523
@@ -895,30 +887,30 @@ msgstr "'@var{val}"
 #. type: table
 #: original_texis/control.texi:526
 msgid "Matches if @var{expval} equals @var{val}.  The comparison is done as if by @code{equal} (@pxref{Equality Predicates})."
-msgstr ""
+msgstr "@var{expval}と@var{val}が等しければマッチ。比較は@code{equal}のように行われる(@ref{Equality Predicates}を参照)。"
 
 #. type: var{#1}
 #: original_texis/control.texi:527 original_texis/control.texi:1097
 #, no-wrap
 msgid "keyword"
-msgstr ""
+msgstr "keyword"
 
 #. type: var{#1}
 #: original_texis/control.texi:528 original_texis/control.texi:1098
 #, no-wrap
 msgid "integer"
-msgstr ""
+msgstr "integer"
 
 #. type: var{#1}
 #: original_texis/control.texi:529 original_texis/control.texi:1099
 #, no-wrap
 msgid "string"
-msgstr ""
+msgstr "string"
 
 #. type: table
 #: original_texis/control.texi:533
 msgid "Matches if @var{expval} equals the literal object.  This is a special case of @code{'@var{val}}, above, possible because literal objects of these types are self-quoting."
-msgstr ""
+msgstr "@var{expval}がリテラルオブジェクトと等しければマッチ。これは上述の@code{'@var{val}}の特殊なケースであり、これらのタイプのリテラルオブジェクトが自己クォート(self-quoting)を行うために可能となる。"
 
 #. type: var{#1}
 #: original_texis/control.texi:534 original_texis/control.texi:1096
@@ -928,27 +920,24 @@ msgstr "symbol"
 
 #. type: table
 #: original_texis/control.texi:538
-#, fuzzy
-#| msgid "A mere symbol in a U-pattern matches anything, and additionally let-binds this symbol to the value that it matched, so that you can later refer to it, either in the @var{body-forms} or also later in the pattern."
 msgid "Matches any @var{expval}, and additionally let-binds @var{symbol} to @var{expval}, such that this binding is available to @var{body-forms} (@pxref{Dynamic Binding})."
-msgstr "U-pattern内の単なるシンボルはすべてにマッチし、さらにマッチした値にそのシンボルをバインドするので、@var{body-forms}や皇族のパターンから、それを参照することができます。"
+msgstr "任意の@var{expval}にマッチするとともに、追加で@var{symbol}を@var{expval}にletバインドする。このようなバインディングは@var{body-forms}内でも利用できる(@ref{Dynamic Binding}を参照)。"
 
 #. type: table
 #: original_texis/control.texi:543
 msgid "If @var{symbol} is part of a sequencing pattern @var{seqpat} (e.g., by using @code{and}, below), the binding is also available to the portion of @var{seqpat} following the appearance of @var{symbol}.  This usage has some caveats, see @ref{pcase-symbol-caveats,,caveats}."
-msgstr ""
+msgstr "@var{symbol}が(以下の@code{and}を使用することにより)シーケンスパターン@var{seqpat}の一部なら、@var{symbol}に後続する@var{seqpat}部分でもバインディングは利用可能。この使用法にはいくつかの注意点がある。@ref{pcase-symbol-caveats,,caveats}を参照のこと。"
 
 #. type: table
 #: original_texis/control.texi:548
 msgid "Two symbols to avoid are @code{t}, which behaves like @code{_} (above) and is deprecated, and @code{nil}, which signals an error.  Likewise, it makes no sense to bind keyword symbols (@pxref{Constant Variables})."
-msgstr ""
+msgstr "使用を避けるべき2つのシンボルは@code{_} (上述)と同様に振る舞う非推奨の@code{t}と@code{nil}(エラーをシグナルする)。同様にキーワードシンボルへのバインドは無意味(@ref{Constant Variables}を参照)。"
 
 #. type: item
 #: original_texis/control.texi:549
-#, fuzzy, no-wrap
-#| msgid "(pred @var{pred})"
+#, no-wrap
 msgid "(pred @var{function})"
-msgstr "(pred @var{pred})"
+msgstr "(pred @var{function})"
 
 #. type: table
 #: original_texis/control.texi:553
