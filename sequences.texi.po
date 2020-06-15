@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-03-12 20:35+0900\n"
+"PO-Revision-Date: 2020-06-15 15:55+0900\n"
 "Last-Translator: Takeshi Ayanokoji <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: Japanese <h1r0p@outlook.jp>\n"
 "Language: ja\n"
@@ -201,10 +201,8 @@ msgstr "sequencep object"
 
 #. type: defun
 #: original_texis/sequences.texi:68
-#, fuzzy
-#| msgid "This function returns @code{t} if @var{object} is a list, vector, string, bool-vector, or char-table, @code{nil} otherwise."
 msgid "This function returns @code{t} if @var{object} is a list, vector, string, bool-vector, or char-table, @code{nil} otherwise.  See also @code{seqp} below."
-msgstr "この関数は@var{object}がリスト、ベクター、文字列、ブールベクター、文字テーブルなら@code{t}、それ以外は@code{nil}をリターンする。"
+msgstr "この関数は@var{object}がリスト、ベクター、文字列、ブールベクター、文字テーブルなら@code{t}、それ以外は@code{nil}をリターンする。以下の@code{seqp}も参照のこと。"
 
 #. type: defun
 #: original_texis/sequences.texi:70
@@ -238,10 +236,9 @@ msgstr "sequence length"
 
 #. type: cindex
 #: original_texis/sequences.texi:75
-#, fuzzy, no-wrap
-#| msgid "vector length"
+#, no-wrap
 msgid "bool-vector length"
-msgstr "vector length"
+msgstr "bool-vector length"
 
 #. type: cindex
 #: original_texis/sequences.texi:76
@@ -256,10 +253,8 @@ msgstr "Definition of length"
 
 #. type: defun
 #: original_texis/sequences.texi:84
-#, fuzzy
-#| msgid "This function returns the number of elements in @var{sequence}.  If @var{sequence} is a dotted list, a @code{wrong-type-argument} error is signaled.  Circular lists may cause an infinite loop.  For a char-table, the value returned is always one more than the maximum Emacs character code."
 msgid "This function returns the number of elements in @var{sequence}.  The function signals the @code{wrong-type-argument} error if the argument is not a sequence or is a dotted list; it signals the @code{circular-list} error if the argument is a circular list.  For a char-table, the value returned is always one more than the maximum Emacs character code."
-msgstr "この関数は@var{sequence}内の要素の数をリターンする。@var{sequence}がドットリストなら@code{wrong-type-argument}エラーがシグナルされる。循環リストは無限ループを引き起こす。文字テーブルではEmacsの最大文字コードより1大きい値が常にリターンされる。"
+msgstr "この関数は@var{sequence}内の要素の数をリターンする。@var{sequence}がシーケンス以外、またはドットリストなら@code{wrong-type-argument}エラーをシグナルする。引数が循環リストなら@code{circular-list}エラーをシグナルする。文字テーブルではEmacsの最大文字コードより1大きい値が常にリターンされる。"
 
 #. type: defun
 #: original_texis/sequences.texi:86
@@ -989,17 +984,14 @@ msgstr "この関数は@var{sequence}内の要素の個数をリターンする�
 
 #. type: defun
 #: original_texis/sequences.texi:480
-#, fuzzy, no-wrap
-#| msgid "sequencep object"
+#, no-wrap
 msgid "seqp object"
-msgstr "sequencep object"
+msgstr "seqp object"
 
 #. type: defun
 #: original_texis/sequences.texi:485
-#, fuzzy
-#| msgid "This function returns non-@code{nil} if @var{sequence} is a sequence (a list or array), or any additional type of sequence defined via @file{seq.el} generic functions."
 msgid "This function returns non-@code{nil} if @var{object} is a sequence (a list or array), or any additional type of sequence defined via @file{seq.el} generic functions.  This is an extensible variant of @code{sequencep}."
-msgstr "この関数は@var{sequence}がシーケンス(リストか配列)、または@file{seq.el}のジェネリック関数を通じて定義されたすべての追加シーケンス型なら非@code{nil}をリターンする。"
+msgstr "この関数は@var{object}がシーケンス(リストか配列)、または@file{seq.el}のジェネリック関数を通じて定義されたすべての追加シーケンス型なら非@code{nil}をリターンする。これは@code{sequencep}の拡張された変種である。"
 
 #. type: group
 #: original_texis/sequences.texi:490
@@ -2098,14 +2090,13 @@ msgstr "このマクロは@code{dolist} (@ref{Iteration, dolist}を参照)と同
 #. type: anchor{#1}
 #: original_texis/sequences.texi:1053
 msgid "seq-let"
-msgstr ""
+msgstr "seq-let"
 
 #. type: defmac
 #: original_texis/sequences.texi:1053
-#, fuzzy, no-wrap
-#| msgid "seq-let arguments sequence body@dots{}"
+#, no-wrap
 msgid "seq-let var-sequence val-sequence body@dots{}"
-msgstr "seq-let arguments sequence body@dots{}"
+msgstr "seq-let var-sequence val-sequence body@dots{}"
 
 #. type: cindex
 #: original_texis/sequences.texi:1054
@@ -2115,17 +2106,13 @@ msgstr "sequence destructuring"
 
 #. type: defmac
 #: original_texis/sequences.texi:1060
-#, fuzzy
-#| msgid "This macro binds the variables defined in @var{arguments} to the elements of @var{sequence}.  @var{arguments} can themselves include sequences, allowing for nested destructuring."
 msgid "This macro binds the variables defined in @var{var-sequence} to the values that are the corresponding elements of @var{val-sequence}.  This is known as @dfn{destructuring binding}.  The elements of @var{var-sequence} can themselves include sequences, allowing for nested destructuring."
-msgstr "このマクロは@var{arguments}内で定義される変数に@var{sequence}の要素をバインドする。@var{arguments}はネストされた非構造化を許容することにより、自身にシーケンスを含むことができる。"
+msgstr "このマクロは@var{var-sequence}内で定義される変数に@var{val-sequence}の対応する要素をバインドする。これは@dfn{分割代入(destructuring binding)}として知られている。@var{var-sequence}の要素は、ネストされた非構造化を許容することにより自身にシーケンスを含むことができる。"
 
 #. type: defmac
 #: original_texis/sequences.texi:1064
-#, fuzzy
-#| msgid "The @var{arguments} sequence can also include the @code{&rest} marker followed by a variable name to be bound to the rest of @code{sequence}."
 msgid "The @var{var-sequence} sequence can also include the @code{&rest} marker followed by a variable name to be bound to the rest of @var{val-sequence}."
-msgstr "@var{arguments}シーケンスには、@code{sequence}の残りにバインドされる変数名が後続するような、@code{&rest}マーカーを含めることもできる。"
+msgstr "@var{var-sequence}シーケンスには、@var{val-sequence}の残りにバインドされる変数名が後続するような@code{&rest}マーカーを含めることもできる。"
 
 #. type: group
 #: original_texis/sequences.texi:1070
@@ -2182,7 +2169,7 @@ msgstr "@result{} [3 4]\n"
 #. type: defmac
 #: original_texis/sequences.texi:1090
 msgid "The @code{pcase} patterns provide an alternative facility for destructuring binding, see @ref{Destructuring with pcase Patterns}."
-msgstr ""
+msgstr "@code{pcase}パターンは分割代入にたいする代替えの機能を提供する。@ref{Destructuring with pcase Patterns}を参照のこと。"
 
 #. type: defun
 #: original_texis/sequences.texi:1092
@@ -2638,10 +2625,8 @@ msgstr "copying vectors"
 
 #. type: defun
 #: original_texis/sequences.texi:1369
-#, fuzzy
-#| msgid "This function returns a new vector containing all the elements of @var{sequences}.  The arguments @var{sequences} may be true lists, vectors, strings or bool-vectors.  If no @var{sequences} are given, the empty vector is returned."
 msgid "This function returns a new vector containing all the elements of @var{sequences}.  The arguments @var{sequences} may be proper lists, vectors, strings or bool-vectors.  If no @var{sequences} are given, the empty vector is returned."
-msgstr "この関数は@var{sequences}のすべての要素を含む新しいベクターをリターンする。引数@var{sequences}は真リスト、ベクター、文字列、ブールベクター。@var{sequences}が与えられければ空のベクターがリターンされる。"
+msgstr "この関数は@var{sequences}のすべての要素を含む新しいベクターをリターンする。引数@var{sequences}は正リスト、ベクター、文字列、ブールベクター。@var{sequences}が与えられければ空のベクターがリターンされる。"
 
 #. type: defun
 #: original_texis/sequences.texi:1372
