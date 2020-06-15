@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-03-12 07:39+0900\n"
+"PO-Revision-Date: 2020-06-15 14:11+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -168,10 +168,9 @@ msgstr "リストとは互いに連なる(chained together)一連のコンスセ
 
 #. type: cindex
 #: original_texis/lists.texi:53
-#, fuzzy, no-wrap
-#| msgid "property list"
+#, no-wrap
 msgid "proper list"
-msgstr "property list"
+msgstr "proper list"
 
 #. type: cindex
 #: original_texis/lists.texi:54
@@ -181,17 +180,13 @@ msgstr "true list"
 
 #. type: Plain text
 #: original_texis/lists.texi:63
-#, fuzzy
-#| msgid "Also by convention, the @sc{cdr} of the last cons cell in a list is @code{nil}.  We call such a @code{nil}-terminated structure a @dfn{true list}.  In Emacs Lisp, the symbol @code{nil} is both a symbol and a list with no elements.  For convenience, the symbol @code{nil} is considered to have @code{nil} as its @sc{cdr} (and also as its @sc{car})."
 msgid "Also by convention, the @sc{cdr} of the last cons cell in a list is @code{nil}.  We call such a @code{nil}-terminated structure a @dfn{proper list}@footnote{It is sometimes also referred to as a @dfn{true list}, but we generally do not use this terminology in this manual.}.  In Emacs Lisp, the symbol @code{nil} is both a symbol and a list with no elements.  For convenience, the symbol @code{nil} is considered to have @code{nil} as its @sc{cdr} (and also as its @sc{car})."
-msgstr "これも慣例的なものですが、リスト内の最後のコンスセルの@sc{cdr}は@code{nil}です。わたしたちはこのような@code{nil}で終端された構造を、@dfn{真リスト(true list)}と呼びます。Emacs Lispではシンボル@code{nil}はシンボルであり、かつ要素なしのリストでもあります。便宜上、シンボル@code{nil}はその@sc{cdr}(と@sc{car})に@code{nil}をもつと考えます。"
+msgstr "これも慣例的なものですがリスト内の最後のコンスセルの@sc{cdr}は@code{nil}です。わたしたちはこのような@code{nil}で終端された構造を@dfn{正リスト(proper list)}と呼びます@footnote{これは@dfn{真リスト(true list)}と呼ばれることもありますが、このマニュアルでは一般的にこの用語を使用しません。}。Emacs Lispではシンボル@code{nil}はシンボルであり、かつ要素なしのリストでもあります。便宜上、シンボル@code{nil}はその@sc{cdr}(と@sc{car})に@code{nil}をもつと考えます。"
 
 #. type: Plain text
 #: original_texis/lists.texi:67
-#, fuzzy
-#| msgid "Hence, the @sc{cdr} of a true list is always a true list.  The @sc{cdr} of a nonempty true list is a true list containing all the elements except the first."
 msgid "Hence, the @sc{cdr} of a proper list is always a proper list.  The @sc{cdr} of a nonempty proper list is a proper list containing all the elements except the first."
-msgstr "したがって真リストの@sc{cdr}は、常に真リストです。空でない真リストの@sc{cdr}は、1番目の要素以外を含む真リストです。"
+msgstr "したがって正リストの@sc{cdr}は常に正リストです。空でない正リストの@sc{cdr}は1番目の要素以外を含む正リストです。"
 
 #. type: cindex
 #: original_texis/lists.texi:68
@@ -212,10 +207,8 @@ msgstr "リストの最後のコンスセルの@sc{cdr}が@code{nil}以外の何
 
 #. type: Plain text
 #: original_texis/lists.texi:83
-#, fuzzy
-#| msgid "For some purposes, it does not matter whether a list is true, circular or dotted.  If a program doesn't look far enough down the list to see the @sc{cdr} of the final cons cell, it won't care.  However, some functions that operate on lists demand true lists and signal errors if given a dotted list.  Most functions that try to find the end of a list enter infinite loops if given a circular list."
 msgid "For some purposes, it does not matter whether a list is proper, circular or dotted.  If a program doesn't look far enough down the list to see the @sc{cdr} of the final cons cell, it won't care.  However, some functions that operate on lists demand proper lists and signal errors if given a dotted list.  Most functions that try to find the end of a list enter infinite loops if given a circular list."
-msgstr "ある目的においてはそのリストが真リストか、循環リストなのか、ドットリストなのかが問題にならない場合もあります。そのプログラムがリストを充分に辿って最後のコンスセルの@sc{cdr}を確認しようとしないなら、これは問題になりません。しかしリストを処理する関数のいくつかは真リストを要求し、ドットリストの場合はエラーをシグナルします。リストの最後を探そうと試みる関数のほとんどは、循環リストを与えると無限ループに突入します。"
+msgstr "ある目的においてはそのリストが正リストか循環リストなのか、あるいはドットリストなのかが問題にならない場合もあります。そのプログラムがリストを充分に辿って最後のコンスセルの@sc{cdr}を確認しようとしないなら、これは問題になりません。しかしリストを処理する関数のいくつかは正リストを要求し、ドットリストの場合はエラーをシグナルします。リストの最後を探そうと試みる関数のほとんどは循環リストを与えると無限ループに突入します。"
 
 #. type: cindex
 #: original_texis/lists.texi:84
@@ -1082,10 +1075,8 @@ msgstr "この関数は@var{sequences}のすべての要素を含むリストを
 
 #. type: defun
 #: original_texis/lists.texi:529
-#, fuzzy
-#| msgid "More generally, the final argument to @code{append} may be any Lisp object.  The final argument is not copied or converted; it becomes the @sc{cdr} of the last cons cell in the new list.  If the final argument is itself a list, then its elements become in effect elements of the result list.  If the final element is not a list, the result is a dotted list since its final @sc{cdr} is not @code{nil} as required in a true list."
 msgid "More generally, the final argument to @code{append} may be any Lisp object.  The final argument is not copied or converted; it becomes the @sc{cdr} of the last cons cell in the new list.  If the final argument is itself a list, then its elements become in effect elements of the result list.  If the final element is not a list, the result is a dotted list since its final @sc{cdr} is not @code{nil} as required in a proper list (@pxref{Cons Cells})."
-msgstr "より一般的には@code{append}にたいする最後の引数は、任意のLispオブジェクトを指定できる。最後の引数はコピーや変換はされない。最後の引数は、新しいリストの最後のコンスセルの@sc{cdr}となる。最後の引数もリストならば、このリストの要素は実質的には結果リストの要素になる。最後の要素がリストでなければ、最後の@sc{cdr}が(真リストで要求される)@code{nil}ではないので、結果はドットリストになる。"
+msgstr "より一般的には@code{append}にたいする最後の引数は任意のLispオブジェクトを指定できる。最後の引数のコピーや変換は行わない。最後の引数は新しいリストの最後のコンスセルの@sc{cdr}となる。最後の引数もリストならば、このリストの要素は実質的には結果リストの要素になる。最後の要素がリストでなければ、最後の@sc{cdr}が(正リストで要求される)@code{nil}ではないので結果はドットリストになる(@ref{Cons Cells}を参照)。"
 
 #. type: Plain text
 #: original_texis/lists.texi:532
@@ -1284,10 +1275,8 @@ msgstr "copy-tree tree &optional vecp"
 
 #. type: defun
 #: original_texis/lists.texi:647
-#, fuzzy
-#| msgid "This function returns a copy of the tree @code{tree}.  If @var{tree} is a cons cell, this makes a new cons cell with the same @sc{car} and @sc{cdr}, then recursively copies the @sc{car} and @sc{cdr} in the same way."
 msgid "This function returns a copy of the tree @var{tree}.  If @var{tree} is a cons cell, this makes a new cons cell with the same @sc{car} and @sc{cdr}, then recursively copies the @sc{car} and @sc{cdr} in the same way."
-msgstr "この関数はツリー@code{tree}のコピーをリターンする。@var{tree}がコンスセルなら、同じ@sc{car}と@sc{cdr}をもつ新しいコンスセルを作成してから、同じ方法により@sc{car}と@sc{cdr}を再帰的にコピーする。"
+msgstr "この関数はツリー@var{tree}のコピーをリターンする。@var{tree}がコンスセルなら同じ@sc{car}と@sc{cdr}をもつ新しいコンスセルを作成してから、同じ方法によって@sc{car}と@sc{cdr}を再帰的にコピーする。"
 
 #. type: defun
 #: original_texis/lists.texi:652
@@ -3201,17 +3190,14 @@ msgstr ""
 
 #. type: defun
 #: original_texis/lists.texi:1739
-#, fuzzy, no-wrap
-#| msgid "assq-delete-all key alist"
+#, no-wrap
 msgid "assoc-delete-all key alist"
-msgstr "assq-delete-all key alist"
+msgstr "assoc-delete-all key alist"
 
 #. type: defun
 #: original_texis/lists.texi:1744
-#, fuzzy
-#| msgid "This function deletes from @var{alist} all the elements whose @sc{cdr} is @code{eq} to @var{value}.  It returns the shortened alist, and often modifies the original list structure of @var{alist}.  @code{rassq-delete-all} is like @code{assq-delete-all} except that it compares the @sc{cdr} of each @var{alist} association instead of the @sc{car}."
 msgid "This function deletes from @var{alist} all the elements whose @sc{car} is @code{equal} to @var{key}.  It works like @code{assq-delete-all}, except for the predicate used for comparing alist elements with @var{key}."
-msgstr "この関数は、@var{alist}から@sc{cdr}が@var{value}と@code{eq}であるようなすべての要素を削除する。この関数は短くなったリストをリターンし、@var{alist}の元のリスト構造を変更することもよくある。@code{rassq-delete-all}は@code{assq-delete-all}と似ているが、@sc{car}ではなく@var{alist}の各連想の@sc{cdr}を比較する。"
+msgstr "この関数は@var{alist}から@sc{car}が@var{key}と@code{equal}であるようなすべての要素を削除する。これは@code{assq-delete-all}と同じように機能するが、alistの要素と@var{key}の比較に使用する述語が異なる。"
 
 #. type: defun
 #: original_texis/lists.texi:1746
