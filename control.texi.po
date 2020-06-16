@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-06-15 21:08+0900\n"
+"PO-Revision-Date: 2020-06-16 16:15+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -941,70 +941,67 @@ msgstr "(pred @var{function})"
 
 #. type: table
 #: original_texis/control.texi:553
-#, fuzzy
-#| msgid "This pattern matches if the function @var{pred} returns non-@code{nil} when called with the object being matched."
 msgid "Matches if the predicate @var{function} returns non-@code{nil} when called on @var{expval}.  the predicate @var{function} can have one of the following forms:"
-msgstr "このパターンは、マッチされるオブジェクトで関数@var{pred}が呼び出したとき、非@code{nil}をreturnするものにマッチします。"
+msgstr "@var{expval}にたいして述語@var{function}が非@code{nil}をリターンしたらマッチ。述語@var{function}は以下のフォームのいずれかが可能:"
 
 #. type: item
 #: original_texis/control.texi:555
 #, no-wrap
 msgid "function name (a symbol)"
-msgstr ""
+msgstr "関数名(シンボル)"
 
 #. type: table
 #: original_texis/control.texi:557
 msgid "Call the named function with one argument, @var{expval}."
-msgstr ""
+msgstr "@var{expval}を単一の引数として名前つきの関数を呼び出す。"
 
 #. type: table
 #: original_texis/control.texi:559
 msgid "Example: @code{integerp}"
-msgstr ""
+msgstr "例: @code{integerp}"
 
 #. type: item
 #: original_texis/control.texi:560
 #, no-wrap
 msgid "lambda expression"
-msgstr ""
+msgstr "lambda式"
 
 #. type: table
 #: original_texis/control.texi:563
 msgid "Call the anonymous function with one argument, @var{expval} (@pxref{Lambda Expressions})."
-msgstr ""
+msgstr "@var{expval}を単一の引数として無名関数を呼び出す(@ref{Lambda Expressions}を参照)。"
 
 #. type: table
 #: original_texis/control.texi:565
 msgid "Example: @code{(lambda (n) (= 42 n))}"
-msgstr ""
+msgstr "例: @code{(lambda (n) (= 42 n))}"
 
 #. type: item
 #: original_texis/control.texi:566
 #, no-wrap
 msgid "function call with @var{n} args"
-msgstr ""
+msgstr "@var{n}個の引数での関数呼び出し"
 
 #. type: table
 #: original_texis/control.texi:570
 msgid "Call the function (the first element of the function call)  with @var{n} arguments (the other elements) and an additional @var{n}+1-th argument that is @var{expval}."
-msgstr ""
+msgstr "関数(関数呼び出しの1つ目の要素)を@var{n}個の引数(残りの要素)、および@var{expval}を@var{n}+1番目の追加の引数としてで呼び出す。"
 
 #. type: table
 #: original_texis/control.texi:574
 msgid "Example: @code{(= 42)}@* In this example, the function is @code{=}, @var{n} is one, and the actual function call becomes: @w{@code{(= 42 @var{expval})}}."
-msgstr ""
+msgstr "例: @code{(= 42)}@* この例では関数が@code{=}、@var{n}が1であり、実際の関数呼び出しは@w{@code{(= 42 @var{expval})}}になる。"
 
 #. type: item
 #: original_texis/control.texi:576
-#, fuzzy, no-wrap
-#| msgid "(and @var{upattern1} @var{upattern2}@dots{})"
+#, no-wrap
 msgid "(app @var{function} @var{pattern})"
-msgstr "(and @var{upattern1} @var{upattern2}@dots{})"
+msgstr "(app @var{function} @var{pattern})"
 
 #. type: table
 #: original_texis/control.texi:582
 msgid "Matches if @var{function} called on @var{expval} returns a value that matches @var{pattern}.  @var{function} can take one of the forms described for @code{pred}, above.  Unlike @code{pred}, however, @code{app} tests the result against @var{pattern}, rather than against a boolean truth value."
-msgstr ""
+msgstr "@var{expval}にたいして呼び出した@var{function}が@var{pattern}にマッチする値をリターンすればマッチ。@var{function}は上述の@code{pred}で説明したフォームのいずれかが可能。しかし@code{pred}とは異なり、@code{app}はブーリーンの真値ではなく@var{pattern}にたいして結果をテストする点が異なる。"
 
 #. type: item
 #: original_texis/control.texi:583
@@ -1015,31 +1012,29 @@ msgstr "(guard @var{boolean-expression})"
 #. type: table
 #: original_texis/control.texi:585
 msgid "Matches if @var{boolean-expression} evaluates to non-@code{nil}."
-msgstr ""
+msgstr "@var{boolean-expression}が非@code{nil}に評価されればマッチ。"
 
 #. type: item
 #: original_texis/control.texi:586
-#, fuzzy, no-wrap
-#| msgid "(@var{qpattern1} . @var{qpattern2})"
+#, no-wrap
 msgid "(let @var{pattern} @var{expr})"
-msgstr "(@var{qpattern1} . @var{qpattern2})"
+msgstr "(let @var{pattern} @var{expr})"
 
 #. type: table
 #: original_texis/control.texi:590
 msgid "Evaluates @var{expr} to get @var{exprval} and matches if @var{exprval} matches @var{pattern}.  (It is called @code{let} because @var{pattern} can bind symbols to values using @var{symbol}.)"
-msgstr ""
+msgstr "@var{exprval}を取得するために@var{expr}を評価して、@var{exprval}が@var{pattern}にマッチすればマッチ(@var{pattern}は@var{symbol}を使用することでシンボルに値をバインドできるので@code{let}と呼ばれる)。"
 
 #. type: cindex
 #: original_texis/control.texi:592
-#, fuzzy, no-wrap
-#| msgid "sequencing"
+#, no-wrap
 msgid "sequencing pattern"
-msgstr "sequencing"
+msgstr "sequencing pattern"
 
 #. type: Plain text
 #: original_texis/control.texi:599
 msgid "A @dfn{sequencing pattern} (also known as @var{seqpat}) is a pattern that processes its sub-pattern arguments in sequence.  There are two for @code{pcase}: @code{and} and @code{or}.  They behave in a similar manner to the special forms that share their name (@pxref{Combining Conditions}), but instead of processing values, they process sub-patterns."
-msgstr ""
+msgstr "@var{seqpat}としても知られる@dfn{シーケンスパターン(sequencing pattern)}はサブパターンを順に処理するパターンです。@code{pcase}にたいしては@code{and}と@code{or}の2つが存在します。これらは同じ名前のスペシャルフォーム(@ref{Combining Conditions}を参照)と同様の方法で振る舞いますが、値ではなくサブパターンを処理します。"
 
 #. type: item
 #: original_texis/control.texi:601
