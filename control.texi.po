@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-06-16 16:15+0900\n"
+"PO-Revision-Date: 2020-06-16 19:41+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -1034,52 +1034,50 @@ msgstr "sequencing pattern"
 #. type: Plain text
 #: original_texis/control.texi:599
 msgid "A @dfn{sequencing pattern} (also known as @var{seqpat}) is a pattern that processes its sub-pattern arguments in sequence.  There are two for @code{pcase}: @code{and} and @code{or}.  They behave in a similar manner to the special forms that share their name (@pxref{Combining Conditions}), but instead of processing values, they process sub-patterns."
-msgstr "@var{seqpat}としても知られる@dfn{シーケンスパターン(sequencing pattern)}はサブパターンを順に処理するパターンです。@code{pcase}にたいしては@code{and}と@code{or}の2つが存在します。これらは同じ名前のスペシャルフォーム(@ref{Combining Conditions}を参照)と同様の方法で振る舞いますが、値ではなくサブパターンを処理します。"
+msgstr "@var{seqpat}としても知られる@dfn{シーケンスパターン(sequencing pattern)}はサブパターンを順に処理するパターンです。@code{pcase}にたいしては@code{and}と@code{or}の2つが存在します。これらは同じ名前のスペシャルフォーム(@ref{Combining Conditions}を参照)と同様の方式で振る舞いますが、値ではなくサブパターンを処理します。"
 
 #. type: item
 #: original_texis/control.texi:601
-#, fuzzy, no-wrap
-#| msgid "(and @var{upattern1} @var{upattern2}@dots{})"
+#, no-wrap
 msgid "(and @var{pattern1}@dots{})"
-msgstr "(and @var{upattern1} @var{upattern2}@dots{})"
+msgstr "(and @var{pattern1}@dots{})"
 
 #. type: table
 #: original_texis/control.texi:606
 msgid "Attempts to match @var{pattern1}@dots{}, in order, until one of them fails to match.  In that case, @code{and} likewise fails to match, and the rest of the sub-patterns are not tested.  If all sub-patterns match, @code{and} matches."
-msgstr ""
+msgstr "@var{pattern1}@dots{}のいずれかがマッチに失敗するまで順にマッチを試みる。この場合には@code{and}もマッチに失敗して、残りのサブパターンはテストしない。すべてのサブパターンがマッチすれば@code{and}はマッチする。"
 
 #. type: item
 #: original_texis/control.texi:607
-#, fuzzy, no-wrap
-#| msgid "(or @var{upattern1} @var{upattern2}@dots{})"
+#, no-wrap
 msgid "(or @var{pattern1} @var{pattern2}@dots{})"
-msgstr "(or @var{upattern1} @var{upattern2}@dots{})"
+msgstr "(or @var{pattern1} @var{pattern2}@dots{})"
 
 #. type: table
 #: original_texis/control.texi:616
 msgid "Attempts to match @var{pattern1}, @var{pattern2}, @dots{}, in order, until one of them succeeds.  In that case, @code{or} likewise matches, and the rest of the sub-patterns are not tested.  (Note that there must be at least two sub-patterns.  Simply @w{@code{(or @var{pattern1})}} signals error.)"
-msgstr ""
+msgstr "@var{pattern1}、@var{pattern2}、@dots{}のいずれかがマッチに成功するまで順にマッチを試みる。この場合には@code{or}もマッチして、残りのサブパターンはテストしない(少なくともサブパターンが2つなければならにことに注意。単なる@w{@code{(or @var{pattern1})}}はエラーをシグナルする)。"
 
 #. type: table
 #: original_texis/control.texi:621
 msgid "To present a consistent environment (@pxref{Intro Eval})  to @var{body-forms} (thus avoiding an evaluation error on match), if any of the sub-patterns let-binds a set of symbols, they @emph{must} all bind the same set of symbols."
-msgstr ""
+msgstr "@var{body-forms}に一定の環境(@ref{Intro Eval}を参照)を与えるためには、シンボルセットをletバインドするサブパターンがある場合には、それらは同一のシンボルセットすべてを@emph{バインドしなければならない}。"
 
 #. type: anchor{#1}
 #: original_texis/control.texi:624
 msgid "pcase-example-0"
-msgstr ""
+msgstr "pcase-example-0"
 
 #. type: subheading
 #: original_texis/control.texi:624
 #, no-wrap
 msgid "Example: Advantage Over @code{cl-case}"
-msgstr ""
+msgstr "例: @code{cl-case}にたいする利点"
 
 #. type: Plain text
 #: original_texis/control.texi:629
 msgid "Here's an example that highlights some advantages @code{pcase} has over @code{cl-case} (@pxref{Conditionals,,,cl,Common Lisp Extensions})."
-msgstr ""
+msgstr "以下は@code{cl-case} (@ref{Conditionals,,,cl,Common Lisp Extensions}を参照)にたいする@code{pcase}の利点のいくつかを強調する例です。"
 
 #. type: group
 #: original_texis/control.texi:636
@@ -1090,17 +1088,14 @@ msgid ""
 "  ((and (pred stringp) msg)\n"
 "   (message \"%s\" msg))\n"
 msgstr ""
+"(pcase (get-return-code x)\n"
+"  ;; 文字列\n"
+"  ((and (pred stringp) msg)\n"
+"   (message \"%s\" msg))\n"
 
 #. type: group
 #: original_texis/control.texi:643
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(pcase (get-return-code x)\n"
-#| "  (`success       (message \"Done!\"))\n"
-#| "  (`would-block   (message \"Sorry, can't do it now\"))\n"
-#| "  (`read-only     (message \"The shmliblick is read-only\"))\n"
-#| "  (`access-denied (message \"You do not have the needed rights\"))\n"
-#| "  (code           (message \"Unknown return code %S\" code)))\n"
+#, no-wrap
 msgid ""
 "  ;; symbol\n"
 "  ('success       (message \"Done!\"))\n"
@@ -1108,12 +1103,11 @@ msgid ""
 "  ('read-only     (message \"The shmliblick is read-only\"))\n"
 "  ('access-denied (message \"You do not have the needed rights\"))\n"
 msgstr ""
-"(pcase (get-return-code x)\n"
-"  (`success       (message \"Done!\"))\n"
-"  (`would-block   (message \"Sorry, can't do it now\"))\n"
-"  (`read-only     (message \"The shmliblick is read-only\"))\n"
-"  (`access-denied (message \"You do not have the needed rights\"))\n"
-"  (code           (message \"Unknown return code %S\" code)))\n"
+"  ;; シンボル\n"
+"  ('success       (message \"完了!\"))\n"
+"  ('would-block   (message \"残念、今は実行できない\"))\n"
+"  ('read-only     (message \"shmliblickは読み取り専用\"))\n"
+"  ('access-denied (message \"必要な権限がない\"))\n"
 
 #. type: group
 #: original_texis/control.texi:647
@@ -1122,27 +1116,29 @@ msgid ""
 "  ;; default\n"
 "  (code           (message \"Unknown return code %S\" code)))\n"
 msgstr ""
+"  ;; default\n"
+"  (code           (message \"未知のリターンコード %S\" code)))\n"
 
 #. type: Plain text
 #: original_texis/control.texi:655
 msgid "With @code{cl-case}, you would need to explicitly declare a local variable @code{code} to hold the return value of @code{get-return-code}.  Also @code{cl-case} is difficult to use with strings because it uses @code{eql} for comparison."
-msgstr ""
+msgstr "@code{cl-case}では@code{get-return-code}のリターン値を保持するためにローカル変数@code{code}を宣言する必要があります。さらに@code{cl-case}は比較に@code{eql}を使用するので文字列の使用も難しくなります。"
 
 #. type: anchor{#1}
 #: original_texis/control.texi:657
 msgid "pcase-example-1"
-msgstr ""
+msgstr "pcase-example-1"
 
 #. type: subheading
 #: original_texis/control.texi:657
 #, no-wrap
 msgid "Example: Using @code{and}"
-msgstr ""
+msgstr "例: @code{and}の使用"
 
 #. type: Plain text
 #: original_texis/control.texi:663
 msgid "A common idiom is to write a pattern starting with @code{and}, with one or more @var{symbol} sub-patterns providing bindings to the sub-patterns that follow (as well as to the body forms).  For example, the following pattern matches single-digit integers."
-msgstr ""
+msgstr "後続のサブパターン(と同様にbodyフォーム)にバインディングを提供する1つ以上の@var{symbol}サブパターンをもつ@code{and}で開始するのが、パターンを記述する際の一般的なイディオムです。たとえば以下のパターンは1桁の整数にマッチします。"
 
 #. type: group
 #: original_texis/control.texi:670
@@ -1153,27 +1149,31 @@ msgid ""
 "  n                     ; @r{bind @code{n} to @var{expval}}\n"
 "  (guard (<= -9 n 9)))\n"
 msgstr ""
+"(and\n"
+"  (pred integerp)\n"
+"  n                     ; @r{@code{n}に@var{expval}をバインド}\n"
+"  (guard (<= -9 n 9)))\n"
 
 #. type: Plain text
 #: original_texis/control.texi:682
 msgid "First, @code{pred} matches if @w{@code{(integerp @var{expval})}} evaluates to non-@code{nil}.  Next, @code{n} is a @var{symbol} pattern that matches anything and binds @code{n} to @var{expval}.  Lastly, @code{guard} matches if the boolean expression @w{@code{(<= -9 n 9)}} (note the reference to @code{n})  evaluates to non-@code{nil}.  If all these sub-patterns match, @code{and} matches."
-msgstr ""
+msgstr "まず@code{pred}は@w{@code{(integerp @var{expval})}}が非@code{nil}に評価されればマッチになります。次に@code{n}はすべてにマッチする@var{symbol}パターンであり、@code{n}に@var{expval}がバインドされます。最後に@code{guard}はブーリーン式@w{@code{(<= -9 n 9)}}が非@code{nil}に評価されればマッチになります(@code{n}への参照に注意)。これらすべてのサブパターンがマッチすれば@code{and}がマッチになります。"
 
 #. type: anchor{#1}
 #: original_texis/control.texi:684
 msgid "pcase-example-2"
-msgstr ""
+msgstr "pcase-example-2"
 
 #. type: subheading
 #: original_texis/control.texi:684
 #, no-wrap
 msgid "Example: Reformulation with @code{pcase}"
-msgstr ""
+msgstr "例: @code{pcase}による書き換え"
 
 #. type: Plain text
 #: original_texis/control.texi:694
 msgid "Here is another example that shows how to reformulate a simple matching task from its traditional implementation (function @code{grok/traditional}) to one using @code{pcase} (function @code{grok/pcase}).  The docstring for both these functions is: ``If OBJ is a string of the form \"key:NUMBER\", return NUMBER (a string).  Otherwise, return the list (\"149\" default).'' First, the traditional implementation (@pxref{Regular Expressions}):"
-msgstr ""
+msgstr "以下はシンプルなマッチングタスクを伝統的な実装(関数@code{grok/traditional}から、@code{pcase}を使用する実装(関数@code{grok/pcase})に書き換える別の例です。これらの関数のdocstringはいずれも``If OBJ is a string of the form \"key:NUMBER\", return NUMBER (a string). Otherwise, return the list (\"149\" default).''です。最初は伝統的な実装です(@ref{Regular Expressions}を参照):"
 
 #. type: group
 #: original_texis/control.texi:702
@@ -1185,6 +1185,11 @@ msgid ""
 "      (match-string 1 obj)\n"
 "    (list \"149\" 'default)))\n"
 msgstr ""
+"(defun grok/traditional (obj)\n"
+"  (if (and (stringp obj)\n"
+"           (string-match \"^key:\\\\([[:digit:]]+\\\\)$\" obj))\n"
+"      (match-string 1 obj)\n"
+"    (list \"149\" 'default)))\n"
 
 #. type: group
 #: original_texis/control.texi:708
@@ -1194,11 +1199,14 @@ msgid ""
 "(grok/traditional \"key:149\") @result{} \"149\"\n"
 "(grok/traditional 'monolith) @result{} (\"149\" default)\n"
 msgstr ""
+"(grok/traditional \"key:0\")   @result{} \"0\"\n"
+"(grok/traditional \"key:149\") @result{} \"149\"\n"
+"(grok/traditional 'monolith) @result{} (\"149\" default)\n"
 
 #. type: Plain text
 #: original_texis/control.texi:714
 msgid "The reformulation demonstrates @var{symbol} binding as well as @code{or}, @code{and}, @code{pred}, @code{app} and @code{let}."
-msgstr ""
+msgstr "この書き換えでは@var{symbol}バインディング、および@code{or}、@code{and}、@code{pred}、@code{app}、@code{let}を実演します。"
 
 #. type: group
 #: original_texis/control.texi:728
@@ -1216,6 +1224,17 @@ msgid ""
 "      (let val (list \"149\" 'default)))       ; @r{line 8}\n"
 "     val)))                                  ; @r{line 9}\n"
 msgstr ""
+"(defun grok/pcase (obj)\n"
+"  (pcase obj\n"
+"    ((or                                     ; @r{L1}\n"
+"      (and                                   ; @r{L2}\n"
+"       (pred stringp)                        ; @r{L3}\n"
+"       (pred (string-match                   ; @r{L4}\n"
+"              \"^key:\\\\([[:digit:]]+\\\\)$\"))   ; @r{L5}\n"
+"       (app (match-string 1)                 ; @r{L6}\n"
+"            val))                            ; @r{L7}\n"
+"      (let val (list \"149\" 'default)))       ; @r{L8}\n"
+"     val)))                                  ; @r{L9}\n"
 
 #. type: group
 #: original_texis/control.texi:734
@@ -1225,36 +1244,39 @@ msgid ""
 "(grok/pcase \"key:149\") @result{} \"149\"\n"
 "(grok/pcase 'monolith) @result{} (\"149\" default)\n"
 msgstr ""
+"(grok/pcase \"key:0\")   @result{} \"0\"\n"
+"(grok/pcase \"key:149\") @result{} \"149\"\n"
+"(grok/pcase 'monolith) @result{} (\"149\" default)\n"
 
 #. type: Plain text
 #: original_texis/control.texi:743
 msgid "The bulk of @code{grok/pcase} is a single clause of a @code{pcase} form, the pattern on lines 1-8, the (single) body form on line 9.  The pattern is @code{or}, which tries to match in turn its argument sub-patterns, first @code{and} (lines 2-7), then @code{let} (line 8), until one of them succeeds."
-msgstr ""
+msgstr "@code{grok/pcase}は主に1つの@code{pcase}フォームのclause、L1からL8のパターン、L9の(1つの)フォームからなります。パターンは引数であるサブパターンにたいして順にマッチを試みる@code{or}です。これは最初に@code{and} (L2からL7)、次に@code{let} (L8)のように、いずれかが成功するまで順にマッチを試みます。"
 
 #. type: Plain text
 #: original_texis/control.texi:749
 msgid "As in the previous example (@pxref{pcase-example-1,,Example 1}), @code{and} begins with a @code{pred} sub-pattern to ensure the following sub-patterns work with an object of the correct type (string, in this case).  If @w{@code{(stringp @var{expval})}} returns @code{nil}, @code{pred} fails, and thus @code{and} fails, too."
-msgstr ""
+msgstr "前出の例(@ref{pcase-example-1,,Example 1}を参照)のように、@code{and}は以降のサブパターンが正しいタイプのオブジェクト(この場合は文字列)に作用することを保証するために@code{pred}サブパターンで始まります。@w{@code{(stringp @var{expval})}}が@code{nil}なら@code{pred}は失敗となり、したがって@code{and}も失敗となります。"
 
 #. type: Plain text
 #: original_texis/control.texi:755
 msgid "The next @code{pred} (lines 4-5) evaluates @w{@code{(string-match RX @var{expval})}} and matches if the result is non-@code{nil}, which means that @var{expval} has the desired form: @code{key:NUMBER}.  Again, failing this, @code{pred} fails and @code{and}, too."
-msgstr ""
+msgstr "次の@code{pred} (L4からL5)は@w{@code{(string-match RX @var{expval})}}を評価して結果が非@code{nil} ( @var{expval}が期待するフォーム@code{key:NUMBER}であることを意味する)ならマッチになります。これが失敗すると再び@code{pred}は失敗となり、したがって@code{and}も失敗となります。"
 
 #. type: Plain text
 #: original_texis/control.texi:762
 msgid "Lastly (in this series of @code{and} sub-patterns), @code{app} evaluates @w{@code{(match-string 1 @var{expval})}} (line 6)  to get a temporary value @var{tmp} (i.e., the ``NUMBER'' substring)  and tries to match @var{tmp} against pattern @code{val} (line 7).  Since that is a @var{symbol} pattern, it matches unconditionally and additionally binds @code{val} to @var{tmp}."
-msgstr ""
+msgstr "(@code{and}の一連のサブパターンでは)最後の@code{app}は一時的な値@var{tmp} (部分文字列 ``NUMBER'')を取得するために@w{@code{(match-string 1 @var{expval})}} (L6)を評価して、パターン@code{val} (L7)と@var{tmp}のマッチを試みます。これは@var{symbol}パターンなので無条件でマッチして、@code{val}に@var{tmp}を追加でバインドします。"
 
 #. type: Plain text
 #: original_texis/control.texi:767
 msgid "Now that @code{app} has matched, all @code{and} sub-patterns have matched, and so @code{and} matches.  Likewise, once @code{and} has matched, @code{or} matches and does not proceed to try sub-pattern @code{let} (line 8)."
-msgstr ""
+msgstr "ついに@code{app}がマッチしたので、@code{and}のすべてのサブパターンがマッチして、@code{and}がマッチとなります。同じように一度@code{and}がマッチすれば@code{or}がマッチするので、サブパターン@code{let} (L8)の処理が試みられることはありません。"
 
 #. type: Plain text
 #: original_texis/control.texi:773
 msgid "Let's consider the situation where @code{obj} is not a string, or it is a string but has the wrong form.  In this case, one of the @code{pred} (lines 3-5) fails to match, thus @code{and} (line 2) fails to match, thus @code{or} (line 1) proceeds to try sub-pattern @code{let} (line 8)."
-msgstr ""
+msgstr "@code{obj}が文字列以外、あるいは間違った形式の文字列の場合を考えてみましょう。この場合にはいずれかの@code{pred} (L3からL5)がマッチに失敗するので、@code{and} (L2)がマッチに失敗して、@code{or} (L1)がサブパターン@code{let} (L8)の処理を試みます。"
 
 #. type: Plain text
 #: original_texis/control.texi:780
