@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-06-16 19:41+0900\n"
+"PO-Revision-Date: 2020-06-17 21:57+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -1281,49 +1281,49 @@ msgstr "@code{obj}が文字列以外、あるいは間違った形式の文字�
 #. type: Plain text
 #: original_texis/control.texi:780
 msgid "First, @code{let} evaluates @w{@code{(list \"149\" 'default)}} to get @w{@code{(\"149\" default)}}, the @var{exprval}, and then tries to match @var{exprval} against pattern @code{val}.  Since that is a @var{symbol} pattern, it matches unconditionally and additionally binds @code{val} to @var{exprval}.  Now that @code{let} has matched, @code{or} matches."
-msgstr ""
+msgstr "まず@code{let}は@w{@code{(\"149\" default)}}を取得するために@w{@code{(list \"149\" 'default)}}を評価して、それからパターン@code{val}にたいして@var{exprval}のマッチを試みます。これは@var{symbol}パターンなので無条件にマッチして、追加で@code{val}に@var{exprval}をバインドします。これで@code{let}がマッチしたので、@code{or}がマッチとなります。"
 
 #. type: Plain text
 #: original_texis/control.texi:789
 msgid "Note how both @code{and} and @code{let} sub-patterns finish in the same way: by trying (always successfully) to match against the @var{symbol} pattern @code{val}, in the process binding @code{val}.  Thus, @code{or} always matches and control always passes to the body form (line 9).  Because that is the last body form in a successfully matched @code{pcase} clause, it is the value of @code{pcase} and likewise the return value of @code{grok/pcase} (@pxref{What Is a Function})."
-msgstr ""
+msgstr "@code{and}と@code{let}のサブパターンはどちらも同じ方法、すなわち@code{val}をバインドする過程で@var{symbol}パターンの@code{val}に(常に成功する)マッチを試みることにより完了することに注意してください。したがって@code{or}は常にマッチして、常に制御をbodyフォーム(L9)に渡します。マッチが成功した@code{pcase}のclauseとしては最後のbodyなので、これは@code{pcase}の値となり、同様に@code{grok/pcase}のリターン値になります(@ref{What Is a Function}を参照)。"
 
 #. type: anchor{#1}
 #: original_texis/control.texi:791
 msgid "pcase-symbol-caveats"
-msgstr ""
+msgstr "pcase-symbol-caveats"
 
 #. type: subheading
 #: original_texis/control.texi:791
 #, no-wrap
 msgid "Caveats for @var{symbol} in Sequencing Patterns"
-msgstr ""
+msgstr "シーケンスパターンにおける@var{symbol}の注意点"
 
 #. type: Plain text
 #: original_texis/control.texi:797
 msgid "The preceding examples all use sequencing patterns which include the @var{symbol} sub-pattern in some way.  Here are some important details about that usage."
-msgstr ""
+msgstr "前出の例のすべてでは、何らかの方法により@var{symbol}サブパターンが含まれるシーケンスパターンが使用されています。以下に使用法に関する重要な詳細をいくつか挙げます。"
 
 #. type: item
 #: original_texis/control.texi:799
 #, no-wrap
 msgid "When @var{symbol} occurs more than once in @var{seqpat},"
-msgstr ""
+msgstr "@var{seqpat}内に@var{symbol}が複数回出現する場合には、"
 
 #. type: enumerate
 #: original_texis/control.texi:802
 msgid "the second and subsequent occurrences do not expand to re-binding, but instead expand to an equality test using @code{eq}."
-msgstr ""
+msgstr "2回目以降に出現してもリバインドには展開されないが、かわりに@code{eq}を使用した等価性テストに展開される。"
 
 #. type: enumerate
 #: original_texis/control.texi:809
 msgid "The following example features a @code{pcase} form with two clauses and two @var{seqpat}, A and B.  Both A and B first check that @var{expval} is a pair (using @code{pred}), and then bind symbols to the @code{car} and @code{cdr} of @var{expval} (using one @code{app} each)."
-msgstr ""
+msgstr "以下の例には2つのclauseと2つの@var{seqpat} (AとB)を使用している。AとBはいずれも最初に(@code{pred}を使用することにより)@var{expval}がペアであることをチェックして、それから(それぞれにたいして@code{app}を使用することにより) @var{expval}の@code{car}と@code{cdr}にシンボルをバインドする。"
 
 #. type: enumerate
 #: original_texis/control.texi:814
 msgid "For A, because symbol @code{st} is mentioned twice, the second mention becomes an equality test using @code{eq}.  On the other hand, B uses two separate symbols, @code{s1} and @code{s2}, both of which become independent bindings."
-msgstr ""
+msgstr "Aではシンボル@code{st}が2回記述されているので、2つ目の記述は@code{eq}を使用した等価性チェックになる。一方でBは@code{s1}と@code{s2}という別個のシンボルを使用するので、独立したバインディングになる。"
 
 #. type: group
 #: original_texis/control.texi:823
@@ -1336,6 +1336,12 @@ msgid ""
 "          (app cdr st))       ; second mention: st\n"
 "     (list 'eq st))\n"
 msgstr ""
+"(defun grok (object)\n"
+"  (pcase object\n"
+"    ((and (pred consp)        ; seqpat A\n"
+"          (app car st)        ; st: 1回目\n"
+"          (app cdr st))       ; st: 2回目\n"
+"     (list 'eq st))\n"
 
 #. type: group
 #: original_texis/control.texi:829
@@ -1346,6 +1352,10 @@ msgid ""
 "          (app cdr s2))       ; first mention: s2\n"
 "     (list 'not-eq s1 s2))))\n"
 msgstr ""
+"    ((and (pred consp)        ; seqpat B\n"
+"          (app car s1)        ; s1: 1回目\n"
+"          (app cdr s2))       ; s2: 1回目\n"
+"     (list 'not-eq s1 s2))))\n"
 
 #. type: group
 #: original_texis/control.texi:836
@@ -1356,6 +1366,10 @@ msgid ""
 "(grok (cons \"yo!\" \"yo!\")) @result{} (not-eq \"yo!\" \"yo!\")\n"
 "(grok '(4 2))             @result{} (not-eq 4 (2))\n"
 msgstr ""
+"(let ((s \"yow!\"))\n"
+"  (grok (cons s s)))      @result{} (eq \"yow!\")\n"
+"(grok (cons \"yo!\" \"yo!\")) @result{} (not-eq \"yo!\" \"yo!\")\n"
+"(grok '(4 2))             @result{} (not-eq 4 (2))\n"
 
 #. type: item
 #: original_texis/control.texi:839
