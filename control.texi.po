@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-06-17 21:57+0900\n"
+"PO-Revision-Date: 2020-06-19 23:46+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -1375,12 +1375,12 @@ msgstr ""
 #: original_texis/control.texi:839
 #, no-wrap
 msgid "Side-effecting code referencing @var{symbol} is undefined."
-msgstr ""
+msgstr "@var{symbol}を参照するコードの副作用は未定義。"
 
 #. type: enumerate
 #: original_texis/control.texi:843
 msgid "Avoid.  For example, here are two similar functions.  Both use @code{and}, @var{symbol} and @code{guard}:"
-msgstr ""
+msgstr "無視する。たとえば以下2つの関数は類似している。いずれの関数も@code{and}、@var{symbol}、@code{guard}を使用する:"
 
 #. type: group
 #: original_texis/control.texi:850
@@ -1392,6 +1392,11 @@ msgid ""
 "    (sorry (list 'no sorry))))\n"
 "\n"
 msgstr ""
+"(defun square-double-digit-p/CLEAN (integer)\n"
+"  (pcase (* integer integer)\n"
+"    ((and n (guard (< 9 n 100))) (list 'yes n))\n"
+"    (sorry (list 'no sorry))))\n"
+"\n"
 
 #. type: group
 #: original_texis/control.texi:853
@@ -1400,6 +1405,8 @@ msgid ""
 "(square-double-digit-p/CLEAN 9) @result{} (yes 81)\n"
 "(square-double-digit-p/CLEAN 3) @result{} (no 9)\n"
 msgstr ""
+"(square-double-digit-p/CLEAN 9) @result{} (yes 81)\n"
+"(square-double-digit-p/CLEAN 3) @result{} (no 9)\n"
 
 #. type: group
 #: original_texis/control.texi:860
@@ -1411,6 +1418,11 @@ msgid ""
 "    (sorry (list 'no sorry))))\n"
 "\n"
 msgstr ""
+"(defun square-double-digit-p/MAYBE (integer)\n"
+"  (pcase (* integer integer)\n"
+"    ((and n (guard (< 9 (incf n) 100))) (list 'yes n))\n"
+"    (sorry (list 'no sorry))))\n"
+"\n"
 
 #. type: group
 #: original_texis/control.texi:863
@@ -1419,29 +1431,30 @@ msgid ""
 "(square-double-digit-p/MAYBE 9) @result{} (yes 81)\n"
 "(square-double-digit-p/MAYBE 3) @result{} (yes 9)  ; @r{WRONG!}\n"
 msgstr ""
+"(square-double-digit-p/MAYBE 9) @result{} (yes 81)\n"
+"(square-double-digit-p/MAYBE 3) @result{} (yes 9)  ; @r{WRONG!}\n"
 
 #. type: enumerate
 #: original_texis/control.texi:872
 msgid "The difference is in @var{boolean-expression} in @code{guard}: @code{CLEAN} references @code{n} simply and directly, while @code{MAYBE} references @code{n} with a side-effect, in the expression @code{(incf n)}.  When @code{integer} is 3, here's what happens:"
-msgstr ""
+msgstr "違いは@code{guard}内の@var{boolean-expression}である。@code{CLEAN}は単に直接@code{n}を参照するのにたいして、@code{MAYBE}は式@code{(incf n)}の中で副作用により@code{n}を参照している。@code{integer}の際には以下のようなことが発生している:"
 
 #. type: item
 #: original_texis/control.texi:874
 #, no-wrap
 msgid "The first @code{n} binds it to @var{expval},"
-msgstr ""
+msgstr "最初の@code{n}は@var{expval}"
 
 #. type: itemize
 #: original_texis/control.texi:876
 msgid "i.e., the result of evaluating @code{(* 3 3)}, or 9."
-msgstr ""
+msgstr "(評価した結果である@code{(* 3 3)}、つまり9)にバインドされる。"
 
 #. type: item
 #: original_texis/control.texi:877
-#, fuzzy, no-wrap
-#| msgid "(guard @var{exp})"
+#, no-wrap
 msgid "@var{boolean-expression} is evaluated:"
-msgstr "(guard @var{exp})"
+msgstr "@var{boolean-expression}が評価される:"
 
 #. type: group
 #: original_texis/control.texi:884
@@ -1451,6 +1464,9 @@ msgid ""
 "becomes: (< 9 (setq n (1+ n)) 100)\n"
 "becomes: (< 9 (setq n (1+ 9)) 100)\n"
 msgstr ""
+"start:   (< 9 (incf n)        100)\n"
+"becomes: (< 9 (setq n (1+ n)) 100)\n"
+"becomes: (< 9 (setq n (1+ 9)) 100)\n"
 
 #. type: group
 #: original_texis/control.texi:891
@@ -1462,43 +1478,48 @@ msgid ""
 "becomes: (< 9      10         100)\n"
 "becomes: t\n"
 msgstr ""
+"becomes: (< 9 (setq n 10)     100)\n"
+"                                   ; @r{ここで副作用!}\n"
+"becomes: (< 9       n         100) ; @r{@code{n}は10にバインドされている}\n"
+"becomes: (< 9      10         100)\n"
+"becomes: t\n"
 
 #. type: item
 #: original_texis/control.texi:894
 #, no-wrap
 msgid "Because the result of the evaluation is non-@code{nil},"
-msgstr ""
+msgstr "結果は非@code{nil}なので"
 
 #. type: itemize
 #: original_texis/control.texi:897
 msgid "@code{guard} matches, @code{and} matches, and control passes to that clause's body forms."
-msgstr ""
+msgstr "@code{guard}がマッチして@code{and}がマッチとなり、制御はそのclauseのbodyフォームに渡される。"
 
 #. type: enumerate
 #: original_texis/control.texi:904
 msgid "Aside from the mathematical incorrectness of asserting that 9 is a double-digit integer, there is another problem with @code{MAYBE}.  The body form references @code{n} once more, yet we do not see the updated value---10---at all.  What happened to it?"
-msgstr ""
+msgstr "@code{MAYBE}には9が2桁の整数だと判定してしまう数学的な誤り以外にも問題がある。bodyフォームは@code{n}の更新された値(10)を確認せずに参照を複数回行う。するとどうなるか?"
 
 #. type: enumerate
 #: original_texis/control.texi:910
 msgid "To sum up, it's best to avoid side-effecting references to @var{symbol} patterns entirely, not only in @var{boolean-expression} (in @code{guard}), but also in @var{expr} (in @code{let})  and @var{function} (in @code{pred} and @code{app})."
-msgstr ""
+msgstr "要約すると( @code{guard}での) @var{boolean-expression}だけではなく( @code{let}での) @var{expr}、( @code{pred}と@code{app}での) @var{function}でも副作用をもつ@var{symbol}パターンにたいする参照は完全に避けることが最良である。"
 
 #. type: item
 #: original_texis/control.texi:911
 #, no-wrap
 msgid "On match, the clause's body forms can reference the set"
-msgstr ""
+msgstr "マッチではclauseのbodyフォームはletバインドされたパターンのシンボルセットを参照できる。"
 
 #. type: enumerate
 #: original_texis/control.texi:917
 msgid "of symbols the pattern let-binds.  When @var{seqpat} is @code{and}, this set is the union of all the symbols each of its sub-patterns let-binds.  This makes sense because, for @code{and} to match, all the sub-patterns must match."
-msgstr ""
+msgstr "このシンボルセットは@var{seqpat}が@code{and}の際には、各サブパターンでletバインドされるすべてのシンボルそれぞれを結合したものになる。@code{and}のマッチではすべてのサブパターンがマッチしなければならないので、これには意味がある。"
 
 #. type: enumerate
 #: original_texis/control.texi:925
 msgid "When @var{seqpat} is @code{or}, things are different: @code{or} matches at the first sub-pattern that matches; the rest of the sub-patterns are ignored.  It makes no sense for each sub-pattern to let-bind a different set of symbols because the body forms have no way to distinguish which sub-pattern matched and choose among the different sets.  For example, the following is invalid:"
-msgstr ""
+msgstr "@var{seqpat}が@code{or}なら事情は異なる。@code{or}は最初にマッチしたサブパターンでマッチとなり、残りのサブパターンは無視される。bodyフォームにはどのサブパターンがマッチして異なるセットの中からどれが選択されたかを知る術はないので、各シンボルが異なるシンボルセットをletバインドすることに意味はない。たとえば以下は無効:"
 
 #. type: group
 #: original_texis/control.texi:933
@@ -1510,6 +1531,11 @@ msgid ""
 "       o-num)           ; @r{bind @code{o-num} to @var{expval}}\n"
 "   (list e-num o-num)))\n"
 msgstr ""
+"(pcase (read-number \"Enter an integer: \")\n"
+"  ((or (and (pred evenp)\n"
+"            e-num)      ; @r{@code{e-num}に@var{expval}をバインド}\n"
+"       o-num)           ; @r{@code{o-num}にを@var{expval}バインド}\n"
+"   (list e-num o-num)))\n"
 
 #. type: group
 #: original_texis/control.texi:938
@@ -1518,6 +1544,8 @@ msgid ""
 "Enter an integer: 42\n"
 "@error{} Symbol’s value as variable is void: o-num\n"
 msgstr ""
+"Enter an integer: 42\n"
+"@error{} Symbol’s value as variable is void: o-num\n"
 
 #. type: group
 #: original_texis/control.texi:942
@@ -1526,11 +1554,13 @@ msgid ""
 "Enter an integer: 149\n"
 "@error{} Symbol’s value as variable is void: e-num\n"
 msgstr ""
+"Enter an integer: 149\n"
+"@error{} Symbol’s value as variable is void: e-num\n"
 
 #. type: enumerate
 #: original_texis/control.texi:950
 msgid "Evaluating body form @w{@code{(list e-num o-num)}} signals error.  To distinguish between sub-patterns, you can use another symbol, identical in name in all sub-patterns but differing in value.  Reworking the above example:"
-msgstr ""
+msgstr "bodyフォーム@w{@code{(list e-num o-num)}}の評価によりエラーがシグナルされる。サブパターンを区別するために、すべてのサブパターンごとに異なる値をもつ同一名のシンボルを使用できる。上記の例を書き換えると:"
 
 #. type: group
 #: original_texis/control.texi:959
@@ -1543,6 +1573,12 @@ msgid ""
 "            (let spin 'odd)))              ; @r{line 4}\n"
 "   (list spin num)))                       ; @r{line 5}\n"
 msgstr ""
+"(pcase (read-number \"Enter an integer: \")\n"
+"  ((and num                                ; @r{L1}\n"
+"        (or (and (pred evenp)              ; @r{L2}\n"
+"                 (let spin 'even))         ; @r{L3}\n"
+"            (let spin 'odd)))              ; @r{L4}\n"
+"   (list spin num)))                       ; @r{L5}\n"
 
 #. type: group
 #: original_texis/control.texi:964
@@ -1551,6 +1587,8 @@ msgid ""
 "Enter an integer: 42\n"
 "@result{} (even 42)\n"
 msgstr ""
+"Enter an integer: 42\n"
+"@result{} (even 42)\n"
 
 #. type: group
 #: original_texis/control.texi:968
@@ -1559,55 +1597,57 @@ msgid ""
 "Enter an integer: 149\n"
 "@result{} (odd 149)\n"
 msgstr ""
+"Enter an integer: 149\n"
+"@result{} (odd 149)\n"
 
 #. type: enumerate
 #: original_texis/control.texi:979
 msgid "Line 1 ``factors out'' the @var{expval} binding with @code{and} and @var{symbol} (in this case, @code{num}).  On line 2, @code{or} begins in the same way as before, but instead of binding different symbols, uses @code{let} twice (lines 3-4) to bind the same symbol @code{spin} in both sub-patterns.  The value of @code{spin} distinguishes the sub-patterns.  The body form references both symbols (line 5)."
-msgstr ""
+msgstr "L1では@var{expval}のバインディング(この場合は@code{num} )を@code{and}と@var{symbol}で``分解''している。L2では前と同じ方法で@code{or}は始まるが、異なるシンボルにバインドするかわりに、両方のサブパターン内で同一のシンボル@code{spin}に回バインドするために2回@code{let}を使用している(L3からL4)。@code{spin}の値によりサブパターンは区別される。そしてbodyフォームでは両方のシンボルを参照している(L5)。"
 
 #. type: node
 #: original_texis/control.texi:981
 #, no-wrap
 msgid "Extending pcase"
-msgstr ""
+msgstr "Extending pcase"
 
 #. type: subsection
 #: original_texis/control.texi:982
 #, no-wrap
 msgid "Extending @code{pcase}"
-msgstr ""
+msgstr "Extending @code{pcase}"
 
 #. type: cindex
 #: original_texis/control.texi:983
 #, no-wrap
 msgid "pcase, defining new kinds of patterns"
-msgstr ""
+msgstr "pcase, defining new kinds of patterns"
 
 #. type: Plain text
 #: original_texis/control.texi:989
 msgid "The @code{pcase} macro supports several kinds of patterns (@pxref{Pattern-Matching Conditional}).  You can add support for other kinds of patterns using the @code{pcase-defmacro} macro."
-msgstr ""
+msgstr "@code{pcase}マクロは数種類のパターンをサポートします(@ref{Pattern-Matching Conditional}を参照)。@code{pcase-defmacro}を使用すれば違う種類のパターンにたいするサポートを追加できます。"
 
 #. type: defmac
 #: original_texis/control.texi:990
 #, no-wrap
 msgid "pcase-defmacro name args [doc] &rest body"
-msgstr ""
+msgstr "pcase-defmacro name args [doc] &rest body"
 
 #. type: defmac
 #: original_texis/control.texi:997
 msgid "Define a new kind of pattern for @code{pcase}, to be invoked as @w{@code{(@var{name} @var{actual-args})}}.  The @code{pcase} macro expands this into a function call that evaluates @var{body}, whose job it is to rewrite the invoked pattern into some other pattern, in an environment where @var{args} are bound to @var{actual-args}."
-msgstr ""
+msgstr "@w{@code{(@var{name} @var{actual-args})}}のように呼び出すために新たな種類の@code{pcase}用のパターンを定義する。@code{pcase}マクロは@var{body}を評価する呼び出しへと展開する。このマクロの役割は@var{args}を@var{actual-args}にバインドした環境下において、呼び出されたパターンを別の何らかのパターンに書き換えることである。"
 
 #. type: defmac
 #: original_texis/control.texi:1003
 msgid "Additionally, arrange to display @var{doc} along with the docstring of @code{pcase}.  By convention, @var{doc} should use @code{EXPVAL} to stand for the result of evaluating @var{expression} (first arg to @code{pcase})."
-msgstr ""
+msgstr "さらに@code{pcase}のドキュメント文字列とともに@var{doc}が表示されるように計らう。@var{doc}では慣例により@var{expression}の評価結果を示すために@code{EXPVAL}を使用すること。"
 
 #. type: Plain text
 #: original_texis/control.texi:1012
 msgid "Typically, @var{body} rewrites the invoked pattern to use more basic patterns.  Although all patterns eventually reduce to core patterns, @code{body} need not use core patterns straight away.  The following example defines two patterns, named @code{less-than} and @code{integer-less-than}."
-msgstr ""
+msgstr "@var{body}は通常はより基本的なパターンを使用して呼び出されたパターンを書き換える。最終的にはすべてのパターンはコアパターンに絞り込まれるが、@code{body}がすぐにコアパターンを使用する必要はない。以下の例では@code{less-than}と@code{integer-less-than}という2つのパターンを定義している。"
 
 #. type: group
 #: original_texis/control.texi:1018
@@ -1617,6 +1657,9 @@ msgid ""
 "  \"Matches if EXPVAL is a number less than N.\"\n"
 "  `(pred (> ,n)))\n"
 msgstr ""
+"(pcase-defmacro less-than (n)\n"
+"  \"Matches if EXPVAL is a number less than N.\"\n"
+"  `(pred (> ,n)))\n"
 
 #. type: group
 #: original_texis/control.texi:1025
@@ -1627,47 +1670,50 @@ msgid ""
 "  `(and (pred integerp)\n"
 "        (less-than ,n)))\n"
 msgstr ""
+"(pcase-defmacro integer-less-than (n)\n"
+"  \"Matches if EXPVAL is an integer less than N.\"\n"
+"  `(and (pred integerp)\n"
+"        (less-than ,n)))\n"
 
 #. type: Plain text
 #: original_texis/control.texi:1037
 msgid "Note that the docstrings mention @var{args} (in this case, only one: @code{n}) in the usual way, and also mention @code{EXPVAL} by convention.  The first rewrite (i.e., @var{body} for @code{less-than})  uses one core pattern: @code{pred}.  The second uses two core patterns: @code{and} and @code{pred}, as well as the newly-defined pattern @code{less-than}.  Both use a single backquote construct (@pxref{Backquote})."
-msgstr ""
+msgstr "@var{args} (このケースでは@code{n}の1つだけ)に言及するdocstringは通常の方法、@code{EXPVAL}では慣例にもとづく方法であることに注意してください。1つ目の書き換え( @code{less-than}の@var{body} )では@code{pred}というコアパターンだけが使用されていて、2つ目では2つのコアパターン@code{and}と@code{pred}と新たに定義したパターン@code{less-than}が使用されています。そしていずれの書き換えにおいてもシングルバッククォート構文が使用されています(@ref{Backquote}を参照)。"
 
 #. type: node
 #: original_texis/control.texi:1038
 #, no-wrap
 msgid "Backquote Patterns"
-msgstr ""
+msgstr "Backquote Patterns"
 
 #. type: subsection
 #: original_texis/control.texi:1039
 #, no-wrap
 msgid "Backquote-Style Patterns"
-msgstr ""
+msgstr "Backquote-Style Patterns"
 
 #. type: cindex
 #: original_texis/control.texi:1040
 #, no-wrap
 msgid "backquote-style patterns"
-msgstr ""
+msgstr "backquote-style patterns"
 
 #. type: cindex
 #: original_texis/control.texi:1041
 #, no-wrap
 msgid "matching, structural"
-msgstr ""
+msgstr "matching, structural"
 
 #. type: cindex
 #: original_texis/control.texi:1042
-#, fuzzy, no-wrap
-#| msgid "pattern matching"
+#, no-wrap
 msgid "structural matching"
-msgstr "pattern matching"
+msgstr "structural matching"
 
 #. type: Plain text
 #: original_texis/control.texi:1047
 msgid "This subsection describes @dfn{backquote-style patterns}, a set of builtin patterns that eases structural matching.  For background, @pxref{Pattern-Matching Conditional}."
-msgstr ""
+msgstr "このサブセクションでは構造化マッチングを容易にするビルトインパターン@dfn{バッククォートスタイルパターン(backquote-style patterns)}について説明します。背景については@ref{Pattern-Matching Conditional}を参照してください。"
 
 #. type: Plain text
 #: original_texis/control.texi:1051
