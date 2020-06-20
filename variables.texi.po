@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1-\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-03-17 19:22+0900\n"
+"PO-Revision-Date: 2020-06-21 01:36+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -884,7 +884,7 @@ msgstr "すでに@var{symbol}がレキシカルにバインドされている場
 #: original_texis/variables.texi:464
 #, no-wrap
 msgid "@code{eval-defun}, and @code{defvar} forms"
-msgstr ""
+msgstr "control.texi.po"
 
 #. type: defspec
 #: original_texis/variables.texi:469
