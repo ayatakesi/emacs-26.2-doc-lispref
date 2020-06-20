@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-06-19 23:46+0900\n"
+"PO-Revision-Date: 2020-06-21 00:23+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -1718,12 +1718,12 @@ msgstr "このサブセクションでは構造化マッチングを容易にす
 #. type: Plain text
 #: original_texis/control.texi:1051
 msgid "Backquote-style patterns are a powerful set of @code{pcase} pattern extensions (created using @code{pcase-defmacro}) that make it easy to match @var{expval} against specifications of its @emph{structure}."
-msgstr ""
+msgstr "バッククォートスタイルパターンは(@code{pcase-defmacro}を使用して作成された)強力な@code{pcase}パターン拡張であり、その@emph{構造(structure)}の仕様にたいする@var{expval}をマッチを容易にします。"
 
 #. type: Plain text
 #: original_texis/control.texi:1055
 msgid "For example, to match @var{expval} that must be a list of two elements whose first element is a specific string and the second element is any value, you can write a core pattern:"
-msgstr ""
+msgstr "たとえば1つ目の要素が特定の文字列、2つ目の要素が任意の値であるような2要素リストの@var{expval}にたいするマッチはコアパターンを使用して記述できます:"
 
 #. type: group
 #: original_texis/control.texi:1060
@@ -1732,6 +1732,8 @@ msgid ""
 "(and (pred listp)\n"
 "     ls\n"
 msgstr ""
+"(and (pred listp)\n"
+"     ls\n"
 
 #. type: group
 #: original_texis/control.texi:1065
@@ -1741,82 +1743,78 @@ msgid ""
 "     (guard (string= \"first\" (car ls)))\n"
 "     (let second-elem (cadr ls)))\n"
 msgstr ""
+"     (guard (= 2 (length ls)))\n"
+"     (guard (string= \"first\" (car ls)))\n"
+"     (let second-elem (cadr ls)))\n"
 
 #. type: Plain text
 #: original_texis/control.texi:1070
 msgid "or you can write the equivalent backquote-style pattern:"
-msgstr ""
+msgstr "しかし等価なバッククォートスタイルパターンで記述することもできます:"
 
 #. type: example
 #: original_texis/control.texi:1073
 #, no-wrap
 msgid "`(\"first\" ,second-elem)\n"
-msgstr ""
+msgstr "`(\"first\" ,second-elem)\n"
 
 #. type: Plain text
 #: original_texis/control.texi:1079
 msgid "The backquote-style pattern is more concise, resembles the structure of @var{expval}, and avoids binding @code{ls}."
-msgstr ""
+msgstr "バッククォートスタイルパターンはより簡潔かつ@var{expval}の構造と似ており、@code{ls}のバインドを要しません。"
 
 #. type: Plain text
 #: original_texis/control.texi:1082
 msgid "A backquote-style pattern has the form @code{`@var{qpat}} where @var{qpat} can have the following forms:"
-msgstr ""
+msgstr "バッククォートスタイルパターンは@code{`@var{qpat}}のような形式をもちます。ここで@var{qpat}は以下の形式をもつことができます:"
 
 #. type: item
 #: original_texis/control.texi:1085
-#, fuzzy, no-wrap
-#| msgid "(@var{qpattern1} . @var{qpattern2})"
+#, no-wrap
 msgid "(@var{qpat1} . @var{qpat2})"
-msgstr "(@var{qpattern1} . @var{qpattern2})"
+msgstr "(@var{qpat1} . @var{qpat2})"
 
 #. type: table
 #: original_texis/control.texi:1090
-#, fuzzy
-#| msgid "This pattern matches any cons cell whose @code{car} matches @var{qpattern1} and whose @code{cdr} matches @var{pattern2}."
 msgid "Matches if @var{expval} is a cons cell whose @code{car} matches @var{qpat1} and whose @code{cdr} matches @var{qpat2}.  This readily generalizes to lists as in @w{@code{(@var{qpat1} @var{qpat2} @dots{})}}."
-msgstr "このパターンは、@code{car}が@var{qpattern1}、@code{cdr}が@var{pattern2}にマッチする、任意のコンスセルにマッチします。"
+msgstr "@var{expval}が( @code{car}が@var{qpat1}、@code{cdr}が@var{qpat2}にマッチする)コンスセルならマッチ。@w{@code{(@var{qpat1} @var{qpat2} @dots{})}}のように容易に一般化できる。"
 
 #. type: item
 #: original_texis/control.texi:1091
-#, fuzzy, no-wrap
-#| msgid "(or @var{upattern1} @var{upattern2}@dots{})"
+#, no-wrap
 msgid "[@var{qpat1} @var{qpat2} @dots{} @var{qpatm}]"
-msgstr "(or @var{upattern1} @var{upattern2}@dots{})"
+msgstr "[@var{qpat1} @var{qpat2} @dots{} @var{qpatm}]"
 
 #. type: table
 #: original_texis/control.texi:1095
 msgid "Matches if @var{expval} is a vector of length @var{m} whose @code{0}..@code{(@var{m}-1)}th elements match @var{qpat1}, @var{qpat2} @dots{} @var{qpatm}, respectively."
-msgstr ""
+msgstr "@var{expval}が長さ@var{m}の(@code{0}から@code{(@var{m}-1)}番目の要素が@var{qpat1}、@var{qpat2}、@dots{}、@var{qpatm}にマッチする)ベクターならマッチ。"
 
 #. type: table
 #: original_texis/control.texi:1104
 msgid "Matches if the corresponding element of @var{expval} is @code{equal} to the specified literal object.  Note that, aside from @var{symbol}, this is the same set of self-quoting literal objects that are acceptable as a core pattern."
-msgstr ""
+msgstr "@var{expval}の対応する要素が指定されたリテラルオブジェクトと@code{equal}ならマッチ。@var{symbol}を別にすると、これはコアパターンとして許容され得る自己クォートを行うリテラルオブジェクトと同一。"
 
 #. type: item
 #: original_texis/control.texi:1105
-#, fuzzy, no-wrap
-#| msgid ",@var{upattern}"
+#, no-wrap
 msgid ",@var{pattern}"
-msgstr ",@var{upattern}"
+msgstr ",@var{pattern}"
 
 #. type: table
 #: original_texis/control.texi:1112
 msgid "Matches if the corresponding element of @var{expval} matches @var{pattern}.  Note that @var{pattern} is any kind that @code{pcase} supports.  (In the example above, @code{second-elem} is a @var{symbol} core pattern; it therefore matches anything, and let-binds @code{second-elem}.)"
-msgstr ""
+msgstr "@var{expval}の対応する要素が@var{pattern}にマッチすればマッチ。@var{pattern}は@code{pcase}がサポートするすべての種類のパターンであることに注意(上記の例では@code{second-elem}は@var{symbol}コアパターンであり、これはすべてにマッチして@code{second-elem}をletでバインドする)。"
 
 #. type: Plain text
 #: original_texis/control.texi:1119
 msgid "The @dfn{corresponding element} is the portion of @var{expval} that is in the same structural position as the structural position of @var{qpat} in the backquote-style pattern.  (In the example above, the corresponding element of @code{second-elem} is the second element of @var{expval}.)"
-msgstr ""
+msgstr "@dfn{対応する要素(corresponding element)}とはバッククォートスタイルパターン@var{qpat}にたいする構造的な位置に等しいような@var{expval}の構造的な位置部分のことです(上記の例では@code{second-elem}の対応する要素は@var{expval}の2つ目の要素)。"
 
 #. type: Plain text
 #: original_texis/control.texi:1125
-#, fuzzy
-#| msgid "To give a more complex example, a simple interpreter for a little expression language could look like (note that this example requires lexical binding):"
 msgid "Here is an example of using @code{pcase} to implement a simple interpreter for a little expression language (note that this requires lexical binding for the lambda expression in the @code{fn} clause to properly capture @code{body} and @code{arg} (@pxref{Lexical Binding}):"
-msgstr "もっと複雑な例として、以下のような小さな式言語のための単純なインタープリターを示します(この例ではレキシカルバインディングが必要なことに注意してください):"
+msgstr "以下は小さな式言語用の単純なインタープリターの実装用に@code{pcase}を使用する例です(@code{body}と@code{arg}を正しくキャプチャーするには@code{fn}のclause内でlambda式にレキシカルバインディングが必要なことに注意):"
 
 #. type: group
 #: original_texis/control.texi:1132
@@ -1827,20 +1825,14 @@ msgid ""
 "    (`(add ,x ,y)       (+ (evaluate x env)\n"
 "                           (evaluate y env)))\n"
 msgstr ""
+"(defun evaluate (form env)\n"
+"  (pcase form\n"
+"    (`(add ,x ,y)       (+ (evaluate x env)\n"
+"                           (evaluate y env)))\n"
 
 #. type: group
 #: original_texis/control.texi:1139
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defun evaluate (exp env)\n"
-#| "  (pcase exp\n"
-#| "    (`(add ,x ,y)       (+ (evaluate x env) (evaluate y env)))\n"
-#| "    (`(call ,fun ,arg)  (funcall (evaluate fun env) (evaluate arg env)))\n"
-#| "    (`(fn ,arg ,body)   (lambda (val)\n"
-#| "                          (evaluate body (cons (cons arg val) env))))\n"
-#| "    ((pred numberp)     exp)\n"
-#| "    ((pred symbolp)     (cdr (assq exp env)))\n"
-#| "    (_                  (error \"Unknown expression %S\" exp))))\n"
+#, no-wrap
 msgid ""
 "    (`(call ,fun ,arg)  (funcall (evaluate fun env)\n"
 "                                 (evaluate arg env)))\n"
@@ -1848,15 +1840,11 @@ msgid ""
 "                          (evaluate body (cons (cons arg val)\n"
 "                                               env))))\n"
 msgstr ""
-"(defun evaluate (exp env)\n"
-"  (pcase exp\n"
-"    (`(add ,x ,y)       (+ (evaluate x env) (evaluate y env)))\n"
-"    (`(call ,fun ,arg)  (funcall (evaluate fun env) (evaluate arg env)))\n"
+"    (`(call ,fun ,arg)  (funcall (evaluate fun env)\n"
+"                                 (evaluate arg env)))\n"
 "    (`(fn ,arg ,body)   (lambda (val)\n"
-"                          (evaluate body (cons (cons arg val) env))))\n"
-"    ((pred numberp)     exp)\n"
-"    ((pred symbolp)     (cdr (assq exp env)))\n"
-"    (_                  (error \"Unknown expression %S\" exp))))\n"
+"                          (evaluate body (cons (cons arg val)\n"
+"                                               env))))\n"
 
 #. type: group
 #: original_texis/control.texi:1144
@@ -1866,18 +1854,19 @@ msgid ""
 "    ((pred symbolp)     (cdr (assq form env)))\n"
 "    (_                  (error \"Syntax error: %S\" form))))\n"
 msgstr ""
+"    ((pred numberp)     form)\n"
+"    ((pred symbolp)     (cdr (assq form env)))\n"
+"    (_                  (error \"Syntax error: %S\" form))))\n"
 
 #. type: Plain text
 #: original_texis/control.texi:1156
-#, fuzzy
-#| msgid "Where @code{`(add ,x ,y)} is a pattern that checks that @code{exp} is a three element list starting with the symbol @code{add}, then extracts the second and third elements and binds them to the variables @code{x} and @code{y}.  @code{(pred numberp)} is a pattern that simply checks that @code{exp} is a number, and @code{_} is the catch-all pattern that matches anything."
 msgid "The first three clauses use backquote-style patterns.  @code{`(add ,x ,y)} is a pattern that checks that @code{form} is a three-element list starting with the literal symbol @code{add}, then extracts the second and third elements and binds them to symbols @code{x} and @code{y}, respectively.  The clause body evaluates @code{x} and @code{y} and adds the results.  Similarly, the @code{call} clause implements a function call, and the @code{fn} clause implements an anonymous function definition."
-msgstr "@code{`(add ,x ,y)}は、@code{exp}がシンボル@code{add}で始まる3要素のリストかチェックして、その後2番目と3番目の要素を抽出し、それらを変数@code{x}と@code{y}にバインドするパターンです。@code{(pred numberp)}は@code{exp}が数字かを単にチェックし、@code{_}はすべてのものにマッチするcatch-allパターンです。"
+msgstr "最初の3つのclauseではバッククォートスタイルパターンが使用されています。@code{`(add ,x ,y)}は@code{form}がリテラルシンボル@code{add}から始まる3要素リストであることをチェックしてから2つ目と3つ目の要素を取り出してシンボル@code{x}と@code{y}にバインドします。clauseのbodyでは@code{x}と@code{y}を評価して結果を加算します。同じように@code{call} clauseは関数呼び出しを実装して、@code{fn} clauseは無名関数定義を実装します。"
 
 #. type: Plain text
 #: original_texis/control.texi:1165
 msgid "The remaining clauses use core patterns.  @code{(pred numberp)} matches if @code{form} is a number.  On match, the body evaluates it.  @code{(pred symbolp)} matches if @code{form} is a symbol.  On match, the body looks up the symbol in @code{env} and returns its association.  Finally, @code{_} is the catch-all pattern that matches anything, so it's suitable for reporting syntax errors."
-msgstr ""
+msgstr "残りのclauseではコアパターンが使用されています。@code{(pred numberp)}は@code{form}が数値ならマッチします。マッチした場合にはbodyがそれを評価します。@code{(pred symbolp)}は@code{form}がシンボルならマッチします。マッチした場合にはbodyは@code{env}内のシンボルを照合して、それの連想値をリターンします。最後の@code{_}はすべてにマッチするcatch-allパターンなので、構文エラーの報告に適しています。"
 
 #. type: Plain text
 #: original_texis/control.texi:1168
@@ -1886,39 +1875,34 @@ msgstr "以下は評価した結果を含む、この小さな言語のサンプ
 
 #. type: example
 #: original_texis/control.texi:1174
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(evaluate '(add 1 2) nil)                 ;=> 3\n"
-#| "(evaluate '(add x y) '((x . 1) (y . 2)))  ;=> 3\n"
-#| "(evaluate '(call (fn x (add 1 x)) 2) nil) ;=> 3\n"
-#| "(evaluate '(sub 1 2) nil)                 ;=> error\n"
+#, no-wrap
 msgid ""
 "(evaluate '(add 1 2) nil)                 @result{} 3\n"
 "(evaluate '(add x y) '((x . 1) (y . 2)))  @result{} 3\n"
 "(evaluate '(call (fn x (add 1 x)) 2) nil) @result{} 3\n"
 "(evaluate '(sub 1 2) nil)                 @result{} error\n"
 msgstr ""
-"(evaluate '(add 1 2) nil)                 ;=> 3\n"
-"(evaluate '(add x y) '((x . 1) (y . 2)))  ;=> 3\n"
-"(evaluate '(call (fn x (add 1 x)) 2) nil) ;=> 3\n"
-"(evaluate '(sub 1 2) nil)                 ;=> error\n"
+"(evaluate '(add 1 2) nil)                 @result{} 3\n"
+"(evaluate '(add x y) '((x . 1) (y . 2)))  @result{} 3\n"
+"(evaluate '(call (fn x (add 1 x)) 2) nil) @result{} 3\n"
+"(evaluate '(sub 1 2) nil)                 @result{} error\n"
 
 #. type: subsection
 #: original_texis/control.texi:1177
 #, no-wrap
 msgid "Destructuring with @code{pcase} Patterns"
-msgstr ""
+msgstr "Destructuring with @code{pcase} Patterns"
 
 #. type: cindex
 #: original_texis/control.texi:1178
 #, no-wrap
 msgid "destructuring with pcase patterns"
-msgstr ""
+msgstr "destructuring with pcase patterns"
 
 #. type: Plain text
 #: original_texis/control.texi:1184
 msgid "Pcase patterns not only express a condition on the form of the objects they can match, but they can also extract sub-fields of those objects.  For example we can extract 2 elements from a list that is the value of the variable @code{my-list} with the following code:"
-msgstr ""
+msgstr "pcaseのパターンはあるオブジェクトがマッチ可能なフォーム上の条件を表現するだけではなく、それらのオブジェクトのサブフィールドの抽出もできます。たとえば以下のコードにより、変数@code{my-list}の値であるリストから2つの要素を抽出できます:"
 
 #. type: example
 #: original_texis/control.texi:1188
@@ -1927,21 +1911,23 @@ msgid ""
 "  (pcase my-list\n"
 "    (`(add ,x ,y)  (message \"Contains %S and %S\" x y)))\n"
 msgstr ""
+"  (pcase my-list\n"
+"    (`(add ,x ,y)  (message \"Contains %S and %S\" x y)))\n"
 
 #. type: Plain text
 #: original_texis/control.texi:1195
 msgid "This will not only extract @code{x} and @code{y} but will additionally test that @code{my-list} is a list containing exactly 3 elements and whose first element is the symbol @code{add}.  If any of those tests fail, @code{pcase} will immediately return @code{nil} without calling @code{message}."
-msgstr ""
+msgstr "これは@code{x}と@code{y}を抽出すだけではなく、加えて@code{my-list}が正確に3つの要素を含むリストであり、最初の要素がシンボル@code{add}かどうかをテストします。これらのテストのいずれかが失敗したら、@code{pcase}は@code{message}を呼び出さずに即座に@code{nil}をリターンします。"
 
 #. type: Plain text
 #: original_texis/control.texi:1202
 msgid "Extraction of multiple values stored in an object is known as @dfn{destructuring}.  Using @code{pcase} patterns allows to perform @dfn{destructuring binding}, which is similar to a local binding (@pxref{Local Variables}), but gives values to multiple elements of a variable by extracting those values from an object of compatible structure."
-msgstr ""
+msgstr "あるオブジェクトから格納された複数の値を抽出する処理は@dfn{分割(destructuring)}という処理としても知られています。@code{pcase}パターンの使用により@dfn{バインディングの分割(destructuring binding)}を処理することが可能になります。これはローカルバインディング(@ref{Local Variables}を参照)と似ていますが、互換性のあるオブジェクトから値を抽出することにより、変数の複数要素に値を与えることができます。"
 
 #. type: Plain text
 #: original_texis/control.texi:1208
 msgid "The macros described in this section use @code{pcase} patterns to perform destructuring binding.  The condition of the object to be of compatible structure means that the object must match the pattern, because only then the object's subfields can be extracted.  For example:"
-msgstr ""
+msgstr "このセクションで説明したマクロはバインディングを分割するために@code{pcase}パターンを使用しています。オブジェクト構造に互換性があるという条件は、そのオブジェクトがパターンにマッチしなければならないことを意味しています。なぜならマッチした場合のみオブジェクトのサブフィールドが抽出可能になるからです。たとえば:"
 
 #. type: example
 #: original_texis/control.texi:1212
@@ -1950,72 +1936,71 @@ msgid ""
 "  (pcase-let ((`(add ,x ,y) my-list))\n"
 "    (message \"Contains %S and %S\" x y))\n"
 msgstr ""
+"  (pcase-let ((`(add ,x ,y) my-list))\n"
+"    (message \"Contains %S and %S\" x y))\n"
 
 #. type: Plain text
 #: original_texis/control.texi:1223
 msgid "does the same as the previous example, except that it directly tries to extract @code{x} and @code{y} from @code{my-list} without first verifying if @code{my-list} is a list which has the right number of elements and has @code{add} as its first element.  The precise behavior when the object does not actually match the pattern is undefined, although the body will not be silently skipped: either an error is signaled or the body is run with some of the variables potentially bound to arbitrary values like @code{nil}."
-msgstr ""
+msgstr "これは最初に@code{my-list}が正しい個数の要素をもつリストであり、かつ1つ目の要素が@code{add}か検証せずに、@code{my-list}から直接@code{x}と@code{y}の抽出を行う点を除いて前の例と同じことを行います。実際にオブジェクトがパターンにマッチしない場合には、たとえbodyが暗黙にスキップされることはないとしても、その振る舞いは未定義でありエラーがシグナルされるか、あるいはいくつかの変数が@code{nil}のような任意の値にバインドされた状況でbodyが実行されるかもしれません。"
 
 #. type: Plain text
 #: original_texis/control.texi:1227
 msgid "The pcase patterns that are useful for destructuring bindings are generally those described in @ref{Backquote Patterns}, since they express a specification of the structure of objects that will match."
-msgstr ""
+msgstr "バインディングの分割に有用なpcaseパターンとしては、マッチされるオブジェクト構造の仕様を表現する@ref{Backquote Patterns}で説明したパターンが一般的です。"
 
 #. type: Plain text
 #: original_texis/control.texi:1230
 msgid "For an alternative facility for destructuring binding, see @ref{seq-let}."
-msgstr ""
+msgstr "バインディングの分割にたいする代替え機能については@ref{seq-let}を参照してください。"
 
 #. type: defmac
 #: original_texis/control.texi:1231
-#, fuzzy, no-wrap
-#| msgid "catch tag body@dots{}"
+#, no-wrap
 msgid "pcase-let bindings body@dots{}"
-msgstr "catch tag body@dots{}"
+msgstr "pcase-let bindings body@dots{}"
 
 #. type: defmac
 #: original_texis/control.texi:1234 original_texis/control.texi:1250
 msgid "Perform destructuring binding of variables according to @var{bindings}, and then evaluate @var{body}."
-msgstr ""
+msgstr "@var{bindings}に応じて変数のバインディング分割を行い、それから@var{body}を評価する。"
 
 #. type: defmac
 #: original_texis/control.texi:1238
 msgid "@var{bindings} is a list of bindings of the form @w{@code{(@var{pattern} @var{exp})}}, where @var{exp} is an expression to evaluate and @var{pattern} is a @code{pcase} pattern."
-msgstr ""
+msgstr "@var{bindings}は@w{@code{(@var{pattern} @var{exp})}}という形式のバインディングのリスト。ここで@var{exp}は評価する式、@var{pattern}は@code{pcase}パターン。"
 
 #. type: defmac
 #: original_texis/control.texi:1245
 msgid "All @var{exp}s are evaluated first, after which they are matched against their respective @var{pattern}, introducing new variable bindings that can then be used inside @var{body}.  The variable bindings are produced by destructuring binding of elements of @var{pattern} to the values of the corresponding elements of the evaluated @var{exp}."
-msgstr ""
+msgstr "@var{exp}はすべて最初に評価されて、その後で対応する@var{pattern}にマッチされて、@var{body}の内部で使用可能な変数バインディングが導入される。この変数バインディングは@var{pattern}の要素を、評価された@var{exp}の対応する要素の値に分割してのバインディングすることにより生成される。"
 
 #. type: defmac
 #: original_texis/control.texi:1247
-#, fuzzy, no-wrap
-#| msgid "catch tag body@dots{}"
+#, no-wrap
 msgid "pcase-let* bindings body@dots{}"
-msgstr "catch tag body@dots{}"
+msgstr "pcase-let* bindings body@dots{}"
 
 #. type: defmac
 #: original_texis/control.texi:1256
 msgid "@var{bindings} is a list of bindings of the form @code{(@var{pattern} @var{exp})}, where @var{exp} is an expression to evaluate and @var{pattern} is a @code{pcase} pattern.  The variable bindings are produced by destructuring binding of elements of @var{pattern} to the values of the corresponding elements of the evaluated @var{exp}."
-msgstr ""
+msgstr "@var{bindings}は@code{(@var{pattern} @var{exp})}という形式のバインディングのリスト。ここで@var{exp}は評価する式、@var{pattern}は@code{pcase}パターン。この変数バインディングは@var{pattern}の要素を、評価された@var{exp}の対応する要素の値に分割してのバインディングすることにより生成される。"
 
 #. type: defmac
 #: original_texis/control.texi:1263
 msgid "Unlike @code{pcase-let}, but similarly to @code{let*}, each @var{exp} is matched against its corresponding @var{pattern} before processing the next element of @var{bindings}, so the variable bindings introduced in each one of the @var{bindings} are available in the @var{exp}s of the @var{bindings} that follow it, additionally to being available in @var{body}."
-msgstr ""
+msgstr "@code{pcase-let}とは異なり(しかし@code{let*}と同じように)、各@var{exp}は@var{bindings}の次要素の処理前に対応する@var{pattern}にたいしてマッチされるので、各@var{bindings}のいずれかによって導入される変数バインディングは@var{body}内で利用可能になるのに加えて、その後に続く@var{bindings}の@var{exp}内で利用可能になる。"
 
 #. type: defmac
 #: original_texis/control.texi:1265
-#, fuzzy, no-wrap
-#| msgid "dolist (var list [result]) body@dots{}"
+#, no-wrap
 msgid "pcase-dolist (pattern list) body@dots{}"
-msgstr "dolist (var list [result]) body@dots{}"
+msgstr "pcase-dolist (pattern list) body@dots{}"
 
 #. type: defmac
 #: original_texis/control.texi:1272
 msgid "Execute @var{body} once for each element of @var{list}, on each iteration performing a destructuring binding of variables in @var{pattern} to the values of the corresponding subfields of the element of @var{list}.  The bindings are performed as if by @code{pcase-let}.  When @var{pattern} is a simple variable, this ends up being equivalent to @code{dolist} (@pxref{Iteration})."
-msgstr ""
+msgstr "繰り返しごとに@var{pattern}の変数を@var{list}の要素の対応するサブフィールドに分割バインディングしながら、@var{list}の各要素ごとに一度@var{body}を実行するこのバインディングは@code{pcase-let}の場合のように行われる。@var{pattern}が単なる変数なら@code{dolist}と等価(@ref{Iteration}を参照)。"
 
 #. type: cindex
 #: original_texis/control.texi:1277
@@ -2031,10 +2016,9 @@ msgstr "recursion"
 
 #. type: cindex
 #: original_texis/control.texi:1279
-#, fuzzy, no-wrap
-#| msgid "iteration"
+#, no-wrap
 msgid "forms, iteration"
-msgstr "iteration"
+msgstr "forms, iteration"
 
 #. type: Plain text
 #: original_texis/control.texi:1285
@@ -2415,10 +2399,9 @@ msgstr "Explicit Nonlocal Exits: @code{catch} and @code{throw}"
 
 #. type: cindex
 #: original_texis/control.texi:1503
-#, fuzzy, no-wrap
-#| msgid "nonlocal exits"
+#, no-wrap
 msgid "forms for nonlocal exits"
-msgstr "nonlocal exits"
+msgstr "forms for nonlocal exits"
 
 #. type: Plain text
 #: original_texis/control.texi:1511
@@ -2952,10 +2935,9 @@ msgstr "handling errors"
 
 #. type: cindex
 #: original_texis/control.texi:1875
-#, fuzzy, no-wrap
-#| msgid "handling errors"
+#, no-wrap
 msgid "forms for handling errors"
-msgstr "handling errors"
+msgstr "forms for handling errors"
 
 #. type: Plain text
 #: original_texis/control.texi:1882
@@ -3468,10 +3450,9 @@ msgstr "nonlocal exits, cleaning up"
 
 #. type: cindex
 #: original_texis/control.texi:2244
-#, fuzzy, no-wrap
-#| msgid "error cleanup"
+#, no-wrap
 msgid "forms for cleanup"
-msgstr "error cleanup"
+msgstr "forms for cleanup"
 
 #. type: Plain text
 #: original_texis/control.texi:2252
