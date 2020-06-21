@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-03-22 23:03+0900\n"
+"PO-Revision-Date: 2020-06-21 17:06+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -820,10 +820,8 @@ msgstr "(a b &optional c d &rest e)\n"
 
 #. type: Plain text
 #: original_texis/functions.texi:423
-#, fuzzy
-#| msgid "binds @code{a} and @code{b} to the first two actual arguments, which are required.  If one or two more arguments are provided, @code{c} and @code{d} are bound to them respectively; any arguments after the first four are collected into a list and @code{e} is bound to that list.  If there are only two arguments, @code{c} is @code{nil}; if two or three arguments, @code{d} is @code{nil}; if four arguments or fewer, @code{e} is @code{nil}."
 msgid "binds @code{a} and @code{b} to the first two actual arguments, which are required.  If one or two more arguments are provided, @code{c} and @code{d} are bound to them respectively; any arguments after the first four are collected into a list and @code{e} is bound to that list.  Thus, if there are only two arguments, @code{c}, @code{d} and @code{e} are @code{nil}; if two or three arguments, @code{d} and @code{e} are @code{nil}; if four arguments or fewer, @code{e} is @code{nil}.  Note that exactly five arguments with an explicit @code{nil} argument provided for @code{e} will cause that @code{nil} argument to be passed as a list with one element, @code{(nil)}, as with any other single value for @code{e}."
-msgstr "これは@code{a}と@code{b}は最初の2つの実引数となり、これらは必須です。さらに1つまたは2つの引数が指定された場合、それらは順番に@code{c}と@code{d}にバインドされます。1つ目から4つ目の引数の後の引数は、リストにまとめられて、@code{e}にそのリストがバインドされます。2つしか引数が指定されなかった場合、@code{c}は@code{nil}になります。2つまたは3つの引数の場合、@code{d}は@code{nil}です。引数が4つ以下の場合、@code{e}は@code{nil}になります。"
+msgstr "これは@code{a}と@code{b}は最初の2つの実引数となり、これらは必須です。さらに1つまたは2つの引数が指定された場合には、それらは順番に@code{c}と@code{d}にバインドされます。1つ目から4つ目の引数の後の引数はリストにまとめられて、@code{e}にそのリストがバインドされます。したがって2つしか引数が指定されなかった場合には@code{c}、@code{d}、@code{e}は@code{nil}になります。2つまたは3つの引数の場合には@code{d}と@code{e}は@code{nil}です。引数が4つ以下の場合には、@code{e}は@code{nil}になります。正確に5つの引数に明示的に@code{nil}が指定された場合には、@code{e}にたいして他の単一値が与えられたときのように、引数の@code{nil}が1要素のリスト@code{(nil)}として@code{e}に与えられます。"
 
 #. type: Plain text
 #: original_texis/functions.texi:432
@@ -1791,10 +1789,8 @@ msgstr "このマクロは引数リスト@var{args}、(もしあれば)ドキュ
 
 #. type: defmac
 #: original_texis/functions.texi:1088
-#, fuzzy
-#| msgid "In effect, this macro makes @code{lambda} forms ``self-quoting'': evaluating a form whose @sc{car} is @code{lambda} yields the form itself:"
 msgid "Under dynamic binding, this macro effectively makes @code{lambda} forms self-quoting: evaluating a form whose @sc{car} is @code{lambda} yields the form itself:"
-msgstr "実際にはこのマクロは@code{lambda}フォームを``自己クォート(self-quoting)''します。つまり@sc{car}が@code{lambda}であるようなフォームは、そのフォーム自身を得ます。"
+msgstr "ダイナミックバインディングの下では、このマクロは@code{lambda}フォームを効果的に``自己クォート(self-quoting)''する。つまり@sc{car}が@code{lambda}であるようなフォームはフォーム自身を得る。"
 
 #. type: example
 #: original_texis/functions.texi:1092
@@ -1809,7 +1805,7 @@ msgstr ""
 #. type: defmac
 #: original_texis/functions.texi:1096
 msgid "Note that when evaluating under lexical binding the result is a closure object (@pxref{Closures})."
-msgstr ""
+msgstr "レキシカルバインディングの下で評価した際には、結果はクロージャオブジェクトになることに注意(@ref{Closures}を参照)。"
 
 #. type: defmac
 #: original_texis/functions.texi:1100
@@ -2297,7 +2293,7 @@ msgstr "これにより同一のspecializerとqualifierにたいして、@var{st
 #. type: defmac
 #: original_texis/functions.texi:1358
 msgid "Functions defined using @code{cl-defmethod} cannot be made interactive, i.e.@: commands (@pxref{Defining Commands}), by adding the @code{interactive} form to them.  If you need a polymorphic command, we recommend defining a normal command that calls a polymorphic function defined via @code{cl-defgeneric} and @code{cl-defmethod}."
-msgstr ""
+msgstr "@code{cl-defmethod}を使用して定義した関数をインタラクティブにすることはできない。つまり@code{interactive}フォームを追加してコマンドにすることはできない(@ref{Defining Commands}を参照)。多相型コマンド(polymorphic command)が必要なら、@code{cl-defgeneric}と@code{cl-defmethod}を通じて定義した多相型関数(polymorphic function)を呼び出す通常のコマンドを定義することを推奨する。"
 
 #. type: cindex
 #: original_texis/functions.texi:1360
@@ -2787,10 +2783,8 @@ msgstr "@var{function}がインタラクティブでなければ合成された�
 
 #. type: defmac
 #: original_texis/functions.texi:1690
-#, fuzzy
-#| msgid "Note: The interactive spec of @var{function} will apply to the combined function and should hence obey the calling convention of the combined function rather than that of @var{function}.  In many cases, it makes no difference since they are identical, but it does matter for @code{:around}, @code{:filter-args}, and @code{filter-return}, where @var{function}."
 msgid "Note: The interactive spec of @var{function} will apply to the combined function and should hence obey the calling convention of the combined function rather than that of @var{function}.  In many cases, it makes no difference since they are identical, but it does matter for @code{:around}, @code{:filter-args}, and @code{:filter-return}, where @var{function} receives different arguments than the original function stored in @var{place}."
-msgstr "注意: @var{function}のインタラクティブ指定は結合された関数に適用され、@var{function}ではなく、結合された関数の呼び出し規約に従うべきです。多くの場合、これらは等しいので差異は生じませんが、@var{function}の@code{:around}、@code{:filter-args}、@code{filter-return}では、重要になります。"
+msgstr "注意: @var{function}のインタラクティブ指定は結合された関数に適用されるべきであり、@var{function}ではなく結合された関数の呼び出し規約にしたがうこと。これらは多くの場合には等しいので差異は生じないが、@var{place}に格納されたオリジナルの関数とは異なる引数を受け取る@var{function}では@code{:around}、@code{:filter-args}、@code{:filter-return}では重要になる。"
 
 #. type: defmac
 #: original_texis/functions.texi:1692
