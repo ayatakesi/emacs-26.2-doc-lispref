@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-03-19 22:44+0900\n"
+"PO-Revision-Date: 2020-06-21 19:21+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -640,7 +640,7 @@ msgstr "@code{defcustom}が何も@code{:group}を指定しなければ、同じ�
 #: original_texis/customize.texi:324
 #, no-wrap
 msgid "@code{eval-defun}, and @code{defcustom} forms"
-msgstr ""
+msgstr "@code{eval-defun}, and @code{defcustom} forms"
 
 #. type: defmac
 #: original_texis/customize.texi:332
@@ -797,15 +797,14 @@ msgstr "変数がすでにセットされている、またはカスタマイズ
 
 #. type: item
 #: original_texis/customize.texi:420
-#, fuzzy, no-wrap
-#| msgid "custom-initialize-default"
+#, no-wrap
 msgid "custom-initialize-delay"
-msgstr "custom-initialize-default"
+msgstr "custom-initialize-delay"
 
 #. type: table
 #: original_texis/customize.texi:428
 msgid "This functions behaves like @code{custom-initialize-set}, but it delays the actual initialization to the next Emacs start.  This should be used in files that are preloaded (or for autoloaded variables), so that the initialization is done in the run-time context rather than the build-time context.  This also has the side-effect that the (delayed) initialization is performed with the @code{:set} function.  @xref{Building Emacs}."
-msgstr ""
+msgstr "この関数は@code{custom-initialize-set}と同様に振る舞うが、実際の初期化をEmacsの次回起動時に遅延させる。これはビルド時ではなく実行時のコンテキストで初期化を行わせるように、事前ロードされるファイル(やautoloadされる変数)で使用すること。これは(遅延された)初期化が@code{:set}関数で処理されるという副作用ももつ。@ref{Building Emacs}を参照のこと。"
 
 #. type: item
 #: original_texis/customize.texi:430
@@ -860,20 +859,12 @@ msgstr "保存されたカスタマイゼーションに合わせて変数をセ
 
 #. type: Plain text
 #: original_texis/customize.texi:453
-#, fuzzy
-#| msgid "It is useful to specify the @code{:require} keyword for an option that ``turns on'' a certain feature.  This causes Emacs to load the feature, if it is not already loaded, whenever the option is set.  @xref{Common Keywords}.  Here is an example, from the library @file{saveplace.el}:"
 msgid "It is useful to specify the @code{:require} keyword for an option that turns on a certain feature.  This causes Emacs to load the feature, if it is not already loaded, whenever the option is set.  @xref{Common Keywords}.  Here is an example:"
-msgstr "特定の機能を``オンに切り替える''オプションにたいしては、@code{:require}キーワードを指定すると便利です。これは、その機能がまだロードされていないときは、そのオプションがセットされるとEmacsがその機能をロードするようにします。@ref{Common Keywords}を参照してください。以下はライブラリー@file{saveplace.el}の例です:"
+msgstr "特定の機能をオンに切り替えるオプションには、@code{:require}キーワードを指定すると便利です。これはその機能がまだロードされていないときには、そのオプションがセットされればEmacsがその機能をロードするようにします。@ref{Common Keywords}を参照してください。以下は例です:"
 
 #. type: example
 #: original_texis/customize.texi:460
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defcustom save-place nil\n"
-#| "  \"Non-nil means automatically save place in each file...\"\n"
-#| "  :type 'boolean\n"
-#| "  :require 'saveplace\n"
-#| "  :group 'save-place)\n"
+#, no-wrap
 msgid ""
 "(defcustom frobnicate-automatically nil\n"
 "  \"Non-nil means automatically frobnicate all buffers.\"\n"
@@ -881,11 +872,11 @@ msgid ""
 "  :require 'frobnicate-mode\n"
 "  :group 'frobnicate)\n"
 msgstr ""
-"(defcustom save-place nil\n"
-"  \"Non-nil means automatically save place in each file...\"\n"
+"(defcustom frobnicate-automatically nil\n"
+"  \"Non-nil means automatically frobnicate all buffers.\"\n"
 "  :type 'boolean\n"
-"  :require 'saveplace\n"
-"  :group 'save-place)\n"
+"  :require 'frobnicate-mode\n"
+"  :group 'frobnicate)\n"
 
 #. type: Plain text
 #: original_texis/customize.texi:470
