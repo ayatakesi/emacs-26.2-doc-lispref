@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-03-21 07:20+0900\n"
+"PO-Revision-Date: 2020-06-21 20:06+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -1639,7 +1639,7 @@ msgstr "dynamic modules"
 #. type: Plain text
 #: original_texis/loading.texi:1145
 msgid "A @dfn{dynamic Emacs module} is a shared library that provides additional functionality for use in Emacs Lisp programs, just like a package written in Emacs Lisp would."
-msgstr "@dfn{ダイナミックEmacsミジュール(dynamic Emacs module)}とは、Emacs Lispで記述されたパッケージのように、Emacs Lispプログラムで使用するための追加機能を提供する共有ライブラリーです。"
+msgstr "@dfn{ダイナミックEmacsモジュール(dynamic Emacs module: 動的Emacsモジュール)}とは、Emacs Lispで記述されたパッケージのように、Emacs Lispプログラムで使用するための追加機能を提供する共有ライブラリーです。"
 
 #. type: Plain text
 #: original_texis/loading.texi:1149
@@ -1672,12 +1672,12 @@ msgstr "plugin_is_GPL_compatible"
 #. type: Plain text
 #: original_texis/loading.texi:1165
 msgid "Every dynamic module should export a C-callable function named @code{emacs_module_init}, which Emacs will call as part of the call to @code{load} or @code{require} which loads the module.  It should also export a symbol named @code{plugin_is_GPL_compatible} to indicate that its code is released under the GPL or compatible license; Emacs will signal an error if your program tries to load modules that don't export such a symbol."
-msgstr ""
+msgstr "すべてのダイナミックモジュールは@code{emacs_module_init}という名前のCから呼び出し可能な関数をエクスポートする必要があります。Emacsはそのモジュールをロードする@code{load}や@code{require}の呼び出しの一部として、その関数を呼び出します。自身のコードがGPLまたは互換ライセンスの下にリリースされていることを示すために、@code{plugin_is_GPL_compatible}という名前のシンボルもエクスポートするべきです。このようなシンボルをエクスポートしないモジュールをプログラムがロードしようとすると、Emacsはエラーをシグナルするでしょう。"
 
 #. type: Plain text
 #: original_texis/loading.texi:1171
 msgid "If a module needs to call Emacs functions, it should do so through the @acronym{API} (Application Programming Interface) defined and documented in the header file @file{emacs-module.h} that is part of the Emacs distribution.  @xref{Writing Dynamic Modules}, for details of using that API when writing your own modules."
-msgstr ""
+msgstr "あるモジュールがEmacsの関数の呼び出しを必要とするなら、Emacsディストリビューションに同梱されているヘッダーファイル@file{emacs-module.h}で定義および文書化された@acronym{API (Application Programming Interface)}を介して行う必要があります。独自モジュールを記述する際におけるこのAPI使用の詳細は@ref{Writing Dynamic Modules}を参照してください。"
 
 #. type: cindex
 #: original_texis/loading.texi:1172
@@ -1687,15 +1687,14 @@ msgstr "user-ptr object"
 
 #. type: cindex
 #: original_texis/loading.texi:1173
-#, fuzzy, no-wrap
-#| msgid "autoloadp object"
+#, no-wrap
 msgid "user pointer object"
-msgstr "autoloadp object"
+msgstr "user pointer object"
 
 #. type: Plain text
 #: original_texis/loading.texi:1182
 msgid "Modules can create @code{user-ptr} Lisp objects that embed pointers to C struct's defined by the module.  This is useful for keeping around complex data structures created by a module, to be passed back to the module's functions.  User-ptr objects can also have associated @dfn{finalizers} -- functions to be run when the object is GC'ed; this is useful for freeing any resources allocated for the underlying data structure, such as memory, open file descriptors, etc.  @xref{Module Values}."
-msgstr ""
+msgstr "モジュールはモジュールが定義するC構造体への埋め込みポインターとなるLispオブジェクト@code{user-ptr}を作成できます。これはモジュールが作成する複雑なデータ構造を維持してモジュールの関数に渡して戻す場合に有用です。user-ptrオブジェクトはそれに関連付けられる@dfn{ファイナライザー(finalizer: オブジェクトがガーベージコレクトされる際に呼び出される関数)}をもつこともできます。これはメモリー、オープンしたファイル記述子等のデータ構造の背後に割り当てられたリソースの解放に有用です。@ref{Module Values}を参照してください。"
 
 #. type: defun
 #: original_texis/loading.texi:1183
@@ -1710,15 +1709,14 @@ msgstr "この関数は引数が@code{user-ptr}オブジェクトなら@code{t}�
 
 #. type: defun
 #: original_texis/loading.texi:1188
-#, fuzzy, no-wrap
-#| msgid "load-file-rep-suffixes"
+#, no-wrap
 msgid "module-load file"
-msgstr "load-file-rep-suffixes"
+msgstr "module-load file"
 
 #. type: defun
 #: original_texis/loading.texi:1199
 msgid "Emacs calls this low-level primitive to load a module from the specified @var{file} and perform the necessary initialization of the module.  This is the primitive which makes sure the module exports the @code{plugin_is_GPL_compatible} symbol, calls the module's @code{emacs_module_init} function, and signals an error if that function returns an error indication, or if the use typed @kbd{C-g} during the initialization.  If the initialization succeeds, @code{module-load} returns @code{t}.  Note that @var{file} must already have the proper file-name extension, as this function doesn't try looking for files with known extensions, unlike @code{load}."
-msgstr ""
+msgstr "Emacsは指定された@var{file}からモジュールをロードして、そのモジュールに必要な初期化えを行うために、この低レベルのプリミティブを呼び出す。これはモジュールがシンボル@code{plugin_is_GPL_compatible}をエクスポートすることを保証して、モジュールの@code{emacs_module_init}関数を呼び出し、その関数のリターン値がエラーを示したりユーザーが初期化中に@kbd{C-g}をタイプしたらエラーをシグナルする。初期化が成功すると@code{module-load}は@code{t}をリターンする。この関数は@code{load}とは異なり既知の拡張子をもつファイルの検索を試みないので、@var{file}は正確なファイル名拡張子をもたなければならないことに注意。"
 
 #. type: Plain text
 #: original_texis/loading.texi:1202
