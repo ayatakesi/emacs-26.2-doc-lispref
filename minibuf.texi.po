@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-03-23 19:21+0900\n"
+"PO-Revision-Date: 2020-06-21 21:48+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -133,10 +133,8 @@ msgstr "Multiple Queries"
 
 #. type: menuentry
 #: original_texis/minibuf.texi:36
-#, fuzzy
-#| msgid "asking the user questions"
 msgid "Asking complex questions."
-msgstr "asking the user questions"
+msgstr "複雑な問い合わせ。"
 
 #. type: section
 #: original_texis/minibuf.texi:36 original_texis/minibuf.texi:2244
@@ -1775,10 +1773,8 @@ msgstr "minibuffer-completion-table"
 
 #. type: defvar
 #: original_texis/minibuf.texi:1110
-#, fuzzy
-#| msgid "The value of this variable is the completion table used for completion in the minibuffer.  This is the global variable that contains what @code{completing-read} passes to @code{try-completion}.  It is used by minibuffer completion commands such as @code{minibuffer-complete-word}."
 msgid "The value of this variable is the completion table (@pxref{Basic Completion}) used for completion in the minibuffer.  This is the global variable that contains what @code{completing-read} passes to @code{try-completion}.  It is used by minibuffer completion commands such as @code{minibuffer-complete-word}."
-msgstr "この変数の値は、ミニバッファー内の補完に使用される補完テーブルである。これは@code{completing-read}が@code{try-completion}に渡す補完テーブルを含むグローバル変数である。@code{minibuffer-complete-word}のような、ミニバッファー補完コマンドにより使用される。"
+msgstr "この変数の値はミニバッファー内の補完に使用される補完テーブル(@ref{Basic Completion}を参照)。これは@code{completing-read}が@code{try-completion}に渡す補完テーブルを含むグローバル変数。@code{minibuffer-complete-word}のようなミニバッファー補完コマンドにより使用される。"
 
 #. type: defvar
 #: original_texis/minibuf.texi:1112
@@ -2081,10 +2077,8 @@ msgstr "この関数はコマンドの名前を読み取って、Lispシンボ�
 
 #. type: defun
 #: original_texis/minibuf.texi:1332
-#, fuzzy
-#| msgid "The argument @var{default} specifies what to return if the user enters null input.  It can be a symbol, a string or a list of strings.  If it is a string, @code{read-command} interns it before returning it.  If it is a list, @code{read-command} interns the first element of this list.  If @var{default} is @code{nil}, that means no default has been specified; then if the user enters null input, the return value is @code{(intern \"\")}, that is, a symbol whose name is an empty string."
 msgid "The argument @var{default} specifies what to return if the user enters null input.  It can be a symbol, a string or a list of strings.  If it is a string, @code{read-command} interns it before returning it.  If it is a list, @code{read-command} interns the first element of this list.  If @var{default} is @code{nil}, that means no default has been specified; then if the user enters null input, the return value is @code{(intern \"\")}, that is, a symbol whose name is an empty string, and whose printed representation is @code{##} (@pxref{Symbol Type})."
-msgstr "引数@var{default}は、ユーザーがnull入力をエンターした場合に何をリターンするか指定する。シンボル、文字列、文字列リストを指定できる。文字列の場合、@code{read-command}はリターンする前にそれをinternする。リストの場合、@code{read-command}はリストの最初の要素をinternする。@var{default}が@code{nil}の場合は、デフォルトが指定されなかったことを意味する。その場合もしユーザーがnull入力をエンターすると、リターン値は@code{(intern \"\")}、つまり名前が空文字列のシンボルとなる。"
+msgstr "引数@var{default}はユーザーがnull入力をエンターした場合に何をリターンするか指定する。シンボル、文字列、文字列リストを指定できる。文字列なら@code{read-command}はリターンする前にそれをinternする。リストなら@code{read-command}はリストの最初の要素をinternする。@var{default}が@code{nil}ならデフォルトが指定されなかったことを意味する。その場合には、もしユーザーがnull入力をエンターするとリターン値は@code{(intern \"\")}、つまり名前が空文字列でプリント表現が@code{##}であるようなシンボル(@ref{Symbol Type}を参照)。"
 
 #. type: example
 #: original_texis/minibuf.texi:1335
@@ -2636,10 +2630,8 @@ msgstr "利用可能なマッチをフィルターする述語関数。もしな
 
 #. type: itemize
 #: original_texis/minibuf.texi:1771
-#, fuzzy
-#| msgid "A flag specifying the type of completion operation to perform.  This is one of the following four values:"
 msgid "A flag specifying the type of completion operation to perform; see @ref{Basic Completion}, for the details of those operations.  This flag may be one of the following values."
-msgstr "実行する補完操作のタイプを指定するフラグ。以下の4つの値のうち1つを指定する:"
+msgstr "実行する補完操作のタイプを指定するフラグ。@ref{Basic Completion}を参照のこと。以下の値のうちいずれか1つを指定する:"
 
 #. type: item
 #: original_texis/minibuf.texi:1773
@@ -2649,10 +2641,8 @@ msgstr "nil"
 
 #. type: table
 #: original_texis/minibuf.texi:1778
-#, fuzzy
-#| msgid "This specifies a @code{test-completion} operation.  The function should return @code{t} if the specified string is an exact match for some completion alternative; @code{nil} otherwise."
 msgid "This specifies a @code{try-completion} operation.  The function should return @code{nil} if there are no matches; it should return @code{t} if the specified string is a unique and exact match; and it should return the longest common prefix substring of all matches otherwise."
-msgstr "@code{test-completion}を指定する。関数は指定された文字列がいくつかの補完候補に完全一致する場合は@code{t}、それ以外は@code{nil}をリターンする。"
+msgstr "これは@code{try-completion}を指定する。マッチがなければ関数は@code{nil}をリターンすること。指定された文字列が一意でかつ正確にマッチしたら@code{t}をリターンすること。それ以外ならすべてのマッチに共通な最長の前置部分文字列をリターンすること。"
 
 #. type: item
 #: original_texis/minibuf.texi:1779
@@ -2760,10 +2750,8 @@ msgstr "completion-table-dynamic function &optional switch-buffer"
 
 #. type: defun
 #: original_texis/minibuf.texi:1850
-#, fuzzy
-#| msgid "This function is a convenient way to write a function that can act as a programmed completion function.  The argument @var{function} should be a function that takes one argument, a string, and returns an alist of possible completions of it.  You can think of @code{completion-table-dynamic} as a transducer between that interface and the interface for programmed completion functions."
 msgid "This function is a convenient way to write a function that can act as a programmed completion function.  The argument @var{function} should be a function that takes one argument, a string, and returns a completion table (@pxref{Basic Completion}) containing all the possible completions.  The table returned by @var{function} can also include elements that don't match the string argument; they are automatically filtered out by @code{completion-table-dynamic}.  In particular, @var{function} can ignore its argument and return a full list of all possible completions.  You can think of @code{completion-table-dynamic} as a transducer between @var{function} and the interface for programmed completion functions."
-msgstr "この関数はプログラム補完関数として動作する関数を記述する便利な方法である。引数@var{function}は1つの引数(文字列)をとる関数であり、その文字列の利用可能な補完のalistをリターンする。@code{completion-table-dynamic}は、@var{function}とプログラム補完関数のインターフェイス変換器と考えることができる。"
+msgstr "この関数はプログラムされた補完関数として動作可能な関数を記述する便利な方法である。引数@var{function}は1つの引数(文字列)をとる関数であり、利用可能な補完すべてを含む補完テーブル(@ref{Basic Completion}を参照)をリターンする。@var{function}がリターンするテーブルには文字列引数にマッチしない要素を含めることもできる。これらは@code{completion-table-dynamic}によって自動的にフィルターされる。特に@var{function}は引数を無視して利用可能なすべての補完の完全なリストをリターンできる。@code{completion-table-dynamic}を@var{function}とプログラムされた補完関数との間の変換器として考えることができる。"
 
 #. type: defun
 #: original_texis/minibuf.texi:1855
@@ -2773,7 +2761,7 @@ msgstr "オプション引数@var{switch-buffer}が非@code{nil}、かつ補完�
 #. type: defun
 #: original_texis/minibuf.texi:1860
 msgid "The return value of @code{completion-table-dynamic} is a function that can be used as the 2nd argument to @code{try-completion} and @code{all-completions}.  Note that this function will always return empty metadata and trivial boundaries (@pxref{Programmed Completion})."
-msgstr ""
+msgstr "@code{completion-table-dynamic}のリターン値は@code{try-completion}および@code{all-completions}の2つ目の引数として使用できる。この関数は常に空のメタデータと無意味な境界をリターンすることに注意(@ref{Programmed Completion}を参照)。"
 
 #. type: defun
 #: original_texis/minibuf.texi:1862
@@ -2817,10 +2805,8 @@ msgstr "completion-at-point-functions"
 
 #. type: defvar
 #: original_texis/minibuf.texi:1888
-#, fuzzy
-#| msgid "The value of this abnormal hook should be a list of functions, which are used to compute a completion table for completing the text at point.  It can be used by major modes to provide mode-specific completion tables (@pxref{Major Mode Conventions})."
 msgid "The value of this abnormal hook should be a list of functions, which are used to compute a completion table (@pxref{Basic Completion}) for completing the text at point.  It can be used by major modes to provide mode-specific completion tables (@pxref{Major Mode Conventions})."
-msgstr "このアブノーマルフックの値は関数のリストである。これらの関数はポイント位置のテキストの補完にたいする補完テーブルの計算に使用される。これはメジャーモードにより、モード特有な補完テーブル(@ref{Major Mode Conventions}を参照)の提供に使用できる。"
+msgstr "このアブノーマルフックの値は関数のリスト。これらの関数はポイント位置のテキストの補完にたいする補完テーブルの計算に使用される(@ref{Basic Completion}を参照)。これはメジャーモードによるモード固有の補完テーブル(@ref{Major Mode Conventions}を参照)の提供に使用できる。"
 
 #. type: defvar
 #: original_texis/minibuf.texi:1894
@@ -3079,15 +3065,14 @@ msgstr ""
 
 #. type: section
 #: original_texis/minibuf.texi:2099
-#, fuzzy, no-wrap
-#| msgid "Asking Multiple Y-or-N Questions"
+#, no-wrap
 msgid "Asking Multiple-Choice Questions"
-msgstr "Asking Multiple Y-or-N Questions"
+msgstr "Asking Multiple-Choice Questions"
 
 #. type: Plain text
 #: original_texis/minibuf.texi:2103
 msgid "This section describes facilities for asking the user more complex questions or several similar questions."
-msgstr ""
+msgstr "このセクションではより複雑な質問や複数の似かよった質問をユーザーに尋ねる機能を説明します。"
 
 #. type: cindex
 #: original_texis/minibuf.texi:2104
@@ -3196,30 +3181,30 @@ msgstr "@code{map-y-or-n-p}のリターン値は処理したオブジェクト�
 #. type: Plain text
 #: original_texis/minibuf.texi:2200
 msgid "If you need to ask the user a question that might have more than just 2 answers, use @code{read-answer}."
-msgstr ""
+msgstr "3つ以上の答えをもつかもしれない質問をユーザーに尋ねる必要がある場合には@code{read-answer}を使用してください。"
 
 #. type: defun
 #: original_texis/minibuf.texi:2201
 #, no-wrap
 msgid "read-answer question answers"
-msgstr ""
+msgstr "read-answer question answers"
 
 #. type: vindex
 #: original_texis/minibuf.texi:2202
 #, no-wrap
 msgid "read-answer-short"
-msgstr ""
+msgstr "read-answer-short"
 
 #. type: defun
 #: original_texis/minibuf.texi:2208
 msgid "This function prompts the user with text in @var{question}, which should end in the @samp{SPC} character.  The function includes in the prompt the possible responses in @var{answers} by appending them to the end of @var{question}.  The possible responses are provided in @var{answers} as an alist whose elements are of the following form:"
-msgstr ""
+msgstr "この関数は@var{question}のテキスト( @samp{SPC}文字で終端されていること)とともにユーザーに入力を求める。この関数は@var{question}に@var{answers}を追加することにより、プロンプト内に可能な応答を含めることができる。この可能な応答は以下の形式の要素をもつalistとして@var{answers}内に提供される。"
 
 #. type: lisp
 #: original_texis/minibuf.texi:2211
 #, no-wrap
 msgid "(@var{long-answer} @var{short-answer} @var{help-message})\n"
-msgstr ""
+msgstr "(@var{long-answer} @var{short-answer} @var{help-message})\n"
 
 #. type: defun
 #: original_texis/minibuf.texi:2226
