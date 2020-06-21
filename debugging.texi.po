@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-03-22 06:24+0900\n"
+"PO-Revision-Date: 2020-06-21 20:07+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -670,10 +670,9 @@ msgstr "force entry to debugger"
 
 #. type: cindex
 #: original_texis/debugging.texi:339
-#, fuzzy, no-wrap
-#| msgid "@code{eval}, and debugging"
+#, no-wrap
 msgid "@code{eval-defun}, and explicit entry to debugger"
-msgstr "@code{eval}, and debugging"
+msgstr "@code{eval-defun}, and explicit entry to debugger"
 
 #. type: Plain text
 #: original_texis/debugging.texi:346
@@ -1607,24 +1606,21 @@ msgstr "プログラムは正常に機能しているものの、十分に高速
 
 #. type: findex
 #: original_texis/debugging.texi:933
-#, fuzzy, no-wrap
-#| msgid "profiling"
+#, no-wrap
 msgid "profiler-start"
-msgstr "profiling"
+msgstr "profiler-start"
 
 #. type: findex
 #: original_texis/debugging.texi:934
-#, fuzzy, no-wrap
-#| msgid "profiling"
+#, no-wrap
 msgid "profiler-report"
-msgstr "profiling"
+msgstr "profiler-report"
 
 #. type: findex
 #: original_texis/debugging.texi:935
-#, fuzzy, no-wrap
-#| msgid "profiling"
+#, no-wrap
 msgid "profiler-stop"
-msgstr "profiling"
+msgstr "profiler-stop"
 
 #. type: Plain text
 #: original_texis/debugging.texi:947
