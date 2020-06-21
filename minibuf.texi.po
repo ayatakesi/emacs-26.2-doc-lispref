@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-06-21 21:48+0900\n"
+"PO-Revision-Date: 2020-06-21 22:07+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3209,19 +3209,17 @@ msgstr "(@var{long-answer} @var{short-answer} @var{help-message})\n"
 #. type: defun
 #: original_texis/minibuf.texi:2226
 msgid "where @var{long-answer} is the complete text of the user response, a string; @var{short-answer} is a short form of the same response, a single character; and @var{help-message} is the text that describes the meaning of the answer.  If the variable @code{read-answer-short} is non-@code{nil}, the prompt will show the short variants of the possible answers and the user is expected to type the single characters shown in the prompt; otherwise the prompt will show the long variants of the answers, and the user is expected to type the full text of one of the answers and end by pressing @key{RET}.  If @code{use-dialog-box} is non-@code{nil}, and this function was invoked by mouse events, the question and the answers will be displayed in a GUI dialog box."
-msgstr ""
+msgstr "@var{long-answer}はユーザーの応答の完全なテキスト(文字列)、@var{short-answer}は同じ応答の短い形式(単一文字)、@var{help-message}はその応答の意味を説明するテキスト。変数@code{read-answer-short}が非@code{nil}なら可能な応答の短いバージョンをプロンプトに表示して、ユーザーがプロンプトに表示された1文字をタイプすることを期待する。それ以外なら可能な応答の長いバージョンをプロンプトに表示して、ユーザーにはプロンプトに表示された完全なテキストのいずれかを入力してから、入力完了で@key{RET}を押下することが期待される。@key{RET}が非@code{nil}かつこの関数がマウスイベントから呼び出された場合には問いと答えはGUIのダイアログボックス内に表示される。"
 
 #. type: defun
 #: original_texis/minibuf.texi:2230
 msgid "The function returns the text of the @var{long-answer} selected by the user, regardless of whether long or short answers were shown in the prompt and typed by the user."
-msgstr ""
+msgstr "この関数はプロンプトに表示された応答の長短やユーザーがタイプした応答とは無関係に、ユーザーがセンタクした@var{long-answer}のテキストをリターンする。"
 
 #. type: defun
 #: original_texis/minibuf.texi:2232
-#, fuzzy
-#| msgid "Here is an example of using @code{read-file-name}:"
 msgid "Here is an example of using this function:"
-msgstr "以下は@code{read-file-name}を使用した例である:"
+msgstr "以下はこの関数の使用例:"
 
 #. type: lisp
 #: original_texis/minibuf.texi:2241
@@ -3235,6 +3233,13 @@ msgid ""
 "       (\"help\" ?h \"show help\")\n"
 "       (\"quit\" ?q \"exit\"))))\n"
 msgstr ""
+"(let ((read-answer-short t))\n"
+"  (read-answer \"Foo \"\n"
+"     '((\"yes\"  ?y \"perform the action\")\n"
+"       (\"no\"   ?n \"skip to the next\")\n"
+"       (\"all\"  ?! \"perform for the rest without more questions\")\n"
+"       (\"help\" ?h \"show help\")\n"
+"       (\"quit\" ?q \"exit\"))))\n"
 
 #. type: cindex
 #: original_texis/minibuf.texi:2246
@@ -3251,7 +3256,7 @@ msgstr "他のプログラムに渡すためのパスワードを読み取るた
 #: original_texis/minibuf.texi:2251
 #, no-wrap
 msgid "read-hide-char"
-msgstr ""
+msgstr "read-hide-char"
 
 #. type: defun
 #: original_texis/minibuf.texi:2252
