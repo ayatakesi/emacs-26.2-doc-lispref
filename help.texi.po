@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-03-26 21:42+0900\n"
+"PO-Revision-Date: 2020-06-22 23:17+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1011,10 +1011,8 @@ msgstr "text-char-description character"
 
 #. type: defun
 #: original_texis/help.texi:568
-#, fuzzy
-#| msgid "This function returns a string describing @var{character} in the standard Emacs notation for characters that appear in text---like @code{single-key-description}, except that control characters are represented with a leading caret (which is how control characters in Emacs buffers are usually displayed).  Another difference is that @code{text-char-description} recognizes the 2**7 bit as the Meta character, whereas @code{single-key-description} uses the 2**27 bit for Meta."
 msgid "This function returns a string describing @var{character} in the standard Emacs notation for characters that can appear in text---similar to @code{single-key-description}, except that the argument must be a valid character code that passes a @code{characterp} test (@pxref{Character Codes}).  The function produces descriptions of control characters with a leading caret (which is how Emacs usually displays control characters in buffers).  Characters with modifier bits will cause this function to signal an error (@acronym{ASCII} characters with the Control modifier are an exception, they are represented as control characters)."
-msgstr "この関数は、テキスト内に出現する文字にたいするEmacsの標準表記として、@var{character}を表記する文字列をリターンする。これは@code{single-key-description}と似ているが、コントロール文字にカレットが前置されて表される点が異なる(これはEmacsバッファー内でコントロール文字を表示する通常の方法である)。他にも、@code{single-key-description}が2**27ビットをメタ文字とするのにたいし、@code{text-char-description}は2**7ビットをメタ文字とする点が異なる。"
+msgstr "この関数はテキスト内に出現し得る文字にたいするEmacsの標準表記として@var{character}を記述する文字列をリターンする。これは@code{single-key-description}と似ているが、引数が@code{characterp}によるテスト(@ref{Character Codes}を参照)をパスする有効な文字コードでなければならない点が異なる。この関数は先頭のカレットによりコントロール文字の記述を生成する(Emacsがバッファー内にコントロール文字を表示する通常の方法)。修飾ビットをもつ文字にたいして、この関数はエラーをシグナルする(コントロール修飾された@acronym{ASCII}文字は例外であり、これらはコントロール文字として表現される)。"
 
 #. type: group
 #: original_texis/help.texi:573
@@ -1028,16 +1026,13 @@ msgstr ""
 
 #. type: group
 #: original_texis/help.texi:577
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(text-char-description ?\\M-m)\n"
-#| "     @result{} \"\\xed\"\n"
+#, no-wrap
 msgid ""
 "(text-char-description ?\\M-m)\n"
 "     @error{} Wrong type argument: characterp, 134217837\n"
 msgstr ""
 "(text-char-description ?\\M-m)\n"
-"     @result{} \"\\xed\"\n"
+"     @error{} Wrong type argument: characterp, 134217837\n"
 
 #. type: deffn
 #: original_texis/help.texi:581
