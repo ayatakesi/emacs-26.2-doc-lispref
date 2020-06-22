@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-03-23 20:00+0900\n"
+"PO-Revision-Date: 2020-06-22 15:45+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -353,7 +353,7 @@ msgstr "インタラクティブに呼び出されることだけを意図して
 #. type: Plain text
 #: original_texis/commands.texi:141
 msgid "Generic functions (@pxref{Generic Functions}) cannot be turned into commands by adding the @code{interactive} form to them."
-msgstr ""
+msgstr "ジェネリック関数(@ref{Generic Functions}を参照)に@code{interactive}フォームを追加してコマンドにすることはできません。"
 
 #. type: node
 #: original_texis/commands.texi:148 original_texis/commands.texi:150
@@ -1940,10 +1940,8 @@ msgstr "@code{composition} property, and point display"
 
 #. type: Plain text
 #: original_texis/commands.texi:1017
-#, fuzzy
-#| msgid "It is not easy to display a value of point in the middle of a sequence of text that has the @code{display}, @code{composition} or is invisible.  Therefore, after a command finishes and returns to the command loop, if point is within such a sequence, the command loop normally moves point to the edge of the sequence."
 msgid "Emacs cannot display the cursor when point is in the middle of a sequence of text that has the @code{display} or @code{composition} property, or is invisible.  Therefore, after a command finishes and returns to the command loop, if point is within such a sequence, the command loop normally moves point to the edge of the sequence, making this sequence effectively intangible."
-msgstr "プロパティ@code{display}や@code{composition}をｍつテキストや、非表示のテキストシーケンスの中間でポイント値を表示するのは、簡単ではありません。したがって、コマンドが終了した後にコマンドループにリターンするとき、そのようなシーケンス中にポイントがある場合、コマンドループは通常ポイントをそのようなシーケンスの端に移動します。"
+msgstr "プロパティ@code{display}や@code{composition}をもつテキストや非表示のテキストシーケンスの中間では、Emacsはポイント値を表示できません。したがってコマンドが終了した後にコマンドループにリターンした後にそのようなシーケンス中にポイントがある場合には、そのシーケンスを効果的に不可触にするために、コマンドループは通常ポイントをそのようなシーケンスの端へと移動します。"
 
 #. type: Plain text
 #: original_texis/commands.texi:1020
@@ -2196,14 +2194,12 @@ msgstr "keyboard events"
 #: original_texis/commands.texi:1082
 #, no-wrap
 msgid "character event"
-msgstr ""
+msgstr "character event"
 
 #. type: Plain text
 #: original_texis/commands.texi:1089
-#, fuzzy
-#| msgid "There are two kinds of input you can get from the keyboard: ordinary keys, and function keys.  Ordinary keys correspond to characters; the events they generate are represented in Lisp as characters.  The event type of a character event is the character itself (an integer); see @ref{Classifying Events}."
 msgid "There are two kinds of input you can get from the keyboard: ordinary keys, and function keys.  Ordinary keys correspond to (possibly modified) characters; the events they generate are represented in Lisp as characters.  The event type of a @dfn{character event} is the character itself (an integer), which might have some modifier bits set; see @ref{Classifying Events}."
-msgstr "キーボードから取得できる入力には2つの種類があります。それは通常のキーとファンクションキーです。通常のキーは文字に対応し、それらが生成するイベントはLisp内では文字で表現されます。文字イベントのイベント型は文字自身(整数)です。@ref{Classifying Events}を参照してください。"
+msgstr "キーボードから取得できる入力には2つの種類があります。それは通常のキーとファンクションキーです。通常のキーは文字に対応しており(修飾されているかもしれない)、それらが生成するイベントはLisp内では文字で表現されます。文字イベントのイベント型は文字自身(整数)であり、何らかの修飾ビットがセットされているかもしれません。@ref{Classifying Events}を参照してください。"
 
 #. type: cindex
 #: original_texis/commands.texi:1090
@@ -2233,7 +2229,7 @@ msgstr "meta"
 #: original_texis/commands.texi:1136 original_texis/commands.texi:1170
 #: original_texis/commands.texi:1181 original_texis/commands.texi:1192
 msgid "The"
-msgstr "文字コードのビット"
+msgstr "文字イベントコードのビット"
 
 #. type: tex
 #: original_texis/commands.texi:1100 original_texis/commands.texi:2263
@@ -2287,10 +2283,8 @@ msgstr "しかし@kbd{%}のような非@acronym{ASCII}とコントロールを�
 
 #. type: table
 #: original_texis/commands.texi:1133
-#, fuzzy
-#| msgid "(assuming the terminal supports non-@acronym{ASCII} control characters)."
 msgid "(assuming the terminal supports non-@acronym{ASCII} control characters), i.e.@: with the 27th bit set."
-msgstr "を加えた値となる(端末が非@acronym{ASCII}コントロール文字をサポートすると仮定する)。"
+msgstr "を加えた値となる(端末が非@acronym{ASCII}コントロール文字、すなわち27番目のビットがセットされた文字をサポートすると仮定する)。"
 
 #. type: item
 #: original_texis/commands.texi:1134
@@ -2313,10 +2307,8 @@ msgstr "2**25"
 
 #. type: table
 #: original_texis/commands.texi:1144
-#, fuzzy
-#| msgid "bit in the character code indicates an @acronym{ASCII} control character typed with the shift key held down."
 msgid "bit (the 26th bit) in the character event code indicates an @acronym{ASCII} control character typed with the shift key held down."
-msgstr "はシフトキーが押下された状態で@acronym{ASCII}コントロール文字がタイプされたことを示す。"
+msgstr "(26番目のビット)はシフトキーが押下された状態で@acronym{ASCII}コントロール文字がタイプされたことを示す。"
 
 #. type: table
 #: original_texis/commands.texi:1149
@@ -2325,8 +2317,6 @@ msgstr "アルファベット文字にたいしては、基本コード自身が
 
 #. type: table
 #: original_texis/commands.texi:1156
-#, fuzzy
-#| msgid "bit for those characters."
 msgid "bit for those character events."
 msgstr "を使用しない。"
 
@@ -2359,8 +2349,6 @@ msgstr "2**24"
 
 #. type: table
 #: original_texis/commands.texi:1178
-#, fuzzy
-#| msgid "bit in the character code indicates a character typed with the hyper key held down."
 msgid "bit in the character event code indicates a character typed with the hyper key held down."
 msgstr "はハイパーキーが押下された状態で文字がタイプされたことを示す。"
 
@@ -2383,8 +2371,6 @@ msgstr "2**23"
 
 #. type: table
 #: original_texis/commands.texi:1189
-#, fuzzy
-#| msgid "bit in the character code indicates a character typed with the super key held down."
 msgid "bit in the character event code indicates a character typed with the super key held down."
 msgstr "はスーパーキーが押下された状態で文字がタイプされたことを示す。"
 
@@ -2407,8 +2393,6 @@ msgstr "2**22"
 
 #. type: table
 #: original_texis/commands.texi:1201
-#, fuzzy
-#| msgid "bit in the character code indicates a character typed with the alt key held down.  (The key labeled @key{Alt} on most keyboards is actually treated as the meta key, not this.)"
 msgid "bit in the character event code indicates a character typed with the alt key held down.  (The key labeled @key{Alt} on most keyboards is actually treated as the meta key, not this.)"
 msgstr "はアルトキーが押下された状態で文字がタイプされたことを示す(ほとんどのキーボードで@key{Alt}とラベルされたキーは、実際にはアルトキーではなくメタキーとして扱われる)。"
 
@@ -3639,7 +3623,7 @@ msgstr ""
 #. type: defun
 #: original_texis/commands.texi:1962
 msgid "The modifiers list for a click event explicitly contains @code{click}, but the event symbol name itself does not contain @samp{click}.  Similarly, the modifiers list for an @acronym{ASCII} control character, such as @samp{C-a}, contains @code{control}, even though reading such an event via @code{read-char} will return the value 1 with the control modifier bit removed."
-msgstr ""
+msgstr "クリックイベントにたいする修飾子リストは明示的に@code{click}を含むが、イベントシンボル名自体には@samp{click}が含まれない。同じように@samp{C-a}のような@acronym{ASCII}コントロール文字にたいする修飾子リストでは、たとえ@samp{C-a}の修飾ビットを取り除いて値1をリターンする@code{read-char}を通じて読み取られたイベントであっても@code{control}が含まれる。"
 
 #. type: defun
 #: original_texis/commands.texi:1964
@@ -4626,22 +4610,18 @@ msgstr "read-char &optional prompt inherit-input-method seconds"
 
 #. type: defun
 #: original_texis/commands.texi:2562
-#, fuzzy
-#| msgid "This function reads and returns a character of command input.  If the user generates an event which is not a character (i.e., a mouse click or function key event), @code{read-char} signals an error.  The arguments work as in @code{read-event}."
 msgid "This function reads and returns a character input event.  If the user generates an event which is not a character (i.e., a mouse click or function key event), @code{read-char} signals an error.  The arguments work as in @code{read-event}."
-msgstr "この関数はコマンド入力の文字を読み取り、それをリターンする。ユーザーが文字以外(たとえばマウスクリックやファンクションキー)のイベントを生成した場合、@code{read-char}はエラーをシグナルする。引数は@code{read-event}と同じように機能する。"
+msgstr "この関数は文字入力イベントを読み取ってリターンする。ユーザーが文字以外(たとえばマウスクリックやファンクションキー)のイベントを生成した場合には、@code{read-char}はエラーをシグナルする。引数は@code{read-event}と同じように機能する。"
 
 #. type: defun
 #: original_texis/commands.texi:2576
 msgid "If the event has modifiers, Emacs attempts to resolve them and return the code of the corresponding character.  For example, if the user types @kbd{C-a}, the function returns 1, which is the @acronym{ASCII} code of the @samp{C-a} character.  If some of the modifiers cannot be reflected in the character code, @code{read-char} leaves the unresolved modifier bits set in the returned event.  For example, if the user types @kbd{C-M-a}, the function returns 134217729, 8000001 in hex, i.e.@: @samp{C-a} with the Meta modifier bit set.  This value is not a valid character code: it fails the @code{characterp} test (@pxref{Character Codes}).  Use @code{event-basic-type} (@pxref{Classifying Events}) to recover the character code with the modifier bits removed; use @code{event-modifiers} to test for modifiers in the character event returned by @code{read-char}."
-msgstr ""
+msgstr "イベントが修飾子をもつ場合には、Emacsはそれらの解決を試みて対応する文字のコードをリターンする。たとえばユーザーが@kbd{C-a}をタイプすると、関数は文字@samp{C-a}の@acronym{ASCII}コードである1をリターンする。いくつかの修飾子を文字コードに反映できない場合には、@code{read-char}は未解決の修飾子ビットをセットしたままイベントをリターンする。たとえばユーザーが@kbd{C-M-a}をタイプすると、関数は134217729(16進の8000001であり、これはメタ修飾子がセットされた@samp{C-a})をリターンする。この値は有効な文字コードではないので、@code{characterp}のテストに失敗する(@ref{Character Codes}を参照)。修飾子ビットが削除された文字の復元には@code{event-basic-type} (@ref{Classifying Events}を参照)、@code{read-char}がリターンした文字イベント内の修飾子をテストするには@code{event-modifiers}を使用すること。"
 
 #. type: defun
 #: original_texis/commands.texi:2583
-#, fuzzy
-#| msgid "In the first example, the user types the character @kbd{1} (@acronym{ASCII} code 49).  The second example shows a keyboard macro definition that calls @code{read-char} from the minibuffer using @code{eval-expression}.  @code{read-char} reads the keyboard macro's very next character, which is @kbd{1}.  Then @code{eval-expression} displays its return value in the echo area."
 msgid "In the first example below, the user types the character @kbd{1} (@acronym{ASCII} code 49).  The second example shows a keyboard macro definition that calls @code{read-char} from the minibuffer using @code{eval-expression}.  @code{read-char} reads the keyboard macro's very next character, which is @kbd{1}.  Then @code{eval-expression} displays its return value in the echo area."
-msgstr "1つ目の例では、ユーザーは文字@kbd{1}(@acronym{ASCII}コード49)をタイプしている。2つ目の例では、@code{eval-expression}を使用してミニバッファーから@code{read-char}を呼び出すキーボード定義を示している。@code{read-char}は、キーボードマクロの直後の文字@kbd{1}を読み取る。その後、@code{eval-expression}はリターン値をエコーエリアに表示する。"
+msgstr "以下の1つ目の例ではユーザーは文字@kbd{1}(@acronym{ASCII}コード49)をタイプしている。2つ目の例では@code{eval-expression}を使用してミニバッファーから@code{read-char}を呼び出すキーボード定義を示している。@code{read-char}はキーボードマクロの直後の文字@kbd{1}を読み取る。その後に@code{eval-expression}はリターン値をエコーエリアに表示する。"
 
 #. type: group
 #: original_texis/commands.texi:2588
@@ -4685,10 +4665,8 @@ msgstr "read-char-exclusive &optional prompt inherit-input-method seconds"
 
 #. type: defun
 #: original_texis/commands.texi:2609
-#, fuzzy
-#| msgid "This function reads and returns a character of command input.  If the user generates an event which is not a character, @code{read-char-exclusive} ignores it and reads another event, until it gets a character.  The arguments work as in @code{read-event}."
 msgid "This function reads and returns a character input event.  If the user generates an event which is not a character event, @code{read-char-exclusive} ignores it and reads another event, until it gets a character.  The arguments work as in @code{read-event}.  The returned value may include modifier bits, as with @code{read-char}."
-msgstr "この関数はコマンド入力の文字を読み取り、それをリターンする。ユーザーが文字以外のイベントを生成した場合、@code{read-char-exclusive}はそれを無視して文字を取得するまで他のイベントを読み取る。引数は@code{read-event}と同じように機能する。"
+msgstr "この関数は文字入力イベントを読み取ってリターンする。ユーザーが文字イベント以外を生成した場合には、@code{read-char-exclusive}はそれを無視して文字を取得するまで他のイベントを読み取る。引数は@code{read-event}と同じように機能する。リターン値には@code{read-char}のように修飾ビットが含まれるかもしれない。"
 
 #. type: Plain text
 #: original_texis/commands.texi:2612
