@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-03-25 20:47+0900\n"
+"PO-Revision-Date: 2020-06-22 16:36+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1556,104 +1556,96 @@ msgstr "オプション引数@var{update}が非@code{nil}なら、この関数�
 
 #. type: defun
 #: original_texis/modes.texi:1104
-#, fuzzy, no-wrap
-#| msgid "tabulated-list-entries"
+#, no-wrap
 msgid "tabulated-list-delete-entry"
-msgstr "tabulated-list-entries"
+msgstr "tabulated-list-delete-entry"
 
 #. type: defun
 #: original_texis/modes.texi:1106
 msgid "This function deletes the entry at point."
-msgstr ""
+msgstr "この関数はポイント位置のエントリーを削除する。"
 
 #. type: defun
 #: original_texis/modes.texi:1111
 msgid "It returns a list @code{(@var{id} @var{cols})}, where @var{id} is the ID of the deleted entry and @var{cols} is a vector of its column descriptors.  It moves point to the beginning of the current line.  It returns @code{nil} if there is no entry at point."
-msgstr ""
+msgstr "リスト@code{(@var{id} @var{cols})}をリターンする。ここで@var{id}は削除したエントリーのID、@var{cols}は列修飾子(column descriptors)のベクター。カレント行の先頭にポイントを移動する。ポイント位置にエントリーがなければ@code{nil}をリターンする。"
 
 #. type: defun
 #: original_texis/modes.texi:1114
 msgid "Note that this function only changes the buffer contents; it does not alter @code{tabulated-list-entries}."
-msgstr ""
+msgstr "この関数はバッファーのコンテンツだけを変更することに注意。@code{tabulated-list-entries}は変更しない。"
 
 #. type: defun
 #: original_texis/modes.texi:1116
-#, fuzzy, no-wrap
-#| msgid "tabulated-list-print &optional remember-pos"
+#, no-wrap
 msgid "tabulated-list-get-id &optional pos"
-msgstr "tabulated-list-print &optional remember-pos"
+msgstr "tabulated-list-get-id &optional pos"
 
 #. type: defun
 #: original_texis/modes.texi:1121
 msgid "This @code{defsubst} returns the ID object from @code{tabulated-list-entries} (if that is a list) or from the list returned by @code{tabulated-list-entries} (if it is a function).  If omitted or @code{nil}, @var{pos} defaults to point."
-msgstr ""
+msgstr "この@code{defsubst}は@code{tabulated-list-entries}がリストならIDオブジェクト、関数なら@code{tabulated-list-entries}がリターンするリストからIDオブジェクトをリターンする。@var{pos}が省略か@code{nil}の場合のデフォルトはポイント位置。"
 
 #. type: defun
 #: original_texis/modes.texi:1123
-#, fuzzy, no-wrap
-#| msgid "tabulated-list-print &optional remember-pos"
+#, no-wrap
 msgid "tabulated-list-get-entry &optional pos"
-msgstr "tabulated-list-print &optional remember-pos"
+msgstr "tabulated-list-get-entry &optional pos"
 
 #. type: defun
 #: original_texis/modes.texi:1129
 msgid "This @code{defsubst} returns the entry object from @code{tabulated-list-entries} (if that is a list) or from the list returned by @code{tabulated-list-entries} (if it is a function).  This will be a vector for the ID at @var{pos}.  If there is no entry at @var{pos}, then the function returns @code{nil}."
-msgstr ""
+msgstr "この@code{defsubst}は@code{tabulated-list-entries}がリストならエントリーオブジェクト、関数なら@code{tabulated-list-entries}がリターンするリストからエントリーオブジェクトをリターンする。これは@var{pos}にあるIDにたいするベクターになるだろう。@var{pos}にエントリーがなければ、この関数は@code{nil}をリターンする。"
 
 #. type: vindex
 #: original_texis/modes.texi:1131
-#, fuzzy, no-wrap
-#| msgid "tabulated-list-init-header"
+#, no-wrap
 msgid "tabulated-list-use-header-line"
-msgstr "tabulated-list-init-header"
+msgstr "tabulated-list-use-header-line"
 
 #. type: defun
 #: original_texis/modes.texi:1132
-#, fuzzy, no-wrap
-#| msgid "tabulated-list-revert-hook"
+#, no-wrap
 msgid "tabulated-list-header-overlay-p &optional POS"
-msgstr "tabulated-list-revert-hook"
+msgstr "tabulated-list-header-overlay-p &optional POS"
 
 #. type: defun
 #: original_texis/modes.texi:1138
 msgid "This @code{defsubst} returns non-nil if there is a fake header at @var{pos}.  A fake header is used if @code{tabulated-list-use-header-line} is @code{nil} to put the column names at the beginning of the buffer.  If omitted or @code{nil}, @var{pos} defaults to @code{point-min}."
-msgstr ""
+msgstr "この@code{defsubst}は@var{pos}に偽ヘッダーがあれば非@code{nil}をリターンする。偽ヘッダー(fake header)はバッファー先頭に列名を配置するために@code{tabulated-list-use-header-line}が@code{nil}にセットされている場合に使用される。@var{pos}が省略か@code{nil}の場合のデフォルトは@code{point-min}。"
 
 #. type: vindex
 #: original_texis/modes.texi:1140
-#, fuzzy, no-wrap
-#| msgid "tabulated-list-printer"
+#, no-wrap
 msgid "tabulated-list-padding"
-msgstr "tabulated-list-printer"
+msgstr "tabulated-list-padding"
 
 #. type: defun
 #: original_texis/modes.texi:1141
-#, fuzzy, no-wrap
-#| msgid "tabulated-list-print &optional remember-pos"
+#, no-wrap
 msgid "tabulated-list-put-tag tag &optional advance"
-msgstr "tabulated-list-print &optional remember-pos"
+msgstr "tabulated-list-put-tag tag &optional advance"
 
 #. type: defun
 #: original_texis/modes.texi:1148
 msgid "This function puts @var{tag} in the padding area of the current line.  The padding area can be empty space at the beginning of the line, the width of which is governed by @code{tabulated-list-padding}.  @var{tag} should be a string, with a length less than or equal to @code{tabulated-list-padding}.  If @var{advance} is non-nil, this function advances point by one line."
-msgstr ""
+msgstr "この関数はレント行のパディングエリアに@var{tag}を配置する。パディングエリアはその行の先頭にある空スペースであり、幅は@code{tabulated-list-padding}により制御される。@var{tag}は長さが@code{tabulated-list-padding}以下の文字列であること。@var{advance}が非@code{nil}なら、この関数は1行分ポイントを前方に移動する。"
 
 #. type: defun
 #: original_texis/modes.texi:1150
-#, fuzzy, no-wrap
-#| msgid "tabulated-list-print &optional remember-pos"
+#, no-wrap
 msgid "tabulated-list-set-col col desc &optional change-entry-data"
-msgstr "tabulated-list-print &optional remember-pos"
+msgstr "tabulated-list-set-col col desc &optional change-entry-data"
 
 #. type: defun
 #: original_texis/modes.texi:1155
 msgid "This function changes the tabulated list entry at point, setting @var{col} to @var{desc}.  @var{col} is the column number to change, or the name of the column to change.  @var{desc} is the new column descriptor, which is inserted via @code{tabulated-list-print-col}."
-msgstr ""
+msgstr "この関数は@var{col}を@var{desc}にセットしてポイント位置にあるTabulated Listのエントリーを変更する。@var{col}は変更する列番号か列名、@var{desc}は新たな列記述子であり、@code{tabulated-list-print-col}を通じて挿入される。"
 
 #. type: defun
 #: original_texis/modes.texi:1160
 msgid "If @var{change-entry-data} is non-nil, this function modifies the underlying data (usually the column descriptor in the list @code{tabulated-list-entries}) by setting the column descriptor of the vector to @code{desc}."
-msgstr ""
+msgstr "@var{change-entry-data}が非@code{nil}なら、この関数は列記述子のベクターを@code{desc}にセットすることにより、背後のデータ(通常はリスト@code{tabulated-list-entries}内の列記述子)を変更する。"
 
 #. type: cindex
 #: original_texis/modes.texi:1165
@@ -1710,17 +1702,7 @@ msgstr "おそらくTextモードは、Fundamentalを除いてもっともシン
 
 #. type: group
 #: original_texis/modes.texi:1223
-#, fuzzy, no-wrap
-#| msgid ""
-#| ";; @r{Create the syntax table for this mode.}\n"
-#| "(defvar text-mode-syntax-table\n"
-#| "  (let ((st (make-syntax-table)))\n"
-#| "    (modify-syntax-entry ?\\\" \".   \" st)\n"
-#| "    (modify-syntax-entry ?\\\\ \".   \" st)\n"
-#| "    ;; Add `p' so M-c on `hello' leads to `Hello', not `hello'.\n"
-#| "    (modify-syntax-entry ?' \"w p\" st)\n"
-#| "    st)\n"
-#| "  \"Syntax table used while in `text-mode'.\")\n"
+#, no-wrap
 msgid ""
 ";; @r{Create the syntax table for this mode.}\n"
 "(defvar text-mode-syntax-table\n"
@@ -1733,15 +1715,16 @@ msgid ""
 "    st)\n"
 "  \"Syntax table used while in `text-mode'.\")\n"
 msgstr ""
-";; @r{このモード用に構文テーブルを作成}\n"
+";; @r{Create the syntax table for this mode.}\n"
 "(defvar text-mode-syntax-table\n"
 "  (let ((st (make-syntax-table)))\n"
 "    (modify-syntax-entry ?\\\" \".   \" st)\n"
 "    (modify-syntax-entry ?\\\\ \".   \" st)\n"
-"    ;; M-cで`hello'が`hello'でなく`Hello'になるよう`p'を追加\n"
+"    ;; Add 'p' so M-c on 'hello' leads to 'Hello', not 'hello'.\n"
 "    (modify-syntax-entry ?' \"w p\" st)\n"
+"    @dots{}\n"
 "    st)\n"
-"  \"`text-mode'で使用される構文テーブル\")\n"
+"  \"Syntax table used while in `text-mode'.\")\n"
 
 #. type: smallexample
 #: original_texis/modes.texi:1226
@@ -1751,15 +1734,7 @@ msgstr ";; @r{このモード用にキーマップを作成}\n"
 
 #. type: group
 #: original_texis/modes.texi:1235
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defvar text-mode-map\n"
-#| "  (let ((map (make-sparse-keymap)))\n"
-#| "    (define-key map \"\\e\\t\" 'ispell-complete-word)\n"
-#| "    map)\n"
-#| "  \"Keymap for `text-mode'.\n"
-#| "Many other modes, such as `mail-mode', `outline-mode' and\n"
-#| "`indented-text-mode', inherit all the commands defined in this map.\")\n"
+#, no-wrap
 msgid ""
 "(defvar text-mode-map\n"
 "  (let ((map (make-sparse-keymap)))\n"
@@ -1773,10 +1748,11 @@ msgstr ""
 "(defvar text-mode-map\n"
 "  (let ((map (make-sparse-keymap)))\n"
 "    (define-key map \"\\e\\t\" 'ispell-complete-word)\n"
+"    @dots{}\n"
 "    map)\n"
-"  \"`text-mode'のキーマップ\n"
-"`mail-mode'、`outline-mode'、`indented-text-mode'のような\n"
-"他の多くのモードはこのマップ内で定義した全コマンドを継承する\")\n"
+"  \"Keymap for `text-mode'.\n"
+"Many other modes, such as `mail-mode', `outline-mode' and\n"
+"`indented-text-mode', inherit all the commands defined in this map.\")\n"
 
 #. type: Plain text
 #: original_texis/modes.texi:1239
@@ -1846,12 +1822,7 @@ msgstr "syntax table example"
 
 #. type: group
 #: original_texis/modes.texi:1276
-#, fuzzy, no-wrap
-#| msgid ""
-#| ";; @r{Create mode-specific table variables.}\n"
-#| "(defvar lisp-mode-abbrev-table nil)\n"
-#| "(define-abbrev-table 'lisp-mode-abbrev-table ())\n"
-#| "\n"
+#, no-wrap
 msgid ""
 ";; @r{Create mode-specific table variables.}\n"
 "(define-abbrev-table 'lisp-mode-abbrev-table ()\n"
@@ -1859,22 +1830,13 @@ msgid ""
 "\n"
 msgstr ""
 ";; @r{モード固有のテーブル変数の作成}\n"
-"(defvar lisp-mode-abbrev-table nil)\n"
-"(define-abbrev-table 'lisp-mode-abbrev-table ())\n"
+"(define-abbrev-table 'lisp-mode-abbrev-table ()\n"
+"  \"Abbrev table for Lisp mode.\")\n"
 "\n"
 
 #. type: group
 #: original_texis/modes.texi:1285
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defvar lisp-mode-syntax-table\n"
-#| "  (let ((table (copy-syntax-table emacs-lisp-mode-syntax-table)))\n"
-#| "    (modify-syntax-entry ?\\[ \"_   \" table)\n"
-#| "    (modify-syntax-entry ?\\] \"_   \" table)\n"
-#| "    (modify-syntax-entry ?# \"' 14\" table)\n"
-#| "    (modify-syntax-entry ?| \"\\\" 23bn\" table)\n"
-#| "    table)\n"
-#| "  \"Syntax table used in `lisp-mode'.\")\n"
+#, no-wrap
 msgid ""
 "(defvar lisp-mode-syntax-table\n"
 "  (let ((table (make-syntax-table lisp--mode-syntax-table)))\n"
@@ -1886,7 +1848,7 @@ msgid ""
 "  \"Syntax table used in `lisp-mode'.\")\n"
 msgstr ""
 "(defvar lisp-mode-syntax-table\n"
-"  (let ((table (copy-syntax-table emacs-lisp-mode-syntax-table)))\n"
+"  (let ((table (make-syntax-table lisp--mode-syntax-table)))\n"
 "    (modify-syntax-entry ?\\[ \"_   \" table)\n"
 "    (modify-syntax-entry ?\\] \"_   \" table)\n"
 "    (modify-syntax-entry ?# \"' 14\" table)\n"
@@ -1901,23 +1863,16 @@ msgstr "Lisp用の3つのモードは多くのコードを共有します。た�
 
 #. type: group
 #: original_texis/modes.texi:1297
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defun lisp-mode-variables (&optional syntax keywords-case-insensitive)\n"
-#| "  (when syntax\n"
-#| "    (set-syntax-table lisp-mode-syntax-table))\n"
-#| "  (setq local-abbrev-table lisp-mode-abbrev-table)\n"
-#| "  @dots{}\n"
+#, no-wrap
 msgid ""
 "(defun lisp-mode-variables (&optional syntax keywords-case-insensitive elisp)\n"
 "  (when syntax\n"
 "    (set-syntax-table lisp-mode-syntax-table))\n"
 "  @dots{}\n"
 msgstr ""
-"(defun lisp-mode-variables (&optional syntax keywords-case-insensitive)\n"
+"(defun lisp-mode-variables (&optional syntax keywords-case-insensitive elisp)\n"
 "  (when syntax\n"
 "    (set-syntax-table lisp-mode-syntax-table))\n"
-"  (setq local-abbrev-table lisp-mode-abbrev-table)\n"
 "  @dots{}\n"
 
 #. type: Plain text
@@ -1927,17 +1882,12 @@ msgstr "その中でも特に以下の関数はLispコメントを処理する�
 
 #. type: group
 #: original_texis/modes.texi:1308
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  (make-local-variable 'comment-start)\n"
-#| "  (setq comment-start \";\")\n"
-#| "  @dots{}\n"
+#, no-wrap
 msgid ""
 "  (setq-local comment-start \";\")\n"
 "  @dots{}\n"
 msgstr ""
-"  (make-local-variable 'comment-start)\n"
-"  (setq comment-start \";\")\n"
+"  (setq-local comment-start \";\")\n"
 "  @dots{}\n"
 
 #. type: Plain text
@@ -1947,14 +1897,7 @@ msgstr "これらの異なるLisp用モードは、微妙に異なるキーマ�
 
 #. type: group
 #: original_texis/modes.texi:1325
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defvar lisp-mode-shared-map\n"
-#| "  (let ((map (make-sparse-keymap)))\n"
-#| "    (define-key map \"\\e\\C-q\" 'indent-sexp)\n"
-#| "    (define-key map \"\\177\" 'backward-delete-char-untabify)\n"
-#| "    map)\n"
-#| "  \"Keymap for commands shared by all sorts of Lisp modes.\")\n"
+#, no-wrap
 msgid ""
 "(defvar lisp-mode-shared-map\n"
 "  (let ((map (make-sparse-keymap)))\n"
@@ -1966,6 +1909,7 @@ msgid ""
 msgstr ""
 "(defvar lisp-mode-shared-map\n"
 "  (let ((map (make-sparse-keymap)))\n"
+"    (set-keymap-parent map prog-mode-map)\n"
 "    (define-key map \"\\e\\C-q\" 'indent-sexp)\n"
 "    (define-key map \"\\177\" 'backward-delete-char-untabify)\n"
 "    map)\n"
@@ -1978,18 +1922,7 @@ msgstr "そして以下がLispモードのためのキーマップをセット�
 
 #. type: group
 #: original_texis/modes.texi:1343
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defvar lisp-mode-map\n"
-#| "  (let ((map (make-sparse-keymap))\n"
-#| "\t(menu-map (make-sparse-keymap \"Lisp\")))\n"
-#| "    (set-keymap-parent map lisp-mode-shared-map)\n"
-#| "    (define-key map \"\\e\\C-x\" 'lisp-eval-defun)\n"
-#| "    (define-key map \"\\C-c\\C-z\" 'run-lisp)\n"
-#| "    @dots{}\n"
-#| "    map)\n"
-#| "  \"Keymap for ordinary Lisp mode.\n"
-#| "All commands in `lisp-mode-shared-map' are inherited by this map.\")\n"
+#, no-wrap
 msgid ""
 "(defvar lisp-mode-map\n"
 "  (let ((map (make-sparse-keymap))\n"
@@ -2004,7 +1937,7 @@ msgid ""
 msgstr ""
 "(defvar lisp-mode-map\n"
 "  (let ((map (make-sparse-keymap))\n"
-"\t(menu-map (make-sparse-keymap \"Lisp\")))\n"
+"        (menu-map (make-sparse-keymap \"Lisp\")))\n"
 "    (set-keymap-parent map lisp-mode-shared-map)\n"
 "    (define-key map \"\\e\\C-x\" 'lisp-eval-defun)\n"
 "    (define-key map \"\\C-c\\C-z\" 'run-lisp)\n"
@@ -2038,11 +1971,7 @@ msgstr ""
 
 #. type: group
 #: original_texis/modes.texi:1360
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\\\@{lisp-mode-map@}\n"
-#| "Note that `run-lisp' may be used either to start an inferior Lisp job\n"
-#| "or to switch back to an existing one.\n"
+#, no-wrap
 msgid ""
 "\\\\@{lisp-mode-map@}\n"
 "Note that `run-lisp' may be used either to start an inferior Lisp job\n"
@@ -2050,20 +1979,11 @@ msgid ""
 msgstr ""
 "\\\\@{lisp-mode-map@}\n"
 "`run-lisp'はinferior Lispジョブの開始と既存ジョブ\n"
-"から戻るための両方に使われるかもしれないことに注意\n"
+"から戻るための両方に使われるかもしれないことに注意\"\n"
 
 #. type: group
 #: original_texis/modes.texi:1367
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Entry to this mode calls the value of `lisp-mode-hook'\n"
-#| "if that value is non-nil.\"\n"
-#| "  (lisp-mode-variables nil t)\n"
-#| "  (set (make-local-variable 'find-tag-default-function)\n"
-#| "       'lisp-find-tag-default)\n"
-#| "  (set (make-local-variable 'comment-start-skip)\n"
-#| "       \"\\\\(\\\\(^\\\\|[^\\\\\\\\\\n]\\\\)\\\\(\\\\\\\\\\\\\\\\\\\\)*\\\\)\\\\(;+\\\\|#|\\\\) *\")\n"
-#| "  (setq imenu-case-fold-search t))\n"
+#, no-wrap
 msgid ""
 "  (lisp-mode-variables nil t)\n"
 "  (setq-local find-tag-default-function 'lisp-find-tag-default)\n"
@@ -2071,13 +1991,10 @@ msgid ""
 "              \"\\\\(\\\\(^\\\\|[^\\\\\\\\\\n]\\\\)\\\\(\\\\\\\\\\\\\\\\\\\\)*\\\\)\\\\(;+\\\\|#|\\\\) *\")\n"
 "  (setq imenu-case-fold-search t))\n"
 msgstr ""
-"このモードへのエントリーにより、\n"
-"`lisp-mode-hook'の値が非nilならそれを呼び出す\"\n"
 "  (lisp-mode-variables nil t)\n"
-"  (set (make-local-variable 'find-tag-default-function)\n"
-"       'lisp-find-tag-default)\n"
-"  (set (make-local-variable 'comment-start-skip)\n"
-"       \"\\\\(\\\\(^\\\\|[^\\\\\\\\\\n]\\\\)\\\\(\\\\\\\\\\\\\\\\\\\\)*\\\\)\\\\(;+\\\\|#|\\\\) *\")\n"
+"  (setq-local find-tag-default-function 'lisp-find-tag-default)\n"
+"  (setq-local comment-start-skip\n"
+"              \"\\\\(\\\\(^\\\\|[^\\\\\\\\\\n]\\\\)\\\\(\\\\\\\\\\\\\\\\\\\\)*\\\\)\\\\(;+\\\\|#|\\\\) *\")\n"
 "  (setq imenu-case-fold-search t))\n"
 
 #. type: cindex
@@ -2167,10 +2084,8 @@ msgstr "conventions for writing minor modes"
 
 #. type: Plain text
 #: original_texis/modes.texi:1408
-#, fuzzy
-#| msgid "There are conventions for writing minor modes just as there are for major modes.  These conventions are described below.  The easiest way to follow them is to use the macro @code{define-minor-mode}.  @xref{Defining Minor Modes}."
 msgid "There are conventions for writing minor modes just as there are for major modes (@pxref{Major Modes}).  These conventions are described below.  The easiest way to follow them is to use the macro @code{define-minor-mode}.  @xref{Defining Minor Modes}."
-msgstr "メジャーモードにあるように、マイナーモードの記述にも慣習があります。以下で、その慣習について説明します。これらの慣習にしたがうには、マクロ@code{define-minor-mode}を使用するのがもっとも簡単な方法です。@ref{Defining Minor Modes}を参照してください。"
+msgstr "メジャーモードにも監修があるように(@ref{Major Modes}を参照)、マイナーモードの記述にも慣習があります。その慣習について以下で説明します。これらの慣習にしたがうにはマクロ@code{define-minor-mode}を使用するのがもっとも簡単な方法です。@ref{Defining Minor Modes}を参照してください。"
 
 #. type: cindex
 #: original_texis/modes.texi:1411
@@ -2306,10 +2221,8 @@ msgstr "(add-to-list 'minor-mode-alist '(leif-mode \" Leif\"))\n"
 
 #. type: Plain text
 #: original_texis/modes.texi:1520
-#, fuzzy
-#| msgid "In addition, several major mode conventions apply to minor modes as well: those regarding the names of global symbols, the use of a hook at the end of the initialization function, and the use of keymaps and other tables."
 msgid "In addition, several major mode conventions (@pxref{Major Mode Conventions}) apply to minor modes as well: those regarding the names of global symbols, the use of a hook at the end of the initialization function, and the use of keymaps and other tables."
-msgstr "これらに加えて、メジャーモードにたいする慣習のいくつかは、マイナーモードにたいしても同様に適用されます。それらの慣習はグローバルシンボルの名前、初期化関数の最後でのフックの使用、キーマップおよびその他のテーブルの使用です。"
+msgstr "これらに加えてメジャーモードにたいする慣習(@ref{Major Mode Conventions}を参照)のいくつかは、マイナーモードにたいしても同様に適用されます。それらの慣習はグローバルシンボルの名前、初期化関数の最後でのフックの使用、キーマップおよびその他のテーブルの使用です。"
 
 #. type: Plain text
 #: original_texis/modes.texi:1531
@@ -2763,7 +2676,7 @@ msgstr "Mode Line Basics"
 #. type: Plain text
 #: original_texis/modes.texi:1810
 msgid "The contents of each mode line are specified by the buffer-local variable @code{mode-line-format} (@pxref{Mode Line Top}).  This variable holds a @dfn{mode line construct}: a template that controls what is displayed on the buffer's mode line.  The value of @code{header-line-format} specifies the buffer's header line in the same way.  All windows for the same buffer use the same @code{mode-line-format} and @code{header-line-format} unless a @code{mode-line-format} or @code{header-line-format} parameter has been specified for that window (@pxref{Window Parameters})."
-msgstr "各モードラインのコンテンツはバッファーローカル変数@code{mode-line-format}により指定されます(@ref{Mode Line Top}を参照)。この変数は@dfn{モードライン構成(mode line construct)}を保持します。これはバッファーのモードラインに何を表示するかを制御するテンプレートです。@code{header-line-format}の値は同じ方法によりバッファーのヘッダーラインを指定します。同一のバッファーにたいするすべてのウィンドウは、@code{mode-line-format}や@code{header-line-format}のパラメーター(@ref{Window Parameters}を参照)がそのウィンドウに指定されていなければ、同じ@code{mode-line-format}と@code{header-line-format}を使用します。"
+msgstr "各モードラインのコンテンツはバッファーローカル変数@code{mode-line-format}により指定されます(@ref{Mode Line Top}を参照)。この変数は@dfn{モードライン構文(mode line construct)}を保持します。これはバッファーのモードラインに何を表示するかを制御するテンプレートです。@code{header-line-format}の値は同じ方法によりバッファーのヘッダーラインを指定します。同一のバッファーにたいするすべてのウィンドウは、@code{mode-line-format}や@code{header-line-format}のパラメーター(@ref{Window Parameters}を参照)がそのウィンドウに指定されていなければ、同じ@code{mode-line-format}と@code{header-line-format}を使用します。"
 
 #. type: Plain text
 #: original_texis/modes.texi:1820
@@ -2860,7 +2773,7 @@ msgstr "モードライン構文におけるシンボルはその値を意味す
 #. type: table
 #: original_texis/modes.texi:1875
 msgid "There is one exception: if the value of @var{symbol} is a string, it is displayed verbatim: the @code{%}-constructs are not recognized."
-msgstr "例外が1つある。@var{symbol}の値が文字列なら、それはそのまま表示されて@code{%}構成は認識されない。"
+msgstr "例外が1つある。@var{symbol}の値が文字列なら、それはそのまま表示されて@code{%}構文は認識されない。"
 
 #. type: table
 #: original_texis/modes.texi:1883
@@ -2903,10 +2816,8 @@ msgstr "(:propertize @var{elt} @var{props}@dots{})"
 
 #. type: table
 #: original_texis/modes.texi:1905
-#, fuzzy
-#| msgid "A list whose first element is the symbol @code{:propertize} says to process the mode line construct @var{elt} recursively, then add the text properties specified by @var{props} to the result.  The argument @var{props} should consist of zero or more pairs @var{text-property} @var{value}."
 msgid "A list whose first element is the symbol @code{:propertize} says to process the mode line construct @var{elt} recursively, then add the text properties specified by @var{props} to the result.  The argument @var{props} should consist of zero or more pairs @var{text-property} @var{value}.  If @var{elt} is or produces a string with text properties, all the characters of that string should have the same properties, or else some of them might be removed by @code{:propertize}."
-msgstr "最初の要素がシンボル@code{:propertize}であるようなリストは、モードライン構成@var{elt}を再帰的に処理して、@var{props}により指定されるテキストプロパティに結果を加えるよう指示する。引数@var{props}は、0個以上の@var{text-property}と@var{value}のペアーで構成されるべきである。"
+msgstr "最初の要素がシンボル@code{:propertize}であるようなリストはモードライン構文@var{elt}を再帰的に処理して、@var{props}により指定されるテキストプロパティに結果を加えるよう指示する。引数@var{props}は0個以上の@var{text-property}と@var{value}のペアーで構成されること。@var{elt}がテキストプロパティをもつ文字列、またはテキストプロパティをもつ文字列を生成する場合には、その文字列内のすべての文字は同一のプロパティをもつこと。さもなければ@code{:propertize}によっていくつかのプロパティは削除されるかもしれない。"
 
 #. type: item
 #: original_texis/modes.texi:1906
@@ -4177,7 +4088,7 @@ msgstr "Multiline Font Lock"
 #. type: menuentry
 #: original_texis/modes.texi:2640
 msgid "How to coerce Font Lock into properly highlighting multiline constructs."
-msgstr "Font Lockに複数行構成の正しいハイライトを強制する方法。"
+msgstr "Font Lockに複数行構文の正しいハイライトを強制する方法。"
 
 #. type: Plain text
 #: original_texis/modes.texi:2655
@@ -5522,7 +5433,7 @@ msgstr "このコマンドは@code{down-list}と似ているが、@code{begin...
 #. type: Plain text
 #: original_texis/modes.texi:3639
 msgid "SMIE's precedence grammars simply give to each token a pair of precedences: the left-precedence and the right-precedence.  We say @code{T1 < T2} if the right-precedence of token @code{T1} is less than the left-precedence of token @code{T2}.  A good way to read this @code{<} is as a kind of parenthesis: if we find @code{... T1 something T2 ...} then that should be parsed as @code{... T1 (something T2 ...} rather than as @code{... T1 something) T2 ...}.  The latter interpretation would be the case if we had @code{T1 > T2}.  If we have @code{T1 = T2}, it means that token T2 follows token T1 in the same syntactic construction, so typically we have @code{\"begin\" = \"end\"}.  Such pairs of precedences are sufficient to express left-associativity or right-associativity of infix operators, nesting of tokens like parentheses and many other cases."
-msgstr "SMIEの演算子順位文法は、各トークンにたいしてシンプルに左優先(left-precedence)と右優先(right-precedence)という順位ペアを与えます。トークン@code{T1}の右優先がトークン@code{T2}の左優先より小さければ@code{T1 < T2}であると言うことにしましょう。これを解読するには@code{<}をカッコの一種だとみなすのがよい方法です。@code{... T1 something T2 ...}を見つけたら、これは@code{... T1 something) T2 ...}ではなく@code{... T1 (something T2 ...}とパースされるべきです。@code{... T1 something) T2 ...}と解釈するのは@code{T1 > T2}を見つけた場合でしょう。@code{T1 = T2}を見つけた場合、それはトークンT2とその後のトークンT1が同じ構文構成にあり、通常は@code{\"begin\" = \"end\"}を得ます。このような優先順位のペアは2項演算子(infix operator)、カッコのようなネストされたトークン、およびその他多くのケースにたいして左結合(left-associativity)や右結合(right-associativity)を表現するのに十分です。"
+msgstr "SMIEの演算子順位文法は、各トークンにたいしてシンプルに左優先(left-precedence)と右優先(right-precedence)という順位ペアを与えます。トークン@code{T1}の右優先がトークン@code{T2}の左優先より小さければ@code{T1 < T2}であると言うことにしましょう。これを解読するには@code{<}をカッコの一種だとみなすのがよい方法です。@code{... T1 something T2 ...}を見つけたら、これは@code{... T1 something) T2 ...}ではなく@code{... T1 (something T2 ...}とパースされるべきです。@code{... T1 something) T2 ...}と解釈するのは@code{T1 > T2}を見つけた場合でしょう。@code{T1 = T2}を見つけた場合、それはトークンT2とその後のトークンT1が同じ構文にあり、通常は@code{\"begin\" = \"end\"}を得ます。このような優先順位のペアは2項演算子(infix operator)、カッコのようなネストされたトークン、およびその他多くのケースにたいして左結合(left-associativity)や右結合(right-associativity)を表現するのに十分です。"
 
 #. type: defun
 #: original_texis/modes.texi:3647
