@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-04-20 20:10+0900\n"
+"PO-Revision-Date: 2020-06-23 21:03+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -947,19 +947,18 @@ msgstr "この関数は@var{buffer}の文字変更に関わる変更カウント
 #. type: Plain text
 #: original_texis/buffers.texi:595
 msgid "Sometimes there's a need for modifying buffer in a way that doesn't really change its text, like if only its text properties are changed.  If your program needs to modify a buffer without triggering any hooks and features that react to buffer modifications, use the @code{with-silent-modifications} macro."
-msgstr ""
+msgstr "テキストプロパティの変更の等、バッファーのテキストを実際には変更しない方法でバッファーを変更することを要する場合があります。プログラムがフックやバッファー変更にたいするリアクションを何もトリガーせずにバッファーを変更する必要がある場合には、@code{with-silent-modifications}マクロを使用します。"
 
 #. type: defmac
 #: original_texis/buffers.texi:596
-#, fuzzy, no-wrap
-#| msgid "with-temp-buffer body@dots{}"
+#, no-wrap
 msgid "with-silent-modifications body@dots{}"
-msgstr "with-temp-buffer body@dots{}"
+msgstr "with-silent-modifications body@dots{}"
 
 #. type: defmac
 #: original_texis/buffers.texi:602
 msgid "Execute @var{body} pretending it does not modify the buffer.  This includes checking whether the buffer's file is locked (@pxref{File Locks}), running buffer modification hooks (@pxref{Change Hooks}), etc.  Note that if @var{body} actually modifies the buffer text, its undo data may become corrupted."
-msgstr ""
+msgstr "バッファーを変更しないように装って@var{body}を実行する。これにはバッファーのファイルがロックされているかどうかのチェック(@ref{File Locks}を参照)、バッファーの変更フック(@ref{Change Hooks}を参照)等が含まれる。@var{body}が持実際にバッファーテキストを変更する場合にはアンドゥするデータが破損するかもしれないことに注意。"
 
 #. type: section
 #: original_texis/buffers.texi:605
@@ -1039,10 +1038,8 @@ msgstr "バッファーが最終変更時刻の記録をもたなければこの
 
 #. type: defun
 #: original_texis/buffers.texi:666
-#, fuzzy
-#| msgid "If the buffer is not visiting a file, this function returns -1."
 msgid "If the buffer is visiting a file that doesn't exist, this function returns @minus{}1."
-msgstr "バッファーがファイルをvisitしていない場合、この関数は-1をリターンする。"
+msgstr "バッファーが存在しないファイルをvisitしている場合には、この関数は@minus{}1をリターンする。"
 
 #. type: defun
 #: original_texis/buffers.texi:668
@@ -1415,7 +1412,7 @@ msgstr "これはバッファーリストが変更されたときに常に実行
 #. type: defvar
 #: original_texis/buffers.texi:947
 msgid "Functions run by this hook should avoid calling @code{select-window} with a nil @var{norecord} argument or @code{with-temp-buffer} since either may lead to infinite recursion."
-msgstr ""
+msgstr "このフックにが実行する関数は無限再帰を引き起こすので、@code{nil}の@var{norecord}引数による@code{select-window}の呼び出しや@code{with-temp-buffer}の呼び出しを無効にする。"
 
 #. type: cindex
 #: original_texis/buffers.texi:951
@@ -1775,10 +1772,8 @@ msgstr "この関数はカレントバッファーのベースバッファーを
 
 #. type: deffn
 #: original_texis/buffers.texi:1193
-#, fuzzy
-#| msgid "If @var{display-flag} is non-@code{nil}, that means to display the new buffer by calling @code{pop-to-buffer}.  If @var{norecord} is non-@code{nil}, that means not to put the new buffer to the front of the buffer list."
 msgid "If @var{display-flag} is non-@code{nil}, as it always is in interactive calls, that means to display the new buffer by calling @code{pop-to-buffer}.  If @var{norecord} is non-@code{nil}, that means not to put the new buffer to the front of the buffer list."
-msgstr "@var{display-flag}が非@code{nil}の場合、それは@code{pop-to-buffer}を呼び出すことにより新しいバッファーを表示することを意味する。@var{norecord}が非@code{nil}の場合、それは新しいバッファーをバッファーリストの先頭に置かないことを意味する。"
+msgstr "@var{display-flag}が非@code{nil} (インタラクティブな呼び出しでは常に非@code{nil})なら、それは@code{pop-to-buffer}を呼び出すことにより新しいバッファーを表示することを意味する。@var{norecord}が非@code{nil}なら、それは新しいバッファーをバッファーリストの先頭に置かないことを意味する。"
 
 #. type: defun
 #: original_texis/buffers.texi:1195
