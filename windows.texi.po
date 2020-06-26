@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-05-03 03:10+0900\n"
+"PO-Revision-Date: 2020-06-26 22:18+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -169,17 +169,14 @@ msgstr "バッファー切り替えのためのより高レベルな関数。"
 
 #. type: node
 #: original_texis/windows.texi:49 original_texis/windows.texi:2335
-#, fuzzy, no-wrap
-#| msgid "displaying a buffer"
+#, no-wrap
 msgid "Displaying Buffers"
-msgstr "displaying a buffer"
+msgstr "Displaying Buffers"
 
 #. type: menuentry
 #: original_texis/windows.texi:49
-#, fuzzy
-#| msgid "How to avoid displaying another buffer in a specific window."
 msgid "Displaying a buffer in a suitable window."
-msgstr "特定のウィンドウ内で他のバッファーの表示を無効にする。"
+msgstr "適切なウィンドウでのバッファーの表示。"
 
 #. type: section
 #: original_texis/windows.texi:49 original_texis/windows.texi:3713
@@ -601,10 +598,8 @@ msgstr "同一フレーム内のウィンドウは、リーフノード(leaf nod
 
 #. type: Plain text
 #: original_texis/windows.texi:208
-#, fuzzy
-#| msgid "A minibuffer window (@pxref{Minibuffer Windows}) is not part of its frame's window tree unless the frame is a minibuffer-only frame.  Nonetheless, most of the functions in this section accept the minibuffer window as an argument.  Also, the function @code{window-tree} described at the end of this section lists the minibuffer window alongside the actual window tree."
 msgid "A minibuffer window (@pxref{Minibuffer Windows}) that is not alone on its frame does not have a parent window, so it strictly speaking is not part of its frame's window tree.  Nonetheless, it is a sibling window of the frame's root window, and thus can be reached via @code{window-next-sibling}.  Also, the function @code{window-tree} described at the end of this section lists the minibuffer window alongside the actual window tree."
-msgstr "ミニバッファーウィンドウ(@ref{Minibuffer Windows}を参照)は、そのフレームがミニバッファーだけのフレームでない限り、そのフレームのウィンドウツリーの一部にはなりません。にもかかわらず、このセクションのほとんどの関数は、引数としてミニバッファーウィンドウを受け付けます。さらにこのセクションの最後に説明する関数@code{window-tree}は、実際のウィンドウツリーと並列してミニバッファーウィンドウをリストします。"
+msgstr "フレーム内で唯一ではないミニバッファーウィンドウ(@ref{Minibuffer Windows}を参照)は親ウィンドウをもたないので、厳密に言えばフレームのウィンドウツリーの一部ではありません。それでもフレームのルートウィンドウの兄弟ウィンドウなので、@code{window-next-sibling}を通じて到達することができます。さらにこのセクションの最後に説明する関数@code{window-tree}は実際のウィンドウツリーと共にミニバッファーウィンドウをリスとします。"
 
 #. type: defun
 #: original_texis/windows.texi:209
@@ -2484,10 +2479,8 @@ msgstr "window-size"
 
 #. type: table
 #: original_texis/windows.texi:1549
-#, fuzzy
-#| msgid "In this case @code{display-buffer} makes a new parent window if it is passed a @code{window-height} or @code{window-width} entry in the @var{alist} argument (@pxref{Display Action Functions})."
 msgid "This means that @code{display-buffer} makes a new parent window when it splits a window and is passed a @code{window-height} or @code{window-width} entry in the @var{alist} argument (@pxref{Buffer Display Action Functions}).  Otherwise, window splitting behaves as for a value of @code{nil}."
-msgstr "この場合、@code{display-buffer}は@var{alist}引数内のエントリー@code{window-height}または@code{window-width}に親ウィンドウが渡されるなら、新たに親ウィンドウを作成する(@ref{Display Action Functions}を参照)。"
+msgstr "これは@code{display-buffer}がウィンドウを分割する際に新たな親ウィンドウを作成して@var{alist}引数の@code{window-height}エントリーや@code{window-width}エントリーに渡すことを意味する(@ref{Buffer Display Action Functions}を参照)。それ以外の場合にはウィンドウの分割は値が@code{nil}のときのように振る舞う。"
 
 #. type: item
 #: original_texis/windows.texi:1550
@@ -2963,10 +2956,8 @@ msgstr "window ordering, cyclic"
 
 #. type: Plain text
 #: original_texis/windows.texi:1885
-#, fuzzy
-#| msgid "When you use the command @kbd{C-x o} (@code{other-window}) to select some other window, it moves through live windows in a specific order.  For any given configuration of windows, this order never varies.  It is called the @dfn{cyclic ordering of windows}."
 msgid "When you use the command @w{@kbd{C-x o}} (@code{other-window}) to select some other window, it moves through live windows in a specific order.  For any given configuration of windows, this order never varies.  It is called the @dfn{cyclic ordering of windows}."
-msgstr "他のウィンドウを選択するためにコマンド@kbd{C-x o}(@code{other-window})を使う際には、特定の順番で生きたウィンドウを巡回します。与えられた任意のウィンドウ構成にたいして、この順序は決して変更されません。これは、@dfn{ウィンドウのサイクル順序(cyclic ordering of windows)}と呼ばれます。"
+msgstr "他のウィンドウを選択するためにコマンド@w{@kbd{C-x o}} (@code{other-window})を使う際には、生きたウィンドウを特定の順番で巡回します。与えられた任意のウィンドウ構成にたいして、この順序は決して変更されません。これは@dfn{ウィンドウのサイクル順序(cyclic ordering of windows)}と呼ばれます。"
 
 #. type: Plain text
 #: original_texis/windows.texi:1891
@@ -2992,10 +2983,8 @@ msgstr "この関数はウィンドウのサイクル順で@var{window}の次の
 
 #. type: defun
 #: original_texis/windows.texi:1904
-#, fuzzy
-#| msgid "The optional argument @var{minibuf} specifies whether minibuffer windows should be included in the cyclic ordering.  Normally, when @var{minibuf} is @code{nil}, a minibuffer window is included only if it is currently ``active''; this matches the behavior of @kbd{C-x o}.  (Note that a minibuffer window is active as long as its minibuffer is in use; see @ref{Minibuffers})."
 msgid "The optional argument @var{minibuf} specifies whether minibuffer windows should be included in the cyclic ordering.  Normally, when @var{minibuf} is @code{nil}, a minibuffer window is included only if it is currently active; this matches the behavior of @w{@kbd{C-x o}}.  (Note that a minibuffer window is active as long as its minibuffer is in use; see @ref{Minibuffers})."
-msgstr "オプション引数@var{minibuf}は、サイクル順にミニバッファーウィンドウを含めるべきかどうかを指定する。通常は、@var{minibuf}が@code{nil}のときは、ミニバッファーウィンドウがカレントで``アクティブ''な場合のみミニバッファーウィンドウが含まれる。これは、@kbd{C-x o}の振る舞うと合致する(ミニバッファーが使用されている限りミニバッファーウィンドウはアクティブであることに注意。@ref{Minibuffers}を参照のこと)。"
+msgstr "オプション引数@var{minibuf}はサイクル順にミニバッファーウィンドウを含めるべきかどうかを指定する。通常は@var{minibuf}が@code{nil}のときは、ミニバッファーウィンドウがカレントでアクティブな場合のみミニバッファーウィンドウが含まれる。これは@w{@kbd{C-x o}}の振る舞いと合致する(ミニバッファーが使用されている限りミニバッファーウィンドウはアクティブであることに注意。@ref{Minibuffers}を参照のこと)。"
 
 #. type: defun
 #: original_texis/windows.texi:1908
@@ -3077,15 +3066,13 @@ msgstr "オプション引数@var{all-frames}は、@code{nil}の@var{minibuf}引
 
 #. type: deffn
 #: original_texis/windows.texi:1961
-#, fuzzy
-#| msgid "This function does not select a window that has a non-@code{nil} @code{no-other-window} window parameter (@pxref{Window Parameters})."
 msgid "This function does not select a window that has a non-@code{nil} @code{no-other-window} window parameter (@pxref{Window Parameters}), provided that @code{ignore-window-parameters} is @code{nil}."
-msgstr "この関数は、非@code{nil}のウィンドウパラメーター@code{no-other-window}をもつウィンドウを選択しない。"
+msgstr "この関数は@code{ignore-window-parameters}が@code{nil}なら非@code{nil}のウィンドウパラメーター@code{no-other-window}をもつウィンドウを選択しない。"
 
 #. type: deffn
 #: original_texis/windows.texi:1966
 msgid "If the @code{other-window} parameter of the selected window is a function, and @code{ignore-window-parameters} is @code{nil}, that function will be called with the arguments @var{count} and @var{all-frames} instead of the normal operation of this function."
-msgstr ""
+msgstr "選択されたウィンドウの@code{other-window}パラメーターが関数で@code{ignore-window-parameters}が@code{nil}なら、この関数の通常の処理のかわりに、@code{other-window}パラメーターの関数が引数@var{count}と@var{all-frames}で呼び出される。"
 
 #. type: defun
 #: original_texis/windows.texi:1968
@@ -3286,10 +3273,8 @@ msgstr "デフォルトではこの関数は指定されたバッファーのロ
 
 #. type: defun
 #: original_texis/windows.texi:2095
-#, fuzzy
-#| msgid "When writing an application, you should normally use the higher-level functions described in @ref{Switching Buffers}, instead of calling @code{set-window-buffer} directly."
 msgid "When writing an application, you should normally use @code{display-buffer} (@pxref{Choosing Window}) or the higher-level functions described in @ref{Switching Buffers}, instead of calling @code{set-window-buffer} directly."
-msgstr "アプリケーションを記述する際は、直接@code{set-window-buffer}を呼び出すのではなく、通常は@ref{Switching Buffers}で説明する高レベルの関数を使用するべきである。"
+msgstr "アプリケーションを記述する際には直接@code{set-window-buffer}を呼び出すのではなく、通常は@code{display-buffer} (@ref{Choosing Window}を参照)や@ref{Switching Buffers}で説明する高レベルの関数を使用すること。"
 
 #. type: defun
 #: original_texis/windows.texi:2098
@@ -3598,16 +3583,15 @@ msgstr "この関数は@code{switch-to-buffer}と同じように、@var{norecord
 
 #. type: section
 #: original_texis/windows.texi:2336
-#, fuzzy, no-wrap
-#| msgid "Switching to a Buffer in a Window"
+#, no-wrap
 msgid "Displaying a Buffer in a Suitable Window"
-msgstr "Switching to a Buffer in a Window"
+msgstr "Displaying a Buffer in a Suitable Window"
 
 #. type: cindex
 #: original_texis/windows.texi:2337
 #, no-wrap
 msgid "buffer display"
-msgstr ""
+msgstr "buffer display"
 
 #. type: cindex
 #: original_texis/windows.texi:2338
@@ -3618,17 +3602,17 @@ msgstr "displaying a buffer"
 #. type: Plain text
 #: original_texis/windows.texi:2345
 msgid "This section describes lower-level functions Emacs uses to find or create a window for displaying a specified buffer.  The common workhorse of these functions is @code{display-buffer} which eventually handles all incoming requests for buffer display (@pxref{Choosing Window})."
-msgstr ""
+msgstr "このセクションでは特定のバッファーの表示にたいしてEmacsが検索や作成に使用する低レベルの関数を説明します。これらの関数の共通点は、受け取ったすべてのバッファー表示要求を最終的に処理する@code{display-buffer} (@ref{Choosing Window}を参照)を主に用いるという点です。"
 
 #. type: Plain text
 #: original_texis/windows.texi:2352
 msgid "@code{display-buffer} delegates the task of finding a suitable window to so-called action functions (@pxref{Buffer Display Action Functions}).  First, @code{display-buffer} compiles a so-called action alist---a special association list that action functions can use to fine-tune their behavior.  Then it passes that alist on to each action function it calls (@pxref{Buffer Display Action Alists})."
-msgstr ""
+msgstr "@code{display-buffer}は適切なウィンドウを見つけるタスクを、いわゆるアクション関数に委譲します(@ref{Buffer Display Action Functions}を参照)。まず@code{display-buffer}は、いわゆるアクションalist (アクション関数が振る舞いを微調整するために使用可能な連想リスト)をコンパイルします。それから呼び出す関数それぞれにたいして、そのalistを渡します(@ref{Buffer Display Action Alists}を参照)。"
 
 #. type: Plain text
 #: original_texis/windows.texi:2361
 msgid "The behavior of @code{display-buffer} is highly customizable.  To understand how customizations are used in practice, you may wish to study examples illustrating the order of precedence which @code{display-buffer} uses to call action functions (@pxref{Precedence of Action Functions}).  To avoid conflicts between Lisp programs calling @code{display-buffer} and user customizations of its behavior, it may make sense to follow a number of guidelines which are sketched in the final part of this section (@pxref{The Zen of Buffer Display})."
-msgstr ""
+msgstr "@code{display-buffer}の動作は高度にカスタマイズ可能です。実際にカスタマイゼーションが使用される方法を理解するためには、@code{display-buffer}がアクション関数を呼び出す際に使用する優先順を示す例を学びたいと思うかもしれません(@ref{Precedence of Action Functions}を参照)。@code{display-buffer}を呼び出すLispプログラムや、@code{display-buffer}の動作にたいするユーザーのカスタマイズとの間の競合を避けるためには、このセクションの最後に示すいくつかのガイドラインにしたがうのが合理的かもしれません(@ref{The Zen of Buffer Display}を参照)。"
 
 #. type: node
 #: original_texis/windows.texi:2371 original_texis/windows.texi:2374
@@ -3643,27 +3627,25 @@ msgstr "バッファーを表示するウィンドウの選択方法。"
 
 #. type: node
 #: original_texis/windows.texi:2371 original_texis/windows.texi:2510
-#, fuzzy, no-wrap
-#| msgid "Display Action Functions"
+#, no-wrap
 msgid "Buffer Display Action Functions"
-msgstr "Display Action Functions"
+msgstr "Buffer Display Action Functions"
 
 #. type: menuentry
 #: original_texis/windows.texi:2371
 msgid "Support functions for buffer display."
-msgstr ""
+msgstr "バッファー表示用のサポート関数。"
 
 #. type: node
 #: original_texis/windows.texi:2371 original_texis/windows.texi:2699
-#, fuzzy, no-wrap
-#| msgid "Display Action Functions"
+#, no-wrap
 msgid "Buffer Display Action Alists"
-msgstr "Display Action Functions"
+msgstr "Buffer Display Action Alists"
 
 #. type: menuentry
 #: original_texis/windows.texi:2371
 msgid "Alists for fine-tuning buffer display."
-msgstr ""
+msgstr "バッファー表示微調整用のalist。"
 
 #. type: node
 #: original_texis/windows.texi:2371 original_texis/windows.texi:2935
@@ -3679,36 +3661,32 @@ msgstr "バッファー表示方法に影響する拡張オプション。"
 #. type: subsection
 #: original_texis/windows.texi:2371 original_texis/windows.texi:3127
 #: original_texis/windows.texi:3128
-#, fuzzy, no-wrap
-#| msgid "Display Action Functions"
+#, no-wrap
 msgid "Precedence of Action Functions"
-msgstr "Display Action Functions"
+msgstr "Precedence of Action Functions"
 
 #. type: menuentry
 #: original_texis/windows.texi:2371
 msgid "Examples to explain the precedence of action functions."
-msgstr ""
+msgstr "アクション関数の優先順の例。"
 
 #. type: subsection
 #: original_texis/windows.texi:2371 original_texis/windows.texi:3458
 #: original_texis/windows.texi:3459
 #, no-wrap
 msgid "The Zen of Buffer Display"
-msgstr ""
+msgstr "The Zen of Buffer Display"
 
 #. type: menuentry
 #: original_texis/windows.texi:2371
-#, fuzzy
-#| msgid "How to avoid displaying another buffer in a specific window."
 msgid "How to avoid that buffers get lost in between windows."
-msgstr "特定のウィンドウ内で他のバッファーの表示を無効にする。"
+msgstr "ウィンドウ間でバッファーが失われることを避けるには。"
 
 #. type: subsection
 #: original_texis/windows.texi:2375
-#, fuzzy, no-wrap
-#| msgid "Choosing a Window for Display"
+#, no-wrap
 msgid "Choosing a Window for Displaying a Buffer"
-msgstr "Choosing a Window for Display"
+msgstr "Choosing a Window for Displaying a Buffer"
 
 #. type: Plain text
 #: original_texis/windows.texi:2383
@@ -3719,7 +3697,7 @@ msgstr "コマンド@code{display-buffer}は表示のために柔軟にウィン
 #: original_texis/windows.texi:2384
 #, no-wrap
 msgid "buffer display display action"
-msgstr ""
+msgstr "buffer display display action"
 
 #. type: cindex
 #: original_texis/windows.texi:2385
@@ -3729,17 +3707,13 @@ msgstr "display action"
 
 #. type: Plain text
 #: original_texis/windows.texi:2394
-#, fuzzy
-#| msgid "This command performs several complex steps to find a window to display in.  These steps are described by means of @dfn{display actions}, which have the form @code{(@var{function} . @var{alist})}.  Here, @var{function} is either a function or a list of functions, which we refer to as @dfn{action functions}; @var{alist} is an association list, which we refer to as @dfn{action alists}."
 msgid "This command performs several complex steps to find a window to display in.  These steps are described by means of @dfn{display actions}, which have the form @code{(@var{functions} . @var{alist})}.  Here, @var{functions} is either a single function or a list of functions, referred to as ``action functions'' (@pxref{Buffer Display Action Functions}); and @var{alist} is an association list, referred to as ``action alist'' (@pxref{Buffer Display Action Alists}).  @xref{The Zen of Buffer Display}, for samples of display actions."
-msgstr "このコマンドは、ウィンドウ内に表示するウィンドウを探すために、いくつかの複雑なステップを実行します。これらのステップは@dfn{ディスプレイアクション(display actions)}を用いて記述されます。ディスプレイアクションは、@code{(@var{function} . @var{alist})}という形式をもちます。ここで、@var{function}は関数、または関数リストで、わたしたちはこれを@dfn{アクション関数(action functions)}として参照します。@var{alist}は連想リスト(association list)で、わたしたちはこれを@dfn{アクションalist(action alists)}として参照します。"
+msgstr "このコマンドはウィンドウ内に表示するウィンドウを探すために、いくつかの複雑なステップを実行します。これらのステップは@dfn{ディスプレイアクション(display actions)}を用いて記述されます。ディスプレイアクションは@code{(@var{functions} . @var{alist})}という形式をもちます。ここで@var{functions}は``アクション関数''と呼ばれる単一の関数か関数のリスト(@ref{Buffer Display Action Functions}を参照)、@var{alist}は``アクションalist''と呼ばれる連想リストです(@ref{Buffer Display Action Alists}を参照)。ディスプレイ表示の例については@ref{The Zen of Buffer Display}を参照してください。"
 
 #. type: Plain text
 #: original_texis/windows.texi:2399
-#, fuzzy
-#| msgid "An action function accepts two arguments: the buffer to display and an action alist.  It attempts to display the buffer in some window, picking or creating a window according to its own criteria.  If successful, it returns the window; otherwise, it returns @code{nil}.  @xref{Display Action Functions}, for a list of predefined action functions."
 msgid "An action function accepts two arguments: the buffer to display and an action alist.  It attempts to display the buffer in some window, picking or creating a window according to its own criteria.  If successful, it returns the window; otherwise, it returns @code{nil}."
-msgstr "アクション関数は、表示するバッファーと、アクションalistという、2つの引数を受け取ります。これは、自身の条件にしたがってウィンドウウィンドウ選択、または作成して、バッファーをウィンドウ内に表示します。成功した場合はそのウィンドウ、それ以外は@code{nil}をリターンします。事前定義されたアクション関数については、@ref{Display Action Functions}を参照してください。"
+msgstr "アクション関数は、表示するバッファーと、アクションalistという、2つの引数を受け取ります。これは、自身の条件にしたがってウィンドウウィンドウ選択、または作成して、バッファーをウィンドウ内に表示します。成功した場合はそのウィンドウ、それ以外は@code{nil}をリターンします。"
 
 #. type: Plain text
 #: original_texis/windows.texi:2404
@@ -3754,17 +3728,13 @@ msgstr "Command display-buffer buffer-or-name &optional action frame"
 
 #. type: deffn
 #: original_texis/windows.texi:2411
-#, fuzzy
-#| msgid "This command makes @var{buffer-or-name} appear in some window, without selecting the window or making the buffer current.  The argument @var{buffer-or-name} must be a buffer or the name of an existing buffer.  The return value is the window chosen to display the buffer."
 msgid "This command makes @var{buffer-or-name} appear in some window, without selecting the window or making the buffer current.  The argument @var{buffer-or-name} must be a buffer or the name of an existing buffer.  The return value is the window chosen to display the buffer, or @code{nil} if no suitable window was found."
-msgstr "このコマンドは、ウィンドウウィンドウ選択したり、そのバッファーをカレントにすることなく、@var{buffer-or-name}をウィンドウに表示させる。引数@var{buffer-or-name}はバッファー、または既存のバッファーの名前でなければならない。リターン値は、そのバッファーを表示するために選ばれたウィンドウである。"
+msgstr "このコマンドは、ウィンドウウィンドウ選択したり、そのバッファーをカレントにすることなく、@var{buffer-or-name}をウィンドウに表示させる。引数@var{buffer-or-name}はバッファー、または既存のバッファーの名前でなければならない。リターン値はバッファーを表示するために選ばれたウィンドウ、適切なウィンドウが見つからなければ@code{nil}。"
 
 #. type: deffn
 #: original_texis/windows.texi:2417
-#, fuzzy
-#| msgid "The optional argument @var{action}, if non-@code{nil}, should normally be a display action (described above).  @code{display-buffer} builds a list of action functions and an action alist, by consolidating display actions from the following sources (in order):"
 msgid "The optional argument @var{action}, if non-@code{nil}, should normally be a display action (described above).  @code{display-buffer} builds a list of action functions and an action alist, by consolidating display actions from the following sources (in order of their precedence, from highest to lowest):"
-msgstr "オプション引数@var{action}が非@code{nil}の場合、それは通常はディスプレイアクション(上述)であること。@code{display-buffer}は、以下のソース(記載順)からディスプレイアクションを集約して、アクション関数リストとアクションalistを構築する:"
+msgstr "オプション引数@var{action}が非@code{nil}なら、それは通常はディスプレイアクション(上述)であること。@code{display-buffer}は以下のソース(優先度の高位順)からディスプレイアクションを集約してアクション関数リストとアクションalistを構築する:"
 
 #. type: itemize
 #: original_texis/windows.texi:2421
@@ -3794,24 +3764,22 @@ msgstr "定数@code{display-buffer-fallback-action}。"
 #. type: deffn
 #: original_texis/windows.texi:2444
 msgid "In practice this means that @code{display-buffer} builds a list of all action functions specified by these display actions.  The first element of this list is the first action function specified by @code{display-buffer-overriding-action}, if any.  Its last element is @code{display-buffer-pop-up-frame}---the last action function specified by @code{display-buffer-fallback-action}.  Duplicates are not removed from this list---hence one and the same action function may be called multiple times during one call of @code{display-buffer}."
-msgstr ""
+msgstr "実際のところは、これらのディプレイアクションにより指定されるアクション関数すべてのリストを@code{display-buffer}が構築することを意味する。このリストの最初の要素は(もしあれば) @code{display-buffer-overriding-action}が指定する最初のアクション関数。@code{display-buffer-pop-up-frame}の最後の要素は@code{display-buffer-fallback-action}が指定する最後のアクション関数。このリストから重複要素は削除されないので、1回の@code{display-buffer}呼び出しの間に同一のアクション関数が複数回呼び出されるかもしれない。"
 
 #. type: deffn
 #: original_texis/windows.texi:2451
-#, fuzzy
-#| msgid "Each action function is called in turn, passing the buffer as the first argument and the combined action alist as the second argument, until one of the functions returns non-@code{nil}.  The caller can pass @code{(allow-no-window . t)} as an element of the action alist to indicate its readiness to handle the case of not displaying the buffer in a window."
 msgid "@code{display-buffer} calls the action functions specified by this list in turn, passing the buffer as the first argument and the combined action alist as the second argument, until one of the functions returns non-@code{nil}.  @xref{Precedence of Action Functions}, for examples how display actions specified by different sources are processed by @code{display-buffer}."
-msgstr "各アクション関数は、いずれかが非@code{nil}をリターンするまで、第1引数にバッファー、第2引数に組み合わせられたアクションalistで、順番に呼び出される。呼び出し側は、ウィンドウ内にバッファーを表示しない場合を処理する用意があることを示すために、アクションalistの要素として@code{(allow-no-window . t)}を渡すことができる。"
+msgstr "@code{display-buffer}はバッファーを1つ目の引数、組み合わされたalistを2つ目の引数として、いずれかの関数が非@code{nil}をリターンするまで、このリスト内で指定されたアクション関数を順に呼び出す。異なるソースから指定されたディスプレイアクションを@code{display-buffer}がどのように処理するかの例は@ref{Precedence of Action Functions}を参照のこと。"
 
 #. type: deffn
 #: original_texis/windows.texi:2458
 msgid "Note that the second argument is always the list of @emph{all} action alist entries specified by the sources named above.  Hence, the first element of that list is the first action alist entry specified by @code{display-buffer-overriding-action}, if any.  Its last element is the last alist entry of @code{display-buffer-base-action}, if any (the action alist of @code{display-buffer-fallback-action} is empty)."
-msgstr ""
+msgstr "2つ目の引数は常に、上記に挙げたソースが指定する@emph{すべて}のアクションalistエントリーのリストであることに注意。したがってこのリストの最初の要素は(もしあれば) @code{display-buffer-overriding-action}が指定する最初のアクションalistエントリー、最後の要素はもしあれば(@code{display-buffer-fallback-action}のアクションalistが空) @code{display-buffer-base-action}の最後のalistエントリーとなる。"
 
 #. type: deffn
 #: original_texis/windows.texi:2465
 msgid "Note also, that the combined action alist may contain duplicate entries and entries for the same key with different values.  As a rule, action functions always use the first association of a key they find.  Hence, the association an action function uses is not necessarily the association provided by the display action that specified that action function,"
-msgstr ""
+msgstr "組み合わされたアクションalistは重複したエントリーを含むかもしれず、同じキーにたするエントリーが異なる値をもつかもしれないことにも注意。アクション関数はルールとして見つかった最初のキーの連想値を常に使用する。したがってアクション関数の連想値が、そのアクション関数が指定するディスプレイアクションにより提供される連想値を使用する必要はない。"
 
 #. type: deffn
 #: original_texis/windows.texi:2472
