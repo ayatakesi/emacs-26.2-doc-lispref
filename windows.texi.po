@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-06-29 00:57+0900\n"
+"PO-Revision-Date: 2020-06-29 02:11+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4085,7 +4085,7 @@ msgstr "Action Alists for Buffer Display"
 #: original_texis/windows.texi:2701
 #, no-wrap
 msgid "buffer display action alist"
-msgstr "\n\nTwo other action functions are described in their proper sections--- (@pxref{Displaying Buffers in Side Windows}) and  (@pxref{Atomic Windows}).<"
+msgstr "buffer display action alist"
 
 #. type: cindex
 #: original_texis/windows.texi:2702
@@ -4276,84 +4276,72 @@ msgstr "整数値は選択したウィンドウの望ましい高さを行数で
 
 #. type: itemize
 #: original_texis/windows.texi:2816
-#, fuzzy
-#| msgid "A number specifies the desired height of the new window.  An integer specifies the number of lines of the window.  A floating-point number gives the fraction of the window's height with respect to the height of the frame's root window."
 msgid "A floating-point number specifies the fraction of the chosen window's desired total height with respect to the total height of its frame's root window."
-msgstr "数字は、新たなウィンドウの高さを指定する。整数は、ウィンドウの行数を指定する。浮動小数点数は、そのフレームのルートウィンドウにたいするウィンドウの高さの割合を与える。"
+msgstr "浮動小数点値は選択したウィンドウの望ましい高さをフレームのルートウィンドウのトータル高さにたいする比率で指定する。"
 
 #. type: itemize
 #: original_texis/windows.texi:2823
-#, fuzzy
-#| msgid "If the @sc{cdr} specifies a function, that function is called with one argument: the new window.  The function is supposed to adjust the height of the window; its return value is ignored.  Suitable functions are @code{shrink-window-if-larger-than-buffer} and @code{fit-window-to-buffer}, see @ref{Resizing Windows}."
 msgid "If the value specifies a function, that function is called with one argument---the chosen window.  The function is supposed to adjust the height of the window; its return value is ignored.  Suitable functions are @code{shrink-window-if-larger-than-buffer} and @code{fit-window-to-buffer}, see @ref{Resizing Windows}."
-msgstr "@sc{cdr}が関数を指定する場合、その関数は新たなウィンドウを引数として呼び出される関数である。この関数は、そのウィンドウの高さを調整することを期待されており、リターン値は無視される。これに適した関数は@code{shrink-window-if-larger-than-buffer}および@code{fit-window-to-buffer}である。@ref{Resizing Windows}を参照のこと。"
+msgstr "値が関数を指定する場合には、その関数は選択したウィンドウを引数として呼び出される関数。この関数はそのウィンドウの高さを調整することを期待されておりリターン値は無視される。これに適した関数は@code{shrink-window-if-larger-than-buffer}と@code{fit-window-to-buffer}。@ref{Resizing Windows}を参照のこと。"
 
 #. type: table
 #: original_texis/windows.texi:2830
 msgid "By convention, the height of the chosen window is adjusted only if the window is part of a vertical combination (@pxref{Windows and Frames})  to avoid changing the height of other, unrelated windows.  Also, this entry should be processed only under certain conditions which are specified right below this list."
-msgstr ""
+msgstr "慣例により選択したウィンドウの高さは、そのウィンドウが垂直コンビネーション(@ref{Windows and Frames}を参照)の一部であり、他の無関係のウィンドウの高さの変更を避ける場合のみ調整される。さらにこのエントリーはこのリストの次で指定する特定の条件下でのみ処理される必要がある。"
 
 #. type: vindex
 #: original_texis/windows.texi:2831
 #, no-wrap
 msgid "window-width@r{, a buffer display action alist entry}"
-msgstr ""
+msgstr "window-width@r{, a buffer display action alist entry}"
 
 #. type: item
 #: original_texis/windows.texi:2832
-#, fuzzy, no-wrap
-#| msgid "window-min-width"
+#, no-wrap
 msgid "window-width"
-msgstr "window-min-width"
+msgstr "window-width"
 
 #. type: table
 #: original_texis/windows.texi:2836
 msgid "This entry is similar to the @code{window-height} entry described before, but used to adjust the chosen window's width instead.  The value can be one of the following:"
-msgstr ""
+msgstr "これは上述の@code{window-height}と同様だが、かわりに選択したウィンドウの幅の調節に使用される。値は以下のいずれか:"
 
 #. type: itemize
 #: original_texis/windows.texi:2840
-#, fuzzy
-#| msgid "@code{nil} means to leave the width of the new window alone."
 msgid "@code{nil} means to leave the width of the chosen window alone."
-msgstr "@code{nil}は、新たなウィンドウの幅を変更しないことを意味する。"
+msgstr "@code{nil}は選択したウィンドウの幅を変更しないことを意味する。"
 
 #. type: itemize
 #: original_texis/windows.texi:2844
 msgid "An integer specifies the desired total width of the chosen window in columns."
-msgstr ""
+msgstr "整数値は選択したウィンドウの望ましい幅を列数で指定する。"
 
 #. type: itemize
 #: original_texis/windows.texi:2849
-#, fuzzy
-#| msgid "A number specifies the desired width of the new window.  An integer specifies the number of columns of the window.  A floating-point number gives the fraction of the window's width with respect to the width of the frame's root window."
 msgid "A floating-point number specifies the fraction of the chosen window's desired total width with respect to the total width of the frame's root window."
-msgstr "数字は、新たなウィンドウの幅を指定する。整数は、ウィンドウの列数を指定する。浮動小数点数は、そのフレームのルートウィンドウにたいするウィンドウの幅の割合を与える。"
+msgstr "浮動小数点値は選択したウィンドウの望ましい幅をフレームのルートウィンドウのトータル幅にたいする比率で指定する。"
 
 #. type: itemize
 #: original_texis/windows.texi:2854
-#, fuzzy
-#| msgid "If the @sc{cdr} specifies a function, that function is called with one argument: the new window.  The function is supposed to adjust the width of the window; its return value is ignored."
 msgid "If the value specifies a function, that function is called with one argument---the chosen window.  The function is supposed to adjust the width of the window; its return value is ignored."
-msgstr "@sc{cdr}が関数を指定する場合、その関数は新たなウィンドウを引数として呼び出される関数である。この関数は、そのウィンドウの幅を調整することを期待されており、リターン値は無視される。"
+msgstr "値が関数を指定する場合には、その関数は選択したウィンドウを引数として呼び出される関数。この関数はそのウィンドウの高さを調整することを期待されておりリターン値は無視される。"
 
 #. type: table
 #: original_texis/windows.texi:2861
 msgid "By convention, the width of the chosen window is adjusted only if the window is part of a horizontal combination (@pxref{Windows and Frames}) to avoid changing the width of other, unrelated windows.  Also, this entry should be processed under only certain conditions which are specified right below this list."
-msgstr ""
+msgstr "慣例により選択したウィンドウの幅は、そのウィンドウが水平コンビネーション(@ref{Windows and Frames}を参照)の一部であり、他の無関係のウィンドウの幅の変更を避ける場合のみ調整される。さらにこのエントリーはこのリストの次で指定する特定の条件下でのみ処理される必要がある。"
 
 #. type: vindex
 #: original_texis/windows.texi:2862
 #, no-wrap
 msgid "preserve-size@r{, a buffer display action alist entry}"
-msgstr ""
+msgstr "preserve-size@r{, a buffer display action alist entry}"
 
 #. type: item
 #: original_texis/windows.texi:2863
-#, fuzzy, no-wrap
-#| msgid "split-window-preferred-function"
+#, no-wrap
 msgid "preserve-size"
-msgstr "split-window-preferred-function"
+msgstr "preserve-size"
 
 #. type: table
 #: original_texis/windows.texi:2871
