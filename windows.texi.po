@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-06-30 00:23+0900\n"
+"PO-Revision-Date: 2020-06-30 03:40+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4784,12 +4784,12 @@ msgstr "ルールとして別フレームにバッファーを表示すること
 #. type: Plain text
 #: original_texis/windows.texi:3209
 msgid "This setting will cause @code{display-buffer} to first try to find a window showing the buffer on a visible or iconified frame and, if no such frame exists, pop up a new frame.  You can observe this behavior on a graphical system by typing @w{@kbd{C-x 1}} in the window showing @file{*scratch*} and evaluating our canonical @code{display-buffer} form.  This will usually create (and give focus to) a new frame whose root window shows @file{*foo*}.  Iconify that frame and evaluate the canonical form again: @code{display-buffer} will reuse the window on the new frame (usually raising the frame and giving it focus too)."
-msgstr ""
+msgstr "このセッティングにより@code{display-buffer}はバッファーを表示するウィンドウを探すために、まず可視のフレームとアイコン化されたフレームを探して、そのようなフレームが存在しなければ新たなフレームをポップアップします。グラフィカルなシステム上で@file{*scratch*}を表示しているウィンドウで@w{@kbd{C-x 1}}をタイプして例の@code{display-buffer}フォームを評価して動作を観察できます。これは通常はルートウィンドウに@file{*foo*}を表示するフレームを新たに作成(およびフォーカスを付与)します。このフレームをアイコン化して例のフォームを再度評価すると、@code{display-buffer}は新たなフレーム(通常はフレームをraiseしてフォーカスを付与)のウィンドウを再利用するでしょう。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3215
 msgid "Only if creating a new frame fails, @code{display-buffer} will apply the actions supplied by @code{display-buffer-fallback-action} which means to again try reusing a window, popping up a new window and so on.  A trivial way to make frame creation fail is supplied by the following form:"
-msgstr ""
+msgstr "@code{display-buffer}は新たなフレームの作成に失敗した場合のみ@code{display-buffer-fallback-action}が提供するアクション(ウィンドウ再利用の再試行、新たなウィンドウのポップアップ等)を適用します。以下のフォームでフレーム作成を簡単に失敗させることができます:"
 
 #. type: group
 #: original_texis/windows.texi:3220
@@ -4798,16 +4798,18 @@ msgid ""
 "(let ((pop-up-frame-function 'ignore))\n"
 "  (display-buffer (get-buffer-create \"*foo*\")))\n"
 msgstr ""
+"(let ((pop-up-frame-function 'ignore))\n"
+"  (display-buffer (get-buffer-create \"*foo*\")))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3226
 msgid "We will forget about that form immediately after observing that it fails to create a new frame and uses a fallback action instead."
-msgstr ""
+msgstr "新たなフレーム作成に失敗してかわりにフォールバックアクションの使用を観察した直後にこのフォームを忘れてしまうでしょう。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3235
 msgid "Note that @code{display-buffer-reuse-window} appears redundant in the customization of @code{display-buffer-base-action} because it is already part of @code{display-buffer-fallback-action} and should be tried there anyway.  However, that would fail because due to the precedence of @code{display-buffer-base-action} over @code{display-buffer-fallback-action}, at that time @code{display-buffer-pop-up-frame} would have already won the race.  In fact, this:"
-msgstr ""
+msgstr "@code{display-buffer-base-action}のカスタマイズにおいて@code{display-buffer-reuse-window}は冗長に思えることに注意してください。なぜならすでに@code{display-buffer-reuse-window}は@code{display-buffer-fallback-action}の一部であり、いずれにせよフォールバックアクションで試みられるはずだからです。しかしこれは@code{display-buffer-pop-up-frame}が優先順ですでに優っていた時点で、@code{display-buffer-base-action}が@code{display-buffer-fallback-action}より優先されることにより失敗するでしょう。実際のところ:"
 
 #. type: group
 #: original_texis/windows.texi:3241
@@ -4817,21 +4819,24 @@ msgid ""
 " 'display-buffer-base-action\n"
 " '(display-buffer-pop-up-frame (reusable-frames . 0)))\n"
 msgstr ""
+"(customize-set-variable\n"
+" 'display-buffer-base-action\n"
+" '(display-buffer-pop-up-frame (reusable-frames . 0)))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3247
 msgid "would cause @code{display-buffer} to @emph{always} pop up a new frame which is probably not what our user wants."
-msgstr ""
+msgstr "は@code{display-buffer}が@emph{常}に新たなフレームをポップアップして、これはおそらくユーザーが望んでいない動作です。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3254
 msgid "So far, we have only shown how @emph{users} can customize the default behavior of @code{display-buffer}.  Let us now see how @emph{applications} can change the course of @code{display-buffer}.  The canonical way to do that is to use the @var{action} argument of @code{display-buffer} or a function that calls it, like, for example, @code{pop-to-buffer} (@pxref{Switching Buffers})."
-msgstr ""
+msgstr "ここまでは@emph{ユーザー}が@code{display-buffer}のデフォルト動作をカスタマイズする方法だけを示しました。今度は@emph{アプリケーション}が@code{display-buffer}の動作を変更する方法について見てみましょう。これを行う正規の手順は@code{display-buffer}や@code{pop-to-buffer}のような@code{display-buffer}を呼び出す関数の@var{action}引数を使用する方法です(@ref{Switching Buffers}を参照)。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3259
 msgid "Suppose an application wants to display @file{*foo*} preferably below the selected window (to immediately attract the attention of the user to the new window) or, if that fails, in a window at the bottom of the frame.  It could do that with a call like this:"
-msgstr ""
+msgstr "あるアプリケーションが(新たなウィンドウにユーザーを即座に注目させるために)可能なら選択されたウィンドウの下、それが失敗したらフレームの最下ウィンドウにに@file{*foo*}を表示したいと仮定してみましょう。これは以下のような呼び出しで行うことができます:"
 
 #. type: group
 #: original_texis/windows.texi:3265
@@ -4841,26 +4846,29 @@ msgid ""
 " (get-buffer-create \"*foo*\")\n"
 " '((display-buffer-below-selected display-buffer-at-bottom)))\n"
 msgstr ""
+"(display-buffer\n"
+" (get-buffer-create \"*foo*\")\n"
+" '((display-buffer-below-selected display-buffer-at-bottom)))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3276
 msgid "In order to see how this new, modified form works, delete any frame showing @file{*foo*}, type @w{@kbd{C-x 1}} followed by @w{@kbd{C-x 2}} in the window showing @file{*scratch*}, and subsequently evaluate that form.  @code{display-buffer} should split the upper window, and show @file{*foo*} in the new window.  Alternatively, if after @w{@kbd{C-x 2}} you had typed @w{@kbd{C-x o}}, @code{display-buffer} would have split the window at the bottom instead."
-msgstr ""
+msgstr "この新しい変更されたフォームがどのように機能するか確認するために@file{*foo*}を表示しているすべてのフレームを削除してから、@file{*scratch*}を表示中のウィンドウで@w{@kbd{C-x 1}}の後に@w{@kbd{C-x 2}}をタイプしてから、続けてそのフォームを評価してみてください。@code{display-buffer}は上側のウィンドウを分割して、新たなウィンドウに@file{*foo*}を表示するはずです。@w{@kbd{C-x 2}}の後に@w{@kbd{C-x o}}をタイプした場合には、@code{display-buffer}はかわりに最下にあるウィンドウを分割するでしょう。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3283
 msgid "Suppose now that, before evaluating the new form, you have made the selected window as small as possible, for example, by evaluating the form @code{(fit-window-to-buffer)} in that window.  In that case, @code{display-buffer} would have failed to split the selected window and would have split the frame's root window instead, effectively displaying @file{*foo*} at the bottom of the frame."
-msgstr ""
+msgstr "今度は新たなフォームを評価する前に、(たとえば選択されたウィンドウで@code{(fit-window-to-buffer)}を評価して)選択されたウィンドウを可能なかぎり小さくしたとします。この場合には@code{display-buffer}は選択されたウィンドウの分割に失敗して、フレームの最下に効果的に@file{*foo*}を表示するために、かわりにフレームのルートウィンドウを分割するでしょう。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3287
 msgid "In either case, evaluating the new form a second time should reuse the window already showing @file{*foo*} since both functions supplied by the @var{action} argument try to reuse such a window first."
-msgstr ""
+msgstr "いずれの場合においても新たなフォームの2回目の評価では、すでに@file{*foo*}を表示しているウィンドウの再利用を試みるはずです。これは@var{action}引数が提供するどちらの関数も、そのようなウィンドウの使用を最初に試みるからです。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3292
 msgid "By setting the @var{action} argument, an application effectively overrules any customization of @code{display-buffer-base-action}.  Our user can now either accept the choice of the application, or redouble by customizing the option @code{display-buffer-alist} as follows:"
-msgstr ""
+msgstr "@var{action}引数をセットすることにより、アプリケーションは@code{display-buffer-base-action}のすべてのカスタマイゼーションを効果的に無効にします。今度はユーザーはアプリケーションの選択を受け入れるか、以下のようにオプション@code{display-buffer-alist}をさらにカスタマイズすることができます:"
 
 #. type: group
 #: original_texis/windows.texi:3299
@@ -4871,28 +4879,24 @@ msgid ""
 " '((\"\\\\*foo\\\\*\"\n"
 "    (display-buffer-reuse-window display-buffer-pop-up-frame))))\n"
 msgstr ""
+"(customize-set-variable\n"
+" 'display-buffer-alist\n"
+" '((\"\\\\*foo\\\\*\"\n"
+"    (display-buffer-reuse-window display-buffer-pop-up-frame))))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3307
 msgid "Trying this with the new, modified form above in a configuration that does not show @file{*foo*} anywhere, will display @file{*foo*} on a separate frame, completely ignoring the @var{action} argument of @code{display-buffer}."
-msgstr ""
+msgstr "@file{*foo*}がどこにも表示されていない設定で新たな変更版のフォームを試みると、@code{display-buffer}の@var{action}を完全に無視して別フレームに@file{*foo*}が表示されます。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3315
 msgid "Note that we didn't care to specify a @code{reusable-frames} action alist entry in our specification of @code{display-buffer-alist}.  @code{display-buffer} always takes the first one it finds---in our case the one specified by @code{display-buffer-base-action}.  If we wanted to use a different specification, for example, to exclude iconified frames showing @file{*foo*} from the list of reusable ones, we would have to specify that separately, however:"
-msgstr ""
+msgstr "@code{display-buffer-alist}の仕様において,@code{reusable-frames}アクションalistの指定を気にしていない点に注意してください。@code{display-buffer}は常に最初に見つかったウィンドウ、この場合では@code{display-buffer-base-action}で指定されたウィンドウを採用します。しかし異なる仕様を使用したいとき、たとえば再利用可能なウィンドウから@file{*foo*}を表示中のアイコン化されたフレームを除外したければ個別にそれを指定する必要があります:"
 
 #. type: group
 #: original_texis/windows.texi:3323
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(display-buffer\n"
-#| " (get-buffer-create \"*foo*\")\n"
-#| " '((display-buffer-reuse-window\n"
-#| "    display-buffer-pop-up-window\n"
-#| "    display-buffer-pop-up-frame)\n"
-#| "   (reusable-frames . 0)\n"
-#| "   (window-height . 10) (window-width . 40)))\n"
+#, no-wrap
 msgid ""
 "(customize-set-variable\n"
 " 'display-buffer-alist\n"
@@ -4900,44 +4904,42 @@ msgid ""
 "    (display-buffer-reuse-window display-buffer-pop-up-frame)\n"
 "    (reusable-frames . visible))))\n"
 msgstr ""
-"(display-buffer\n"
-" (get-buffer-create \"*foo*\")\n"
-" '((display-buffer-reuse-window\n"
-"    display-buffer-pop-up-window\n"
-"    display-buffer-pop-up-frame)\n"
-"   (reusable-frames . 0)\n"
-"   (window-height . 10) (window-width . 40)))\n"
+"(customize-set-variable\n"
+" 'display-buffer-alist\n"
+" '((\"\\\\*foo\\\\*\"\n"
+"    (display-buffer-reuse-window display-buffer-pop-up-frame)\n"
+"    (reusable-frames . visible))))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3330
 msgid "If you try this, you will notice that repeated attempts to display @file{*foo*} will succeed to reuse a frame only if that frame is visible."
-msgstr ""
+msgstr "これを試せば繰り返し@file{*foo*}の表示を試みた場合に、フレームが可視のときだけフレームの再利用に成功することに気がつくでしょう。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3338
 msgid "The above example would allow the conclusion that users customize @code{display-buffer-alist} for the sole purpose to overrule the @var{action} argument chosen by applications.  Such a conclusion would be incorrect.  @code{display-buffer-alist} is the standard option for users to direct the course of display of specific buffers in a preferred way regardless of whether the display is also guided by an @var{action} argument."
-msgstr ""
+msgstr "上記の例によりアプリケーションが選択した@var{action}引数を無視するという単一の目的にたいしてユーザーが@code{display-buffer-alist}をカスタマイズできるという結論が導かれるかもしれません。そのような結論は正しくありません。@code{display-buffer-alist}は表示が@var{action}引数によってもガイドされるかどうかに関わらず、ユーザーが好む方法で特定のバッファーの表示方法を指示するための標準オプションです。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3346
 msgid "We can, however, reasonably conclude that customizing @code{display-buffer-alist} differs from customizing @code{display-buffer-base-action} in two major aspects: it is stronger because it overrides the @var{action} argument of @code{display-buffer}, and it allows to explicitly specify the affected buffers.  In fact, displaying other buffers is not affected in any way by a customization for @file{*foo*}.  For example,"
-msgstr ""
+msgstr "しかし2つの主要な観点から、@code{display-buffer-alist}のカスタマイズは@code{display-buffer-base-action}のカスタマイズとは異なると合理的に結論づけることができます。@code{display-buffer-alist}のカスタマイズは@code{display-buffer}の@var{action}引数をオーバーライドして、影響を受けるバッファーを明示的に指定できることからより強力です。実際のところ@file{*foo*}のカスタマイズによって他のバッファーの表示には何も影響がありません。たとえば、"
 
 #. type: example
 #: original_texis/windows.texi:3349
 #, no-wrap
 msgid "(display-buffer (get-buffer-create \"*bar*\"))\n"
-msgstr ""
+msgstr "(display-buffer (get-buffer-create \"*bar*\"))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3355
 msgid "continues being governed by the settings of @code{display-buffer-base-action} and @code{display-buffer-fallback-action} only."
-msgstr ""
+msgstr "は@code{display-buffer-base-action}と@code{display-buffer-fallback-action}のセッティングだけに管理されます。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3361
 msgid "We could stop with our examples here but Lisp programs still have an ace up their sleeves which they can use to overrule any customization of @code{display-buffer-alist}.  It's the variable @code{display-buffer-overriding-action} which they can bind around @code{display-buffer} calls as follows:"
-msgstr ""
+msgstr "ここで例を止めることもできますが、Lispプログラムには@code{display-buffer-alist}にたいする任意のカスタマイズの無効化に使用できる取って置きの切り札があります。その切り札@code{display-buffer-overriding-action}は以下のように@code{display-buffer}呼び出しの前後でバインドすることができます:"
 
 #. type: group
 #: original_texis/windows.texi:3369
@@ -4949,16 +4951,21 @@ msgid ""
 "   (get-buffer-create \"*foo*\")\n"
 "   '((display-buffer-below-selected display-buffer-at-bottom))))\n"
 msgstr ""
+"(let ((display-buffer-overriding-action\n"
+"       '((display-buffer-same-window))))\n"
+"  (display-buffer\n"
+"   (get-buffer-create \"*foo*\")\n"
+"   '((display-buffer-below-selected display-buffer-at-bottom))))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3378
 msgid "Evaluating this form will usually display @file{*foo*} in the selected window regardless of the @var{action} argument and any user customizations.  (Usually, an application will not bother to also provide an @var{action} argument.  Here it just serves to illustrate the fact that it gets overridden.)"
-msgstr ""
+msgstr "このフォームの評価により通常は@var{action}引数や任意のユーザーカスタマイゼーションとは無関係に、選択されたウィンドウに@file{*foo*}が表示されます(通常はアプリケーションが@var{action}を提供する必要もないが、ここではオーバーライドされる事実を示すために提供されている)。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3383
 msgid "It might be illustrative to look at the list of action functions @code{display-buffer} would have tried to display @file{*foo*} with the customizations we provided here.  The list (including comments explaining who added this and the subsequent elements) is:"
-msgstr ""
+msgstr "ここで提供したカスタマイゼーションで@file{*foo*}の表示を試みたアクション関数のリストを調べれば、それが実例になるかもしれません。そのリスト(何がそれを追加したかと後続の要素を含む)は:"
 
 #. type: group
 #: original_texis/windows.texi:3399
@@ -4978,16 +4985,29 @@ msgid ""
 " display-buffer-use-some-window\n"
 " display-buffer-pop-up-frame)\n"
 msgstr ""
+"(display-buffer-same-window  ;; `display-buffer-overriding-action'\n"
+" display-buffer-reuse-window ;; `display-buffer-alist'\n"
+" display-buffer-pop-up-frame\n"
+" display-buffer-below-selected ;; ACTION argument\n"
+" display-buffer-at-bottom\n"
+" display-buffer-reuse-window ;; `display-buffer-base-action'\n"
+" display-buffer-pop-up-frame\n"
+" display-buffer--maybe-same-window ;; `display-buffer-fallback-action'\n"
+" display-buffer-reuse-window\n"
+" display-buffer--maybe-pop-up-frame-or-window\n"
+" display-buffer-in-previous-window\n"
+" display-buffer-use-some-window\n"
+" display-buffer-pop-up-frame)\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3407
 msgid "Note that among the internal functions listed here, @code{display-buffer--maybe-same-window} is effectively ignored while @code{display-buffer--maybe-pop-up-frame-or-window} actually runs @code{display-buffer-pop-up-window}."
-msgstr ""
+msgstr "ここで列挙した内部関数の中で@code{display-buffer--maybe-pop-up-frame-or-window}が実際に@code{display-buffer-pop-up-window}を実行しているにも関わらず、@code{display-buffer--maybe-same-window}が効果的に無視されていることに注意してください。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3409
 msgid "The action alist passed in each function call is:"
-msgstr ""
+msgstr "アクション関数の各呼び出しにおいて渡されるアクションalistは:"
 
 #. type: group
 #: original_texis/windows.texi:3414
@@ -4996,11 +5016,13 @@ msgid ""
 "((reusable-frames . visible)\n"
 " (reusable-frames . 0))\n"
 msgstr ""
+"((reusable-frames . visible)\n"
+" (reusable-frames . 0))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3422
 msgid "which shows that we have used the second specification of @code{display-buffer-alist} above, overriding the specification supplied by @code{display-buffer-base-action}.  Suppose our user had written that as"
-msgstr ""
+msgstr "これは上述の@code{display-buffer-alist}の2つ目の仕様を使用して、@code{display-buffer-base-action}が提供する仕様をオーバーライドすることを示しています。これをユーザーが以下のように記述したと考えてみましょう"
 
 #. type: group
 #: original_texis/windows.texi:3431
@@ -5013,11 +5035,17 @@ msgid ""
 "    (inhibit-same-window . t)\n"
 "    (reusable-frames . visible))))\n"
 msgstr ""
+"(customize-set-variable\n"
+" 'display-buffer-alist\n"
+" '((\"\\\\*foo\\\\*\"\n"
+"    (display-buffer-reuse-window display-buffer-pop-up-frame)\n"
+"    (inhibit-same-window . t)\n"
+"    (reusable-frames . visible))))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3442
 msgid "In this case the @code{inhibit-same-window} alist entry will successfully invalidate the @code{display-buffer-same-window} specification from @code{display-buffer-overriding-action} and @code{display-buffer} will show @file{*foo*} on another frame.  To make @code{display-buffer-overriding-action} more robust in this regard, the application would have to specify an appropriate @code{inhibit-same-window} entry too, for example, as follows:"
-msgstr ""
+msgstr "この場合にはalistの@code{inhibit-same-window}エントリーは@code{display-buffer-overriding-action}から@code{display-buffer-same-window}仕様を成功裏に無効化して、@code{display-buffer}は別フレームに@file{*foo*}を表示するでしょう。この点において@code{display-buffer-overriding-action}をより堅牢にするためには、アプリケーションはたとえば以下のように適切な@code{inhibit-same-window}エントリーも指定する必要があるでしょう:"
 
 #. type: group
 #: original_texis/windows.texi:3448
@@ -5027,11 +5055,14 @@ msgid ""
 "       '(display-buffer-same-window (inhibit-same-window . nil))))\n"
 "  (display-buffer (get-buffer-create \"*foo*\")))\n"
 msgstr ""
+"(let ((display-buffer-overriding-action\n"
+"       '(display-buffer-same-window (inhibit-same-window . nil))))\n"
+"  (display-buffer (get-buffer-create \"*foo*\")))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3456
 msgid "This last example shows that while the precedence order of action functions is fixed, as described in @ref{Choosing Window}, an action alist entry specified by a display action ranked lower in that order can affect the execution of a higher ranked display action."
-msgstr ""
+msgstr "最後の例では@ref{Choosing Window}で説明したようにアクション関数の優先順は固定ではあるものの、優先順で低位のディスプレイアクションが指定したアクションalistのエントリーが、より高位のディスプレイアクションの実行に影響を与えれれることを示しています。"
 
 #. type: cindex
 #: original_texis/windows.texi:3460
