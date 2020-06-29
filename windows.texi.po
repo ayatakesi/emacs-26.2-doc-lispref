@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-06-29 03:03+0900\n"
+"PO-Revision-Date: 2020-06-30 00:23+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4475,10 +4475,8 @@ msgstr "Additional Options for Displaying Buffers"
 
 #. type: Plain text
 #: original_texis/windows.texi:2940
-#, fuzzy
-#| msgid "The behavior of the standard display actions of @code{display-buffer} (@pxref{Choosing Window}) can be modified by a variety of user options."
 msgid "The behavior of buffer display actions (@pxref{Choosing Window}) can be further modified by the following user options."
-msgstr "@code{display-buffer}の標準のディスプレイアクション(@pxref{Choosing Window})は、さまざまなユーザーオプションにより変更が可能です。"
+msgstr "以下のユーザーオプションでバッファーのディスプレイアクション(@ref{Choosing Window}を参照)の振る舞いをさらに変更することができます。"
 
 #. type: item
 #: original_texis/windows.texi:2941 original_texis/windows.texi:3077
@@ -4493,10 +4491,8 @@ msgstr "この変数の値が非@code{nil}なら、@code{display-buffer}は表�
 
 #. type: defopt
 #: original_texis/windows.texi:2953
-#, fuzzy
-#| msgid "This variable is provided mainly for backward compatibility.  It is obeyed by @code{display-buffer} via a special mechanism in @code{display-buffer-fallback-action}, which only calls the action function @code{display-buffer-pop-up-window} (@pxref{Display Action Functions}) when the value is @code{nil}.  It is not consulted by @code{display-buffer-pop-up-window} itself, which the user may specify directly in @code{display-buffer-alist} etc."
 msgid "This variable is provided for backward compatibility only.  It is obeyed by @code{display-buffer} via a special mechanism in @code{display-buffer-fallback-action}, which calls the action function @code{display-buffer-pop-up-window} (@pxref{Buffer Display Action Functions}) when the value of this option is non-@code{nil}.  It is not consulted by @code{display-buffer-pop-up-window} itself, which the user may specify directly in @code{display-buffer-alist} etc."
-msgstr "この変数は、主に後方互換のために提供される。値が@code{nil}のときは、アクション関数@code{display-buffer-pop-up-window}(@ref{Display Action Functions}を参照)を呼び出すだけの@code{display-buffer-fallback-action}内の特別なメカニズムを経由して、@code{display-buffer}にしたがう。この変数は、@code{display-buffer-alist}等により直接指定できる、@code{display-buffer-pop-up-window}自体からは参照されない。"
+msgstr "この変数は後方互換のためだけに提供される。このオプションの値が非@code{nil}のときはアクション関数@code{display-buffer-pop-up-window} (@ref{Buffer Display Action Functions}を参照)を呼び出すだけの@code{display-buffer-fallback-action}内の特別なメカニズムを経由して@code{display-buffer}にしたがう。この変数は@code{display-buffer-alist}等により直接指定できる@code{display-buffer-pop-up-window}自体からは参照されない。"
 
 #. type: defopt
 #: original_texis/windows.texi:2955
@@ -4506,17 +4502,13 @@ msgstr "split-window-preferred-function"
 
 #. type: defopt
 #: original_texis/windows.texi:2960
-#, fuzzy
-#| msgid "This variable specifies a function for splitting a window, in order to make a new window for displaying a buffer.  It is used by the @code{display-buffer-pop-up-window} action function to actually split the window (@pxref{Display Action Functions})."
 msgid "This variable specifies a function for splitting a window, in order to make a new window for displaying a buffer.  It is used by the @code{display-buffer-pop-up-window} action function to actually split the window."
-msgstr "この変数は、バッファーを表示する新たなウィンドウを作成するための、ウィンドウを分割する関数を指定する。これは、実際にウィンドウを分割するために、アクション関数@code{display-buffer-pop-up-window}により使用される(@ref{Display Action Functions}を参照)。"
+msgstr "この変数は、バッファーを表示する新たなウィンドウを作成するための、ウィンドウを分割する関数を指定する。これは、実際にウィンドウを分割するために、アクション関数@code{display-buffer-pop-up-window}により使用される。"
 
 #. type: defopt
 #: original_texis/windows.texi:2965
-#, fuzzy
-#| msgid "The default value is @code{split-window-sensibly}, which is documented below.  The value must be a function that takes one argument, a window, and return either a new window (which will be used to display the desired buffer) or @code{nil} (which means the splitting failed)."
-msgid "The value must be a function that takes one argument, a window, and returns either a new window (which will be used to display the desired buffer) or @code{nil} (which means the splitting failed).  The default value is @code{split-window-sensibly}, which is documented next."
-msgstr "デフォルト値は@code{split-window-sensibly}で、これは以下で記述する。値は、ウィンドウを引数とする関数でなければならず、(要求されたバッファーを表示するために使用されるであろう)新たなウィンドウ、または@code{nil}(分割の失敗を意味する)をリターンしなければならない。"
+msgid "The value must be a function that takes one argument, a window, and returns either a new window (which will be used to display the desired buffer) or @code{nil} (which means the splitting failed).  The default value is , which is documented next."
+msgstr "値はウィンドウを単一の引数とする関数でなければならず、(要求されたバッファーを表示するために使用される)新たなウィンドウ、または@code{nil} (分割の失敗を意味する)をリターンしなければならない。デフォルト値は@code{split-window-sensibly} (次に説明)。"
 
 #. type: defun
 #: original_texis/windows.texi:2967
@@ -4526,17 +4518,13 @@ msgstr "split-window-sensibly &optional window"
 
 #. type: defun
 #: original_texis/windows.texi:2972
-#, fuzzy
-#| msgid "This function tries to split @var{window}, and return the newly created window.  If @var{window} cannot be split, it returns @code{nil}."
 msgid "This function tries to split @var{window} and return the newly created window.  If @var{window} cannot be split, it returns @code{nil}.  If @var{window} is omitted or @code{nil}, it defaults to the selected window."
-msgstr "この関数は、@var{window}を分割して、新たに作成したウィンドウをリターンする。@var{window}を分割できなければ、@code{nil}をリターンする。"
+msgstr "この関数は@var{window}を分割して新たに作成したウィンドウをリターンする。@var{window}を分割できなければ@code{nil}をリターンする。@var{window}が省略か@code{nil}の場合のデフォルトは選択されたウィンドウ。"
 
 #. type: defun
 #: original_texis/windows.texi:2983
-#, fuzzy
-#| msgid "This function obeys the usual rules that determine when a window may be split (@pxref{Splitting Windows}).  It first tries to split by placing the new window below, subject to the restriction imposed by @code{split-height-threshold} (see below), in addition to any other restrictions.  If that fails, it tries to split by placing the new window to the right, subject to @code{split-width-threshold} (see below).  If that fails, and the window is the only window on its frame, this function again tries to split and place the new window below, disregarding @code{split-height-threshold}.  If this fails as well, this function gives up and returns @code{nil}."
 msgid "This function obeys the usual rules that determine when a window may be split (@pxref{Splitting Windows}).  It first tries to split by placing the new window below, subject to the restriction imposed by @code{split-height-threshold} (see below), in addition to any other restrictions.  If that fails, it tries to split by placing the new window to the right, subject to @code{split-width-threshold} (see below).  If that also fails, and the window is the only window on its frame, this function again tries to split and place the new window below, disregarding @code{split-height-threshold}.  If this fails as well, this function gives up and returns @code{nil}."
-msgstr "この関数は、ウィンドウが分割できるかどうか判断する際の、通常のルールにしたがう(@ref{Splitting Windows}を参照)。最初にまず、@code{split-height-threshold}(以下参照)、およびその他が課す制約の元、新たなウィンドウが下になるように分割を試みる。これが失敗したら、@code{split-width-threshold}(以下参照)が課す制約の元、新たなウィンドウが右になるように分割を試みる。これが失敗して、かつそのウィンドウがそのフレームの唯一のウィンドウの場合、この関数は@code{split-height-threshold}を無視して、新たなウィンドウが下になるよう、再度分割を試みる。これも同様に失敗したら、この関数は諦めて@code{nil}をリターンする。"
+msgstr "この関数はウィンドウが分割できるかどうか判断する際の通常のルールにしたがう(@ref{Splitting Windows}を参照)。最初にまず@code{split-height-threshold}(以下参照)、およびその他が課す制約の元で新たなウィンドウが下になるように分割を試みる。これが失敗したら@code{split-width-threshold}(以下参照)が課す制約の元で新たなウィンドウが右になるように分割を試みる。これも失敗して、かつそのウィンドウがそのフレームの唯一のウィンドウなら、この関数は@code{split-height-threshold}を無視して新たなウィンドウが下になるように再度分割を試みる。これも同様に失敗したら、この関数は諦めて@code{nil}をリターンする。"
 
 #. type: defopt
 #: original_texis/windows.texi:2985
@@ -4546,10 +4534,8 @@ msgstr "split-height-threshold"
 
 #. type: defopt
 #: original_texis/windows.texi:2991
-#, fuzzy
-#| msgid "This variable, used by @code{split-window-sensibly}, specifies whether to split the window placing the new window below.  If it is an integer, that means to split only if the original window has at least that many lines.  If it is @code{nil}, that means not to split this way."
 msgid "This variable specifies whether @code{split-window-sensibly} is allowed to split the window placing the new window below.  If it is an integer, that means to split only if the original window has at least that many lines.  If it is @code{nil}, that means not to split this way."
-msgstr "これは@code{split-window-sensibly}により使用される変数であり、ウィンドウを分割して新たなウィンドウを下に配置するかどうかを指定する。整数の場合は、元のウィンドウが最低でもその行数なければ分割しないことを意味する。@code{nil}の場合は、この方法では分割しないことを意味する。"
+msgstr "この変数は@code{split-window-sensibly}がウィンドウを分割して新たなウィンドウを下に配置できるかどうかを指定する。整数なら元のウィンドウが最低でもその行数なければ分割しないことを意味する。@code{nil}なら、この方法では分割しないことを意味する。"
 
 #. type: defopt
 #: original_texis/windows.texi:2993
@@ -4559,10 +4545,8 @@ msgstr "split-width-threshold"
 
 #. type: defopt
 #: original_texis/windows.texi:2999
-#, fuzzy
-#| msgid "This variable, used by @code{split-window-sensibly}, specifies whether to split the window placing the new window to the right.  If the value is an integer, that means to split only if the original window has at least that many columns.  If the value is @code{nil}, that means not to split this way."
 msgid "This variable specifies whether @code{split-window-sensibly} is allowed to split the window placing the new window to the right.  If the value is an integer, that means to split only if the original window has at least that many columns.  If the value is @code{nil}, that means not to split this way."
-msgstr "これは@code{split-window-sensibly}により使用される変数であり、ウィンドウを分割して新たなウィンドウを右に配置するかどうかを指定する。整数の場合は、元のウィンドウが最低でもその列数なければ分割しないことを意味する。@code{nil}の場合は、この方法では分割しないことを意味する。"
+msgstr "この変数は@code{split-window-sensibly}がウィンドウを分割して新たなウィンドウを右に配置できるかどうかを指定する。整数なら元のウィンドウが最低でもその列数なければ分割しないことを意味する。@code{nil}なら、この方法では分割しないことを意味する。"
 
 #. type: defopt
 #: original_texis/windows.texi:3001
@@ -4572,10 +4556,8 @@ msgstr "even-window-sizes"
 
 #. type: defopt
 #: original_texis/windows.texi:3005
-#, fuzzy
-#| msgid "If the value of this variable is non-@code{nil}, @code{display-buffer} is allowed to split an existing window to make a new window for displaying in.  This is the default."
 msgid "This variable, if non-@code{nil}, causes @code{display-buffer} to even window sizes whenever it reuses an existing window, and that window is adjacent to the selected one."
-msgstr "この変数の値が非@code{nil}の場合、@code{display-buffer}は表示のために既存のバッファーを分割して新たなウィンドウの作成を許される。"
+msgstr "この変数が非@code{nil}なら@code{display-buffer}が既存のウィンドウを再利用する際は常にウィンドウのサイズを均等にして、そのウィンドウを選択されたウィンドウに隣接させる。"
 
 #. type: defopt
 #: original_texis/windows.texi:3014
@@ -4600,10 +4582,8 @@ msgstr "非@code{nil}値は@code{display-buffer}がすでに@var{buffer-or-name}
 
 #. type: defopt
 #: original_texis/windows.texi:3033
-#, fuzzy
-#| msgid "This variable is provided mainly for backward compatibility.  It is obeyed by @code{display-buffer} via a special mechanism in @code{display-buffer-fallback-action}, which calls the action function @code{display-buffer-pop-up-frame} (@pxref{Display Action Functions})  if the value is non-@code{nil}.  (This is done before attempting to split a window.)  This variable is not consulted by @code{display-buffer-pop-up-frame} itself, which the user may specify directly in @code{display-buffer-alist} etc."
 msgid "This variable is provided mainly for backward compatibility.  It is obeyed by @code{display-buffer} via a special mechanism in @code{display-buffer-fallback-action}, which calls the action function @code{display-buffer-pop-up-frame} (@pxref{Buffer Display Action Functions}) if the value is non-@code{nil}.  (This is done before attempting to split a window.)  This variable is not consulted by @code{display-buffer-pop-up-frame} itself, which the user may specify directly in @code{display-buffer-alist} etc."
-msgstr "この変数は主に、後方互換のために提供されている。値が非@code{nil}のときは、アクション関数@code{display-buffer-pop-up-frame}(@ref{Display Action Functions}を参照)を呼び出すだけの@code{display-buffer-fallback-action}内の特別なメカニズムを経由して、@code{display-buffer}にしたがう。この変数は、@code{display-buffer-alist}等により直接指定できる、@code{display-buffer-pop-up-window}自体からは参照されない(これはウィンドウの分割前に行われる)。この変数は、@code{display-buffer-alist}等により直接指定できる、@code{display-buffer-pop-up-frame}自体からは参照されない。"
+msgstr "この変数は主に後方互換のために提供されている。値が非@code{nil}のときは、アクション関数@code{display-buffer-pop-up-frame} (@ref{Buffer Display Action Functions}を参照)を呼び出すだけの@code{display-buffer-fallback-action}内の特別なメカニズムを経由して@code{display-buffer}にしたがう。この変数は@code{display-buffer-alist}等により直接指定できる、@code{display-buffer-pop-up-window}自体からは参照されない(これはウィンドウの分割前に行われる)。この変数は@code{display-buffer-alist}等により直接指定できる@code{display-buffer-pop-up-frame}自体からは参照されない。"
 
 #. type: defopt
 #: original_texis/windows.texi:3035
@@ -4613,10 +4593,8 @@ msgstr "pop-up-frame-function"
 
 #. type: defopt
 #: original_texis/windows.texi:3039
-#, fuzzy
-#| msgid "This variable specifies a function for creating a new frame, in order to make a new window for displaying a buffer.  It is used by the @code{display-buffer-pop-up-frame} action function (@pxref{Display Action Functions})."
 msgid "This variable specifies a function for creating a new frame, in order to make a new window for displaying a buffer.  It is used by the @code{display-buffer-pop-up-frame} action function."
-msgstr "この変数は、バッファーを表示する新たなウィンドウを作成するための、フレームを作成する関数を指定する。これは、アクション関数@code{display-buffer-pop-up-frame}により使用される(@ref{Display Action Functions}を参照)。"
+msgstr "この変数はバッファーを表示する新たなウィンドウを作成するためのフレームを作成する関数を指定する。これはアクション関数@code{display-buffer-pop-up-frame}により使用される。"
 
 #. type: defopt
 #: original_texis/windows.texi:3044
@@ -4631,48 +4609,38 @@ msgstr "pop-up-frame-alist"
 
 #. type: defopt
 #: original_texis/windows.texi:3051
-#, fuzzy
-#| msgid "This variable holds an alist of frame parameters (@pxref{Frame Parameters}), which is used by the default function in @code{pop-up-frame-function} to make a new frame.  The default is @code{nil}."
 msgid "This variable holds an alist of frame parameters (@pxref{Frame Parameters}), which is used by the function specified by @code{pop-up-frame-function} to make a new frame.  The default is @code{nil}."
-msgstr "この変数は、フレームを新たに作成するための@code{pop-up-frame-function}のデフォルト関数により使用される、フレームパラメーター(@ref{Frame Parameters}を参照)のalistを保持する。デフォルトは@code{nil}。"
+msgstr "この変数はフレームを新たに作成するための@code{pop-up-frame-function}で指定される関数が使用するフレームパラメーター(@ref{Frame Parameters}を参照)のalistを保持する。デフォルトは@code{nil}。"
 
 #. type: defopt
 #: original_texis/windows.texi:3059
 msgid "This option is provided for backward compatibility only.  Note, that when @code{display-buffer-pop-up-frame} calls the function specified by @code{pop-up-frame-function}, it prepends the value of all @code{pop-up-frame-parameters} action alist entries to @code{pop-up-frame-alist} so that the values specified by the action alist entry effectively override any corresponding values of @code{pop-up-frame-alist}."
-msgstr ""
+msgstr "このオプションは後方互換のためだけに提供される。これは@code{display-buffer-pop-up-frame}が@code{pop-up-frame-function}の指定する関数を呼び出す際に、すべてのアクションalistの@code{pop-up-frame-parameters}エントリーの値に前置されるので、アクションalistのエントリーが指定する値が@code{pop-up-frame-alist}の対応する値を効果的にオーバーライドすることに注意。"
 
 #. type: defopt
 #: original_texis/windows.texi:3065
 msgid "Hence, users should set up a @code{pop-up-frame-parameters} action alist entry in @code{display-buffer-alist} instead of customizing @code{pop-up-frame-alist}.  Only this will guarantee that the value of a parameter specified by the user overrides the value of that parameter specified by the caller of @code{display-buffer}."
-msgstr ""
+msgstr "したがってユーザーは@code{pop-up-frame-alist}をカスタマイズするのではなく、@code{display-buffer-alist}noアクションalistの@code{pop-up-frame-parameters}エントリーをセットアップするべきである。ユーザーが指定したパラメーターの値だけが、@code{display-buffer}の呼び出し手が指定したパラメーターの値をオーバーライドするこが保証されている。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3075
 msgid "Many efforts in the design of @code{display-buffer} have been given to maintain compatibility with code that uses older options like @code{pop-up-windows}, @code{pop-up-frames}, @code{pop-up-frame-alist}, @code{same-window-buffer-names} and @code{same-window-regexps}.  Lisp Programs and users should refrain from using these options.  Above we already warned against customizing @code{pop-up-frame-alist}.  Here we describe how to convert the remaining options to use display actions instead."
-msgstr ""
+msgstr "@code{display-buffer}のデザインでは@code{pop-up-windows}、@code{pop-up-frames}、@code{pop-up-frame-alist}、@code{same-window-buffer-names}、@code{same-window-regexps}のような古いオプションを使用するコードにたいする保守に互換性を与えるために多くの努力が払われています。Lispプログラムやユーザーはこれらのオプションの使用は控えるべきです。上述のように@code{pop-up-frame-alist}のカスタマイズにたいしては警告済みです。ここでは残りのオプションではなくディスプレイアクションを使用するように変換する方法を説明します。"
 
 #. type: vindex
 #: original_texis/windows.texi:3078
 #, no-wrap
 msgid "pop-up-windows@r{, replacement for}"
-msgstr ""
+msgstr "pop-up-windows@r{, replacement for}"
 
 #. type: table
 #: original_texis/windows.texi:3083
 msgid "This variable is @code{t} by default.  Instead of customizing it to @code{nil} and thus telling @code{display-buffer} what not to do, it's much better to list in @code{display-buffer-base-action} the action functions it should try instead as, for example:"
-msgstr ""
+msgstr "この変数のデフォルトは@code{t}。これを@code{nil}にカスタマイズして@code{display-buffer}に何を行うべきではないかを指示するよりも、かわりに試みるべきアクション関数を@code{display-buffer-base-action}内にリストするほうがよい。たとえば:"
 
 #. type: group
 #: original_texis/windows.texi:3091
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(display-buffer\n"
-#| " (get-buffer-create \"*foo*\")\n"
-#| " '((display-buffer-reuse-window\n"
-#| "    display-buffer-pop-up-window\n"
-#| "    display-buffer-pop-up-frame)\n"
-#| "   (reusable-frames . 0)\n"
-#| "   (window-height . 10) (window-width . 40)))\n"
+#, no-wrap
 msgid ""
 "(customize-set-variable\n"
 " 'display-buffer-base-action\n"
@@ -4680,49 +4648,36 @@ msgid ""
 "    display-buffer-in-previous-window\n"
 "    display-buffer-use-some-window)))\n"
 msgstr ""
-"(display-buffer\n"
-" (get-buffer-create \"*foo*\")\n"
-" '((display-buffer-reuse-window\n"
-"    display-buffer-pop-up-window\n"
-"    display-buffer-pop-up-frame)\n"
-"   (reusable-frames . 0)\n"
-"   (window-height . 10) (window-width . 40)))\n"
+"(customize-set-variable\n"
+" 'display-buffer-base-action\n"
+" '((display-buffer-reuse-window display-buffer-same-window\n"
+"    display-buffer-in-previous-window\n"
+"    display-buffer-use-some-window)))\n"
 
 #. type: vindex
 #: original_texis/windows.texi:3095
 #, no-wrap
 msgid "pop-up-frames@r{, replacement for}"
-msgstr ""
+msgstr "pop-up-frames@r{, replacement for}"
 
 #. type: table
 #: original_texis/windows.texi:3098
 msgid "Instead of customizing this variable to @code{t}, customize @code{display-buffer-base-action}, for example, as follows:"
-msgstr ""
+msgstr "この変数を@code{t}にカスタマイズするのではなく、たとえば以下のように@code{display-buffer-base-action}をカスタマイズすること:"
 
 #. type: group
 #: original_texis/windows.texi:3105 original_texis/windows.texi:3196
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(display-buffer\n"
-#| " (get-buffer-create \"*foo*\")\n"
-#| " '((display-buffer-reuse-window\n"
-#| "    display-buffer-pop-up-window\n"
-#| "    display-buffer-pop-up-frame)\n"
-#| "   (reusable-frames . 0)\n"
-#| "   (window-height . 10) (window-width . 40)))\n"
+#, no-wrap
 msgid ""
 "(customize-set-variable\n"
 " 'display-buffer-base-action\n"
 " '((display-buffer-reuse-window display-buffer-pop-up-frame)\n"
 "   (reusable-frames . 0)))\n"
 msgstr ""
-"(display-buffer\n"
-" (get-buffer-create \"*foo*\")\n"
-" '((display-buffer-reuse-window\n"
-"    display-buffer-pop-up-window\n"
-"    display-buffer-pop-up-frame)\n"
-"   (reusable-frames . 0)\n"
-"   (window-height . 10) (window-width . 40)))\n"
+"(customize-set-variable\n"
+" 'display-buffer-base-action\n"
+" '((display-buffer-reuse-window display-buffer-pop-up-frame)\n"
+"   (reusable-frames . 0)))\n"
 
 #. type: item
 #: original_texis/windows.texi:3108
@@ -4738,22 +4693,20 @@ msgstr "same-window-regexps"
 
 #. type: vindex
 #: original_texis/windows.texi:3110
-#, fuzzy, no-wrap
-#| msgid "same-window-buffer-names"
+#, no-wrap
 msgid "same-window-buffer-names@r{, replacement for}"
-msgstr "same-window-buffer-names"
+msgstr "same-window-buffer-names@r{, replacement for}"
 
 #. type: vindex
 #: original_texis/windows.texi:3111
-#, fuzzy, no-wrap
-#| msgid "same-window-regexps"
+#, no-wrap
 msgid "same-window-regexps@r{, replacement for}"
-msgstr "same-window-regexps"
+msgstr "same-window-regexps@r{, replacement for}"
 
 #. type: table
 #: original_texis/windows.texi:3115
 msgid "Instead of adding a buffer name or a regular expression to one of these options use a @code{display-buffer-alist} entry for that buffer specifying the action function @code{display-buffer-same-window}."
-msgstr ""
+msgstr "これらのオプションのいずれかにたいしてバッファー名や正規表現を追加するかわりに、そのバッファーにたいしてアクション関数@code{display-buffer-same-window}を指定する@code{display-buffer-alist}エントリーを使用すること。"
 
 #. type: group
 #: original_texis/windows.texi:3122
@@ -4764,65 +4717,69 @@ msgid ""
 " (cons '(\"\\\\*foo\\\\*\" (display-buffer-same-window))\n"
 "        display-buffer-alist))\n"
 msgstr ""
+"(customize-set-variable\n"
+" 'display-buffer-alist\n"
+" (cons '(\"\\\\*foo\\\\*\" (display-buffer-same-window))\n"
+"        display-buffer-alist))\n"
 
 #. type: cindex
 #: original_texis/windows.texi:3129
 #, no-wrap
 msgid "precedence of buffer display action functions"
-msgstr ""
+msgstr "precedence of buffer display action functions"
 
 #. type: cindex
 #: original_texis/windows.texi:3130
 #, no-wrap
 msgid "execution order of buffer display action functions"
-msgstr ""
+msgstr "execution order of buffer display action functions"
 
 #. type: cindex
 #: original_texis/windows.texi:3131
 #, no-wrap
 msgid "buffer display action functions, precedence"
-msgstr ""
+msgstr "buffer display action functions, precedence"
 
 #. type: Plain text
 #: original_texis/windows.texi:3143
 msgid "From the past subsections we already know that @code{display-buffer} must be supplied with a number of display actions (@pxref{Choosing Window}) in order to display a buffer.  In a completely uncustomized Emacs, these actions are specified by @code{display-buffer-fallback-action} in the following order of precedence: Reuse a window, pop up a new window on the same frame, use a window previously showing the buffer, use some window and pop up a new frame.  (Note that the remaining actions named by @code{display-buffer-fallback-action} are void in an uncustomized Emacs)."
-msgstr ""
+msgstr "これまでのサブセクションによってバッファーを表示するためには、@code{display-buffer}にいくつかのディスプレイアクションを提供しなければならないことがわかりました(@ref{Choosing Window}を参照)。まったくカスタマイズしていないEmacsでは、これらのアクションは@code{display-buffer-fallback-action}によってウィンドウの再利用、同一フレーム上での新たなウィンドウのポップアップ、そのバッファーを以前に表示したウィンドウの使用、新たなフレームをポップアップして何らかのウィンドウを使用するという優先順で指定されます(@code{display-buffer-fallback-action}いより命名される残りのアクションは未カスタマイズのEmacsではvoidであることに注意)。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3145
 msgid "Consider the following form:"
-msgstr ""
+msgstr "以下のフォームを考えてください:"
 
 #. type: example
 #: original_texis/windows.texi:3148
 #, no-wrap
 msgid "(display-buffer (get-buffer-create \"*foo*\"))\n"
-msgstr ""
+msgstr "(display-buffer (get-buffer-create \"*foo*\"))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3158
 msgid "Evaluating this form in the buffer @file{*scratch*} of an uncustomized Emacs session will usually fail to reuse a window that shows @file{*foo*} already, but succeed in popping up a new window.  Evaluating the same form again will now not cause any visible changes---@code{display-buffer} reused the window already showing @file{*foo*} because that action was applicable and had the highest precedence among all applicable actions."
-msgstr ""
+msgstr "このフォームをカスタマイズされていないEmacsの@file{*scratch*}バッファーで評価すると、通常はすでに@file{*foo*}を表示しているウィンドウの再利用は失敗しますが、新たなウィンドウのポップアップは成功するでしょう。そこで同じフォームを再度評価すると、今度は@code{display-buffer}はすでに@file{*foo*}を表示しているウィンドウを再利用して視覚的な変化は生じません。なぜならそれは許容され得るアクションであるとともに、すべての許容され得るアクションの中でもっとも高い優先度をもつからです。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3169
 msgid "Popping up a new window will fail if there is not enough space on the selected frame.  In an uncustomized Emacs it typically fails when there are already two windows on a frame.  For example, if you now type @w{@kbd{C-x 1}} followed by @w{@kbd{C-x 2}} and evaluate the form once more, @file{*foo*} should show up in the lower window---@code{display-buffer} just used ``some'' window.  If, before typing @w{@kbd{C-x 2}} you had typed @w{@kbd{C-x o}}, @file{*foo*} would have been shown in the upper window because ``some'' window stands for the ``least recently used'' window and the selected window has been least recently used if and only if it is alone on its frame."
-msgstr ""
+msgstr "選択されたフレームに十分なスペースがなければ、新たなウィンドウのポップアップは失敗します。カスタマイズされていないEmacsでは、通常はフレームに2つのウィンドウがすでに存在すれば失敗します。たとえば今度は@w{@kbd{C-x 1}}の後に@w{@kbd{C-x 2}}をタイプしてからもう一度フォームを評価すると、@file{*foo*}は下側のウィンドウに表示されるはずです( @code{display-buffer}は単に``何らか''のウィンドウを使用した)。@w{@kbd{C-x 2}}をタイプする前に@w{@kbd{C-x o}}をタイプしていれば、@file{*foo*}は上側のウィンドウに表示されるでしょう。なぜなら``何らか''のウィンドウとは``最近もっとも使用されていない''ウィンドウという意味であり、選択されたウィンドウが最近もっとも使用されていないウィンドウになるのは、それがフレームで唯一のウィンドウの場合だけだからです。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3176
 msgid "Let's assume you did not type @w{@kbd{C-x o}} and @file{*foo*} is shown in the lower window.  Type @w{@kbd{C-x o}} to get there followed by @w{@kbd{C-x left}} and evaluate the form again.  This should display @file{*foo*} in the same, lower window because that window had already shown @file{*foo*} previously and was therefore chosen instead of some other window."
-msgstr ""
+msgstr "@w{@kbd{C-x o}}をタイプせずに@file{*foo*}が下側のウィンドウに表示されているとしましょう。下側のウィンドウに移動するために@w{@kbd{C-x o}}の後に@w{@kbd{C-x left}}をタイプして、再びフォームを評価してみます。すると@file{*foo*}は同じ下側のウィンドウに表示されるはずです。なぜなら@file{*foo*}は以前にそのウィンドウで表示されているので何らかのウィンドウのかわりにそのウィンドウが選択されるからです。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3186
 msgid "So far we have only observed the default behavior in an uncustomized Emacs session.  To see how this behavior can be customized, let's consider the option @code{display-buffer-base-action}.  It provides a very coarse customization which conceptually affects the display of @emph{any} buffer.  It can be used to supplement the actions supplied by @code{display-buffer-fallback-action} by reordering them or by adding actions that are not present there but fit more closely the user's editing practice.  However, it can also be used to change the default behavior in a more profound way."
-msgstr ""
+msgstr "ここまではカスタマイズしていないEmacsのデフォルトの動作を観察してきました。この動作のカスタマイズの仕方を確認するために、オプション@code{display-buffer-base-action}について考えてみましょう。これは概念的に@emph{任意}のバッファーの表示に影響を与える、非常に大まかなカスタマイズを提供します。これは@code{display-buffer-fallback-action}により提供されるアクションの並び替えや、提供されていないもののユーザーの編集方法により密接に適合するアクションを追加することにより、@code{display-buffer-fallback-action}の補強に使用することができます。しかしデフォルトの動作をより深く変更するためにも使用できます。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3189
 msgid "Let's consider a user who, as a rule, prefers to display buffers on another frame.  Such a user might provide the following customization:"
-msgstr ""
+msgstr "ルールとして別フレームにバッファーを表示することを好むユーザーを考えてみましょう。そのようなユーザーなら以下のようなカスタマイズを行うかもしれません:"
 
 #. type: Plain text
 #: original_texis/windows.texi:3209
