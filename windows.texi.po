@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-07-04 00:08+0900\n"
+"PO-Revision-Date: 2020-07-04 03:16+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -5214,7 +5214,13 @@ msgid ""
 "    (display-buffer-below-selected display-buffer-at-bottom)\n"
 "    (inhibit-same-window . t)\n"
 "    (window-height . fit-window-to-buffer))))\n"
-msgstr "@code{display-buffer-alist}"
+msgstr ""
+"(customize-set-variable\n"
+" 'display-buffer-alist\n"
+" '((\"\\\\*foo\\\\*\"\n"
+"    (display-buffer-below-selected display-buffer-at-bottom)\n"
+"    (inhibit-same-window . t)\n"
+"    (window-height . fit-window-to-buffer))))\n"
 
 #. type: table
 #: original_texis/windows.texi:3580
@@ -5251,7 +5257,7 @@ msgstr ""
 #: original_texis/windows.texi:3595
 #, no-wrap
 msgid "Treat each other with respect"
-msgstr ""
+msgstr "互いを遵守して扱う"
 
 #. type: table
 #: original_texis/windows.texi:3601
@@ -5271,34 +5277,34 @@ msgstr "Lispプログラムは表示しようとしているバッファーに�
 #. type: table
 #: original_texis/windows.texi:3624
 msgid "Users should not pose too many and too severe restrictions on how arbitrary buffers get displayed.  Otherwise, they will risk to lose the characteristics of showing a buffer for a certain purpose.  Suppose a Lisp program has been written to compare different versions of a buffer in two windows side-by-side.  If the customization of @code{display-buffer-alist} prescribes that any such buffer should be always shown in or below the selected window, the program will have a hard time to set up the desired window configuration via @code{display-buffer}."
-msgstr ""
+msgstr "ユーザーは任意のバッファーが表示される方法ひついて厳しすぎる制限を過度に多く設けるべきではない。さもないと特定の目的でバッファーを表示する際の特性を失うリスクがある。横並びの2つのウィンドウでバッファーの異なるバージョンを比較するLispプログラムを記述するとしよう。@code{display-buffer-alist}のカスタマイズによりそのようなすべてのバッファーは常に選択されたウィンドウの下に表示されるように定められていたら、@code{display-buffer}を通じて望ましいウィンドウ設定を設定するのはプログラムにとって困難だろう。"
 
 #. type: table
 #: original_texis/windows.texi:3630
 msgid "To specify a preference for showing an arbitrary buffer, users should customize @code{display-buffer-base-action}.  An example of how users who prefer working with multiple frames would do that was given in the previous subsection.  @code{display-buffer-alist} should be reserved for displaying specific buffers in a specific way."
-msgstr ""
+msgstr "任意のバッファーを表示するための設定を指定するためには、ユーザーは@code{display-buffer-base-action}をカスタマイズする必要がある。複数のフレームで作業を行うことを好むユーザーについての例は前のサブセクションを参照のこと。@code{display-buffer-alist}は特定のバッファーを特定の方法で表示するために予約済みである。"
 
 #. type: item
 #: original_texis/windows.texi:3631
 #, no-wrap
 msgid "Consider reusing a window that already shows the buffer"
-msgstr ""
+msgstr "すでにバッファーを表示しているウィンドウの再利用の考慮"
 
 #. type: table
 #: original_texis/windows.texi:3640
 msgid "Generally, it's always a good idea for users and Lisp programmers to be prepared for the case that a window already shows the buffer in question and to reuse that window.  In the preceding subsection we have shown that failing to do so properly may cause @code{display-buffer} to continuously pop up a new frame although a frame showing that buffer existed already.  In a few cases only, it might be undesirable to reuse a window, for example, when a different portion of the buffer should be shown in that window."
-msgstr ""
+msgstr "一般的にユーザーとLispプログラムにとって、ウィンドウがすでに対象となるバッファーを表示していて、それを再利用するのは常に良いアイデアである。前のサブセクションではバッファーを表示しているフレームがすでに存在していても、正しく行うことに失敗すると@code{display-buffer}が継続的に新たなフレームをポップアップすることを示した。たとえばバッファーの異なる部分をそのウィンドウで表示する必要がある際のように、少数のケースにおいてはウィンドウの再利用は望ましくないかもしれない。"
 
 #. type: table
 #: original_texis/windows.texi:3647
 msgid "Hence, @code{display-buffer-reuse-window} is one action function that should be used as often as possible, both in @var{action} arguments and customizations.  An @code{inhibit-same-window} entry in the @var{action} argument usually takes care of the most common case where reusing a window showing the buffer should be avoided---that where the window in question is the selected one."
-msgstr ""
+msgstr "したがって@code{display-buffer-reuse-window}は@var{action}引数とカスタマイゼーションの両方で可能なかぎり使用するべきアクション関数の1つである。@var{action}引数の@code{inhibit-same-window}エントリーは、通常はバッファーをを表示中のウィンドウ、つまり対象となるウィンドウが選択されたウィンドウならそのウィンドウの再利用を避けるような、一般的なケースのほとんどを考慮する。"
 
 #. type: item
 #: original_texis/windows.texi:3648
 #, no-wrap
 msgid "Attract focus to the window chosen"
-msgstr ""
+msgstr "選択したウィンドウにフォーカスを当てる"
 
 #. type: table
 #: original_texis/windows.texi:3657
