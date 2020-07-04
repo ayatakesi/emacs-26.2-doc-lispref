@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-07-04 03:16+0900\n"
+"PO-Revision-Date: 2020-07-05 00:21+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -5309,54 +5309,53 @@ msgstr "選択したウィンドウにフォーカスを当てる"
 #. type: table
 #: original_texis/windows.texi:3657
 msgid "This is a no-brainer for people working with multiple frames---the frame showing the buffer will automatically raise and get focus unless an @code{inhibit-switch-frame} entry forbids it.  For single frame users this task can be considerably more difficult.  In particular, @code{display-buffer-pop-up-window} and @code{display-buffer-use-some-window} can become obtrusive in this regard.  They split or use a seemingly arbitrary (often the largest or least recently used) window, distracting the user's attention."
-msgstr ""
+msgstr "これは複数フレームで作業を行う人にとっては思考を要しない。バッファーを表示中のフレームは自動的にraiseされて@code{inhibit-switch-frame}が禁じていなければフォーカスを取得する。単一フレームのユーザーにとっては、このタスクは顕著に困難になり得る。この点において特に@code{display-buffer-pop-up-window}と@code{display-buffer-use-some-window}が厄介になる可能性がある。これらは表面上は任意に見えるウィンドウ(最大のウィンドウか最近もっとも使用されていないウィンドウ)を分割または使用してユーザーの注意を逸らす。"
 
 #. type: table
 #: original_texis/windows.texi:3664
 msgid "Some Lisp programs therefore try to choose a window at the bottom of the frame, for example, in order to display the buffer in vicinity of the minibuffer window where the user is expected to answer a question related to the new window.  For non-input related actions @code{display-buffer-below-selected} might be preferable because the selected window usually already has the user's attention."
-msgstr ""
+msgstr "したがってLispプログラムのいくつかは、たとえば新たなウィンドウに関して問いに答える場所として期待されるミニバッファーウィンドウの近傍にバッファーを表示するためにフレーム最下のウィンドウの選択を試みる。選択されたウィンドウは通常はすでにユーーザーの注意を喚起済みなので、入力とは無関係なアクション@code{display-buffer-below-selected}が好ましいかもしれない。"
 
 #. type: item
 #: original_texis/windows.texi:3665
-#, fuzzy, no-wrap
-#| msgid "Action Functions for @code{display-buffer}"
+#, no-wrap
 msgid "Handle subsequent invocations of @code{display-buffer}"
-msgstr "Action Functions for @code{display-buffer}"
+msgstr "@code{display-buffer}に後続する呼び出しの処理"
 
 #. type: table
 #: original_texis/windows.texi:3673
 msgid "@code{display-buffer} is not overly well suited for displaying several buffers in sequence and making sure that all these buffers are shown orderly in the resulting window configuration.  Again, the standard action functions @code{display-buffer-pop-up-window} and @code{display-buffer-use-some-window} are not very suited for this purpose due to their somewhat chaotic nature in more complex configurations."
-msgstr ""
+msgstr "@code{display-buffer}は複数のバッファーを順番に表示するのに最適ではないので、結果となるウィンドウ構成でこれらのバッファーのすべてが順に表示されているか確認すること。繰り返しになるが標準のアクション関数@code{display-buffer-pop-up-window}と@code{display-buffer-use-some-window}は、より複雑な構成における幾分混沌とした性質のために、この用途に最適とは言えない。"
 
 #. type: table
 #: original_texis/windows.texi:3679
 msgid "To produce a window configuration displaying multiple buffers (or different views of one and the same buffer) in one and the same display cycle, Lisp programmers will unavoidably have to write their own action functions.  A few tricks listed below might help in this regard."
-msgstr ""
+msgstr "同一の表示サイクル1つで複数バッファーを表示するウィンドウ構成を生成するためには、Lispプログラマーは自身でアクション関数を記述する必要を避けることはできないだろう。この問題において以下にリストしたいくつかのトリックが助けになるかもしれない。"
 
 #. type: itemize
 #: original_texis/windows.texi:3685
 msgid "Making windows atomic (@pxref{Atomic Windows}) avoids breaking an existing window composition when popping up a new window.  The new window will pop up outside the composition instead."
-msgstr ""
+msgstr "新たなウィンドウのポップアップ時に既存のウィンドウ構成の破壊を回避するためにウィンドウをアトミックにする(@ref{Atomic Windows}を参照)。そうすれば新たなウィンドウは構成の外部にポップアップされる。"
 
 #. type: itemize
 #: original_texis/windows.texi:3690
 msgid "Temporarily dedicating windows to their buffers (@pxref{Dedicated Windows}) avoids using a window for displaying a different buffer.  A non-dedicated window will be used instead."
-msgstr ""
+msgstr "別のバッファーを表示中のウィンドウの使用を回避するために、一時的にウィンドウをバッファー専用にする(@ref{Dedicated Windows}を参照)。そうすれば非専用のウィンドウが使用される。"
 
 #. type: itemize
 #: original_texis/windows.texi:3696
 msgid "Calling @code{window-preserve-size} (@pxref{Preserving Window Sizes})  will try to keep the size of the argument window unchanged when popping up a new window.  You have to make sure that another window in the same combination can be shrunk instead, though."
-msgstr ""
+msgstr "@code{window-preserve-size}を呼び出すことにより新たなウィンドウのポップアップ時に引数のウィンドウのサイズの維持が試みられる(@ref{Preserving Window Sizes}を参照)。ただし同一構成内の別ウィンドウのサイズが縮小されるかもしれないことに留意する必要がある。"
 
 #. type: itemize
 #: original_texis/windows.texi:3703
 msgid "Side windows (@pxref{Side Windows}) can be used for displaying specific buffers always in a window at the same position of a frame.  This permits grouping buffers that do not compete for being shown at the same time on a frame and showing any such buffer in the same window without disrupting the display of other buffers."
-msgstr ""
+msgstr "特定のバッファーをフレーム上の同一位置のウィンドウに常に表示するにはサイドウィンドウを使用できる(@ref{Side Windows}を参照)。これによりフレーム上で同時に表示する際に競合しないバッファーをグループ化して、他のバッファーの表示を妨害せずに同一ウィンドウでグループ化したバッファーを表示することが可能になる。"
 
 #. type: itemize
 #: original_texis/windows.texi:3709
 msgid "Child frames (@pxref{Child Frames}) can be used to display a buffer within the screen estate of the selected frame without disrupting that frame's window configuration and without the overhead associated with full-fledged frames as inflicted by @code{display-buffer-pop-up-frame}."
-msgstr ""
+msgstr "フレームのウィンドウ構成の破壊や@code{display-buffer-pop-up-frame}により課せられる完全なフレームに付加されるオーバーヘッドなしで、選択されたフレームのスクリーン領域内にバッファー表示するために子フレームを使用できる(@ref{Child Frames}を参照)。"
 
 #. type: cindex
 #: original_texis/windows.texi:3715
