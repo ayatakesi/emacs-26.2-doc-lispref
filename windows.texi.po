@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-07-05 17:39+0900\n"
+"PO-Revision-Date: 2020-07-05 18:55+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -5164,7 +5164,7 @@ msgstr ""
 #. type: table
 #: original_texis/windows.texi:3540
 msgid "and to add another alist entry one would write"
-msgstr "別のアクションalistを追加するには以下のように▼記述"
+msgstr "別のアクションalistを追加するには以下のように記述"
 
 #. type: group
 #: original_texis/windows.texi:3546
@@ -5225,9 +5225,7 @@ msgstr ""
 #. type: table
 #: original_texis/windows.texi:3580
 msgid "To add a customization for a second buffer one would then write:"
-msgstr ""
-"2つ目のバッファーへのカスタマイズを追加するには以下のように記述\n"
-"To:"
+msgstr "2つ目のバッファーへのカスタマイズを追加するには以下のように記述:"
 
 #. type: group
 #: original_texis/windows.texi:3592
@@ -5257,7 +5255,7 @@ msgstr ""
 #: original_texis/windows.texi:3595
 #, no-wrap
 msgid "Treat each other with respect"
-msgstr "互いを遵守して扱う"
+msgstr "互いを尊重して扱う"
 
 #. type: table
 #: original_texis/windows.texi:3601
