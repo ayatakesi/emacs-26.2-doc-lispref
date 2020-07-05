@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-05-24 05:15+0900\n"
+"PO-Revision-Date: 2020-07-06 01:04+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -5628,7 +5628,7 @@ msgstr "@code{top-visible}パラメーターは親のネイティブフレーム
 #. type: Plain text
 #: original_texis/frames.texi:3206
 msgid "When a child frame is used for displaying a buffer via @code{display-buffer-in-child-frame} (@pxref{Buffer Display Action Functions}), the frame's @code{auto-hide-function} parameter (@pxref{Frame Interaction Parameters}) can be set to a function, in order to appropriately deal with the frame when the window displaying the buffer shall be quit."
-msgstr ""
+msgstr "@code{display-buffer-in-child-frame} (@ref{Buffer Display Action Functions}を参照)を介してバッファー表示に子フレームが使用されている際には、バッファーを表示中のウィンドウがquitされる際にフレームを適切に処理するために、フレームの@code{auto-hide-function}パラメーターに関数をセットできます(@ref{Frame Interaction Parameters}を参照)。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3211
@@ -5752,10 +5752,8 @@ msgstr "track-mouse body@dots{}"
 
 #. type: defmac
 #: original_texis/frames.texi:3318
-#, fuzzy
-#| msgid "This special form executes @var{body}, with generation of mouse motion events enabled.  Typically, @var{body} would use @code{read-event} to read the motion events and modify the display accordingly.  @xref{Motion Events}, for the format of mouse motion events."
 msgid "This macro executes @var{body}, with generation of mouse motion events enabled.  Typically, @var{body} would use @code{read-event} to read the motion events and modify the display accordingly.  @xref{Motion Events}, for the format of mouse motion events."
-msgstr "このスペシャルフォームは、マウスモーションイベントの生成を有効にして、@var{body}を実行する。通常、@var{body}はモーションイベントを読み取るために@code{read-event}を使用し、それに対応して表示を変更する。マウスモーションイベントのフォーマットについては、@ref{Motion Events}を参照のこと。"
+msgstr "このマクロはマウスモーションイベントの生成を有効にして@var{body}を実行する。@var{body}はモーションイベントを読み取るために、通常は@code{read-event}を使用してそれに対応して表示を変更する。マウスモーションイベントのフォーマットについては@ref{Motion Events}を参照のこと。"
 
 #. type: defmac
 #: original_texis/frames.texi:3323
