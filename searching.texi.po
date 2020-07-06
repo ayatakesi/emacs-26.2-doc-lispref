@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-05-31 22:27+0900\n"
+"PO-Revision-Date: 2020-07-06 09:39+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -709,24 +709,18 @@ msgstr "したがって@samp{[ad]}は1つの@samp{a}と1つの@samp{d}の両方�
 
 #. type: table
 #: original_texis/searching.texi:397
-#, fuzzy
-#| msgid "You can also include character ranges in a character alternative, by writing the starting and ending characters with a @samp{-} between them.  Thus, @samp{[a-z]} matches any lower-case @acronym{ASCII} letter.  Ranges may be intermixed freely with individual characters, as in @samp{[a-z$%.]}, which matches any lower case @acronym{ASCII} letter or @samp{$}, @samp{%} or period."
 msgid "You can also include character ranges in a character alternative, by writing the starting and ending characters with a @samp{-} between them.  Thus, @samp{[a-z]} matches any lower-case @acronym{ASCII} letter.  Ranges may be intermixed freely with individual characters, as in @samp{[a-z$%.]}, which matches any lower case @acronym{ASCII} letter or @samp{$}, @samp{%} or period.  However, the ending character of one range should not be the starting point of another one; for example, @samp{[a-m-z]} should be avoided."
-msgstr "開始文字と終了文字の間に@samp{-}を記述することにより、文字候補内に文字範囲を含めることができる。つまり@samp{[a-z]}は小文字の@acronym{ASCII}アルファベット文字にマッチする。範囲は@samp{[a-z$%.]}のように個別の文字と自由に組み合わせることができる。これは任意の@acronym{ASCII}小文字アルファベットと@samp{$}、@samp{%}、またはピリオドとマッチする。"
+msgstr "開始文字と終了文字の間に@samp{-}を記述することにより文字候補内に文字範囲を含めることができる。つまり@samp{[a-z]}は小文字の@acronym{ASCII}アルファベット文字にマッチする。範囲は@samp{[a-z$%.]}のように個別の文字と自由に組み合わせることができる。これは任意の@acronym{ASCII}小文字アルファベットと@samp{$}、@samp{%}、またはピリオドとマッチする。しかし1つの範囲の終端文字が別の範囲の開始文字ではないこと。たとえば@samp{[a-m-z]}は使用しないこと。"
 
 #. type: table
 #: original_texis/searching.texi:401
-#, fuzzy
-#| msgid "Note also that the usual regexp special characters are not special inside a character alternative.  A completely different set of characters is special inside character alternatives: @samp{]}, @samp{-} and @samp{^}."
 msgid "The usual regexp special characters are not special inside a character alternative.  A completely different set of characters is special inside character alternatives: @samp{]}, @samp{-} and @samp{^}."
-msgstr "さらに通常のregexpスペシャル文字は文字候補内では特別ではないことにも注意されたい。文字候補内部では@samp{]}、@samp{-}、@samp{^}という完全に異なる文字セットが特別に扱われる。"
+msgstr "通常のregexpスペシャル文字は文字候補内では特別ではない。文字候補内部では@samp{]}、@samp{-}、@samp{^}という完全に異なる文字セットが特別に扱われる。"
 
 #. type: table
 #: original_texis/searching.texi:409
-#, fuzzy
-#| msgid "To include a @samp{]} in a character alternative, you must make it the first character.  For example, @samp{[]a]} matches @samp{]} or @samp{a}.  To include a @samp{-}, write @samp{-} as the first or last character of the character alternative, or put it after a range.  Thus, @samp{[]-]} matches both @samp{]} and @samp{-}.  (As explained below, you cannot use @samp{\\]} to include a @samp{]} inside a character alternative, since @samp{\\} is not special there.)"
 msgid "To include a @samp{]} in a character alternative, you must make it the first character.  For example, @samp{[]a]} matches @samp{]} or @samp{a}.  To include a @samp{-}, write @samp{-} as the first or last character of the character alternative, or as the upper bound of a range.  Thus, @samp{[]-]} matches both @samp{]} and @samp{-}.  (As explained below, you cannot use @samp{\\]} to include a @samp{]} inside a character alternative, since @samp{\\} is not special there.)"
-msgstr "文字候補内に@samp{]}を含めるには、それを最初の文字にしなければならない。たとえば@samp{[]a]}は、@samp{]}と@samp{a}にマッチする。@samp{-}を含めるには、文字候補の最初または最後の文字として@samp{-}を記述するか、範囲の後に置くこと。つまり@samp{[]-]}は@samp{]}と@samp{-}の両方にマッチする。(以下で説明するように、ここでは@samp{\\}は特別ではないので、文字候補内に@samp{]}を含めるために@samp{\\]}は使用できない)。"
+msgstr "文字候補内に@samp{]}を含めるには、それを最初の文字にしなければならない。たとえば@samp{[]a]}は@samp{]}と@samp{a}にマッチする。@samp{-}を含めるには文字候補の最初または最後の文字として@samp{-}を記述するか範囲の上側の境界に配置すること。つまり@samp{[]-]}は@samp{]}と@samp{-}の両方にマッチする(以下で説明するようにここでは@samp{\\}は特別ではないので文字候補内に@samp{]}を含めるために@samp{\\]}は使用できない)。"
 
 #. type: table
 #: original_texis/searching.texi:412
@@ -736,34 +730,32 @@ msgstr "文字候補内に@samp{^}を含めるには先頭以外のいずれか�
 #. type: table
 #: original_texis/searching.texi:416
 msgid "The following aspects of ranges are specific to Emacs, in that POSIX allows but does not require this behavior and programs other than Emacs may behave differently:"
-msgstr ""
+msgstr "以下の範囲にたいする側面はEmacs固有であり、POSIXはこの振る舞いを許容はするが必須ではなく、Emacs以外のプログラムは異なる振る舞いをするかもしれない。"
 
 #. type: enumerate
 #: original_texis/searching.texi:421
 msgid "If @code{case-fold-search} is non-@code{nil}, @samp{[a-z]} also matches upper-case letters."
-msgstr ""
+msgstr "@code{case-fold-search}が非@code{nil}なら@samp{[a-z]}は大文字にもマッチする。"
 
 #. type: enumerate
 #: original_texis/searching.texi:427
 msgid "A range is not affected by the locale's collation sequence: it always represents the set of characters with codepoints ranging between those of its bounds, so that @samp{[a-z]} matches only ASCII letters, even outside the C or POSIX locale."
-msgstr ""
+msgstr "範囲はlocaleの照合順の影響を受けない。範囲は常にその範囲の境界間に存在するコードポイントを文字セットで表現されるので、たとえCやPOSIXのlocale外部でも@samp{[a-z]}がマッチするのはASCII文字のみ。"
 
 #. type: enumerate
 #: original_texis/searching.texi:432
 msgid "As a special case, if either bound of a range is a raw 8-bit byte, the other bound should be a unibyte character, and the range matches only unibyte characters."
-msgstr ""
+msgstr "特別なケースとして範囲の境界がいずれかが8ビットのrawバイトなら、もう一方の境界はユニバイト文字のはずであり、その範囲がマッチするのはユニバイト文字のみ。"
 
 #. type: enumerate
 #: original_texis/searching.texi:440
 msgid "If the lower bound of a range is greater than its upper bound, the range is empty and represents no characters.  Thus, @samp{[b-a]} always fails to match, and @samp{[^b-a]} matches any character, including newline.  However, the lower bound should be at most one greater than the upper bound; for example, @samp{[c-a]} should be avoided."
-msgstr ""
+msgstr "範囲の下側境界が上側境界より大きければ範囲は空であり何の文字も表現しない。したがって@samp{[b-a]}は常にマッチに失敗するし、@samp{[^b-a]}は改行を含む任意の文字にマッチする。しかし下側境界は最大でも上側境界より1大きいこと。たとえば@samp{[c-a]}は使用しないこと。"
 
 #. type: table
 #: original_texis/searching.texi:450
-#, fuzzy
-#| msgid "A character alternative can also specify named character classes (@pxref{Char Classes}).  This is a POSIX feature.  For example, @samp{[[:ascii:]]} matches any @acronym{ASCII} character.  Using a character class is equivalent to mentioning each of the characters in that class; but the latter is not feasible in practice, since some classes include thousands of different characters."
 msgid "A character alternative can also specify named character classes (@pxref{Char Classes}).  This is a POSIX feature.  For example, @samp{[[:ascii:]]} matches any @acronym{ASCII} character.  Using a character class is equivalent to mentioning each of the characters in that class; but the latter is not feasible in practice, since some classes include thousands of different characters.  A character class should not appear as the lower or upper bound of a range."
-msgstr "文字候補には、名前付き文字クラスも指定できる(@ref{Char Classes}を参照)。これはPOSIXの機能である。たとえば@samp{[[:ascii:]]}は、任意の@acronym{ASCII}文字にマッチする。文字クラスの使用は、そのクラス内すべての文字を記述するのと等しい。しかし異なる文字数千を含むクラスもあるので、後者は実際は実現可能ではない。"
+msgstr "文字候補には名前付き文字クラスも指定できる(@ref{Char Classes}を参照)。これはPOSIXの機能。たとえば@samp{[[:ascii:]]}は任意の@acronym{ASCII}文字にマッチする。文字クラスの使用は、そのクラス内すべての文字を記述するのと等しい。しかし異なる文字数千を含むクラスもあるので後者は実際は実現不可能。文字クラス範囲の上側や下側の境界に出現するべきではない。"
 
 #. type: samp{#1}
 #: original_texis/searching.texi:451
