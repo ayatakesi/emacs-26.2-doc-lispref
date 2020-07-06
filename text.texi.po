@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-05-31 15:40+0900\n"
+"PO-Revision-Date: 2020-07-06 09:04+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4048,17 +4048,14 @@ msgstr ""
 
 #. type: deffn
 #: original_texis/text.texi:2573
-#, fuzzy, no-wrap
-#| msgid "Command indent-relative &optional unindented-ok"
+#, no-wrap
 msgid "Command indent-relative-first-indent-point"
-msgstr "Command indent-relative &optional unindented-ok"
+msgstr "Command indent-relative-first-indent-point"
 
 #. type: deffn
 #: original_texis/text.texi:2578
-#, fuzzy
-#| msgid "This command indents the current line like the previous nonblank line, by calling @code{indent-relative} with @code{t} as the @var{unindented-ok} argument.  The return value is unpredictable."
 msgid "This command indents the current line like the previous nonblank line, by calling @code{indent-relative} with @code{t} as the @var{first-only} argument.  The return value is unpredictable."
-msgstr "このコマンドは、引数@var{unindented-ok}に@code{t}を指定して@code{indent-relative}を呼び出すことにより、前の非ブランク行に倣ってカレント行をインデントする。リターン値は予測できない。"
+msgstr "このコマンドは引数@var{first-only}に@code{t}を指定して@code{indent-relative}を呼び出すことにより、前の非ブランク行に倣ってカレント行をインデントする。リターン値は予測できない。"
 
 #. type: deffn
 #: original_texis/text.texi:2581
@@ -4865,7 +4862,7 @@ msgstr "with-silent-modifications"
 #. type: Plain text
 #: original_texis/text.texi:3044
 msgid "If you wish to add text properties to a buffer or remove them without marking the buffer as modified, you can wrap the calls above in the @code{with-silent-modifications} macro.  @xref{Buffer Modification}."
-msgstr ""
+msgstr "バッファーを変更せずにバッファーにテキストプロパティを追加したり削除したければ、その呼び出しを上記の@code{with-silent-modifications}マクロでラップできます。@ref{Buffer Modification}を参照してください。"
 
 #. type: subsection
 #: original_texis/text.texi:3046
@@ -5463,19 +5460,18 @@ msgstr "cursor-intangible-mode"
 #. type: table
 #: original_texis/text.texi:3400
 msgid "When the minor mode @code{cursor-intangible-mode} is turned on, point is moved away from any position that has a non-@code{nil} @code{cursor-intangible} property, just before redisplay happens."
-msgstr ""
+msgstr "マイナーモード@code{cursor-intangible-mode}がオンに切り替えられた際には、再表示の発生直前に非@code{nil}の@code{cursor-intangible}プロパティをもつすべての位置からポイントが移動される。"
 
 #. type: vindex
 #: original_texis/text.texi:3401
-#, fuzzy, no-wrap
-#| msgid "before-change-functions"
+#, no-wrap
 msgid "cursor-sensor-inhibit"
-msgstr "before-change-functions"
+msgstr "cursor-sensor-inhibit"
 
 #. type: table
 #: original_texis/text.texi:3405
 msgid "When the variable @code{cursor-sensor-inhibit} is non-@code{nil}, the @code{cursor-intangible} property and the @code{cursor-sensor-functions} property (described below) are ignored."
-msgstr ""
+msgstr "変数@code{cursor-sensor-inhibit}が非@code{nil}なら、@code{cursor-intangible}プロパティと@code{cursor-sensor-functions}プロパティ(以下参照)は無視される。"
 
 #. type: item
 #: original_texis/text.texi:3406
@@ -5778,10 +5774,8 @@ msgstr "このスペシャルプロパティはカーソル移動に反応する
 
 #. type: table
 #: original_texis/text.texi:3589
-#, fuzzy
-#| msgid "When the variable @code{inhibit-point-motion-hooks} is non-@code{nil}, the @code{intangible} property is ignored."
 msgid "When the variable @code{cursor-sensor-inhibit} is non-@code{nil}, the @code{cursor-sensor-functions} property is ignored."
-msgstr "変数@code{inhibit-point-motion-hooks}が非@code{nil}なら、@code{intangible}プロパティは無視される。"
+msgstr "変数@code{cursor-sensor-inhibit}が非@code{nil}なら@code{cursor-sensor-functions}プロパティは無視される。"
 
 #. type: item
 #: original_texis/text.texi:3590
