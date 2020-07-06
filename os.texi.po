@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-06-10 23:33+0900\n"
+"PO-Revision-Date: 2020-07-07 00:29+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -416,17 +416,14 @@ msgstr "initial-window-system@r{, and startup}"
 
 #. type: findex
 #: original_texis/os.texi:99
-#, fuzzy, no-wrap
-#| msgid "window-system-initialization-alist"
+#, no-wrap
 msgid "window-system-initialization"
-msgstr "window-system-initialization-alist"
+msgstr "window-system-initialization"
 
 #. type: enumerate
 #: original_texis/os.texi:111
-#, fuzzy
-#| msgid "If not running in batch mode, it initializes the window system that the variable @code{initial-window-system} specifies (@pxref{Window Systems, initial-window-system}).  The initialization function for each supported window system is specified by @code{window-system-initialization-alist}.  If the value of @code{initial-window-system} is @var{windowsystem}, then the appropriate initialization function is defined in the file @file{term/@var{windowsystem}-win.el}.  This file should have been compiled into the Emacs executable when it was built."
 msgid "If not running in batch mode, it initializes the window system that the variable @code{initial-window-system} specifies (@pxref{Window Systems, initial-window-system}).  The initialization function, @code{window-system-initialization}, is a @dfn{generic function} (@pxref{Generic Functions}) whose actual implementation is different for each supported window system.  If the value of @code{initial-window-system} is @var{windowsystem}, then the appropriate implementation of the initialization function is defined in the file @file{term/@var{windowsystem}-win.el}.  This file should have been compiled into the Emacs executable when it was built."
-msgstr "batchモードで実行されていなければ、変数@code{initial-window-system}が指定するウィンドウシステムを初期化する(@ref{Window Systems, initial-window-system}を参照)。サポートされる各ウィンドウシステムにたいする初期化関数は、@code{window-system-initialization-alist}により指定される。@code{initial-window-system}の値が@var{windowsystem}なら、ファイル@file{term/@var{windowsystem}-win.el}内で適切な初期化関数が定義されている。このファイルはビルド時に、Emacs実行可能形式にコンパイルされているべきである。"
+msgstr "batchモードで実行されていなければ変数@code{initial-window-system}が指定するウィンドウシステムを初期化する(@ref{Window Systems, initial-window-system}を参照)。初期化関数@code{window-system-initialization}は@dfn{ジェネリック関数generic function}であり、本当の実装はサポートされる各ウィンドウシステムごとに異なる(@ref{Generic Functions}を参照)。@code{initial-window-system}の値が@var{windowsystem}なら、ファイル@file{term/@var{windowsystem}-win.el}内で適切な初期化関数の実装が定義されている。このファイルはビルド時にEmacs実行可能形式にコンパイルされているはずである。"
 
 #. type: enumerate
 #: original_texis/os.texi:114
@@ -436,7 +433,7 @@ msgstr "ノーマルフック@code{before-init-hook}を実行する。"
 #. type: enumerate
 #: original_texis/os.texi:122
 msgid "If appropriate, it creates a graphical frame.  As part of creating the graphical frame, it initializes the window system specified by @code{initial-frame-alist} and @code{default-frame-alist} (@pxref{Initial Parameters}) for the graphical frame, by calling the @code{window-system-initialization} function for that window system.  This is not done in batch (noninteractive) or daemon mode."
-msgstr ""
+msgstr "それが適切ならグラフィカルなフレームを作成する。グラフィカルなフレーム作成の一環として@code{initial-frame-alist}と@code{default-frame-alist} (@ref{Initial Parameters}を参照)により指定されたウィンドウシステム用の@code{window-system-initialization}関数を呼び出すことにより、そのウィンドウシステムのグラフィカルなフレームを初期化する。これは(非インタラクティブな)batchモードやデーモンモードでは行われない。"
 
 #. type: enumerate
 #: original_texis/os.texi:128
@@ -2605,33 +2602,29 @@ msgstr "date-to-time string"
 #. type: defun
 #: original_texis/os.texi:1474
 msgid "This function parses the time-string @var{string} and returns the corresponding time value.  The argument @var{string} should represent a date-time, and should be in one of the forms recognized by @code{parse-time-string} (see below).  This function assumes the GMT timezone if @var{string} lacks an explicit timezone information."
-msgstr ""
+msgstr "この関数はtime文字列@var{string}をパースして対応するtime値をリターンする。引数@var{string}は日時を表現する@code{parse-time-string} (以下参照)が認識する形式のいずれかであること。この関数は@var{string}に明示的なタイムゾーン情報が欠落していればGMTタイムゾーンを仮定する。"
 
 #. type: defun
 #: original_texis/os.texi:1476
-#, fuzzy, no-wrap
-#| msgid "date-to-time string"
+#, no-wrap
 msgid "parse-time-string string"
-msgstr "date-to-time string"
+msgstr "parse-time-string string"
 
 #. type: defun
 #: original_texis/os.texi:1479
-#, fuzzy
-#| msgid "This function parses the time-string @var{string} and returns the corresponding time value."
 msgid "This function parses the time-string @var{string} into a list of the following form:"
-msgstr "この関数はtime文字列@var{string}をパースして、それに対応するtime値をリターンする。"
+msgstr "この関数はtime文字列@var{string}を以下の形式のリストにパースする:"
 
 #. type: example
 #: original_texis/os.texi:1482
-#, fuzzy, no-wrap
-#| msgid "(@var{seconds} @var{minutes} @var{hour} @var{day} @var{month} @var{year} @var{dow} @var{dst} @var{zone})\n"
+#, no-wrap
 msgid "(@var{sec} @var{min} @var{hour} @var{day} @var{mon} @var{year} @var{dow} @var{dst} @var{tz})\n"
-msgstr "(@var{seconds} @var{minutes} @var{hour} @var{day} @var{month} @var{year} @var{dow} @var{dst} @var{zone})\n"
+msgstr "(@var{sec} @var{min} @var{hour} @var{day} @var{mon} @var{year} @var{dow} @var{dst} @var{tz})\n"
 
 #. type: defun
 #: original_texis/os.texi:1492
 msgid "The format of this list is the same as what @code{decode-time} accepts (@pxref{Time Conversion}), and is described in more detail there.  Any element that cannot be determined from the input will be set to @code{nil}.  The argument @var{string} should resemble an RFC 822 (or later) or ISO 8601 string, like ``Fri, 25 Mar 2016 16:24:56 +0100'' or ``1998-09-12T12:21:54-0200'', but this function will attempt to parse less well-formed time strings as well."
-msgstr ""
+msgstr "このリストのフォーマットは@code{decode-time}が受け取るフォーマットと同じであり、詳細はそこに説明してある(@ref{Time Conversion}を参照)。入力から判断できない要素はすべて@code{nil}にセットされる。引数@var{string}はRFC 822(またはそれ以降)やISO 8601に類似した``Fri, 25 Mar 2016 16:24:56 +0100''や``1998-09-12T12:21:54-0200''のような文字列であることが必要だが、この関数は形式が若干不正なtime文字列のパースも同様に試みる。"
 
 #. type: defun
 #: original_texis/os.texi:1494
@@ -3394,10 +3387,8 @@ msgstr "timerp object"
 
 #. type: defun
 #: original_texis/os.texi:1797
-#, fuzzy
-#| msgid "This function returns @code{t} if @var{year} is a leap year."
 msgid "This predicate function returns non-@code{nil} if @code{object} is a timer."
-msgstr "この関数は、@var{year}が閏年なら@code{t}をリターンする。"
+msgstr "この述語関数は@code{object}がタイマーなら非@code{nil}をリターンする。"
 
 #. type: Plain text
 #: original_texis/os.texi:1805
@@ -5538,7 +5529,7 @@ msgstr "アクセスコントロール"
 #. type: table
 #: original_texis/os.texi:3051
 msgid "Although Emacs normally respects access permissions of the underlying operating system, in some cases it handles accesses specially.  For example, file names can have handlers that treat the files specially, with their own access checking.  @xref{Magic File Names}.  Also, a buffer can be read-only even if the corresponding file is writable, and vice versa, which can result in messages such as @samp{File passwd is write-protected; try to save anyway? (yes or no)}.  @xref{Read Only Buffers}."
-msgstr ""
+msgstr "たとえEmacsが通常は背後にあるオペレーティングシステムのアクセスパーミッションを尊重するとしても、あるケースにおいてはアクセスを特別に処理する。たとえばファイル名は独自のアクセスチェックによりファイルを特別に扱うハンドラーをもつことができる。@ref{Magic File Names}を参照のこと。さらにバッファーは対応するファイルが書き込み可でも読み取り専用にできるしその逆も可能であり、@samp{File passwd is write-protected; try to save anyway? (yes or no)}のようなメッセージを結果としてもたらすかもしれない。@ref{Read Only Buffers}を参照のこと。"
 
 #. type: item
 #: original_texis/os.texi:3052
