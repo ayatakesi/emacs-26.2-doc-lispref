@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-06-09 00:16+0900\n"
+"PO-Revision-Date: 2020-07-06 16:15+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1872,10 +1872,8 @@ msgstr "@code{selective-display}の値が正の整数なら、それより多く
 
 #. type: defvar
 #: original_texis/display.texi:1052
-#, fuzzy
-#| msgid "When some portion of a buffer is hidden, the vertical movement commands operate as if that portion did not exist, allowing a single @code{next-line} command to skip any number of hidden lines.  However, character movement commands (such as @code{forward-char}) do not skip the hidden portion, and it is possible (if tricky) to insert or delete text in an hidden portion."
 msgid "When some portion of a buffer is hidden, the vertical movement commands operate as if that portion did not exist, allowing a single @code{next-line} command to skip any number of hidden lines.  However, character movement commands (such as @code{forward-char}) do not skip the hidden portion, and it is possible (if tricky) to insert or delete text in a hidden portion."
-msgstr "バッファーの一部が隠蔽されている際は、垂直移動コマンドはあたかもその部分を存在しないかのように処理して、1回の@code{next-line}コマンドで任意の行数の隠蔽された行をスキップできる。しかし(@code{forward-char}のような)文字移動コマンドは隠蔽された部分をスキップせず、(注意すれば)隠蔽された部分にたいしてテキストの挿入と削除が可能である。"
+msgstr "バッファーの一部が隠蔽されている際には垂直移動コマンドはあたかもその部分を存在しないかのように処理して、1回の@code{next-line}コマンドで任意の行数の隠蔽された行をスキップできる。しかし( @code{forward-char}のような)文字移動コマンドは隠蔽された部分をスキップせずに、(注意すれば)隠蔽された部分にたいしてテキストの挿入と削除が可能である。"
 
 #. type: defvar
 #: original_texis/display.texi:1057
@@ -4305,7 +4303,7 @@ msgstr "デフォルトフェイスspecは何もカスタマイゼーション(@
 #: original_texis/display.texi:2499
 #, no-wrap
 msgid "@code{eval-defun}, and @code{defface} forms"
-msgstr ""
+msgstr "@code{eval-defun}, and @code{defface} forms"
 
 #. type: defmac
 #: original_texis/display.texi:2504
@@ -5072,13 +5070,13 @@ msgstr "この関数はすべての定義済みフェイス名のリストをリ
 #: original_texis/display.texi:3041
 #, no-wrap
 msgid "face number"
-msgstr ""
+msgstr "face number"
 
 #. type: cindex
 #: original_texis/display.texi:3042
 #, no-wrap
 msgid "face property of face symbols"
-msgstr ""
+msgstr "face property of face symbols"
 
 #. type: defun
 #: original_texis/display.texi:3043
@@ -5089,7 +5087,7 @@ msgstr "face-id face"
 #. type: defun
 #: original_texis/display.texi:3052
 msgid "This function returns the @dfn{face number} of face @var{face}.  This is a number that uniquely identifies a face at low levels within Emacs.  It is seldom necessary to refer to a face by its face number.  However, functions that manipulate glyphs, such as @code{make-glyph-code} and @code{glyph-face} (@pxref{Glyphs}) access the face numbers internally.  Note that the face number is stored as the value of the @code{face} property of the face symbol, so we recommend not to set that property of a face to any value of your own."
-msgstr ""
+msgstr "この関数はフェイス@var{face}の@dfn{フェイス番号(face number)}をリターンする。これはEmacs内部の低レベルでフィエスを一意に識別する番号。フェイス番号によるフェイスの参照を要するのは稀である。しかし@code{make-glyph-code}や@code{glyph-face} (@ref{Glyphs}を参照)のようなグリフを操作する関数は内部的にフェイス番号にアクセスする。フェイス番号はフェイスシンボルの@code{face}プロパティの値として格納されることに注意。このフェイスプロパティにあなた自身が値をセットしないことを推奨する。"
 
 #. type: defun
 #: original_texis/display.texi:3054
@@ -5746,24 +5744,18 @@ msgstr "@var{character}には@code{(@var{from} . @var{to})}のようなコンス
 
 #. type: defun
 #: original_texis/display.texi:3469
-#, fuzzy
-#| msgid "@var{character} may be a charset.  In that case, use @var{font-spec} for all character in the charsets."
 msgid "@var{character} may be a charset (@pxref{Character Sets}).  In that case, use @var{font-spec} for all the characters in the charset."
-msgstr "@var{character}には文字セットも指定できる。この場合は、その文字セット内のすべての文字にたいして、@var{font-spec}を使用する。"
+msgstr "@var{character}には文字セット(@ref{Character Sets}を参照)も指定できる。この場合には、その文字セット内のすべての文字にたいして@var{font-spec}を使用する。"
 
 #. type: defun
 #: original_texis/display.texi:3473
-#, fuzzy
-#| msgid "@var{character} may be a script name.  In that case, use @var{font-spec} for all character in the charsets."
 msgid "@var{character} may be a script name (@pxref{Character Properties}).  In that case, use @var{font-spec} for all the characters belonging to the script."
-msgstr "@var{character}にはスクリプト名も指定できる。この場合は、その文字セット内のすべての文字にたいして、@var{font-spec}を使用する。"
+msgstr "@var{character}にはスクリプト名(@ref{Character Properties}を参照)も指定できる。この場合には、そのスクリプトに属するすべての文字にたいして@var{font-spec}を使用する。"
 
 #. type: defun
 #: original_texis/display.texi:3476
-#, fuzzy
-#| msgid "@var{character} may be a charset.  In that case, use @var{font-spec} for all character in the charsets."
 msgid "@var{character} may be @code{nil}, which means to use @var{font-spec} for any character which no font-spec is specified."
-msgstr "@var{character}には文字セットも指定できる。この場合は、その文字セット内のすべての文字にたいして、@var{font-spec}を使用する。"
+msgstr "@var{character}には@code{nil}も指定できる。この場合にはフォント仕様が指定されていないすべての文字に@var{font-spec}を使用する。"
 
 #. type: defun
 #: original_texis/display.texi:3479
@@ -5777,10 +5769,8 @@ msgstr "@var{font-spec}にはコンス@code{(@var{family} . @var{registry})}を�
 
 #. type: defun
 #: original_texis/display.texi:3486
-#, fuzzy
-#| msgid "@var{font-spec} may be a font name string."
 msgid "@var{font-spec} may be a font name, a string."
-msgstr "@var{font-spec}には、フォント名文字列も指定できる。"
+msgstr "@var{font-spec}にはフォント名(文字列)も指定できる。"
 
 #. type: defun
 #: original_texis/display.texi:3492
@@ -6543,7 +6533,7 @@ msgstr "引数@var{left}は左フリンジ、同様に@var{right}は右フリン
 #. type: defun
 #: original_texis/display.texi:3921
 msgid "If @var{window} is not large enough to accommodate fringes of the desired width, this leaves the fringes of @var{window} unchanged."
-msgstr ""
+msgstr "期待する幅のフリンジを収容するのに@var{window}が十分大きくなければ、@var{window}のフリンジは未変更のままになる。"
 
 #. type: defun
 #: original_texis/display.texi:3925 original_texis/display.texi:4349
@@ -7209,7 +7199,7 @@ msgstr "@var{height}はピクセル単位で水平スクロールバーの高さ
 #. type: defun
 #: original_texis/display.texi:4345
 msgid "If @var{window} is not large enough to accommodate a scroll bar of the desired dimension, this leaves the corresponding scroll bar unchanged."
-msgstr ""
+msgstr "期待するサイズのスクロールバーを収容するのに@var{window}が十分大きくなければ、@var{window}のスクロールバーは未変更のままになる。"
 
 #. type: Plain text
 #: original_texis/display.texi:4353
@@ -7992,7 +7982,7 @@ msgstr "任意のディスプレイ仕様にたいして条件を作成できま
 #. type: Plain text
 #: original_texis/display.texi:4871
 msgid "Note that @var{condition} will only be evaluated when redisplay examines the text where this display spec is located, so this feature is best suited for conditions that are relatively stable, i.e.@: yield, for each particular buffer position, the same results on every evaluation.  If the results change for the same text location, e.g., if the result depends on the position of point, then the conditional specification might not do what you want, because redisplay examines only those parts of buffer text where it has reasons to assume that something changed since the last display cycle."
-msgstr ""
+msgstr "@var{condition}はこのディスプレイ仕様が配置された箇所のテキストを再表示が調べる際だけ評価されるので、この機能は比較的安定した条件にもっとも適していることに注意してください(特定のバッファー位置それぞれにたいして評価ごとに同じ結果を取得する)。同じのテキスト位置にたいする結果が異なる、つまり結果がポイント位置に依存するようなら、この条件仕様はあなたの望むものではないかもしれません。なぜなら再表示は最後の表示サイクル以降に何かが変更されたといなす理由があるバッファーテキストの部分だけを調べるからです。"
 
 #. type: subsection
 #: original_texis/display.texi:4873
@@ -8088,7 +8078,7 @@ msgstr "この関数はウィンドウ@var{window}のマージン幅、文字セ
 #. type: defun
 #: original_texis/display.texi:4937
 msgid "If @var{window} is not large enough to accommodate margins of the desired width, this leaves the margins of @var{window} unchanged."
-msgstr ""
+msgstr "期待する幅のマージンを収容するのに@var{window}が十分大きくなければ、@var{window}のマージンは未変更のままになる。"
 
 #. type: defun
 #: original_texis/display.texi:4943
@@ -8910,7 +8900,7 @@ msgstr "SVG images"
 #. type: Plain text
 #: original_texis/display.texi:5432
 msgid "SVG (Scalable Vector Graphics) is an XML format for specifying images.  If your Emacs build has SVG support, you can create and manipulate these images with the following functions from the @file{svg.el} library."
-msgstr ""
+msgstr "SVG(Scalable Vector Graphics)はイメージを指定するXMLフォーマットです。SVGサポートつきでEmacsがビルドされていれば、以下の@file{svg.el}ライブラリー由来の関数でこれらのイメージの作成や操作ができます。"
 
 #. type: defun
 #: original_texis/display.texi:5433
@@ -8947,15 +8937,14 @@ msgstr "作成するすべてのラインのデフォルトのストロークカ
 
 #. type: cindex
 #: original_texis/display.texi:5445
-#, fuzzy, no-wrap
-#| msgid "font object"
+#, no-wrap
 msgid "SVG object"
-msgstr "font object"
+msgstr "SVG object"
 
 #. type: defun
 #: original_texis/display.texi:5450
 msgid "This function returns an @dfn{SVG object}, a Lisp data structure that specifies an SVG image, and all the following functions work on that structure.  The argument @var{svg} in the following functions specifies such an SVG object."
-msgstr ""
+msgstr "この関数は@dfn{SVGオブジェクト} (SVGイメージを指定するLispデータ構造)をリターンする。以下の関数はすべてこのブジェクトにたいして機能する。以下の関数の引数@var{svg}はこのようなSVGオブジェクトを指定する。"
 
 #. type: defun
 #: original_texis/display.texi:5452
@@ -9051,7 +9040,7 @@ msgstr "svg-rectangle svg x y width height &rest args"
 #. type: defun
 #: original_texis/display.texi:5495
 msgid "Add to @var{svg} a rectangle whose upper left corner is at position @var{x}/@var{y} and whose size is @var{width}/@var{height}."
-msgstr ""
+msgstr "左上隅が位置@var{x}/@var{y}、サイズが@var{width}/@var{height}の矩形を@var{svg}に追加する。"
 
 #. type: lisp
 #: original_texis/display.texi:5498
@@ -9068,7 +9057,7 @@ msgstr "svg-circle svg x y radius &rest args"
 #. type: defun
 #: original_texis/display.texi:5504
 msgid "Add to @var{svg} a circle whose center is at @var{x}/@var{y} and whose radius is @var{radius}."
-msgstr ""
+msgstr "中央が位置@var{x}/@var{y}、半径が@var{radius}の円を@var{svg}に追加する。"
 
 #. type: defun
 #: original_texis/display.texi:5506
@@ -9079,7 +9068,7 @@ msgstr "svg-ellipse svg x y x-radius y-radius &rest args"
 #. type: defun
 #: original_texis/display.texi:5510
 msgid "Add to @var{svg} an ellipse whose center is at @var{x}/@var{y}, and whose horizontal radius is @var{x-radius} and the vertical radius is @var{y-radius}."
-msgstr ""
+msgstr "中央が位置@var{x}/@var{y}、水平半径が@var{x-radius}、垂直半径が@var{y-radius}の楕円を@var{svg}に追加する。"
 
 #. type: defun
 #: original_texis/display.texi:5512
@@ -9090,7 +9079,7 @@ msgstr "svg-line svg x1 y1 x2 y2 &rest args"
 #. type: defun
 #: original_texis/display.texi:5515
 msgid "Add to @var{svg} a line that starts at @var{x1}/@var{y1} and extends to @var{x2}/@var{y2}."
-msgstr ""
+msgstr "始点が@var{x1}/@var{y1}、終点が@var{x2}/@var{y2}の線を@var{svg}に追加する。"
 
 #. type: defun
 #: original_texis/display.texi:5517
@@ -9101,7 +9090,7 @@ msgstr "svg-polyline svg points &rest args"
 #. type: defun
 #: original_texis/display.texi:5520
 msgid "Add to @var{svg} a multiple-segment line (a.k.a.@: ``polyline'') that goes through @var{points}, which is a list of X/Y position pairs."
-msgstr ""
+msgstr "@var{points} (XとYの位置ペアのリスト)を通過する複数セグメントラライン、いわゆる``ポリゴン(polyline)''を@var{svg}に追加する。"
 
 #. type: lisp
 #: original_texis/display.texi:5524
@@ -9131,6 +9120,8 @@ msgid ""
 "(svg-polygon svg '((100 . 100) (200 . 150) (150 . 90))\n"
 "             :stroke-color \"blue\" :fill-color \"red\")\n"
 msgstr ""
+"(svg-polygon svg '((100 . 100) (200 . 150) (150 . 90))\n"
+"             :stroke-color \"blue\" :fill-color \"red\")\n"
 
 #. type: defun
 #: original_texis/display.texi:5537
@@ -9141,7 +9132,7 @@ msgstr "svg-text svg text &rest args"
 #. type: defun
 #: original_texis/display.texi:5539
 msgid "Add the specified @var{text} to @var{svg}."
-msgstr ""
+msgstr "指定した@var{text}を@var{svg}に追加する。"
 
 #. type: lisp
 #: original_texis/display.texi:5552
@@ -9180,7 +9171,7 @@ msgstr "svg-embed svg image image-type datap &rest args"
 #. type: defun
 #: original_texis/display.texi:5560
 msgid "Add an embedded (raster) image to @var{svg}.  If @var{datap} is @code{nil}, @var{image} should be a file name; otherwise it should be a string containing the image data as raw bytes.  @var{image-type} should be a @acronym{MIME} image type, for instance @code{\"image/jpeg\"}."
-msgstr ""
+msgstr "埋め込みの(ラスター)イメージを@var{svg}に追加する。@var{datap}が@code{nil}なら@var{image}はファイル名、それ以外なら@var{image}はイメージデータをrawバイトとして含む文字列であること。@var{image-type}は@code{\"image/jpeg\"}のような@acronym{MIME}イメージタイプであること。"
 
 #. type: lisp
 #: original_texis/display.texi:5565
@@ -9209,17 +9200,17 @@ msgstr "@code{svg}から識別子@code{id}の要素を取り除く。"
 #: original_texis/display.texi:5572
 #, no-wrap
 msgid "svg-image svg"
-msgstr ""
+msgstr "svg-image svg"
 
 #. type: defun
 #: original_texis/display.texi:5576
 msgid "Finally, the @code{svg-image} takes an SVG object as its argument and returns an image object suitable for use in functions like @code{insert-image}."
-msgstr ""
+msgstr "最後に@code{svg-image}は引数としてSVGを受け取り、@code{insert-image}のような関数での使用に適したイメージオブジェクトをリターンする。"
 
 #. type: Plain text
 #: original_texis/display.texi:5580
 msgid "Here's a complete example that creates and inserts an image with a circle:"
-msgstr ""
+msgstr "以下は円のイメージを作成して挿入する完全な例です:"
 
 #. type: lisp
 #: original_texis/display.texi:5587
