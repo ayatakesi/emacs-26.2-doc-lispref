@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-06-06 12:24+0900\n"
+"PO-Revision-Date: 2020-07-06 09:47+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -582,10 +582,8 @@ msgstr "comment style"
 
 #. type: itemize
 #: original_texis/syntax.texi:349
-#, fuzzy
-#| msgid "Emacs supports several comment styles simultaneously in any one syntax table.  A comment style is a set of flags @samp{b}, @samp{c}, and @samp{n}, so there can be up to 8 different comment styles.  Each comment delimiter has a style and only matches comment delimiters of the same style.  Thus if a comment starts with the comment-start sequence of style ``bn'', it will extend until the next matching comment-end sequence of style ``bn''."
 msgid "Emacs supports several comment styles simultaneously in any one syntax table.  A comment style is a set of flags @samp{b}, @samp{c}, and @samp{n}, so there can be up to 8 different comment styles, each one named by the set of its flags.  Each comment delimiter has a style and only matches comment delimiters of the same style.  Thus if a comment starts with the comment-start sequence of style ``bn'', it will extend until the next matching comment-end sequence of style ``bn''.  When the set of flags has neither flag @samp{b} nor flag @samp{c} set, the resulting style is called the ``a'' style."
-msgstr "Emacsは任意の構文テーブル1つにたいして、同時に複数のコメントスタイルをサポートする。コメントスタイルはフラグ@samp{b}、@samp{c}、@samp{n}の組み合わせなので、8個の異なるコメントスタイルが可能である。コメント区切りはそれぞれスタイルをもち、同じスタイルのコメント区切りとのみマッチできる。つまりコメントがスタイル``bn''のコメント開始シーケンスで開始されるなら、そのコメントは次のスタイル``bn''のコメント終了シーケンスにマッチするまで拡張されるだろう。"
+msgstr "Emacsは任意の構文テーブル1つにたいして同時に複数のコメントスタイルをサポートする。コメントスタイルはフラグ@samp{b}、@samp{c}、@samp{n}の組み合わせで8個の異なるコメントスタイルが可能で、コメントスタイルはそれぞれフラグセットにより命名される。コメント区切りはそれぞれスタイルをもち、同じスタイルのコメント区切りとのみマッチできる。つまりコメントがスタイル``bn''のコメント開始シーケンスで開始されるなら、そのコメントは次のスタイル``bn''のコメント終了シーケンスにマッチするまで拡張されるだろう。フラグセットが@samp{b}と@samp{c}のいずれでもなければ、結果となるスタイルは``a''スタイルと呼ばれる。"
 
 #. type: itemize
 #: original_texis/syntax.texi:351
@@ -966,10 +964,8 @@ msgstr "parse-sexp-lookup-properties"
 
 #. type: defvar
 #: original_texis/syntax.texi:561
-#, fuzzy
-#| msgid "If this is non-@code{nil}, the syntax scanning functions, like @code{forward-sexp}, pay attention to syntax text properties.  Otherwise they use only the current syntax table."
 msgid "If this is non-@code{nil}, the syntax scanning functions, like @code{forward-sexp}, pay attention to @code{syntax-table} text properties.  Otherwise they use only the current syntax table."
-msgstr "これが非@code{nil}なら、@code{forward-sexp}のような構文をスキャンする関数は、syntax-tableテキストプロパティに注意を払い、それ以外ならカレント構文テーブルだけを使用する。"
+msgstr "これが非@code{nil}なら、@code{forward-sexp}のような構文をスキャンする関数は@code{syntax-table}テキストプロパティを考慮し、それ以外ならカレント構文テーブルだけを使用する。"
 
 #. type: defvar
 #: original_texis/syntax.texi:563
@@ -1511,10 +1507,8 @@ msgstr "multibyte-syntax-as-symbol"
 
 #. type: defvar
 #: original_texis/syntax.texi:933
-#, fuzzy
-#| msgid "If this variable is non-@code{nil}, @code{scan-sexps} treats all non-@acronym{ASCII} characters as symbol constituents regardless of what the syntax table says about them.  (However, text properties can still override the syntax.)"
 msgid "If this variable is non-@code{nil}, @code{scan-sexps} treats all non-@acronym{ASCII} characters as symbol constituents regardless of what the syntax table says about them.  (However, @code{syntax-table }text properties can still override the syntax.)"
-msgstr "この変数が非@code{nil}なら、構文テーブルがそれらについて何と言っているかに関わらず、@code{scan-sexps}はすべての非@acronym{ASCII}文字をシンボル構成要素として扱う(とはいえ依然としてテキストプロパティは構文をオーバーラードできるが)。"
+msgstr "この変数が非@code{nil}なら構文テーブルがそれらについて何と言っているかに関わらず、@code{scan-sexps}はすべての非@acronym{ASCII}文字をシンボル構成要素として扱う(とはいえ依然として@code{syntax-table}テキストプロパティは構文をオーバーラードできる)。"
 
 #. type: defopt
 #: original_texis/syntax.texi:935
@@ -1893,10 +1887,8 @@ msgstr "この関数はraw構文記述子@var{syntax}にたいする構文コー
 
 #. type: defun
 #: original_texis/syntax.texi:1046
-#, fuzzy
-#| msgid "If @var{syntax} is @code{nil}, the return value is returns @code{nil}.  This is so that the expression"
 msgid "If @var{syntax} is @code{nil}, the return value is @code{nil}.  This is so that the expression"
-msgstr "@var{syntax}が@code{nil}なら、リターン値は@code{nil}となる。これは以下の式"
+msgstr "@var{syntax}が@code{nil}ならリターン値は@code{nil}。これは以下の式"
 
 #. type: example
 #: original_texis/syntax.texi:1049
