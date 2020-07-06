@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:40+0900\n"
-"PO-Revision-Date: 2020-06-14 06:06+0900\n"
+"PO-Revision-Date: 2020-07-07 00:34+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -896,21 +896,19 @@ msgstr "curved quotes"
 
 #. type: itemize
 #: original_texis/tips.texi:685
-#, fuzzy
-#| msgid "When a documentation string refers to a Lisp symbol, write it as it would be printed (which usually means in lower case), with single-quotes around it.  For example: @samp{`lambda'}.  There are two exceptions: write @code{t} and @code{nil} without single-quotes."
 msgid "When a documentation string refers to a Lisp symbol, write it as it would be printed (which usually means in lower case), surrounding it with curved single quotes (@t{‘..’}).  There are two exceptions: write @code{t} and @code{nil} without surrounding punctuation.  For example:"
-msgstr "ドキュメント文字列がLispシンボルを参照する際には、たとえば@samp{`lambda'}のように、それがプリントされるとき(通常は小文字を意味する)のように、前後をシングルクォーテーションで括るとともに、記述すること。2つ例外はある。@code{t}と@code{nil}はシングルクォーテーションを記述しない。"
+msgstr "ドキュメント文字列がLispシンボルを参照する際には、たとえば(@t{‘..’})のように、それがプリントされるとき(通常は小文字を意味する)のように、前後をcurved single quoteで括って記述すること。例外が2つある。@code{t}と@code{nil}は前後の区切り記号を記述しない。たとえば:"
 
 #. type: example
 #: original_texis/tips.texi:688
 #, no-wrap
 msgid " CODE can be ‘lambda’, nil, or t.\n"
-msgstr ""
+msgstr " CODE can be ‘lambda’, nil, or t.\n"
 
 #. type: itemize
 #: original_texis/tips.texi:693
 msgid "@xref{Quotation Marks,,, emacs, The GNU Emacs Manual}, for how to enter curved single quotes."
-msgstr ""
+msgstr "curved single quoteを入力する方法については@ref{Quotation Marks,,, emacs, The GNU Emacs Manual}を参照のこと。"
 
 #. type: itemize
 #: original_texis/tips.texi:702
@@ -1240,10 +1238,9 @@ msgstr ""
 
 #. type: group
 #: original_texis/tips.texi:951
-#, fuzzy, no-wrap
-#| msgid ";; Copyright (C) 2010-2015 Your Name\n"
+#, no-wrap
 msgid ";; Copyright (C) 2010-2019 Your Name\n"
-msgstr ";; Copyright (C) 2010-2015 Your Name\n"
+msgstr ";; Copyright (C) 2010-2019 Your Name\n"
 
 #. type: smallexample
 #: original_texis/tips.texi:956
