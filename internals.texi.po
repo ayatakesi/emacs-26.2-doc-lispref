@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-07-11 23:07+0900\n"
+"PO-Revision-Date: 2020-07-11 23:42+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2258,29 +2258,29 @@ msgstr "Function emacs_value vec_get (emacs_env *@var{env}, emacs_value @var{vec
 #. type: deftypefn
 #: original_texis/internals.texi:1370
 msgid "This function returns the element of @var{vector} at @var{index}.  The @var{index} of the first vector element is zero.  The function raises the @code{args-out-of-range} error condition if the value of @var{index} is invalid.  To extract C data from the value the function returns, use the other extraction functions described here, as appropriate for the Lisp data type stored in that element of the vector."
-msgstr ""
+msgstr "この関数は@var{vector}の@var{index}の要素をリターンする。ベクターの最初の要素の@var{index}は0。@var{index}の値が無効ならこの関数はエラーコンディション@code{args-out-of-range}をraiseする。関数のリターン値からCデータを抽出するためには、ベクターの当該要素に格納されたLispデータタイプに応じて、ここで説明している他の抽出関数を使用すればよい。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1372
 #, no-wrap
 msgid "Function ptrdiff_t vec_size (emacs_env *@var{env}, emacs_value @var{vector})"
-msgstr ""
+msgstr "Function ptrdiff_t vec_size (emacs_env *@var{env}, emacs_value @var{vector})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1374
 msgid "This function returns the number of elements in @var{vector}."
-msgstr ""
+msgstr "この関数は@var{vector}内の要素数をリターンする。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1376
 #, no-wrap
 msgid "Function void vec_set (emacs_env *@var{env}, emacs_value @var{vector}, ptrdiff_t @var{index}, emacs_value @var{value})"
-msgstr ""
+msgstr "Function void vec_set (emacs_env *@var{env}, emacs_value @var{vector}, ptrdiff_t @var{index}, emacs_value @var{value})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1380
 msgid "This function stores @var{value} in the element of @var{vector} whose index is @var{index}.  It raises the @code{args-out-of-range} error condition if the value of @var{index} is invalid."
-msgstr ""
+msgstr "この関数は@var{vector}のインデックス@var{index}の要素に@var{value}を格納する。@var{index}の値が無効ならこの関数はエラーコンディション@code{args-out-of-range}をraiseする。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1385
