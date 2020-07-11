@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-06-14 20:38+0900\n"
+"PO-Revision-Date: 2020-07-11 15:15+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -114,14 +114,12 @@ msgstr "Emacs用にCコードを記述する。"
 #: original_texis/internals.texi:24 original_texis/internals.texi:984
 #, no-wrap
 msgid "Writing Dynamic Modules"
-msgstr ""
+msgstr "Writing Dynamic Modules"
 
 #. type: menuentry
 #: original_texis/internals.texi:24
-#, fuzzy
-#| msgid "Writing C code for Emacs."
 msgid "Writing loadable modules for Emacs."
-msgstr "Emacs用にCコードを記述する。"
+msgstr "Emacsにロード可能なモジュールの記述。"
 
 #. type: section
 #: original_texis/internals.texi:24 original_texis/internals.texi:1686
@@ -1351,10 +1349,8 @@ msgstr "interactive"
 
 #. type: table
 #: original_texis/internals.texi:737
-#, fuzzy
-#| msgid "This is an interactive specification, a string such as might be used as the argument of @code{interactive} in a Lisp function.  In the case of @code{or}, it is 0 (a null pointer), indicating that @code{or} cannot be called interactively.  A value of @code{\"\"} indicates a function that should receive no arguments when called interactively.  If the value begins with a @samp{\"(}, the string is evaluated as a Lisp form.  For example:"
 msgid "This is an interactive specification, a string such as might be used as the argument of @code{interactive} in a Lisp function (@pxref{Using Interactive}).  In the case of @code{or}, it is 0 (a null pointer), indicating that @code{or} cannot be called interactively.  A value of @code{\"\"} indicates a function that should receive no arguments when called interactively.  If the value begins with a @samp{\"(}, the string is evaluated as a Lisp form.  For example:"
-msgstr "これはLisp関数で@code{interactive}の引数として使用されるような、インタラクティブ仕様である(文字列)。@code{or}の場合は0(nullポインター)で、それは@code{or}がインタラクティブに呼び出せないことを示す。値@code{\"\"}は、インタラクティブに呼び出し時、関数が引き受けるべきではないことを示す。値が@samp{\"(}で始まる場合、その文字列はLispフォームとして評価される。たとえば:"
+msgstr "これはLisp関数で@code{interactive} (@ref{Using Interactive}を参照)の引数として使用されるようなインタラクティブ仕様(文字列)。@code{or}の場合は0(nullポインター)であり@code{or}がインタラクティブに呼び出せないことを示す。値@code{\"\"}はインタラクティブに呼び出す際に関数が引き受けるべきではないことを示す。値が@samp{\"(}で始まる場合には、その文字列はLispフォームとして評価される。たとえば:"
 
 #. type: group
 #: original_texis/internals.texi:745
@@ -1724,120 +1720,119 @@ msgstr "副作用をもたない関数を定義する場合には、コンパイ
 #: original_texis/internals.texi:985
 #, no-wrap
 msgid "Writing Dynamically-Loaded Modules"
-msgstr ""
+msgstr "Writing Dynamically-Loaded Modules"
 
 #. type: cindex
 #: original_texis/internals.texi:986
-#, fuzzy, no-wrap
-#| msgid "writing Emacs primitives"
+#, no-wrap
 msgid "writing emacs modules"
-msgstr "writing Emacs primitives"
+msgstr "writing emacs modules"
 
 #. type: cindex
 #: original_texis/internals.texi:987
 #, no-wrap
 msgid "dynamic modules, writing"
-msgstr ""
+msgstr "dynamic modules, writing"
 
 #. type: cindex
 #: original_texis/internals.texi:989
 #, no-wrap
 msgid "module @acronym{API}"
-msgstr ""
+msgstr "module @acronym{API}"
 
 #. type: Plain text
 #: original_texis/internals.texi:998
 msgid "This section describes the Emacs module @acronym{API} and how to use it as part of writing extension modules for Emacs.  The module @acronym{API} is defined in the C programming language, therefore the description and the examples in this section assume the module is written in C@.  For other programming languages, you will need to use the appropriate bindings, interfaces and facilities for calling C code.  Emacs C code requires a C99 or later compiler (@pxref{C Dialect}), and so the code examples in this section also follow that standard."
-msgstr ""
+msgstr "このセクションでがEmacsのモジュール@acronym{API}、およびEmacs用の拡張モジュール記述の一部としてそれらを使用する方法について説明します。モジュール@acronym{API}はCプログラム言語で定義されているので、このセクション内の記述と例はモジュールがCで記述されていると仮定します。別のプログラム言語ではCコード呼び出しのための適切なバインディングやインターフェースと機能の使用が必要になるでしょう。EmacsのCコードにはC99以降のコンパイラー(@ref{C Dialect}を参照)が必要であり、このセクションもこの標準にしたがいます。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1001
 msgid "Writing a module and integrating it into Emacs comprises the following tasks:"
-msgstr ""
+msgstr "モジュールの記述とEmacsへの統合には以下のタスクが含まれます:"
 
 #. type: itemize
 #: original_texis/internals.texi:1005
 msgid "Writing initialization code for the module."
-msgstr ""
+msgstr "モジュール用の初期化コードの記述。"
 
 #. type: itemize
 #: original_texis/internals.texi:1008
 msgid "Writing one or more module functions."
-msgstr ""
+msgstr "1つ以上のモジュール関数の記述。"
 
 #. type: itemize
 #: original_texis/internals.texi:1012
 msgid "Communicating values and objects between Emacs and your module functions."
-msgstr ""
+msgstr "Emacsとモジュール間での値とオブジェクトのやり取り。"
 
 #. type: itemize
 #: original_texis/internals.texi:1015
 msgid "Handling of error conditions and nonlocal exits."
-msgstr ""
+msgstr "エラーコンディションと非ローカル脱出のハンドリング。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1020
 msgid "The following subsections describe these tasks and the @acronym{API} itself in more detail."
-msgstr ""
+msgstr "以下のサクセクションこれらのタスクと@acronym{API}自体の詳細を説明します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1025
 msgid "Once your module is written, compile it to produce a shared library, according to the conventions of the underlying platform.  Then place the shared library in a directory mentioned in @code{load-path} (@pxref{Library Search}), where Emacs will find it."
-msgstr ""
+msgstr "モジュールを一度記述したら共有ライブラリーを生成するために、背景のプラットドームの慣習に応じてモジュールをコンパイルします。その後で@code{load-path} (@ref{Library Search}を参照)に言及されたディレクトリー内(Emacsが共有ライブラリーを探す場所)にそれを配置します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1029
 msgid "If you wish to verify the conformance of a module to the Emacs dynamic module @acronym{API}, invoke Emacs with the @kbd{--module-assertions} option.  @xref{Initial Options,,,emacs, The GNU Emacs Manual}."
-msgstr ""
+msgstr "Emacsダイナミックモジュール@acronym{API}にたいしてモジュールの適合性を検証したければ@kbd{--module-assertions}オプションでEmacsを呼び出します。@ref{Initial Options,,,emacs, The GNU Emacs Manual}を参照してください。"
 
 #. type: menuentry
 #: original_texis/internals.texi:1036
 msgid "Module Initialization::"
-msgstr ""
+msgstr "Module Initialization::"
 
 #. type: menuentry
 #: original_texis/internals.texi:1036
 msgid "Module Functions::"
-msgstr ""
+msgstr "Module Functions::"
 
 #. type: menuentry
 #: original_texis/internals.texi:1036
 msgid "Module Values::"
-msgstr ""
+msgstr "Module Values::"
 
 #. type: menuentry
 #: original_texis/internals.texi:1036
 msgid "Module Misc::"
-msgstr ""
+msgstr "Module Misc::"
 
 #. type: node
 #: original_texis/internals.texi:1036 original_texis/internals.texi:1574
 #, no-wrap
 msgid "Module Nonlocal"
-msgstr ""
+msgstr "Module Nonlocal"
 
 #. type: node
 #: original_texis/internals.texi:1038
 #, no-wrap
 msgid "Module Initialization"
-msgstr ""
+msgstr "Module Initialization"
 
 #. type: subsection
 #: original_texis/internals.texi:1039
 #, no-wrap
 msgid "Module Initialization Code"
-msgstr ""
+msgstr "Module Initialization Code"
 
 #. type: cindex
 #: original_texis/internals.texi:1040
 #, no-wrap
 msgid "module initialization"
-msgstr ""
+msgstr "module initialization"
 
 #. type: Plain text
 #: original_texis/internals.texi:1044
 msgid "Begin your module by including the header file @file{emacs-module.h} and defining the GPL compatibility symbol:"
-msgstr ""
+msgstr "ヘッダーファイル@file{emacs-module.h}のインクルードとGPL互換性シンボル(GPL compatibility symbol)によりモジュールの記述を始めましょう:"
 
 #. type: example
 #: original_texis/internals.texi:1047
@@ -1845,66 +1840,66 @@ msgstr ""
 msgid ""
 "#include <emacs-module.h>\n"
 "\n"
-msgstr ""
+msgstr "#include <emacs-module.h>\n\n"
 
 #. type: example
 #: original_texis/internals.texi:1049
 #, no-wrap
 msgid "int plugin_is_GPL_compatible;\n"
-msgstr ""
+msgstr "int plugin_is_GPL_compatible;\n"
 
 #. type: Plain text
 #: original_texis/internals.texi:1054
 msgid "The @file{emacs-module.h} file is installed into your system's include tree as part of the Emacs installation.  Alternatively, you can find it in the Emacs source tree."
-msgstr ""
+msgstr "Emacsインストールの一部としてシステムのインクルードツリーに@file{emacs-module.h}ファイルがインストールされます。かわりにEmacsのソースツリー内で見つけることもできます。"
 
 #. type: anchor{#1}
 #: original_texis/internals.texi:1057
 msgid "module initialization function"
-msgstr ""
+msgstr "module initialization function"
 
 #. type: Plain text
 #: original_texis/internals.texi:1057
 msgid "Next, write an initialization function for the module."
-msgstr ""
+msgstr "次にモジュール用の初期化関数を記述します。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1058
 #, no-wrap
 msgid "Function int emacs_module_init (struct emacs_runtime *@var{runtime})"
-msgstr ""
+msgstr "Function int emacs_module_init (struct emacs_runtime *@var{runtime})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1068
 msgid "Emacs calls this function when it loads a module.  If a module does not export a function named @code{emacs_module_init}, trying to load the module will signal an error.  The initialization function should return zero if the initialization succeeds, non-zero otherwise.  In the latter case, Emacs will signal an error, and the loading of the module will fail.  If the user presses @kbd{C-g} during the initialization, Emacs ignores the return value of the initialization function and quits (@pxref{Quitting}).  (If needed, you can catch user quitting inside the initialization function, @pxref{should_quit}.)"
-msgstr ""
+msgstr "Emacsはモジュールをロードする際にこの関数を呼び出す。モジュールが@code{emacs_module_init}という名前の関数をエクスポートしていなければモジュールはエラーをシグナルする。この初期化関数は初期化成功時には0、それ以外は非0をリターンすること。後者の場合にはEmacsはエラーをシグナルして、モジュールのロードは失敗する。初期化中にユーザーが@kbd{C-g}を押下すると、Emacsは初期化関数のリターン値を無視してquitする(@ref{Quitting}を参照)(必要なら初期化関数内でユーザーのquitをcatchできる。@ref{should_quit}を参照)。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1074
 msgid "The argument @var{runtime} is a pointer to a C @code{struct} that includes 2 public fields: @code{size}, which provides the size of the structure in bytes; and @code{get_environment}, which provides a pointer to a function that allows the module initialization function access to the Emacs environment object and its interfaces."
-msgstr ""
+msgstr "引数@var{runtime}は2つのパブリックなフィールドを含むCの@code{struct}へのポインター、@code{size}はその構造体のバイトサイズ、@code{get_environment}はEmacsの環境オブジェクトとそのインターフェースにモジュール初期化関数をアクセス可能にする関数へのポインターを提供する。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1078
 msgid "The initialization function should perform whatever initialization is required for the module.  In addition, it can perform the following tasks:"
-msgstr ""
+msgstr "初期化関数はモジュールに必要な初期化は何であれすべて行うこと。さらに以下のタスクを行うことができる:"
 
 #. type: cindex
 #: original_texis/internals.texi:1080
 #, no-wrap
 msgid "compatibility, between modules and Emacs"
-msgstr ""
+msgstr "compatibility, between modules and Emacs"
 
 #. type: item
 #: original_texis/internals.texi:1081
 #, no-wrap
 msgid "Compatibility verification"
-msgstr ""
+msgstr "互換性の検証"
 
 #. type: table
 #: original_texis/internals.texi:1085
 msgid "A module can verify that the Emacs executable which loads the module is compatible with the module, by comparing the @code{size} member of the @var{runtime} structure with the value compiled into the module:"
-msgstr ""
+msgstr "モジュールにコンパイルされた@var{runtime}構造体の@code{size}メンバーの値を比較することにより、モジュールをロードするEmacs実行可能形式がモジュールと互換性があるか検証できる。"
 
 #. type: example
 #: original_texis/internals.texi:1093
@@ -1917,16 +1912,22 @@ msgid ""
 "    return 1;\n"
 "@}\n"
 msgstr ""
+"int\n"
+"emacs_module_init (struct emacs_runtime *ert)\n"
+"@{\n"
+"  if (ert->size < sizeof (*ert))\n"
+"    return 1;\n"
+"@}\n"
 
 #. type: table
 #: original_texis/internals.texi:1100
 msgid "If the size of the runtime object passed to the module is smaller than what it expects, it means the module was compiled for an Emacs version newer (later) than the one which attempts to load it, i.e.@: the module might be incompatible with the Emacs binary."
-msgstr ""
+msgstr "モジュールに渡されたruntimeオブジェクトのsizeが期待する値より小さければ、ロードしようとしているモジュールがEmacsの新しい(最近の)バージョン向けにコンパイルされていることを意味する(そのモジュールはEmacsのバイナリーとは非互換かもしれない)。"
 
 #. type: table
 #: original_texis/internals.texi:1105
 msgid "In addition, a module can verify the compatibility of the module @acronym{API} with what the module expects.  The following sample code assumes it is part of the @code{emacs_module_init} function shown above:"
-msgstr ""
+msgstr "さらにモジュールは期待しているモジュール@acronym{API}の互換性も検証できる。以下の例では上述の@code{emacs_module_init}関数の一部であることを仮定している:"
 
 #. type: example
 #: original_texis/internals.texi:1110
@@ -1936,22 +1937,25 @@ msgid ""
 "  if (env->size < sizeof (*env))\n"
 "    return 2;\n"
 msgstr ""
+"  emacs_env *env = ert->get_environment (ert);\n"
+"  if (env->size < sizeof (*env))\n"
+"    return 2;\n"
 
 #. type: cindex
 #: original_texis/internals.texi:1113
 #, no-wrap
 msgid "module runtime environment"
-msgstr ""
+msgstr "module runtime environment"
 
 #. type: table
 #: original_texis/internals.texi:1118
 msgid "This calls the @code{get_environment} function using the pointer provided in the @code{runtime} structure to retrieve a pointer to the @acronym{API}'s @dfn{environment}, a C @code{struct} which also has a @code{size} field holding the size of the structure in bytes."
-msgstr ""
+msgstr "これは@acronym{API}の@dfn{環境(environment)}へのポインターの取得用に構造体@code{runtime} (@code{size}フィールドに構造体のバイトサイズも保有するC@code{struct} )で提供されるポインターを使用して@code{get_environment}関数を呼び出す。"
 
 #. type: table
 #: original_texis/internals.texi:1122
 msgid "Finally, you can write a module that will work with older versions of Emacs, by comparing the size of the environment passed by Emacs with known sizes, like this:"
-msgstr ""
+msgstr "最後にEmacsから渡された環境のサイズと既知のサイズを比較することによって、以下のように古いバージョンのEmacsで動作するモジュールを記述できる:"
 
 #. type: example
 #: original_texis/internals.texi:1131
@@ -1965,129 +1969,136 @@ msgid ""
 "  else\n"
 "    return 2; /* Unknown or unsupported version.  */\n"
 msgstr ""
+"  emacs_env *env = ert->get_environment (ert);\n"
+"  if (env->size >= sizeof (struct emacs_env_26))\n"
+"    emacs_version = 26;  /* Emacs 26 or later.  */\n"
+"  else if (env->size >= sizeof (struct emacs_env_25))\n"
+"    emacs_version = 25;\n"
+"  else\n"
+"    return 2; /* Unknown or unsupported version.  */\n"
 
 #. type: table
 #: original_texis/internals.texi:1139
 msgid "This works because later Emacs versions always @emph{add} members to the environment, never @emph{remove} any members, so the size can only grow with new Emacs releases.  Given the version of Emacs, the module can use only the parts of the module @acronym{API} that existed in that version, since those parts are identical in later versions."
-msgstr ""
+msgstr "新しいバージョンのEmacsではメンバーを環境に常に@emph{追加}して@emph{削除}は決して行わないので、新たなEmacsのリリースではサイズは増加するだけであることにより機能する。与えられたバージョンのEmacsにたいして、そのバージョンに存在するモジュール@acronym{API}は新しいバージョンのものと等しいので、その部分だけを使用できる。"
 
 #. type: table
 #: original_texis/internals.texi:1144
 msgid "We recommend that modules always perform the compatibility verification, unless they do their job entirely in the initialization function, and don't access any Lisp objects or use any Emacs functions accessible through the environment structure."
-msgstr ""
+msgstr "モジュールが処理全体を初期化関数内で行い、Lispオブジェクトにアクセスしたり環境構造体を通じてアクセス可能なEmacs関数を使用することがない場合を除いて、モジュールの互換性検証を常に行うことを推奨する。"
 
 #. type: item
 #: original_texis/internals.texi:1145
 #, no-wrap
 msgid "Binding module functions to Lisp symbols"
-msgstr ""
+msgstr "Lispシンボルへのモジュール関数のバインド"
 
 #. type: table
 #: original_texis/internals.texi:1149
 msgid "This gives the module functions names so that Lisp code could call it by that name.  We describe how to do this in @ref{Module Functions} below."
-msgstr ""
+msgstr "これはLispコードが名前で呼び出せるようにモジュール関数に名前を与える。これを行う方法については以下の@ref{Module Functions}で説明する。"
 
 #. type: node
 #: original_texis/internals.texi:1152
 #, no-wrap
 msgid "Module Functions"
-msgstr ""
+msgstr "Module Functions"
 
 #. type: subsection
 #: original_texis/internals.texi:1153
 #, no-wrap
 msgid "Writing Module Functions"
-msgstr ""
+msgstr "Writing Module Functions"
 
 #. type: cindex
 #: original_texis/internals.texi:1154
 #, no-wrap
 msgid "writing module functions"
-msgstr ""
+msgstr "writing module functions"
 
 #. type: cindex
 #: original_texis/internals.texi:1155
 #, no-wrap
 msgid "module functions"
-msgstr ""
+msgstr "module functions"
 
 #. type: Plain text
 #: original_texis/internals.texi:1160
 msgid "The main reason for writing an Emacs module is to make additional functions available to Lisp programs that load the module.  This subsection describes how to write such @dfn{module functions}."
-msgstr ""
+msgstr "Emacsモジュールを記述する主な理由は、そのモジュールをロードしたLispプログラムが追加の関数を利用できるようにするためです。このサブセクションでは、そのような@dfn{モジュール関数(module functions9}の記述方法を説明します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1162
 msgid "A module function has the following general form and signature:"
-msgstr ""
+msgstr "モジュール関数は以下のような一般的なフォームとシグネチャをもっています:"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1163
 #, no-wrap
 msgid "Function emacs_value module_func (emacs_env *@var{env}, ptrdiff_t @var{nargs}, emacs_value *@var{args}, void *@var{data})"
-msgstr ""
+msgstr "Function emacs_value module_func (emacs_env *@var{env}, ptrdiff_t @var{nargs}, emacs_value *@var{args}, void *@var{data})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1173
 msgid "The @var{env} argument provides a pointer to the @acronym{API} environment, needed to access Emacs objects and functions.  The @var{nargs} argument is the required number of arguments, which can be zero (see @code{make_function} below for more flexible specification of the argument number), and @var{args} is a pointer to the array of the function arguments.  The argument @var{data} points to additional data required by the function, which was arranged when @code{make_function} (see below) was called to create an Emacs function from @code{module_func}."
-msgstr ""
+msgstr "引数@var{env}はEmacsのオブジェクトや関数へのアクセスに必要となる@acronym{API}環境へのポインターを提供する。引数@var{nargs}は要求される引数の個数であり0もあり得る(引数の個数にたいするより柔軟な仕様については以下の@code{make_function}を参照)。@var{args}は関数の引数へのポインター。引数@var{data}は関数により要求される追加データへのポインターであり、@code{module_func}からEmacs関数を作成するために@code{make_function} (以下参照)が呼び出される際にアレンジされる。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1179
 msgid "Module functions use the type @code{emacs_value} to communicate Lisp objects between Emacs and the module (@pxref{Module Values}).  The @acronym{API}, described below and in the following subsections, provides facilities for conversion between basic C data types and the corresponding @code{emacs_value} objects."
-msgstr ""
+msgstr "モジュール関数はEmacsとモジュール間でLispオブジェクトをやり取りするためにタイプ@code{emacs_value}を使用する(@ref{Module Values}を参照)。以下で説明する@acronym{API}と以降のサブセクションではCの基本データ型と、それらに対応する@code{emacs_value}オブジェクトの慣習にたいする機能を提供する。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1187
 msgid "A module function always returns a value.  If the function returns normally, the Lisp code which called it will see the Lisp object corresponding to the @code{emacs_value} value the function returned.  However, if the user typed @kbd{C-g}, or if the module function or its callees signaled an error or exited nonlocally (@pxref{Module Nonlocal}), Emacs will ignore the returned value and quit or throw as it does when Lisp code encounters the same situations."
-msgstr ""
+msgstr "モジュール関数は常に値をリターンする。関数が正常にリターンすると、それに呼び出されたLispコードは関数がリターンした@code{emacs_value}値に対応するLispオブジェクトを目にすることになる。しかしユーザーが@kbd{C-g}をタイプしたり、モジュール関数やその呼び出し先がエラーをシグナルしたり非ローカルなexit (@ref{Module Nonlocal}を参照)を行なった場合には、Emacsはリターン値を無視してLispコードが同じ状況に遭遇した際のようにquitやthrrowを行う。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1196
 msgid "After writing your C code for a module function, you should make a Lisp function object from it using the @code{make_function} function, whose pointer is provided in the environment (recall that the pointer to the environment is returned by @code{get_environment}).  This is normally done in the module initialization function (@pxref{module initialization function}), after verifying the @acronym{API} compatibility."
-msgstr ""
+msgstr "モジュール関数用のCコード記述後には、そこから@code{make_function}を使用してLisp関数オブジェクトを作成する必要があります。@code{make_function}関数へのポインターは環境内で提供されます(環境へのポインターは@code{get_environment}がリターンすることを思い出してほしい)。これは通常は@acronym{API}のモジュール初期化関数(@ref{module initialization function}を参照)の内部で互換性検証後に行われます。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1197
 #, no-wrap
 msgid "Function emacs_value make_function (emacs_env *@var{env}, ptrdiff_t @var{min_arity}, ptrdiff_t @var{max_arity}, subr @var{func}, const char *@var{docstring}, void *@var{data})"
-msgstr ""
+msgstr "Function emacs_value make_function (emacs_env *@var{env}, ptrdiff_t @var{min_arity}, ptrdiff_t @var{max_arity}, subr @var{func}, const char *@var{docstring}, void *@var{data})"
 
 #. type: vindex
 #: original_texis/internals.texi:1198
 #, no-wrap
 msgid "emacs_variadic_function"
-msgstr ""
+msgstr "emacs_variadic_function"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1207
 msgid "This returns an Emacs function created from the C function @var{func}, whose signature is as described for @code{module_func} above (assumed here to be @code{typedef}'ed as @code{subr}).  The arguments @var{min_arity} and @var{max_arity} specify the minimum and maximum number of arguments that @var{func} can accept.  The @var{max_arity} argument can have the special value @code{emacs_variadic_function}, which makes the function accept an unlimited number of arguments, like the @code{&rest} keyword in Lisp (@pxref{Argument List})."
-msgstr ""
+msgstr "これは上述の@code{module_func} (ここでは@code{subr}として@code{typedef}されたものとしている)で説明したようなシグネチャをもつC関数@var{func}によって作成されたEmacs関数をリターンする。引数@var{min_arity}と@var{max_arity}は、@var{func}が受け付ける引数の最大個数と最小個数を指定する。引数@var{max_arity}は特別な値@code{emacs_variadic_function}をもつことができる。これはLispの@code{&rest}キーワードのように、関数の受け付ける引数の個数を無制限にする(@ref{Argument List}を参照)。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1212
 msgid "The argument @var{data} is a way to arrange for arbitrary additional data to be passed to @var{func} when it is called.  Whatever pointer is passed to @code{make_function} will be passed unaltered to @var{func}."
-msgstr ""
+msgstr "引数@var{data}は@var{func}の呼び出し時に任意の追加データを渡すための手段である。@code{make_function}に渡されたポインターが何であれ、それは変更されずに@var{func}に渡される。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1219
 msgid "The argument @var{docstring} specifies the documentation string for the function.  It should be either an @acronym{ASCII} string, or a UTF-8 encoded non-@acronym{ASCII} string, or a @code{NULL} pointer; in the latter case the function will have no documentation.  The documentation string can end with a line that specifies the advertised calling convention, see @ref{Function Documentation}."
-msgstr ""
+msgstr "引数@var{docstring}はその関数用のドキュメント文字列を指定する。これは@acronym{ASCII}文字列かUTF-8にエンコードされた非@acronym{ASCII}文字列、または@code{NULL}ポインターのいずれかであること。後者の場合には関数がドキュメントをもたないことを意味する。ドキュメント文字列はadvertised-calling-conventionを指定する行で終端できる。@ref{Function Documentation}を参照のこと。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1225
 msgid "Since every module function must accept the pointer to the environment as its first argument, the call to @code{make_function} could be made from any module function, but you will normally want to do that from the module initialization function, so that all the module functions are known to Emacs once the module is loaded."
-msgstr ""
+msgstr "すべてのモジュール関数は1つ目の引数として環境へのポインターを受け取らなければならないので、@code{make_function}は任意のモジュール関数から呼び出され得るが、モジュールが一度ロードされればすべてのモジュール関数がEmacsに既知となるように、通常はこれをモジュール初期化関数で行うことを望むだろう。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1231
 msgid "Finally, you should bind the Lisp function to a symbol, so that Lisp code could call your function by name.  For that, use the module @acronym{API} function @code{intern} (@pxref{intern}) whose pointer is also provided in the environment that module functions can access."
-msgstr ""
+msgstr "最後にLispコードが関数を名前で呼び出せるようにLisp関数をシンボルにバインドする必要があります。これを行うにはモジュール@acronym{API}関数@code{intern} (@ref{intern}を参照)を使用します。この関数のポインターもモジュール関数がアクセス可能な環境内で提供されています。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1235
 msgid "Combining the above steps, code that arranges for a C function @code{module_func} to be callable as @code{module-func} from Lisp will look like this, as part of the module initialization function:"
-msgstr ""
+msgstr "上述のステップを組み合わせて、モジュール初期化関数の中で以下のようにC用にアレンジしたコード@code{module_func}が、Lispから@code{module-func}として呼び出し可能になります:"
 
 #. type: example
 #: original_texis/internals.texi:1243
@@ -2100,16 +2111,22 @@ msgid ""
 " emacs_value args[] = @{symbol, func@};\n"
 " env->funcall (env, env->intern (env, \"defalias\"), 2, args);\n"
 msgstr ""
+" emacs_env *env = ert->get_environment (ert);\n"
+" emacs_value func = env->make_function (env, min_arity, max_arity,\n"
+"                                        module_func, docstring, data);\n"
+" emacs_value symbol = env->intern (env, \"module-func\");\n"
+" emacs_value args[] = @{symbol, func@};\n"
+" env->funcall (env, env->intern (env, \"defalias\"), 2, args);\n"
 
 #. type: Plain text
 #: original_texis/internals.texi:1251
 msgid "This makes the symbol @code{module-func} known to Emacs by calling @code{env->intern}, then invokes @code{defalias} from Emacs to bind the function to that symbol.  Note that it is possible to use @code{fset} instead of @code{defalias}; the differences are described in @ref{Defining Functions, defalias}."
-msgstr ""
+msgstr "@code{env->intern}の呼び出しによりシンボル@code{module-func}はEmacsが知ることとなり、それから関数をこのシンボルにバインドするためにEmacsから@code{defalias}を呼び出します。@code{defalias}のかわりに@code{fset}の使用も可能なことに注意してください。両者の違いは@ref{Defining Functions, defalias}に説明があります。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1263
 msgid "Using the module @acronym{API}, it is possible to define more complex function and data types: interactive functions, inline functions, macros, etc.  However, the resulting C code will be cumbersome and hard to read.  Therefore, we recommend that you limit the module code which creates functions and data structures to the absolute minimum, and leave the rest for a Lisp package that will accompany your module, because doing these additional tasks in Lisp is much easier, and will produce a much more readable code.  For example, given a module function @code{module-func} defined as above, one way of making an interactive command @code{module-cmd} based on it is with the following simple Lisp wrapper:"
-msgstr ""
+msgstr "モジュール@acronym{API}の使用により、より複雑な関数やデータ型(インタラクティブ関数、インライン関数、マクロ等)の定義が可能になります。ただしCの結果コードは扱いにくく、可読性も低下します。したがって関数やデータ構造を作成するモジュールコードを可能なかぎり最小限に留めるとともに、残りの部分をモジュールに付属するLispパッケージに付託することを推奨します。なぜならこれらの追加タスクをLispで行うのはより用意であり、より可読性の高いコードが生成されるでしょう。たとえば上記のように定義されたモジュール関数@code{module-func}がある場合には、以下のようなシンプルなLispラッパーにもとづくインタラクティブなコマンド@code{module-cmd}を作成するのも1つの方法です:"
 
 #. type: lisp
 #: original_texis/internals.texi:1269
@@ -2120,35 +2137,39 @@ msgid ""
 "  (interactive @var{spec})\n"
 "  (apply 'module-func args))\n"
 msgstr ""
+"(defun module-cmd (&rest args)\n"
+"  \"Documentation string for the command.\"\n"
+"  (interactive @var{spec})\n"
+"  (apply 'module-func args))\n"
 
 #. type: Plain text
 #: original_texis/internals.texi:1274
 msgid "The Lisp package which goes with your module could then load the module using the @code{module-load} primitive (@pxref{Dynamic Modules}) when the package is loaded into Emacs."
-msgstr ""
+msgstr "モジュールに同梱されるLispパッケージは、Emacsにパッケージがロードされる際に@code{module-load}プリミティブ(@ref{Dynamic Modules}を参照)を使用してモジュールをロードできます。"
 
 #. type: node
 #: original_texis/internals.texi:1275
 #, no-wrap
 msgid "Module Values"
-msgstr ""
+msgstr "Module Values"
 
 #. type: subsection
 #: original_texis/internals.texi:1276
 #, no-wrap
 msgid "Conversion Between Lisp and Module Values"
-msgstr ""
+msgstr "Conversion Between Lisp and Module Values"
 
 #. type: cindex
 #: original_texis/internals.texi:1277
 #, no-wrap
 msgid "module values, conversion"
-msgstr ""
+msgstr "module values, conversion"
 
 #. type: cindex
 #: original_texis/internals.texi:1279
 #, no-wrap
 msgid "@code{emacs_value} data type"
-msgstr ""
+msgstr "@code{emacs_value} data type"
 
 #. type: Plain text
 #: original_texis/internals.texi:1291
