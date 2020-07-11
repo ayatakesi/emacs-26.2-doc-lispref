@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-07-11 15:15+0900\n"
+"PO-Revision-Date: 2020-07-11 23:07+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2174,12 +2174,12 @@ msgstr "@code{emacs_value} data type"
 #. type: Plain text
 #: original_texis/internals.texi:1291
 msgid "With very few exceptions, most modules need to exchange data with Lisp programs that call them: accept arguments to module functions and return values from module functions.  For this purpose, the module @acronym{API} provides the @code{emacs_value} type, which represents Emacs Lisp objects communicated via the @acronym{API}; it is the functional equivalent of the @code{Lisp_Object} type used in Emacs C primitives (@pxref{Writing Emacs Primitives}).  This section describes the parts of the module @acronym{API} that allow to create @code{emacs_value} objects corresponding to basic Lisp data types, and how to access from C data in @code{emacs_value} objects that correspond to Lisp objects."
-msgstr ""
+msgstr "非常に少数の例外を除くほとんどのモジュールでは、モジュールを呼び出すLispプログラムとの間でモジュール関数への引数やリターン値の受け渡しでデータのやり取りが必要になります。この目的にたいしてモジュール@acronym{API}は@code{emacs_value}タイプを提供しています。これは@acronym{API}を通じたやり取りにおいてEmacsのLispオブジェクトを表現するタイプであり、EmacsのCプリミティブ(@ref{Writing Emacs Primitives}を参照)で使用される@code{Lisp_Object}タイプと機能的には等価です。このセクションではLispの基本データ型に対応する@code{emacs_value}オブジェクトの作成を可能とするモジュール@acronym{API}の部分と、Lispオブジェクトに対応する@code{emacs_value}オブジェクト内のCデータへのアクセス方法について説明します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1296
 msgid "All of the functions described below are actually @emph{function pointers} provided via the pointer to the environment which every module function accepts.  Therefore, module code should call these functions through the environment pointer, like this:"
-msgstr ""
+msgstr "以下で説明するすべての関数は、実際にはすべてのモジュール関数が受け取る環境へのポインターを介して提供される@emph{関数ポインター(function pointers)}です。したがってモジュールのコードでは以下のように環境ポインターを通じてこれらの関数を呼び出す必要があります:"
 
 #. type: example
 #: original_texis/internals.texi:1300
@@ -2188,70 +2188,72 @@ msgid ""
 "emacs_env *env;  /* the environment pointer */\n"
 "env->some_function (arguments@dots{});\n"
 msgstr ""
+"emacs_env *env;  /* the environment pointer */\n"
+"env->some_function (arguments@dots{});\n"
 
 #. type: Plain text
 #: original_texis/internals.texi:1306
 msgid "The @code{emacs_env} pointer will usually come from the first argument to the module function, or from the call to @code{get_environment} if you need the environment in the module initialization function."
-msgstr ""
+msgstr "@code{emacs_env}ポインターは通常はモジュール関数の1つ目の引数、モジュール初期化関数内で環境が必要な場合には@code{get_environment}の呼び出しから取得できます。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1311
 msgid "Most of the functions described below became available in Emacs 25, the first Emacs release that supported dynamic modules.  For the few functions that became available in later Emacs releases, we mention the first Emacs version that supported them."
-msgstr ""
+msgstr "以下で説明するもののほとんどはEmacs 25で利用可能になった関数であり、Emacs 25はダイナミックモジュールを最初にサポートした最初のEmacsリリースです。それ以降のリリースで利用可能になったいくつかの関数につていは、それらをサポートする最初のEmacsバージョンを注記します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1321
 msgid "The following @acronym{API} functions extract values of various C data types from @code{emacs_value} objects.  They all raise the @code{wrong-type-argument} error condition (@pxref{Type Predicates})  if the argument @code{emacs_value} object is not of the type expected by the function.  @xref{Module Nonlocal}, for details of how signaling errors works in Emacs modules, and how to catch error conditions inside the module before they are reported to Emacs.  The @acronym{API} function @code{type_of} (@pxref{Module Misc, type_of})  can be used to obtain the type of a @code{emacs_value} object."
-msgstr ""
+msgstr "以下の@acronym{API}関数は@code{emacs_value}オブジェクトから種々のCデータ型を抽出します。これらすべては引数の@code{emacs_value}オブジェクトがその関数の期待するタイプでなければ、エラーコンディション@code{wrong-type-argument}をraiseします(@ref{Type Predicates}を参照)。Emacsモジュール内でエラーをシグナルする方法、およびEmacsにエラーが報告される前にモジュール内部でエラーコンディションをcatchする方法の詳細は@ref{Module Nonlocal}を参照してください。@code{emacs_value}のタイプ取得には@acronym{API}関数@code{type_of}を使用できます(@ref{Module Misc, type_of}を参照)。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1322
 #, no-wrap
 msgid "Function intmax_t extract_integer (emacs_env *@var{env}, emacs_value @var{arg})"
-msgstr ""
+msgstr "Function intmax_t extract_integer (emacs_env *@var{env}, emacs_value @var{arg})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1327
 msgid "This function returns the value of a Lisp integer specified by @var{arg}.  The C data type of the return value, @code{intmax_t}, is the widest integral data type supported by the C compiler, typically @w{@code{long long}}."
-msgstr ""
+msgstr "この関数は@var{arg}で指定されたLisp整数の値をリターンする。リターン値のCデータ型@code{intmax_t}はCコンパイラーがサポートする最大の整数型であり、一般的には@w{@code{long long}}。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1329
 #, no-wrap
 msgid "Function double extract_float (emacs_env *@var{env}, emacs_value @var{arg})"
-msgstr ""
+msgstr "Function double extract_float (emacs_env *@var{env}, emacs_value @var{arg})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1332
 msgid "This function returns the value of a Lisp float specified by @var{arg}, as a C @code{double} value."
-msgstr ""
+msgstr "この関数は@var{arg}で指定されたLisp浮動小数の値をCの@code{double}値としてリターンする。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1334
 #, no-wrap
 msgid "Function bool copy_string_contents (emacs_env *@var{env}, emacs_value @var{arg}, char *@var{buf}, ptrdiff_t *@var{len})"
-msgstr ""
+msgstr "Function bool copy_string_contents (emacs_env *@var{env}, emacs_value @var{arg}, char *@var{buf}, ptrdiff_t *@var{len})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1341
 msgid "This function stores the UTF-8 encoded text of a Lisp string specified by @var{arg} in the array of @code{char} pointed by @var{buf}, which should have enough space to hold at least @code{*@var{len}} bytes, including the terminating null byte.  The argument @var{len} must not be a @code{NULL} pointer, and, when the function is called, it should point to a value that specifies the size of @var{buf} in bytes."
-msgstr ""
+msgstr "これは@var{arg}で指定されたLisp文字列をUTF-8にエンコードしたテキストを@var{buf}が指す@code{char}配列に格納する。@var{buf}は少なくとも終端のnullバイトを含む@code{*@var{len}}バイトを保持するために十分なスペースをもつこと。引数@var{len}は@code{NULL}ポインターであってはならない。この関数の呼び出し時には@var{buf}のバイトサイズを指定する値を指していること。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1350
 msgid "If the buffer size specified by @code{*@var{len}} is large enough to hold the string's text, the function stores in @code{*@var{len}} the actual number of bytes copied to @var{buf}, including the terminating null byte, and returns @code{true}.  If the buffer is too small, the function raises the @code{args-out-of-range} error condition, stores the required number of bytes in @code{*@var{len}}, and returns @code{false}.  @xref{Module Nonlocal}, for how to handle pending error conditions."
-msgstr ""
+msgstr "@code{*@var{len}}で指定されたバッファーサイズが文字列のテキストを保持するために十分大きければ、関数は終端のnullバイト含む実際にコピーされる@code{*@var{len}}バイトを@var{buf}にコピーして@code{true}をリターンする。バッファーが小さすぎる場合には、関数はエラーコンディション@code{args-out-of-range}をraiseするとともに、必要なバイト数を@code{*@var{len}}に格納して@code{false}をリターンする。保留中のエラーコンディションのハンドル方法は@ref{Module Nonlocal}を参照のこと。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1360
 msgid "The argument @var{buf} can be a @code{NULL} pointer, in which case the function stores in @code{*@var{len}} the number of bytes required for storing the contents of @var{arg}, and returns @code{true}.  This is how you can determine the size of @var{buf} needed to store a particular string: first call @code{copy_string_contents} with @code{NULL} as @var{buf}, then allocate enough memory to hold the number of bytes stored by the function in @code{*@var{len}}, and call the function again with non-@code{NULL} @var{buf} to actually perform the text copying."
-msgstr ""
+msgstr "引数@var{buf}は@code{NULL}ポインターでもよく、この場合には関数は@var{arg}のコンテンツの格納に必要なバイト数を@code{*@var{len}}に格納して@code{true}をリターンする。これは特定の文字列を格納するために必要な@var{buf}サイズを決定する手段となり得る。1回目は@var{buf}を@code{NULL}で@code{copy_string_contents}を呼び出して、関数により@code{*@var{len}}に格納されたバイト数の保持に十分なメモリーを割り当ててから、実際にテキストのコピーを行うために非@code{NULL}の@var{buf}で関数を再び呼び出す。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1362
 #, no-wrap
 msgid "Function emacs_value vec_get (emacs_env *@var{env}, emacs_value @var{vector}, ptrdiff_t @var{index})"
-msgstr ""
+msgstr "Function emacs_value vec_get (emacs_env *@var{env}, emacs_value @var{vector}, ptrdiff_t @var{index})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1370
