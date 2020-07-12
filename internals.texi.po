@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-07-13 05:39+0900\n"
+"PO-Revision-Date: 2020-07-13 06:22+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4086,10 +4086,8 @@ msgstr "window_end_valid"
 
 #. type: table
 #: original_texis/internals.texi:2215
-#, fuzzy
-#| msgid "This field is set to a non-@code{nil} value if @code{window_end_pos} is truly valid.  This is @code{nil} if nontrivial redisplay is pre-empted, since in that case the display that @code{window_end_pos} was computed for did not get onto the screen."
 msgid "This field is set to a non-zero value if @code{window_end_pos} and @code{window_end_vpos} are truly valid.  This is zero if nontrivial redisplay is pre-empted, since in that case the display that @code{window_end_pos} was computed for did not get onto the screen."
-msgstr "このフィールドは、@code{window_end_pos}が真に有効なら、非@code{nil}値にセットされる。これは重要な再表示が先に割り込んだ場合には、@code{window_end_pos}を算出した表示がスクリーン上に出現しなくなるので@code{nil}となる。"
+msgstr "このフィールドは@code{window_end_pos}および@code{window_end_vpos}が真に有効なら非0値にセットされる。これは重要な再表示が先に割り込んだ場合には、@code{window_end_pos}を算出した表示がスクリーン上に出現しなくなるので0になる。"
 
 #. type: item
 #: original_texis/internals.texi:2216
@@ -4104,17 +4102,14 @@ msgstr "そのウィンドウ内でカーソルがどこにあるかを記述す
 
 #. type: item
 #: original_texis/internals.texi:2219
-#, fuzzy, no-wrap
-#| msgid "last_cursor"
+#, no-wrap
 msgid "last_cursor_vpos"
-msgstr "last_cursor"
+msgstr "last_cursor_vpos"
 
 #. type: table
 #: original_texis/internals.texi:2222
-#, fuzzy
-#| msgid "The value of @code{cursor} as of the last redisplay that finished."
 msgid "The window-relative vertical position of the line showing the cursor as of the last redisplay that finished."
-msgstr "完了した最後の表示での@code{cursor}の値。"
+msgstr "最後の再表示完了時にカーソルを表示していた行の、ウィンドウに相対的な垂直位置。"
 
 #. type: item
 #: original_texis/internals.texi:2223
@@ -4202,22 +4197,19 @@ msgstr "hscroll"
 
 #. type: table
 #: original_texis/internals.texi:2253
-#, fuzzy
-#| msgid "This is the number of columns that the display in the window is scrolled horizontally to the left.  Normally, this is 0."
 msgid "This is the number of columns that the display in the window is scrolled horizontally to the left.  Normally, this is 0.  When only the current line is hscrolled, this describes how much the current line is scrolled."
-msgstr "これは、そのウィンドウ内の表示が左へ水平スクロールされている列数。通常これは0。"
+msgstr "これはウィンドウ内の表示が左へ水平スクロールされている列数。通常は0。カレント行だけが水平スクロールされている際には、カレント行がどれだけ左へ水平スクロールされているかを示す。"
 
 #. type: item
 #: original_texis/internals.texi:2254
-#, fuzzy, no-wrap
-#| msgid "hscroll"
+#, no-wrap
 msgid "min_hscroll"
-msgstr "hscroll"
+msgstr "min_hscroll"
 
 #. type: table
 #: original_texis/internals.texi:2259
 msgid "Minimum value of @code{hscroll}, set by the user via @code{set-window-hscroll} (@pxref{Horizontal Scrolling}).  When only the current line is hscrolled, this describes the horizontal scrolling of lines other than the current one."
-msgstr ""
+msgstr "@code{set-window-hscroll}を通じてユーザーがセットする@code{hscroll}の最小値(@ref{Horizontal Scrolling}を参照)。カレント行だけが水平スクロールされている際には、カレント行以外の行がどれだけ左へ水平スクロールされているかを示す。"
 
 #. type: item
 #: original_texis/internals.texi:2260
@@ -4245,24 +4237,23 @@ msgstr "そのウィンドウがそれのバッファー専用(dedicated)なら�
 #: original_texis/internals.texi:2266
 #, no-wrap
 msgid "combination_limit"
-msgstr ""
+msgstr "combination_limit"
 
 #. type: table
 #: original_texis/internals.texi:2270
 msgid "This window's combination limit, meaningful only for a parent window.  If this is @code{t}, then it is not allowed to delete this window and recombine its child windows with other siblings of this window."
-msgstr ""
+msgstr "このウィンドウの組み合わせ限界は親ウィンドウにとってのみ意味がある。これが@code{t}ならそのウィンドウの削除は許されず、そのウィンドウの他の兄弟と子ウィンドウを再組み合わせする。"
 
 #. type: item
 #: original_texis/internals.texi:2271
-#, fuzzy, no-wrap
-#| msgid "window_end_bytepos"
+#, no-wrap
 msgid "window_parameters"
-msgstr "window_end_bytepos"
+msgstr "window_parameters"
 
 #. type: table
 #: original_texis/internals.texi:2273
 msgid "The alist of this window's parameters."
-msgstr ""
+msgstr "そのウィンドウのパラメーターのalist。"
 
 #. type: table
 #: original_texis/internals.texi:2276
@@ -4277,29 +4268,25 @@ msgstr "update_mode_line"
 
 #. type: table
 #: original_texis/internals.texi:2279
-#, fuzzy
-#| msgid "Non-@code{nil} means this window's mode line needs to be updated."
 msgid "Non-zero means this window's mode line needs to be updated."
-msgstr "非@code{nil}は、そのウィンドウのモードラインの更新が必要なことを意味する。"
+msgstr "非0はウィンドウのモードラインの更新が必要なことを意味する。"
 
 #. type: item
 #: original_texis/internals.texi:2280
-#, fuzzy, no-wrap
-#| msgid "mode_line_format"
+#, no-wrap
 msgid "mode_line_height"
-msgstr "mode_line_format"
+msgstr "mode_line_height"
 
 #. type: itemx
 #: original_texis/internals.texi:2281
-#, fuzzy, no-wrap
-#| msgid "header_line_format"
+#, no-wrap
 msgid "header_line_height"
-msgstr "header_line_format"
+msgstr "header_line_height"
 
 #. type: table
 #: original_texis/internals.texi:2284
 msgid "The height in pixels of the mode line and the header line, or @minus{}1 if not known."
-msgstr ""
+msgstr "モードラインおよびヘッダーラインのピクセル高さ、不明なら@minus{}1。"
 
 #. type: item
 #: original_texis/internals.texi:2285
@@ -4309,10 +4296,8 @@ msgstr "base_line_number"
 
 #. type: table
 #: original_texis/internals.texi:2288
-#, fuzzy
-#| msgid "The line number of a certain position in the buffer, or @code{nil}.  This is used for displaying the line number of point in the mode line."
 msgid "The line number of a certain position in the buffer, or zero.  This is used for displaying the line number of point in the mode line."
-msgstr "そのバッファーの特定の位置の行番号か@code{nil}。これは、モードラインでポイントの行番号を表示するために使用される。"
+msgstr "そのバッファーの特定の位置の行番号か0。これはモードラインでポイントの行番号を表示するために使用される。"
 
 #. type: item
 #: original_texis/internals.texi:2289
@@ -4322,10 +4307,8 @@ msgstr "base_line_pos"
 
 #. type: table
 #: original_texis/internals.texi:2293
-#, fuzzy
-#| msgid "The position in the buffer for which the line number is known, or @code{nil} meaning none is known.  If it is a buffer, don't display the line number as long as the window shows that buffer."
 msgid "The position in the buffer for which the line number is known, or zero meaning none is known.  If it is @minus{}1, don't display the line number as long as the window shows that buffer."
-msgstr "行番号が既知であるバッファー位置、それが知られていなければ@code{nil}。これがバッファーなら、そのウィンドウがバッファーを表示するかぎり、行番号は表示されない。"
+msgstr "行番号が既知であるバッファー位置、不明なら0。これが@minus{}1なら、そのウィンドウがバッファーを表示するかぎり行番号は表示されない。"
 
 #. type: item
 #: original_texis/internals.texi:2294
@@ -4335,10 +4318,8 @@ msgstr "column_number_displayed"
 
 #. type: table
 #: original_texis/internals.texi:2297
-#, fuzzy
-#| msgid "The column number currently displayed in this window's mode line, or @code{nil} if column numbers are not being displayed."
 msgid "The column number currently displayed in this window's mode line, or @minus{}1 if column numbers are not being displayed."
-msgstr "そのウィンドウのモードラインに表示されているカレント列番号、列番号が表示されていなければ@code{nil}。"
+msgstr "そのウィンドウのモードラインに表示されているカレント列番号、列番号が表示されていなければ@minus{}1。"
 
 #. type: item
 #: original_texis/internals.texi:2298
@@ -4376,10 +4357,8 @@ msgstr "プロセスのフィールドには以下が含まれます(完全な�
 
 #. type: table
 #: original_texis/internals.texi:2314
-#, fuzzy
-#| msgid "A string, the name of the process."
 msgid "A Lisp string, the name of the process."
-msgstr "プロセス名(文字列)。"
+msgstr "プロセス名(Lisp文字列)。"
 
 #. type: item
 #: original_texis/internals.texi:2315
@@ -4400,10 +4379,8 @@ msgstr "filter"
 
 #. type: table
 #: original_texis/internals.texi:2322
-#, fuzzy
-#| msgid "A function used to accept output from the process."
 msgid "A Lisp function used to accept output from the process."
-msgstr "そのプロセスから出力を受け取るために使用される関数。"
+msgstr "そのプロセスから出力を受け取るために使用されるLisp関数。"
 
 #. type: item
 #: original_texis/internals.texi:2323
@@ -4413,10 +4390,8 @@ msgstr "sentinel"
 
 #. type: table
 #: original_texis/internals.texi:2325
-#, fuzzy
-#| msgid "A function called whenever the state of the process changes."
 msgid "A Lisp function called whenever the state of the process changes."
-msgstr "そのプロセスの状態が変化したら常に呼び出される関数。"
+msgstr "そのプロセスの状態が変化したら常に呼び出されるLisp関数。"
 
 #. type: item
 #: original_texis/internals.texi:2326
@@ -4486,10 +4461,8 @@ msgstr "status"
 
 #. type: table
 #: original_texis/internals.texi:2353
-#, fuzzy
-#| msgid "The process status, as @code{process-status} should return it."
 msgid "The process status, as @code{process-status} should return it.  This is a Lisp symbol, a cons cell, or a list."
-msgstr "@code{process-status}がリターンするようなプロセス状態。"
+msgstr "@code{process-status}がリターンするようなプロセス状態。Lispシンボル、コンスセル、またはリストのいずれか。"
 
 #. type: item
 #: original_texis/internals.texi:2354
@@ -4516,10 +4489,8 @@ msgstr "pty_flag"
 
 #. type: table
 #: original_texis/internals.texi:2363
-#, fuzzy
-#| msgid "Non-@code{nil} if communication with the subprocess uses a pty; @code{nil} if it uses a pipe."
 msgid "Non-zero if communication with the subprocess uses a pty; zero if it uses a pipe."
-msgstr "そのサブプロセスがptyを使用して対話する場合は非@code{nil}。パイプを使用する場合には@code{nil}。"
+msgstr "そのサブプロセスがptyを使用して対話する場合は非0。パイプを使用する場合には0。"
 
 #. type: item
 #: original_texis/internals.texi:2364
