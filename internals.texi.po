@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-07-13 03:33+0900\n"
+"PO-Revision-Date: 2020-07-13 05:39+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2530,7 +2530,7 @@ msgstr ""
 #: original_texis/internals.texi:1550
 #, no-wrap
 msgid "Function emacs_value funcall (emacs_env *@var{env}, emacs_value @var{func}, ptrdiff_t @var{nargs}, emacs_value *@var{args})"
-msgstr ""
+msgstr "Function emacs_value funcall (emacs_env *@var{env}, emacs_value @var{func}, ptrdiff_t @var{nargs}, emacs_value *@var{args})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1557
@@ -2808,10 +2808,8 @@ msgstr "これらのタイプは内部的タイプシステムのファースト
 
 #. type: Plain text
 #: original_texis/internals.texi:1754
-#, fuzzy
-#| msgid "Below there is a description of a few subtypes of @code{Lisp_Vectorlike}.  Buffer object represents the text to display and edit.  Window is the part of display structure which shows the buffer or used as a container to recursively place other windows on the same frame.  (Do not confuse Emacs Lisp window object with the window as an entity managed by the user interface system like X; in Emacs terminology, the latter is called frame.)  Finally, process object is used to manage the subprocesses."
 msgid "Below there is a description of a few subtypes of @code{Lisp_Vectorlike}.  Buffer object represents the text to display and edit.  Window is the part of display structure which shows the buffer or is used as a container to recursively place other windows on the same frame.  (Do not confuse Emacs Lisp window object with the window as an entity managed by the user interface system like X; in Emacs terminology, the latter is called frame.)  Finally, process object is used to manage the subprocesses."
-msgstr "@code{Lisp_Vectorlike}のいくつかのサブタイプを説明します。バッファーオブジェクトは、表示および編集を行うテキストを表します。ウィンドウはバッファーを表示したり、同一フレーム上で再帰的に他のウィンドウを配置するためのコンテナーに使用される、表示構造の一部です(Emacs Lispのウィンドウオブジェクトと、Xのようなユーザーインターフェースシステムに管理されるエンティティとしてのウィンドウを混同しないこと。Emacsの用語では後者はフレームと呼ばれる)。最後に、プロセスオブジェクトは、サブプロセスの管理に使用されます。"
+msgstr "@code{Lisp_Vectorlike}のいくつかのサブタイプを説明します。バッファーオブジェクトは表示や編集を行うテキストを表します。ウィンドウはバッファーを表示したり、同一フレーム上で再帰的に他のウィンドウを配置するためのコンテナーとして使用される表示構造の一部です(Emacs Lispのウィンドウオブジェクトと、のようなユーザーインターフェースシステムに管理されるエンティティとしてのウィンドウを混同しないこと。Emacsの用語では後者はフレームと呼ばれる)。最後にプロセスオブジェクトはサブプロセスの管理に使用されます。"
 
 #. type: subsection
 #: original_texis/internals.texi:1759 original_texis/internals.texi:1761
@@ -2880,7 +2878,7 @@ msgstr "beg"
 #. type: table
 #: original_texis/internals.texi:1778
 msgid "The address of the buffer contents.  The buffer contents is a linear C array of @code{char}, with the gap somewhere in its midst."
-msgstr ""
+msgstr "バッファーコンテンツのアドレス。バッファーコンテンツは途中にギャップをもつ@code{char}の線形C配列。"
 
 #. type: item
 #: original_texis/internals.texi:1779
@@ -2953,10 +2951,8 @@ msgstr "overlay_modiff"
 
 #. type: table
 #: original_texis/internals.texi:1803
-#, fuzzy
-#| msgid "These fields count the number of buffer-modification events performed in this buffer.  @code{modiff} is incremented after each buffer-modification event, and is never otherwise changed; @code{save_modiff} contains the value of @code{modiff} the last time the buffer was visited or saved; @code{chars_modiff} counts only modifications to the characters in the buffer, ignoring all other kinds of changes; and @code{overlay_modiff} counts only modifications to the overlays."
 msgid "These fields count the number of buffer-modification events performed in this buffer.  @code{modiff} is incremented after each buffer-modification event, and is never otherwise changed; @code{save_modiff} contains the value of @code{modiff} the last time the buffer was visited or saved; @code{chars_modiff} counts only modifications to the characters in the buffer, ignoring all other kinds of changes (such as text properties); and @code{overlay_modiff} counts only modifications to the buffer's overlays."
-msgstr "これらのフィールドは、そのバッファーで行われた、バッファー変更イベントの数をカウントする。@code{modiff}はバッファー変更イベントのたびに増分され、それ以外では決して変化しない。@code{save_modiff}には、そのバッファーが最後にvisitまたは保存されたときの、@code{modiff}の値が含まれる。@code{chars_modiff}は、そのバッファー内の文字にたいする変更だけをカウントし、その他すべての種類の変更を無視する。@code{overlay_modiff}は、オーバーレイにたいする変更だけをカウントする。"
+msgstr "これらのフィールドは、そのバッファーで行われたバッファー変更イベントの数をカウントする。@code{modiff}はバッファー変更イベントのたびに増分されて、それ以外では決して変化しない。@code{save_modiff}にはバッファーが最後にvisitや保存されたときの@code{modiff}の値が含まれる。@code{chars_modiff}はバッファー内の文字にたいする変更だけをカウントして、(テキストプロパティのように)その他すべての種類の変更を無視する。@code{overlay_modiff}はバッファーのオーバーレイにたいする変更だけをカウントする。"
 
 #. type: item
 #: original_texis/internals.texi:1804
@@ -3228,13 +3224,13 @@ msgstr "name"
 #. type: table
 #: original_texis/internals.texi:1914
 msgid "A Lisp string that names the buffer.  It is guaranteed to be unique.  @xref{Buffer Names}.  This and the following fields have their names in the C struct definition end in a @code{_} to indicate that they should not be accessed directly, but via the @code{BVAR} macro, like this:"
-msgstr ""
+msgstr "バッファーを命名するLisp文字列。一意であることが保証されている。@ref{Buffer Names}を参照のこと。このフィールドと以降のフィールドは以下のように@code{BVAR}を介するアクセス以外の方法で直接アクセスするべきではないことを示すためにC構造体定義内の名前の最後に@code{_}をもつ:"
 
 #. type: example
 #: original_texis/internals.texi:1917
 #, no-wrap
 msgid "  Lisp_Object buf_name = BVAR (buffer, name);\n"
-msgstr ""
+msgstr "  Lisp_Object buf_name = BVAR (buffer, name);\n"
 
 #. type: item
 #: original_texis/internals.texi:1919
@@ -3244,10 +3240,8 @@ msgstr "save_length"
 
 #. type: table
 #: original_texis/internals.texi:1926
-#, fuzzy
-#| msgid "The length of the file this buffer is visiting, when last read or saved.  This and other fields concerned with saving are not kept in the @code{buffer_text} structure because indirect buffers are never saved."
 msgid "The length of the file this buffer is visiting, when last read or saved.  It can have 2 special values: @minus{}1 means auto-saving was turned off in this buffer, and @minus{}2 means don't turn off auto-saving if buffer text shrinks a lot.  This and other fields concerned with saving are not kept in the @code{buffer_text} structure because indirect buffers are never saved."
-msgstr "そのバッファーがvisitしているファイルを、最後に読み込みまたは保存したときの長さ。インダイレクトバッファーは決して保存されることはないので、保存に関して、このフィールドとその他のフィールドは、@code{buffer_text}構造体で維持されない"
+msgstr "そのバッファーがvisitしているファイルを最後に読み込み、または保存したときの長さ。2つの特別な値をもつことができる。@minus{}1はそのバッファーで自動保存がオフであること、@minus{}2はバッファーのテキストが大量に減少するようなら自動保存をオフに切り替えないことを意味する。インダイレクトバッファーは決して保存されることはないので、保存に関して、このフィールドとその他のフィールドは@code{buffer_text}構造体で維持されない"
 
 #. type: item
 #: original_texis/internals.texi:1927
@@ -3711,39 +3705,36 @@ msgstr "frame"
 
 #. type: table
 #: original_texis/internals.texi:2050
-#, fuzzy
-#| msgid "The frame that this window is on."
 msgid "The frame that this window is on, as a Lisp object."
-msgstr "そのウィンドウがあるフレーム。"
+msgstr "そのウィンドウがあるフレーム(Lispオブジェクト)。"
 
 #. type: item
 #: original_texis/internals.texi:2051
-#, fuzzy, no-wrap
-#| msgid "mini_p"
+#, no-wrap
 msgid "mini"
-msgstr "mini_p"
+msgstr "mini"
 
 #. type: table
 #: original_texis/internals.texi:2054
 msgid "Non-zero if this window is a minibuffer window, a window showing the minibuffer or the echo area."
-msgstr ""
+msgstr "そのウィンドウがミニバッファーウィンドウ、ミニバッファーかエコーエリアを表示しているウィンドウなら非0。"
 
 #. type: item
 #: original_texis/internals.texi:2055
 #, no-wrap
 msgid "pseudo_window_p"
-msgstr ""
+msgstr "pseudo_window_p"
 
 #. type: cindex
 #: original_texis/internals.texi:2056
 #, no-wrap
 msgid "pseudo window"
-msgstr ""
+msgstr "pseudo window"
 
 #. type: table
 #: original_texis/internals.texi:2062
 msgid "Non-zero if this window is a @dfn{pseudo window}.  A pseudo window is either a window used to display the menu bar or the tool bar (when Emacs uses toolkits that don't display their own menu bar and tool bar) or a window showing a tooltip on a tooltip frame.  Pseudo windows are in general not accessible from Lisp code."
-msgstr ""
+msgstr "そのウィンドウが@dfn{疑似ウィンドウ(pseudo window)}なら非0。疑似ウィンドウとはメニューバーかツールバーの表示に使用されているウィンドウ(自身のメニューバーうあツールバーを表示しないツールキットをEmacsが使用している場合)、またはツールチップフレーム上でツールチップを表示しているウィンドウのいずれか。一般的には疑似ウィンドウはLispコードからアクセスできない。"
 
 #. type: item
 #: original_texis/internals.texi:2063
@@ -3753,28 +3744,24 @@ msgstr "parent"
 
 #. type: table
 #: original_texis/internals.texi:2069
-#, fuzzy
-#| msgid "Internally, Emacs arranges windows in a tree; each group of siblings has a parent window whose area includes all the siblings.  This field points to a window's parent."
 msgid "Internally, Emacs arranges windows in a tree; each group of siblings has a parent window whose area includes all the siblings.  This field points to the window's parent in that tree, as a Lisp object.  For the root window of the tree and a minibuffer window this is always @code{nil}."
-msgstr "Emacsは内部的に、ウィンドウをツリーにアレンジする。ウィンドウの兄弟グループは、そのエリアがすべての兄弟を含むような親ウィンドウをもつ。このフィールドは、ウィンドウの親を指す。"
+msgstr "Emacsは内部的にウィンドウをツリーにアレンジする。ウィンドウの兄弟グループは、そのエリアがすべての兄弟を含むような親ウィンドウをもつ。このフィールドはツリー内でのウィンドウの親をLispオブジェクトとして指す。これはツリーのルートウィンドウとミニバッファーウィンドウでは常に@code{nil}。"
 
 #. type: table
 #: original_texis/internals.texi:2074
-#, fuzzy
-#| msgid "Parent windows do not display buffers, and play little role in display except to shape their child windows.  Emacs Lisp programs usually have no access to the parent windows; they operate on the windows at the leaves of the tree, which actually display buffers."
 msgid "Parent windows do not display buffers, and play little role in display except to shape their child windows.  Emacs Lisp programs cannot directly manipulate parent windows; they operate on the windows at the leaves of the tree, which actually display buffers."
-msgstr "親ウィンドウはバッファーを表示せず、子ウィンドウ形成を除き、表示では少ししか役割を果たさない。Emacs Lispプログラムでからは、通常は親ウィンドウへのアクセスがない。Emacs Lispプログラムでは、実際にバッファーを表示するツリーの子ノードのウィンドウにたいして操作を行う。"
+msgstr "親ウィンドウはバッファーを表示せず、子ウィンドウ形成を除いて表示では少ししか役割を果たさない。Emacs Lispプログラムは親ウィンドウを直接操作できない。Emacs Lispプログラムでは実際にバッファーを表示するツリーの子ノードのウィンドウにたいして操作を行う。"
 
 #. type: item
 #: original_texis/internals.texi:2075
 #, no-wrap
 msgid "contents"
-msgstr ""
+msgstr "contents"
 
 #. type: table
 #: original_texis/internals.texi:2081
 msgid "For a leaf window and windows showing a tooltip, this is the buffer, as a Lisp object, that the window is displaying.  For an internal (``parent'') window, this is its first child window.  For a pseudo window showing a menu or tool bar this is @code{nil}.  It is also @code{nil} for a window that has been deleted."
-msgstr ""
+msgstr "リーフウィンドウ(leaf window)およびツールチップを表示中のウィンドウでは、そのウィンドウが表示しているLispオブジェクトとしてのバッファー、内部ウィンドウ(``親''ウィンドウ)では最初の子ウィンドウ、メニューバーやツールバーを表示している疑似ウィンドウでは@code{nil}、削除されたウィンドウでも@code{nil}。"
 
 #. type: itemx
 #: original_texis/internals.texi:2083
@@ -3784,15 +3771,13 @@ msgstr "prev"
 
 #. type: table
 #: original_texis/internals.texi:2091
-#, fuzzy
-#| msgid "The next sibling and previous sibling of this window.  @code{next} is @code{nil} if the window is the right-most or bottom-most in its group; @code{prev} is @code{nil} if it is the left-most or top-most in its group."
 msgid "The next and previous sibling of this window as Lisp objects.  @code{next} is @code{nil} if the window is the right-most or bottom-most in its group; @code{prev} is @code{nil} if it is the left-most or top-most in its group.  Whether the sibling is left/right or up/down is determined by the @code{horizontal} field of the sibling's parent: if it's non-zero, the siblings are arranged horizontally."
-msgstr "そのウィンドウの次の兄弟と、前の兄弟。自身のグループ内でそのウィンドウが右端か下端なら、@code{next}は@code{nil}。自身のグループ内でそのウィンドウが左端か上端なら、@code{prev}は@code{nil}。"
+msgstr "そのウィンドウの次の兄弟と前の兄弟(Lispオブジェクト)。自身のグループ内でそのウィンドウが右端か下端なら@code{next}は@code{nil}。自身のグループ内でそのウィンドウが左端か上端なら@code{prev}は@code{nil}。兄弟が左右あるいは上下であるかは兄弟の親の@code{horizontal}フィールドで判断される。これが非0なら兄弟は水平に配置されている。"
 
 #. type: table
 #: original_texis/internals.texi:2098
 msgid "As a special case, @code{next} of a frame's root window points to the frame's minibuffer window, provided this is not a minibuffer-only or minibuffer-less frame.  On such frames @code{prev} of the minibuffer window points to that frame's root window.  In any other case, the root window's @code{next} and the minibuffer window's (if present)  @code{prev} fields are @code{nil}."
-msgstr ""
+msgstr "特別なケースとしてミニバッファーのみのフレームやミニバッファーなしのフレームでなければ、フレームのルートウィンドウの@code{next}は、そのフレームのミニバッファーウィンドウを指す。そのようなフレームのミニバッファーウィンドウの@code{prev}は、そのフレームのルートウィンドウを指す。それ以外の場合にはルートウィンドウの@code{next}フィールド、および(もしあれば)ミニバッファーの@code{prev}フィールドは@code{nil}。"
 
 #. type: item
 #: original_texis/internals.texi:2099
@@ -3802,10 +3787,8 @@ msgstr "left_col"
 
 #. type: table
 #: original_texis/internals.texi:2102
-#, fuzzy
-#| msgid "The left-hand edge of the window, measured in columns, relative to the leftmost column in the frame (column 0)."
 msgid "The left-hand edge of the window, measured in columns, relative to the leftmost column (column 0) of the window's native frame."
-msgstr "そのウィンドウの左端を、そのフレームの最左列(列0)から相対的に数えた列数。"
+msgstr "そのウィンドウの左端をウィンドウのネイティブフレームの最左列(列0)から相対的に数えた列数。"
 
 #. type: item
 #: original_texis/internals.texi:2103
@@ -3815,29 +3798,25 @@ msgstr "top_line"
 
 #. type: table
 #: original_texis/internals.texi:2106
-#, fuzzy
-#| msgid "The top edge of the window, measured in lines, relative to the topmost line in the frame (line 0)."
 msgid "The top edge of the window, measured in lines, relative to the topmost line (line 0) of the window's native frame."
-msgstr "そのウィンドウの上端を、そのフレームの最上行(行0)から相対的に数えた行数。"
+msgstr "そのウィンドウの上端をウィンドウのネイティブフレームの最上行(行0)から相対的に数えた行数。"
 
 #. type: item
 #: original_texis/internals.texi:2107
 #, no-wrap
 msgid "pixel_left"
-msgstr ""
+msgstr "pixel_left"
 
 #. type: itemx
 #: original_texis/internals.texi:2108
 #, no-wrap
 msgid "pixel_top"
-msgstr ""
+msgstr "pixel_top"
 
 #. type: table
 #: original_texis/internals.texi:2111
-#, fuzzy
-#| msgid "The left-hand edge of the window, measured in columns, relative to the leftmost column in the frame (column 0)."
 msgid "The left-hand and top edges of this window, measured in pixels, relative to the top-left corner (0, 0) of the window's native frame."
-msgstr "そのウィンドウの左端を、そのフレームの最左列(列0)から相対的に数えた列数。"
+msgstr "そのウィンドウの左側上端をウィンドウのネイティブフレームの左上隅(0, 0)から相対的に計測したピクセル数。"
 
 #. type: item
 #: original_texis/internals.texi:2112
@@ -3853,27 +3832,25 @@ msgstr "total_lines"
 
 #. type: table
 #: original_texis/internals.texi:2118
-#, fuzzy
-#| msgid "The width and height of the window, measured in columns and lines respectively.  The width includes the scroll bar and fringes, and/or the separator line on the right of the window (if any)."
 msgid "The total width and height of the window, measured in columns and lines respectively.  The values include scroll bars and fringes, dividers and/or the separator line on the right of the window (if any)."
-msgstr "列数と行数で数えた、そのウィンドウの幅と高さ。幅にはスクロールバーとフリンジ、および/または(もしあれば)ウィンドウ右側のセパレーターラインが含まれる。"
+msgstr "列数または行数で数えた、そのウィンドウの幅または高さの合計。値にはスクロールバーとフリンジ、ディバイダー、および/または(もしあれば)ウィンドウ右側のセパレーターラインが含まれる。"
 
 #. type: item
 #: original_texis/internals.texi:2119
 #, no-wrap
 msgid "pixel_width;"
-msgstr ""
+msgstr "pixel_width;"
 
 #. type: itemx
 #: original_texis/internals.texi:2120
 #, no-wrap
 msgid "pixel_height;"
-msgstr ""
+msgstr "pixel_height;"
 
 #. type: table
 #: original_texis/internals.texi:2122
 msgid "The total width and height of the window measured in pixels."
-msgstr ""
+msgstr "ピクセルで計測したウィンドウの幅または高さの合計。"
 
 #. type: item
 #: original_texis/internals.texi:2123
@@ -3883,10 +3860,8 @@ msgstr "start"
 
 #. type: table
 #: original_texis/internals.texi:2127
-#, fuzzy
-#| msgid "A marker pointing to the position in the buffer that is the first character displayed in the window."
 msgid "A marker pointing to the position in the buffer that is the first character (in the logical order, @pxref{Bidirectional Display})  displayed in the window."
-msgstr "そのウィンドウ内に表示されるバッファーで、ウィンドウに最初に表示される文字の位置を指すマーカー。"
+msgstr "そのウィンドウ内に表示されるバッファーで、ウィンドウに最初(ロジカル順。@ref{Bidirectional Display}を参照)に表示される文字の位置を指すマーカー。"
 
 #. type: item
 #: original_texis/internals.texi:2128
@@ -3907,17 +3882,14 @@ msgstr "これはウィンドウが選択されているときのカレントバ
 
 #. type: item
 #: original_texis/internals.texi:2133
-#, fuzzy, no-wrap
-#| msgid "pointm"
+#, no-wrap
 msgid "old_pointm"
-msgstr "pointm"
+msgstr "old_pointm"
 
 #. type: table
 #: original_texis/internals.texi:2135
-#, fuzzy
-#| msgid "The value of @code{cursor} as of the last redisplay that finished."
 msgid "The value of @code{pointm} at the last redisplay time."
-msgstr "完了した最後の表示での@code{cursor}の値。"
+msgstr "最後の再表示時の@code{pointm}の値。"
 
 #. type: item
 #: original_texis/internals.texi:2136
@@ -3927,21 +3899,19 @@ msgstr "force_start"
 
 #. type: table
 #: original_texis/internals.texi:2143
-#, fuzzy
-#| msgid "If this flag is non-@code{nil}, it says that the window has been scrolled explicitly by the Lisp program.  This affects what the next redisplay does if point is off the screen: instead of scrolling the window to show the text around point, it moves point to a location that is on the screen."
 msgid "If this flag is non-@code{nil}, it says that the window has been scrolled explicitly by the Lisp program, and the value of the the window's @code{start} was set for redisplay to honor.  This affects what the next redisplay does if point is off the screen: instead of scrolling the window to show the text around point, it moves point to a location that is on the screen."
-msgstr "このフラグが非@code{nil}なら、Lispプログラムによりそのウィンドウが明示的にスクロールされたことを示す。これはポイントがスクリーン外の場合の、次回再表示に影響を与える。影響とは、ポイント周辺のテキストを表示するためにウィンドウをスクロールするかわりに、スクリーン上にある位置にポイントを移動するというものである。"
+msgstr "このフラグが非@code{nil}ならLispプログラムによりそのウィンドウが明示的にスクロールされたことを示し、再表示のためにウィンドウの@code{start}の値がセットされる。これはポイントがスクリーン外の場合の次回再表示に影響を与える。影響とはポイント周辺のテキストを表示するためにウィンドウをスクロールするかわりに、スクリーン上にある位置にポイントを移動するというものである。"
 
 #. type: item
 #: original_texis/internals.texi:2144
 #, no-wrap
 msgid "optional_new_start"
-msgstr ""
+msgstr "optional_new_start"
 
 #. type: table
 #: original_texis/internals.texi:2147
 msgid "This is similar to @code{force_start}, but the next redisplay will only obey it if point stays visible."
-msgstr ""
+msgstr "これは@code{force_start}と同様だが、次回表示ではポイントが可視の場合のみしたがう。"
 
 #. type: item
 #: original_texis/internals.texi:2148
@@ -4017,43 +3987,36 @@ msgstr "last_had_star"
 
 #. type: table
 #: original_texis/internals.texi:2174
-#, fuzzy
-#| msgid "A non-@code{nil} value means the window's buffer was ``modified'' when the window was last updated."
 msgid "A non-zero value means the window's buffer was modified when the window was last updated."
-msgstr "非@code{nil}値は、そのウィンドウが最後に更新されたとき、そのウィンドウのバッファーが``変更''されたことを意味する。"
+msgstr "非0値はウィンドウが最後に更新されたとき、そのウィンドウのバッファーが変更されたことを意味する。"
 
 #. type: item
 #: original_texis/internals.texi:2175
-#, fuzzy, no-wrap
-#| msgid "vertical_scroll_bar"
+#, no-wrap
 msgid "vertical_scroll_bar_type"
-msgstr "vertical_scroll_bar"
+msgstr "vertical_scroll_bar_type"
 
 #. type: itemx
 #: original_texis/internals.texi:2176
-#, fuzzy, no-wrap
-#| msgid "vertical_scroll_bar"
+#, no-wrap
 msgid "horizontal_scroll_bar_type"
-msgstr "vertical_scroll_bar"
+msgstr "horizontal_scroll_bar_type"
 
 #. type: table
 #: original_texis/internals.texi:2178
-#, fuzzy
-#| msgid "This window's vertical scroll bar."
 msgid "The types of this window's vertical and horizontal scroll bars."
-msgstr "そのウィンドウの垂直スクロールバー。"
+msgstr "そのウィンドウの垂直スクロールバーおよび水平スクロールバーのタイプ。"
 
 #. type: itemx
 #: original_texis/internals.texi:2180
-#, fuzzy, no-wrap
-#| msgid "scroll_bar_width"
+#, no-wrap
 msgid "scroll_bar_height"
-msgstr "scroll_bar_width"
+msgstr "scroll_bar_height"
 
 #. type: table
 #: original_texis/internals.texi:2183
 msgid "The width of this window's vertical scroll bar and the height of this window's horizontal scroll bar, in pixels."
-msgstr ""
+msgstr "そのウィンドウの垂直スクロールバーの幅および水平スクロールバーの高さ(ピクセル単位)。"
 
 #. type: item
 #: original_texis/internals.texi:2184
@@ -4069,24 +4032,18 @@ msgstr "right_margin_cols"
 
 #. type: table
 #: original_texis/internals.texi:2188
-#, fuzzy
-#| msgid "The widths of the left and right margins in this window.  A value of @code{nil} means no margin."
 msgid "The widths of the left and right margins in this window.  A value of zero means no margin."
-msgstr "そのウィンドウの、左マージンと右マージンの幅。値@code{nil}はマージンがないことを意味する。"
+msgstr "そのウィンドウの左マージンと右マージンの幅。値0はマージンがないことを意味する。"
 
 #. type: table
 #: original_texis/internals.texi:2193
-#, fuzzy
-#| msgid "The widths of the left and right fringes in this window.  A value of @code{nil} or @code{t} means use the values of the frame."
 msgid "The pixel widths of the left and right fringes in this window.  A value of @minus{}1 means use the values of the frame."
-msgstr "そのウィンドウの、左フリンジと右フリンジの幅。値@code{nil}と@code{t}は、フレームの値の使用を意味する。"
+msgstr "そのウィンドウの左フリンジと右フリンジのピクセル幅。値@minus{}1はフレームの値の使用を意味する。"
 
 #. type: table
 #: original_texis/internals.texi:2197
-#, fuzzy
-#| msgid "A non-@code{nil} value means the fringes outside the display margins; othersize they are between the margin and the text."
 msgid "A non-zero value means the fringes outside the display margins; othersize they are between the margin and the text."
-msgstr "非@code{nil}値は、ディスプレーマージン外側のフリンジ、それ以外ならフリンジはマージンとテキストの間にあることを意味する。"
+msgstr "非0値はディスプレーマージン外側のフリンジ、それ以外ならフリンジはマージンとテキストの間にあることを意味する。"
 
 #. type: item
 #: original_texis/internals.texi:2198
@@ -4096,10 +4053,8 @@ msgstr "window_end_pos"
 
 #. type: table
 #: original_texis/internals.texi:2202
-#, fuzzy
-#| msgid "This is computed as @code{z} minus the buffer position of the last glyph in the current matrix of the window.  The value is only valid if @code{window_end_valid} is not @code{nil}."
 msgid "This is computed as @code{z} minus the buffer position of the last glyph in the current matrix of the window.  The value is only valid if @code{window_end_valid} is non-zero."
-msgstr "これは@code{z}から、そのウィンドウのカレントマトリクス内の最後のグリフのバッファー位置を減じて算出される。この値は、@code{window_end_valid}が非@code{nil}のときだけ有効である。"
+msgstr "これは@code{z}から、そのウィンドウのカレントマトリクス内の最後のグリフのバッファー位置を減じて算出される。この値は@code{window_end_valid}が非0のときだけ有効である。"
 
 #. type: item
 #: original_texis/internals.texi:2203
