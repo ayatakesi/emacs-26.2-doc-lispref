@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-07-11 23:42+0900\n"
+"PO-Revision-Date: 2020-07-12 13:57+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2285,149 +2285,149 @@ msgstr "この関数は@var{vector}のインデックス@var{index}の要素に@
 #. type: Plain text
 #: original_texis/internals.texi:1385
 msgid "The following @acronym{API} functions create @code{emacs_value} objects from basic C data types.  They all return the created @code{emacs_value} object."
-msgstr ""
+msgstr "以下はCの基本データ型から@code{emacs_value}オブジェクトを作成する@acronym{API}関数です。これらはすべて作成した@code{emacs_value}オブジェクトをリターンします。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1386
 #, no-wrap
 msgid "Function emacs_value make_integer (emacs_env *@var{env}, intmax_t @var{n})"
-msgstr ""
+msgstr "Function emacs_value make_integer (emacs_env *@var{env}, intmax_t @var{n})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1393
 msgid "This function takes an integer argument @var{n} and returns the corresponding @code{emacs_value} object.  It raises the @code{overflow-error} error condition if the value of @var{n} cannot be represented as an Emacs integer, i.e.@: is not inside the limits set by @code{most-negative-fixnum} and @code{most-positive-fixnum} (@pxref{Integer Basics})."
-msgstr ""
+msgstr "この関数は引数@var{n} (整数)を受け取り対応する@code{emacs_value}オブジェクトをリターンする。@var{n}の値をEmacs整数で表現できない、すなわち@code{most-negative-fixnum}と@code{most-positive-fixnum}の範囲外(@ref{Integer Basics}を参照)ならエラーコンディション@code{overflow-error}をraiseする。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1395
 #, no-wrap
 msgid "Function emacs_value make_float (emacs_env *@var{env}, double @var{d})"
-msgstr ""
+msgstr "Function emacs_value make_float (emacs_env *@var{env}, double @var{d})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1398
 msgid "This function takes a @code{double} argument @var{d} and returns the corresponding Emacs floating-point value."
-msgstr ""
+msgstr "この関数は@code{double}の引数@var{d}を受け取り対応するEmacs浮動小数点値をリターンする。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1400
 #, no-wrap
 msgid "Function emacs_value make_string (emacs_env *@var{env}, const char *@var{str}, ptrdiff_t @var{strlen})"
-msgstr ""
+msgstr "Function emacs_value make_string (emacs_env *@var{env}, const char *@var{str}, ptrdiff_t @var{strlen})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1410
 msgid "This function creates an Emacs string from C text string pointed by @var{str} whose length in bytes, not including the terminating null byte, is @var{strlen}.  The original string in @var{str} can be either an @acronym{ASCII} string or a UTF-8 encoded non-@acronym{ASCII} string; it can include embedded null bytes, and doesn't have to end in a terminating null byte at @code{@var{str}[@var{strlen}]}.  The function raises the @code{overflow-error} error condition if @var{strlen} is negative or exceeds the maximum length of an Emacs string."
-msgstr ""
+msgstr "この関数は@var{str}が指す、終端のnullバイトを含まないバイト長が@var{strlen}であるようなCテキスト文字列からEmacs文字列を作成する。@var{str}の元文字列は@acronym{ASCII}文字列かUTF-8にエンコードされた非@acronym{ASCII}文字列が可能であり、文字列には埋め込みのnullバイトを含むことができ、@code{@var{str}[@var{strlen}]}にあるnullバイトで終端される必要はない。@var{strlen}が負、またはEmacs文字列の最大長を超過する場合には、この関数はエラーコンディション@code{overflow-error}をraiseする。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1419
 msgid "The @acronym{API} does not provide functions to manipulate Lisp data structures, for example, create lists with @code{cons} and @code{list} (@pxref{Building Lists}), extract list members with @code{car} and @code{cdr} (@pxref{List Elements}), create vectors with @code{vector} (@pxref{Vector Functions}), etc.  For these, use @code{intern} and @code{funcall}, described in the next subsection, to call the corresponding Lisp functions."
-msgstr ""
+msgstr "この@acronym{API}はたとえば@code{cons}と@code{list}によるリスト作成(@ref{Building Lists}を参照)、@code{car}と@code{cdr}によるリストメンバーの抽出(@ref{List Elements}を参照)、@code{vector}によるベクター作成(@ref{Vector Functions}を参照)等のようなLispデータ構造を操作する関数は提供しません。これらにたいしてはたいおう するLisp関数を呼び出すために、次のサブセクションで説明する@code{intern}と@code{funcall}を使用します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1425
 msgid "Normally, @code{emacs_value} objects have a rather short lifetime: it ends when the @code{emacs_env} pointer used for their creation goes out of scope.  Occasionally, you may need to create @dfn{global references}: @code{emacs_value} objects that live as long as you wish.  Use the following two functions to manage such objects."
-msgstr ""
+msgstr "@code{emacs_value}オブジェクトのライフタイムはかなり短いのが普通です。このライフタイムはオブジェクトの作成に使用された@code{emacs_env}ポインターがスコープ外になると終了します。@code{emacs_value}が望む間は行き続けるような@dfn{グローバル参照(global references)}を作成を要する場合もあるかもしれません。そのようなオブジェクトの管理には以下の2つの関数を使用します。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1426
 #, no-wrap
 msgid "Function emacs_value make_global_ref (emacs_env *@var{env}, emacs_value @var{value})"
-msgstr ""
+msgstr "Function emacs_value make_global_ref (emacs_env *@var{env}, emacs_value @var{value})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1428
 msgid "This function returns a global reference for @var{value}."
-msgstr ""
+msgstr "この関数は@var{value}のグローバル参照をリターンする。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1430
 #, no-wrap
 msgid "Function void free_global_ref (emacs_env *@var{env}, emacs_value @var{global_value})"
-msgstr ""
+msgstr "Function void free_global_ref (emacs_env *@var{env}, emacs_value @var{global_value})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1435
 msgid "This function frees the @var{global_value} previously created by @code{make_global_ref}.  The @var{global_value} is no longer valid after the call.  Your module code should pair each call to @code{make_global_ref} with the corresponding @code{free_global_ref}."
-msgstr ""
+msgstr "この関数は以前に@code{make_global_ref}で作成した@var{global_value}を解放する。@var{global_value}はこの呼び出し後は無効になる。モジュールのコードでは@code{make_global_ref}と対応する@code{free_global_ref}の呼び出しそれぞれをペアーとすること。"
 
 #. type: cindex
 #: original_texis/internals.texi:1437
 #, no-wrap
 msgid "user pointer, using in module functions"
-msgstr ""
+msgstr "user pointer, using in module functions"
 
 #. type: Plain text
 #: original_texis/internals.texi:1448
 msgid "An alternative to keeping around C data structures that need to be passed to module functions later is to create @dfn{user pointer} objects.  A user pointer, or @code{user-ptr}, object is a Lisp object that encapsulates a C pointer and can have an associated finalizer function, which is called when the object is garbage-collected (@pxref{Garbage Collection}).  The module @acronym{API} provides functions to create and access @code{user-ptr} objects.  These functions raise the @code{wrong-type-argument} error condition if they are called on @code{emacs_value} that doesn't represent a @code{user-ptr} object."
-msgstr ""
+msgstr "後でモジュール関数に渡す必要があるCデータ構造体を追跡するための代替え手段は@dfn{ユーザーポインター(user pointer)}オブジェクトの作成です。ユーザーポインター(または@code{user-ptr} )はCポインターをカプセル化したLispオブジェクトであり、関連付けられたファイナライザー(オブジェクトがガーベージコレクトされる際に呼び出される。@ref{Garbage Collection}を参照)をもつことができます。モジュール@acronym{API}は@code{user-ptr}オブジェクトの作成やアクセスを行う関数を提供します。これらの関数は@code{user-ptr}オブジェクトを表現しない@code{emacs_value}で呼び出されるとエラーコンディション@code{wrong-type-argument}をraiseします。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1449
 #, no-wrap
 msgid "Function emacs_value make_user_ptr (emacs_env *@var{env}, emacs_finalizer @var{fin}, void *@var{ptr})"
-msgstr ""
+msgstr "Function emacs_value make_user_ptr (emacs_env *@var{env}, emacs_finalizer @var{fin}, void *@var{ptr})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1454
 msgid "This function creates and returns a @code{user-ptr} object which wraps the C pointer @var{ptr}.  The finalizer function @var{fin} can be a @code{NULL} pointer (meaning no finalizer), or it can be a function of the following signature:"
-msgstr ""
+msgstr "この関数はCポインター@var{ptr}をラップした@code{user-ptr}オブジェクトを作成してリターンする。ファイナライザー関数@var{fin}は@code{NULL} (ファイナライザーなし)、または以下のシグネチャをもつ関数のいずれか:"
 
 #. type: example
 #: original_texis/internals.texi:1457
 #, no-wrap
 msgid "typedef void (*emacs_finalizer) (void *@var{ptr});\n"
-msgstr ""
+msgstr "typedef void (*emacs_finalizer) (void *@var{ptr});\n"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1464
 msgid "If @var{fin} is not a @code{NULL} pointer, it will be called with the @var{ptr} as the argument when the @code{user-ptr} object is garbage-collected.  Don't run any expensive code in a finalizer, because GC must finish quickly to keep Emacs responsive."
-msgstr ""
+msgstr "@var{fin}が@code{NULL}ポインターでなければ、@code{user-ptr}オブジェクトがガーベージコレクトされる際に@var{ptr}を引数として呼び出される。Emacsの応答性を維持するためにGCは短時間で終了しなければならないので、ファイナライザーでは高価なコードの実行は行ってはならない。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1466
 #, no-wrap
 msgid "Function void *get_user_ptr (emacs_env *@var{env}, emacs_value val)"
-msgstr ""
+msgstr "Function void *get_user_ptr (emacs_env *@var{env}, emacs_value val)"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1469
 msgid "This function extracts the C pointer from the Lisp object represented by @var{val}."
-msgstr ""
+msgstr "この関数は@var{val}で表されるLispオブジェクトからCポインターを抽出する。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1471
 #, no-wrap
 msgid "Function void set_user_ptr (emacs_env *@var{env}, emacs_value @var{value}, void *@var{ptr})"
-msgstr ""
+msgstr "Function void set_user_ptr (emacs_env *@var{env}, emacs_value @var{value}, void *@var{ptr})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1474
 msgid "This function sets the C pointer embedded in the @code{user-ptr} object represented by @var{value} to @var{ptr}."
-msgstr ""
+msgstr "この関数は@var{value}で表される@code{user-ptr}オブジェクトに埋め込まれたCポインターに@var{ptr}をセットする。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1476
 #, no-wrap
 msgid "Function emacs_finalizer get_user_finalizer (emacs_env *@var{env}, emacs_value val)"
-msgstr ""
+msgstr "Function emacs_finalizer get_user_finalizer (emacs_env *@var{env}, emacs_value val)"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1479
 msgid "This function returns the finalizer of the @code{user-ptr} object represented by @var{val}, or @code{NULL} if it doesn't have a finalizer."
-msgstr ""
+msgstr "この関数は@var{val}で表される@code{user-ptr}オブジェクトのファイナライザー、ファイナライザーがなければ@code{NULL}をリターンする。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1481
 #, no-wrap
 msgid "Function void set_user_finalizer (emacs_env *@var{env}, emacs_value @var{val}, emacs_finalizer @var{fin})"
-msgstr ""
+msgstr "Function void set_user_finalizer (emacs_env *@var{env}, emacs_value @var{val}, emacs_finalizer @var{fin})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1485
 msgid "This function changes the finalizer of the @code{user-ptr} object represented by @var{val} to be @var{fin}.  If @var{fin} is a @code{NULL} pointer, the @code{user-ptr} object will have no finalizer."
-msgstr ""
+msgstr "この関数は@var{val}で表される@code{user-ptr}オブジェクトのファイナライザーを@var{fin}に変更する。@var{fin}が@code{NULL}なら@code{user-ptr}オブジェクトのファイナライザーはなくなる。"
 
 #. type: node
 #: original_texis/internals.texi:1487
