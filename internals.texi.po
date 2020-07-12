@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-07-13 06:22+0900\n"
+"PO-Revision-Date: 2020-07-13 07:08+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2025,7 +2025,7 @@ msgstr "module functions"
 #. type: Plain text
 #: original_texis/internals.texi:1160
 msgid "The main reason for writing an Emacs module is to make additional functions available to Lisp programs that load the module.  This subsection describes how to write such @dfn{module functions}."
-msgstr "Emacsモジュールを記述する主な理由は、そのモジュールをロードしたLispプログラムが追加の関数を利用できるようにするためです。このサブセクションでは、そのような@dfn{モジュール関数(module functions9}の記述方法を説明します。"
+msgstr "Emacsモジュールを記述する主な理由は、そのモジュールをロードしたLispプログラムが追加の関数を利用できるようにするためです。このサブセクションでは、そのような@dfn{モジュール関数(module functions)}の記述方法を説明します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1162
