@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-07-12 13:57+0900\n"
+"PO-Revision-Date: 2020-07-12 15:28+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2199,7 +2199,7 @@ msgstr "@code{emacs_env}ポインターは通常はモジュール関数の1つ�
 #. type: Plain text
 #: original_texis/internals.texi:1311
 msgid "Most of the functions described below became available in Emacs 25, the first Emacs release that supported dynamic modules.  For the few functions that became available in later Emacs releases, we mention the first Emacs version that supported them."
-msgstr "以下で説明するもののほとんどはEmacs 25で利用可能になった関数であり、Emacs 25はダイナミックモジュールを最初にサポートした最初のEmacsリリースです。それ以降のリリースで利用可能になったいくつかの関数につていは、それらをサポートする最初のEmacsバージョンを注記します。"
+msgstr "以下で説明するもののほとんどはEmacs 25で利用可能になった関数であり、Emacs 25はダイナミックモジュールを最初にサポートした最初のEmacsリリースです。それ以降のリリースで利用可能になったいくつかの関数につていは、それらをサポートする最初のEmacsバージョンを付記します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1321
@@ -2433,82 +2433,82 @@ msgstr "この関数は@var{val}で表される@code{user-ptr}オブジェクト
 #: original_texis/internals.texi:1487
 #, no-wrap
 msgid "Module Misc"
-msgstr ""
+msgstr "Module Misc"
 
 #. type: subsection
 #: original_texis/internals.texi:1488
 #, no-wrap
 msgid "Miscellaneous Convenience Functions for Modules"
-msgstr ""
+msgstr "Miscellaneous Convenience Functions for Modules"
 
 #. type: Plain text
 #: original_texis/internals.texi:1496
 msgid "This subsection describes a few convenience functions provided by the module @acronym{API}.  Like the functions described in previous subsections, all of them are actually function pointers, and need to be called via the @code{emacs_env} pointer.  Description of functions that were introduced after Emacs 25 calls out the first version where they became available."
-msgstr ""
+msgstr "このサブセクションではモジュール@acronym{API}が提供する便利な関数をいくつか説明します。前のサブセクションで説明した関数と同じようにこれらの関数は実際には関数ポインターであり、@code{emacs_env}ポインターを介して呼び出す必要があります。Emacs 25以降に導入された関数の説明はそれらが利用可能になった最初のバージョンを付記します。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1497
 #, no-wrap
 msgid "Function bool eq (emacs_env *@var{env}, emacs_value @var{val1}, emacs_value @var{val2})"
-msgstr ""
+msgstr "Function bool eq (emacs_env *@var{env}, emacs_value @var{val1}, emacs_value @var{val2})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1503
 msgid "This function returns @code{true} if the Lisp objects represented by @var{val1} and @var{val2} are identical, @code{false} otherwise.  This is the same as the Lisp function @code{eq} (@pxref{Equality Predicates}), but avoids the need to intern the objects represented by the arguments."
-msgstr ""
+msgstr "この関数は@var{val1}と@var{val2}が表すLispオブジェクトが等しければ@code{true}、それ以外なら@code{false}をリターンする。これはLisp関数@code{eq} (@ref{Equality Predicates}を参照)と同じだが、引数が表すオブジェクトのinternの要否を無視する。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1507
 msgid "There are no @acronym{API} functions for other equality predicates, so you will need to use @code{intern} and @code{funcall}, described below, to perform more complex equality tests."
-msgstr ""
+msgstr "等価性に関する他の述語は@acronym{API}関数には存在しないので、より複雑な等価性のテストを行うためには、以下で説明する@code{intern}と@code{funcall}を使う必要がある。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1509
 #, no-wrap
 msgid "Function bool is_not_nil (emacs_env *@var{env}, emacs_value @var{val})"
-msgstr ""
+msgstr "Function bool is_not_nil (emacs_env *@var{env}, emacs_value @var{val})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1512
 msgid "This function tests whether the Lisp object represented by @var{val} is non-@code{nil}; it returns @code{true} or @code{false} accordingly."
-msgstr ""
+msgstr "このえ関数は@var{val}で表されるLispオブジェクトをテストして非@code{nil}なら@code{true}、それ以外は@code{false}をリターンする。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1517
 msgid "Note that you could implement an equivalent test by using @code{intern} to get an @code{emacs_value} representing @code{nil}, then use @code{eq}, described above, to test for equality.  But using this function is more convenient."
-msgstr ""
+msgstr "等価性をテストするたに@code{intern}を使って@code{nil}を表す@code{emacs_value}を取得して、上述の@code{eq}を使用すれば自身で等価性テストを実装できることに注意。しかしこの関数を使用するほうが簡便だろう。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1519
 #, no-wrap
 msgid "Function emacs_value type_of (emacs_env *@var{env}, emacs_value @code{object})"
-msgstr ""
+msgstr "Function emacs_value type_of (emacs_env *@var{env}, emacs_value @code{object})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1525
 msgid "This function returns the type of @var{object} as a value that represents a symbol: @code{string} for a string, @code{integer} for an integer, @code{process} for a process, etc.  @xref{Type Predicates}.  You can use @code{intern} and @code{eq} to compare against known type symbols, if your code needs to depend on the object type."
-msgstr ""
+msgstr "この関数はシンボルを表す値(文字列は@code{string}、整数は@code{integer}、プロセスなら@code{process}等)として@var{object}のタイプをリターンする。@ref{Type Predicates}を参照のこと。オブジェクトのタイプにコードが依存する必要があれば、既知のタイプシンボルと比較するために@code{intern}と@code{eq}を使用できる。"
 
 #. type: anchor{#1}
 #: original_texis/internals.texi:1528
 msgid "intern"
-msgstr ""
+msgstr "intern"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1528
 #, no-wrap
 msgid "Function emacs_value intern (emacs_env *@var{env}, const char *name)"
-msgstr ""
+msgstr "Function emacs_value intern (emacs_env *@var{env}, const char *name)"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1532
 msgid "This function returns an interned Emacs symbol whose name is @var{name}, which should be an @acronym{ASCII} null-terminated string.  It creates a new symbol if one does not already exist."
-msgstr ""
+msgstr "この関数は名前が@var{name} (null終端された@acronym{ASCII}文字列であること)であるような、internされたEmacsシンボルをリターンする。すでに存在していなれば新たにシンボルを作成する。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1539
 msgid "Together with @code{funcall}, described below, this function provides a means for invoking any Lisp-callable Emacs function, provided that its name is a pure @acronym{ASCII} string.  For example, here's how to intern a symbol whose name @code{name_str} is non-@acronym{ASCII}, by calling the more powerful Emacs @code{intern} function (@pxref{Creating Symbols}):"
-msgstr ""
+msgstr "この関数は以下で説明する@code{funcall}と共に用いることにより、Lispで呼び出し可能なEmcas関数(名前が純粋な@acronym{ASCII}文字列である場合にかぎる)純粋な@acronym{ASCII}文字列であるようなを呼び出す手段を提供する。たとえば以下はより協力なEmacsの@code{intern}関数(@ref{Creating Symbols}を参照)を呼び出すことにより、名前@code{name_str}が非@acronym{ASCII}であるようなシンボルをinternする方法:"
 
 #. type: example
 #: original_texis/internals.texi:1546
@@ -2520,6 +2520,11 @@ msgid ""
 "emacs_value intern_args[] = @{ sym_name, env->intern (env, \"nil\") @};\n"
 "emacs_value symbol = env->funcall (env, fintern, 2, intern_args);\n"
 msgstr ""
+"emacs_value fintern = env->intern (env, \"intern\");\n"
+"emacs_value sym_name =\n"
+"  env->make_string (env, name_str, strlen (name_str));\n"
+"emacs_value intern_args[] = @{ sym_name, env->intern (env, \"nil\") @};\n"
+"emacs_value symbol = env->funcall (env, fintern, 2, intern_args);\n"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1550
@@ -2530,33 +2535,33 @@ msgstr ""
 #. type: deftypefn
 #: original_texis/internals.texi:1557
 msgid "This function calls the specified @var{func} passing it @var{nargs} arguments from the array pointed to by @var{args}.  The argument @var{func} can be a function symbol (e.g., returned by @code{intern} described above), a module function returned by @code{make_function} (@pxref{Module Functions}), a subroutine written in C, etc.  If @var{nargs} is zero, @var{args} can be a @code{NULL} pointer."
-msgstr ""
+msgstr "この関数は@var{args}が指す配列の@var{nargs}個の引数を渡して@var{func}の指定先を呼び出す。引数@var{func}は(上述の@code{intern}がリターンした)関数シンボル、@code{make_function}がリターンしたモジュール関数(@ref{Module Functions}を参照)、Cで記述されたサブルーチン等。@var{nargs}が0なら@var{args}は@code{NULL}ポインターでもよい。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1559
 msgid "The function returns the value that @var{func} returned."
-msgstr ""
+msgstr "この関数は@var{func}がリターンした値をリターンする。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1566
 msgid "If your module includes potentially long-running code, it is a good idea to check from time to time in that code whether the user wants to quit, e.g., by typing @kbd{C-g} (@pxref{Quitting}).  The following function, which is available since Emacs 26.1, is provided for that purpose."
-msgstr ""
+msgstr "モジュールに長時間実行される可能性のあるコードが含まれる場合には、たとえば@kbd{C-g}をタイプする(@ref{Quitting}を参照)等によりユーザーがquitを望むかどうかをコード内でときどきチェックするのはよいアイデアです。Emacs 26.1から利用可能になった以下の関数は、この目的のために提供されました。"
 
 #. type: anchor{#1}
 #: original_texis/internals.texi:1568
 msgid "should_quit"
-msgstr ""
+msgstr "should_quit"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1568
 #, no-wrap
 msgid "Function bool should_quit (emacs_env *@var{env})"
-msgstr ""
+msgstr "Function bool should_quit (emacs_env *@var{env})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1572
 msgid "This function returns @code{true} if the user wants to quit.  In that case, we recommend that your module function aborts any on-going processing and returns as soon as possible."
-msgstr ""
+msgstr "この関数はユーザーがquitを望むようなら@code{true}をリターンする。この場合にはモジュール関数は実行中の処理をabortして可能なかぎり速やかにリターンすることを推奨する。"
 
 #. type: subsection
 #: original_texis/internals.texi:1575
