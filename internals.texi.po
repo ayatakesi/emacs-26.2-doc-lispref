@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-06-14 22:39+0900\n"
-"PO-Revision-Date: 2020-07-12 15:28+0900\n"
+"PO-Revision-Date: 2020-07-13 03:33+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2567,152 +2567,152 @@ msgstr "この関数はユーザーがquitを望むようなら@code{true}をリ
 #: original_texis/internals.texi:1575
 #, no-wrap
 msgid "Nonlocal Exits in Modules"
-msgstr ""
+msgstr "Nonlocal Exits in Modules"
 
 #. type: cindex
 #: original_texis/internals.texi:1576
 #, no-wrap
 msgid "nonlocal exits, in modules"
-msgstr ""
+msgstr "nonlocal exits, in modules"
 
 #. type: Plain text
 #: original_texis/internals.texi:1590
 msgid "Emacs Lisp supports nonlocal exits, whereby program control is transfered from one point in a program to another remote point.  @xref{Nonlocal Exits}.  Thus, Lisp functions called by your module might exit nonlocally by calling @code{signal} or @code{throw}, and your module functions must handle such nonlocal exits properly.  Such handling is needed because C programs will not automatically release resources and perform other cleanups in these cases; your module code must itself do it.  The module @acronym{API} provides facilities for that, described in this subsection.  They are generally available since Emacs 25; those of them that became available in later releases explicitly call out the first Emacs version where they became part of the @acronym{API}."
-msgstr ""
+msgstr "Emacs Lispは非ローカル脱出(nonlocal exits)をサポートしており、これによりプログラムの制御はプログラムのあるポイントから別の離れたポイントに転送されます。@ref{Nonlocal Exits}を参照してください。したがってモジュールから呼び出されたLisp関数は@code{signal}や@code{throw}を呼び出して非ローカルにexitするかもしれず、そのような非ローカル脱出をモジュール関数は正しくハンドルしなければなりません。このようなハンドリングはCプログラムがリソースを自動的に解放せず、このような場合には別のクリーンアップを行うために必要になります。モジュールコードは自身でこれを行わなければなりません。そのための機能をモジュール@acronym{API}は提供しており、このサブセクションではそれを説明します。これらは一般的にはEmacs 25以降で利用可能です。これ以降のリリースで利用可能になったものについては、@acronym{API}に含まれるようになった最初のEmacsのバージョンを付記します。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1601
 msgid "When some Lisp code called by a module function signals an error or throws, the nonlocal exit is trapped, and the pending exit and its associated data are stored in the environment.  Whenever a nonlocal exit is pending in the environment, any module @acronym{API} function called with a pointer to that environment will return immediately without any processing (the functions @code{non_local_exit_check}, @code{non_local_exit_get}, and @code{non_local_exit_clear} are exceptions from this rule).  If your module function then does nothing and returns to Emacs, a pending nonlocal exit will cause Emacs to act on it: signal an error or throw to the corresponding @code{catch}."
-msgstr ""
+msgstr "モジュール関数から呼び出されたLispコードがエラーをシグナルしたりthrowを行う際には、非ローカル脱出はtrapされて保留中のexitと関連するデータは環境内に格納されます。環境内で非ローカル脱出が保留中の際には、環境へのポインターで呼び出されたすべてのモジュール@acronym{API}関数は何も処理を行わずに即座にリターンします(関数@code{non_local_exit_check}、@code{non_local_exit_get}、@code{non_local_exit_clear}はこのルールの例外)。モジュール関数が何も行わずにEmacsにリターンすれば、保留中の非ローカル脱出にたいしてEmacsがエラーをシグナルしたり、対応する@code{catch}へのthrowという対処を行うでしょう。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1605
 msgid "So the simplest ``handling'' of nonlocal exits in module functions is to do nothing special and let the rest of your code to run as if nothing happened.  However, this can cause two classes of problems:"
-msgstr ""
+msgstr "したがって特別なことな何も行わずに、何事もなかったかのようにコードの残りを実行するのが、モジュール関数での非ローカル脱出にけるもっともシンプルな``ハンドリング''です。しかしこれは2つのクラスの問題を引き起こすかもしれません:"
 
 #. type: itemize
 #: original_texis/internals.texi:1611
 msgid "Your module function might use uninitialized or undefined values, since @acronym{API} functions return immediately without producing the expected results."
-msgstr ""
+msgstr "期待する値を生成することなく@acronym{API}関数は即座にリターンするので、初期化や定義が行われていない値をモジュール関数が使用するかもしれない。"
 
 #. type: itemize
 #: original_texis/internals.texi:1615
 msgid "Your module might leak resources, because it might not have the opportunity to release them."
-msgstr ""
+msgstr "リソースを解放する機会がないかもしれないのでモジュールがリソースをリークするかもしれない。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1620
 msgid "Therefore, we recommend that your module functions check for nonlocal exit conditions and recover from them, using the functions described below."
-msgstr ""
+msgstr "したがってモジュール関数は以下に説明する関数を使用して、非ローカル脱出のコンディションのチェックとリカバリングを行うことを推奨します。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1621
 #, no-wrap
 msgid "Function enum emacs_funcall_exit non_local_exit_check (emacs_env *@var{env})"
-msgstr ""
+msgstr "Function enum emacs_funcall_exit non_local_exit_check (emacs_env *@var{env})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1624
 msgid "This function returns the kind of nonlocal exit condition stored in @var{env}.  The possible values are:"
-msgstr ""
+msgstr "この関数は@var{env}に格納された非ローカル脱出のコンディションをリターンする。可能な値は:"
 
 #. type: vindex
 #: original_texis/internals.texi:1625
 #, no-wrap
 msgid "emacs_funcall_exit@r{, enumeration}"
-msgstr ""
+msgstr "emacs_funcall_exit@r{, enumeration}"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1627
 msgid "@vtable @code"
-msgstr ""
+msgstr "@vtable @code"
 
 #. type: item
 #: original_texis/internals.texi:1627
 #, no-wrap
 msgid "emacs_funcall_exit_return"
-msgstr ""
+msgstr "emacs_funcall_exit_return"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1629
 msgid "The last @acronym{API} function exited normally."
-msgstr ""
+msgstr "最後の@acronym{API}関数は正常にexitした。"
 
 #. type: item
 #: original_texis/internals.texi:1629
 #, no-wrap
 msgid "emacs_funcall_exit_signal"
-msgstr ""
+msgstr "emacs_funcall_exit_signal"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1631
 msgid "The last @acronym{API} function signaled an error."
-msgstr ""
+msgstr "最後の@acronym{API}関数はエラーをシグナルした。"
 
 #. type: item
 #: original_texis/internals.texi:1631
 #, no-wrap
 msgid "emacs_funcall_exit_throw"
-msgstr ""
+msgstr "emacs_funcall_exit_throw"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1633
 msgid "The last @acronym{API} function exited via @code{throw}."
-msgstr ""
+msgstr "最後の@acronym{API}関数は@code{throw}を通じてexitした。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1636
 #, no-wrap
 msgid "Function emacs_funcall_exit non_local_exit_get (emacs_env *@var{env}, emacs_value *@var{symbol}, emacs_value *@var{data})"
-msgstr ""
+msgstr "Function emacs_funcall_exit non_local_exit_get (emacs_env *@var{env}, emacs_value *@var{symbol}, emacs_value *@var{data})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1648
 msgid "This function returns the kind of nonlocal exit condition stored in @var{env}, like @code{non_local_exit_check} does, but it also returns the full information about the nonlocal exit, if any.  If the return value is @code{emacs_funcall_exit_signal}, the function stores the error symbol in @code{*@var{symbol}} and the error data in @code{*@var{data}} (@pxref{Signaling Errors}).  If the return value is @code{emacs_funcall_exit_throw}, the function stores the @code{catch} tag symbol in @code{*@var{symbol}} and the @code{throw} value in @code{*@var{data}}.  The function doesn't store anything in memory pointed by these arguments when the return value is @code{emacs_funcall_exit_return}."
-msgstr ""
+msgstr "この関数は@code{non_local_exit_check}が行うように@var{env}に格納された非ローカル脱出の種別をリターンするが、もしあれば非ローカル脱出に関する完全な情報もリターンする。リターン値が@code{emacs_funcall_exit_signal}なら関数は@code{*@var{symbol}}にエラーシンボル、@code{*@var{data}}にエラーデータを格納する(@ref{Signaling Errors}を参照)。リターン値が@code{emacs_funcall_exit_throw}なら関数は@code{*@var{symbol}}に@code{catch}されたたタグシンボル、@code{*@var{data}}に@code{throw}された値を格納する。リターン値が@code{emacs_funcall_exit_return}なら関数はこれらの引数が指すメンモリー内に何も格納しない。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1654
 msgid "You should check nonlocal exit conditions where it matters: before you allocated some resource or after you allocated a resource that might need freeing, or where a failure means further processing is impossible or infeasible."
-msgstr ""
+msgstr "何らかのリソースの割り当て前や解放を要するリソースの割り当て後、あるいは失敗がそれ以上の処理が不可能もしくは実行不能を意味するような場合のように、非ローカル脱出が問題になるようならチェックするべきです。"
 
 #. type: Plain text
 #: original_texis/internals.texi:1659
 msgid "Once your module function detected that a nonlocal exit is pending, it can either return to Emacs (after performing the necessary local cleanup), or it can attempt to recover from the nonlocal exit.  The following @acronym{API} functions will help with these tasks."
-msgstr ""
+msgstr "モジュール関数が保留中の非ローカル脱出を一度検知すれば、(必要なローカルクリーンアップの実施後に)Emacsにリターンしたり、非ローカル脱出からのリカバリーを試みることができます。以下の@acronym{API}関数はこれらのタスクの助けとなるでしょう。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1660
 #, no-wrap
 msgid "Function void non_local_exit_clear (emacs_env *@var{env})"
-msgstr ""
+msgstr "Function void non_local_exit_clear (emacs_env *@var{env})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1668
 msgid "This function clears the pending nonlocal exit conditions and data from @var{env}.  After calling it, the module @acronym{API} functions will work normally.  Use this function if your module function can recover from nonlocal exits of the Lisp functions it calls and continue, and also before calling any of the following two functions (or any other @acronym{API} functions, if you want them to perform their intended processing when a nonlocal exit is pending)."
-msgstr ""
+msgstr "この関数は保留中の非ローカル脱出のコンディションと@var{env}由来のデータをクリアーする。これの呼び出し後にはモジュール@acronym{API}関数は通常どおり機能するだろう。モジュール関数が呼び出したLisp関数の非ローカル脱出からリカバーして継続可能な場合、あるいは以下の2つの関数のいずれか(非ローカル脱出が保留中の際に他の@acronym{API}関数に意図した動作を行わせたい場合にはそれらの@acronym{API}関数も)を呼び出す前にもこの関数を使用すること"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1670
 #, no-wrap
 msgid "Function void non_local_exit_throw (emacs_env *@var{env}, emacs_value @var{tag}, emacs_value @var{value})"
-msgstr ""
+msgstr "Function void non_local_exit_throw (emacs_env *@var{env}, emacs_value @var{tag}, emacs_value @var{value})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1676
 msgid "This function throws to the Lisp @code{catch} symbol represented by @var{tag}, passing it @var{value} as the value to return.  Your module function should in general return soon after calling this function.  One use of this function is when you want to re-throw a non-local exit from one of the called @acronym{API} or Lisp functions."
-msgstr ""
+msgstr "この関数は@var{tag}で表されるLispの@code{catch}シンボルにリターン値として@var{value}を渡してthrowを行う。モジュール関数は一般的にはこの関数の呼び出し後は即座にリターンすること。この関数は呼び出された@acronym{API}関数やLisp関数のいずれかから非ローカル脱出を再throwしたい際の1つの手段である。"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1678
 #, no-wrap
 msgid "Function void non_local_exit_signal (emacs_env *@var{env}, emacs_value @var{error}, emacs_value @var{data})"
-msgstr ""
+msgstr "Function void non_local_exit_signal (emacs_env *@var{env}, emacs_value @var{error}, emacs_value @var{data})"
 
 #. type: deftypefn
 #: original_texis/internals.texi:1683
 msgid "This function signals the error represented by @var{error} with the specified error data @var{data}.  The module function should return soon after calling this function.  This function could be useful, e.g., for signaling errors from module functions to Emacs."
-msgstr ""
+msgstr "この関数は@var{error}で表されるエラーを、指定したエラーデータ@var{data}とともにシグナルする。モジュール関数はこの関数の呼び出し後は即座にリターンすること。この関数はたとえばモジュール関数からEmacsにエラーをシグナルする際に有用かもしれない。"
 
 #. type: cindex
 #: original_texis/internals.texi:1688
