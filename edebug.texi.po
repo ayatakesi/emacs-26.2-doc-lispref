@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-24.5\n"
-"POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2019-11-02 14:49+0900\n"
+"POT-Creation-Date: 2020-03-08 09:41+0900\n"
+"PO-Revision-Date: 2020-06-22 03:23+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -390,10 +390,9 @@ msgstr "C-M-x"
 
 #. type: findex
 #: original_texis/edebug.texi:161
-#, fuzzy, no-wrap
-#| msgid "eval-defun (Edebug)"
+#, no-wrap
 msgid "eval-defun @r{(Edebug)}"
-msgstr "eval-defun (Edebug)"
+msgstr "eval-defun @r{(Edebug)}"
 
 #. type: Plain text
 #: original_texis/edebug.texi:171
@@ -459,25 +458,23 @@ msgstr "Edebugがセッション内で最初にコードをインストルメン
 #: original_texis/edebug.texi:212
 #, no-wrap
 msgid "edebug, failure to instrument"
-msgstr ""
+msgstr "edebug, failure to instrument"
 
 #. type: Plain text
 #: original_texis/edebug.texi:217
-#, fuzzy
-#| msgid "If Edebug detects a syntax error while instrumenting, it leaves point at the erroneous code and signals an @code{invalid-read-syntax} error."
 msgid "If Edebug detects a syntax error while instrumenting, it leaves point at the erroneous code and signals an @code{invalid-read-syntax} error.  Example:"
-msgstr "Edebugがインストルメント中にシンタックスエラー(syntax error: 構文エラー)を検知した場合は、間違ったコードの箇所にポイントを残して@code{invalid-read-syntax}エラーをシグナルします。"
+msgstr "Edebugがインストルメント中にシンタックスエラー(syntax error: 構文エラー)を検知した場合には、以下のように間違ったコードの箇所にポイントを残して@code{invalid-read-syntax}エラーをシグナルします:"
 
 #. type: example
 #: original_texis/edebug.texi:220
 #, no-wrap
 msgid "@error{} Invalid read syntax: \"Expected lambda expression\"\n"
-msgstr ""
+msgstr "@error{} Invalid read syntax: \"Expected lambda expression\"\n"
 
 #. type: Plain text
 #: original_texis/edebug.texi:225
 msgid "One potential reason for such a failure to instrument is that some macro definitions are not yet known to Emacs.  To work around this, load the file which defines the function you are about to instrument."
-msgstr ""
+msgstr "このようにインストルメントに失敗する可能性の1つとして、いくつかのマクロ定義をEmacsが把握していない場合があります。これに対処するためには、インストルメントしようとしている関数を定義しているファイルをロードしてください。"
 
 #. type: findex
 #: original_texis/edebug.texi:226
@@ -670,7 +667,7 @@ msgid "Keyboard macros containing the commands in this section do not completely
 msgstr "このセクションのコマンドを含むキーボードマクロは、完全には機能しません。プログラムを再開するためにEdebugからexitすると、キーボードマクロの追跡記録は失われます。これに対処するのは簡単ではありません。またEdebug外部でキーボードマクロを定義または実行しても、Edebug内部のコマンドに影響しません。通常これは利点です。@ref{Edebug Options}内の@code{edebug-continue-kbd-macro}オプションも参照してください。"
 
 #. type: defopt
-#: original_texis/edebug.texi:333 original_texis/edebug.texi:1704
+#: original_texis/edebug.texi:333 original_texis/edebug.texi:1705
 #, no-wrap
 msgid "edebug-sit-for-seconds"
 msgstr "edebug-sit-for-seconds"
@@ -767,7 +764,7 @@ msgstr "@kbd{o}コマンドは、式の外側で実行を継続します。こ�
 #. type: Plain text
 #: original_texis/edebug.texi:401
 msgid "Normally, the @kbd{h}, @kbd{f}, and @kbd{o} commands display ``Break'' and pause for @code{edebug-sit-for-seconds} before showing the result of the form just evaluated.  You can avoid this pause by setting @code{edebug-sit-on-break} to @code{nil}.  @xref{Edebug Options}."
-msgstr ""
+msgstr "コマンド@kbd{h}、@kbd{f}、@kbd{o}は通常は``Break''を表示して、正に評価した結果を表示する前に@code{edebug-sit-for-seconds}の間、一時停止します。@code{edebug-sit-on-break}を@code{nil}にセットすることによりこの一時停止を回避できます。@ref{Edebug Options}を参照してください。"
 
 #. type: Plain text
 #: original_texis/edebug.texi:407
@@ -1433,7 +1430,7 @@ msgid "One way to cope with circular structure is to set @code{print-length} or 
 msgstr "循環構造への対処の1つとして、@code{print-length}と@code{print-level}にプリントの切り詰めをセットする方法があります。Edebugは変数@code{edebug-print-length}と@code{edebug-print-level}の値(非@code{nil}値なら)を、これらの変数にバインドします。@ref{Output Variables}を参照してください。"
 
 #. type: defopt
-#: original_texis/edebug.texi:813 original_texis/edebug.texi:1642
+#: original_texis/edebug.texi:813 original_texis/edebug.texi:1643
 #, no-wrap
 msgid "edebug-print-length"
 msgstr "edebug-print-length"
@@ -1444,7 +1441,7 @@ msgid "If non-@code{nil}, Edebug binds @code{print-length} to this value while p
 msgstr "非@code{nil}なら結果をプリントするときEdebugは@code{print-length}をこの値にバインドする。デフォルト値は@code{50}。"
 
 #. type: defopt
-#: original_texis/edebug.texi:818 original_texis/edebug.texi:1647
+#: original_texis/edebug.texi:818 original_texis/edebug.texi:1648
 #, no-wrap
 msgid "edebug-print-level"
 msgstr "edebug-print-level"
@@ -1480,7 +1477,7 @@ msgid "Custom printing prints this as @samp{Result: #1=(#1# y)}.  The @samp{#1=}
 msgstr "カスタムプリントはこれを@samp{Result: #1=(#1# y)}のようにプリントします。@samp{#1=}という表記はその後の構造をラベル@samp{1}とラベル付けして、@samp{#1#}表記はその前にラベル付けされた構造を参照しています。この表記はリストとベクターの任意の共有要素に使用されます。"
 
 #. type: defopt
-#: original_texis/edebug.texi:841 original_texis/edebug.texi:1652
+#: original_texis/edebug.texi:841 original_texis/edebug.texi:1653
 #, no-wrap
 msgid "edebug-print-circle"
 msgstr "edebug-print-circle"
@@ -1579,10 +1576,9 @@ msgstr "frequency counts"
 
 #. type: cindex
 #: original_texis/edebug.texi:901
-#, fuzzy, no-wrap
-#| msgid "performance analysis"
+#, no-wrap
 msgid "performance analysis (Edebug)"
-msgstr "performance analysis"
+msgstr "performance analysis (Edebug)"
 
 #. type: Plain text
 #: original_texis/edebug.texi:904
@@ -1724,17 +1720,14 @@ msgstr "Edebugにエンターするときは常に特定のデータの保存と
 
 #. type: vindex
 #: original_texis/edebug.texi:992
-#, fuzzy, no-wrap
-#| msgid "edebug-defun"
+#, no-wrap
 msgid "edebug-max-depth"
-msgstr "edebug-defun"
+msgstr "edebug-max-depth"
 
 #. type: itemize
 #: original_texis/edebug.texi:999
-#, fuzzy
-#| msgid "@code{max-lisp-eval-depth} and @code{max-specpdl-size} are both increased to reduce Edebug's impact on the stack.  You could, however, still run out of stack space when using Edebug."
 msgid "@code{max-lisp-eval-depth} (@pxref{Eval}) and @code{max-specpdl-size} (@pxref{Local Variables}) are both increased to reduce Edebug's impact on the stack.  You could, however, still run out of stack space when using Edebug.  You can also enlarge the value of @code{edebug-max-depth} if Edebug reaches the limit of recursion depth instrumenting code that contains very large quoted lists."
-msgstr "@code{max-lisp-eval-depth}および@code{max-specpdl-size}は、Edebugがスタック与える影響の低減効果を高める。しかしそれでも、Edebug使用時にスタック空間を使い切ってしまうことはあり得る。"
+msgstr "@code{max-lisp-eval-depth} (@ref{Eval}を参照)、および@code{max-specpdl-size} (@ref{Local Variables}を参照)はEdebugがスタックに与える影響の低減効果を高める。しかしそれでもEdebug使用時にスタック空間を使い切ってしまうことがあり得る。非常に大きいクォートされたリストを含むコードをインストルメントすることによってEdebugが再帰深さの制限に達してしまうようなら、@code{edebug-max-depth}の値を大きくすることもできる。"
 
 #. type: itemize
 #: original_texis/edebug.texi:1004
@@ -1878,7 +1871,7 @@ msgid "How to specify complex patterns of evaluation."
 msgstr "式の複雑なパターンを指定する方法。"
 
 #. type: node
-#: original_texis/edebug.texi:1119 original_texis/edebug.texi:1429
+#: original_texis/edebug.texi:1119 original_texis/edebug.texi:1430
 #, no-wrap
 msgid "Backtracking"
 msgstr "Backtracking"
@@ -1889,8 +1882,8 @@ msgid "What Edebug does when matching fails."
 msgstr "マッチに失敗したときEdebugが行なうこと。"
 
 #. type: subsubsection
-#: original_texis/edebug.texi:1119 original_texis/edebug.texi:1470
-#: original_texis/edebug.texi:1471
+#: original_texis/edebug.texi:1119 original_texis/edebug.texi:1471
+#: original_texis/edebug.texi:1472
 #, no-wrap
 msgid "Specification Examples"
 msgstr "Specification Examples"
@@ -1933,10 +1926,8 @@ msgstr "このEdebug仕様はマクロ呼び出しのどの部分が評価され
 
 #. type: Plain text
 #: original_texis/edebug.texi:1163
-#, fuzzy
-#| msgid "Take care to ensure that the specifications are known to Edebug when you instrument code.  If you are instrumenting a function from a file that uses @code{eval-when-compile} to require another file containing macro definitions, you may need to explicitly load that file."
 msgid "Take care to ensure that the specifications are known to Edebug when you instrument code.  If you are instrumenting a function which uses a macro defined in another file, you may first need to either evaluate the @code{require} forms in the file containing your function, or explicitly load the file containing the macro.  If the definition of a macro is wrapped by @code{eval-when-compile}, you may need to evaluate it."
-msgstr "コードをインストルメントするときEdebugに仕様が確実に解るよう注意してください。マクロ定義を含む他のファイルを要求するために@code{eval-when-compile}を使用するファイルから関数をインストルメントする場合は、そのファイルを明示的にロードする必要があるかもしれません。"
+msgstr "コードをインストルメントするときEdebugに仕様が確実に解るように留意してください。別ファイルで定義されたマクロを使用する関数をインストルメントする場合には、関数を含むファイル内の@code{require}フォームを評価するか、あるいはマクロを含むファイルを明示的にロードする必要があるかもしれません。マクロの定義が@code{eval-when-compile}でラップされていれば、それを評価する必要があるでしょう。"
 
 #. type: Plain text
 #: original_texis/edebug.texi:1169
@@ -2008,7 +1999,7 @@ msgid "If a macro has no Edebug specification, neither through a @code{debug} de
 msgstr "マクロがEdebug仕様をもたなければ、@code{debug}宣言および@code{def-edebug-spec}呼び出しのどちらを介しても、変数@code{edebug-eval-macro-args}が効果を発揮します。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1204 original_texis/edebug.texi:1576
+#: original_texis/edebug.texi:1204 original_texis/edebug.texi:1577
 #, no-wrap
 msgid "edebug-eval-macro-args"
 msgstr "edebug-eval-macro-args"
@@ -2069,7 +2060,7 @@ msgstr "form"
 #. type: table
 #: original_texis/edebug.texi:1250
 msgid "A single evaluated expression, which is instrumented.  If your macro wraps the expression with @code{lambda} before it is evaluated, use @code{def-form} instead.  See @code{def-form} below."
-msgstr ""
+msgstr "評価される単一の式。インストルメントされる。評価前にマクロが式のを@code{lambda}でラップしていれば、かわりに@code{def-form}を使用すること(以下の@code{def-form}を参照)。"
 
 #. type: item
 #: original_texis/edebug.texi:1251
@@ -2091,7 +2082,7 @@ msgstr "body"
 #. type: table
 #: original_texis/edebug.texi:1258
 msgid "Short for @code{&rest form}.  See @code{&rest} below.  If your macro wraps its body of code with @code{lambda} before it is evaluated, use @code{def-body} instead.  See @code{def-body} below."
-msgstr ""
+msgstr "@code{&rest form}の短縮形(以下の@code{&rest}を参照)。評価前にマクロが式のを@code{lambda}でラップしていれば、かわりに@code{def-form}を使用すること(以下の@code{def-form}を参照)。"
 
 #. type: item
 #: original_texis/edebug.texi:1259
@@ -2181,280 +2172,278 @@ msgid "&define"
 msgstr "&define"
 
 #. type: table
-#: original_texis/edebug.texi:1316
+#: original_texis/edebug.texi:1317
 msgid "Indicates that the specification is for a defining form.  Edebug's definition of a defining form is a form containing one or more code forms which are saved and executed later, after the execution of the defining form."
-msgstr ""
+msgstr "フォームを定義する仕様であることを示す。フォームを定義するEdebugの定義は、後刻(フォーム定義の実行後に)保存および実行される1つ以上のコードを含んだフォーム。"
 
 #. type: table
-#: original_texis/edebug.texi:1321
-#, fuzzy
-#| msgid "Indicates that the specification is for a defining form.  The defining form itself is not instrumented (that is, Edebug does not stop before and after the defining form), but forms inside it typically will be instrumented.  The @code{&define} keyword should be the first element in a list specification."
+#: original_texis/edebug.texi:1322
 msgid "The defining form itself is not instrumented (that is, Edebug does not stop before and after the defining form), but forms inside it typically will be instrumented.  The @code{&define} keyword should be the first element in a list specification."
-msgstr "フォーム定義にたいする仕様であることを示す。フォーム定義自体はインストルメントされない(つまりEdebugはフォーム定義の前後でストップしない)が、フォーム内部は通常はインストルメントされるであろう。@code{&define}キーワードはリスト仕様の最初の要素であること。"
+msgstr "フォーム定義自体はインストルメントされない(つまりEdebugはフォーム定義の前後でストップしない)が、フォーム内部は通常はインストルメントされるであろう。@code{&define}キーワードはリスト仕様の最初の要素であること。"
 
 #. type: item
-#: original_texis/edebug.texi:1322
+#: original_texis/edebug.texi:1323
 #, no-wrap
 msgid "nil"
 msgstr "nil"
 
 #. type: table
-#: original_texis/edebug.texi:1326
+#: original_texis/edebug.texi:1327
 msgid "This is successful when there are no more arguments to match at the current argument list level; otherwise it fails.  See sublist specifications and the backquote example."
 msgstr "カレント引数レベルでマッチさせる引数が存在しなければ成功し、それ以外は失敗する。部分リスト仕様とバッククォートの例を参照のこと。"
 
 #. type: item
-#: original_texis/edebug.texi:1327
+#: original_texis/edebug.texi:1328
 #, no-wrap
 msgid "gate"
 msgstr "gate"
 
 #. type: cindex
-#: original_texis/edebug.texi:1328
+#: original_texis/edebug.texi:1329
 #, no-wrap
 msgid "preventing backtracking"
 msgstr "preventing backtracking"
 
 #. type: table
-#: original_texis/edebug.texi:1333
+#: original_texis/edebug.texi:1334
 msgid "No argument is matched but backtracking through the gate is disabled while matching the remainder of the specifications at this level.  This is primarily used to generate more specific syntax error messages.  See @ref{Backtracking}, for more details.  Also see the @code{let} example."
 msgstr "引数はマッチされないがgateを通じたバックトラックは、このレベルの仕様の残りをマッチングする間は無効にされる。これは主に特定の構文エラーメッセージを一般化するために使用される。詳細は@ref{Backtracking}、および@code{let}の例も参照のこと。"
 
 #. type: var{#1}
-#: original_texis/edebug.texi:1334
+#: original_texis/edebug.texi:1335
 #, no-wrap
 msgid "other-symbol"
 msgstr "other-symbol"
 
 #. type: cindex
-#: original_texis/edebug.texi:1335
+#: original_texis/edebug.texi:1336
 #, no-wrap
 msgid "indirect specifications"
 msgstr "indirect specifications"
 
 #. type: table
-#: original_texis/edebug.texi:1338
+#: original_texis/edebug.texi:1339
 msgid "Any other symbol in a specification list may be a predicate or an indirect specification."
 msgstr "仕様リスト内のその他の要素は、述語(predicate)かインダイレクト仕様(indirect specification)である。"
 
 #. type: table
-#: original_texis/edebug.texi:1344
+#: original_texis/edebug.texi:1345
 msgid "If the symbol has an Edebug specification, this @dfn{indirect specification} should be either a list specification that is used in place of the symbol, or a function that is called to process the arguments.  The specification may be defined with @code{def-edebug-spec} just as for macros.  See the @code{defun} example."
 msgstr "シンボルがEdebug仕様をもつなら、@dfn{インダイレクト仕様(indirect specification)}はシンボル位置に使用されるリスト仕様か、引数を処理するための関数のいずれかである。この仕様はマクロにたいする@code{def-edebug-spec}のように定義される。@code{defun}の例を参照のこと。"
 
 #. type: table
-#: original_texis/edebug.texi:1348
+#: original_texis/edebug.texi:1349
 msgid "Otherwise, the symbol should be a predicate.  The predicate is called with the argument, and if the predicate returns @code{nil}, the specification fails and the argument is not instrumented."
 msgstr "それ以外ならシンボルは述語(predicate)である。述語は引数とともに呼び出されて@code{nil}をリターンしたら、その仕様は失敗して引数はインストルメントされない。"
 
 #. type: table
-#: original_texis/edebug.texi:1351
+#: original_texis/edebug.texi:1352
 msgid "Some suitable predicates include @code{symbolp}, @code{integerp}, @code{stringp}, @code{vectorp}, and @code{atom}."
 msgstr "適切な述語としては@code{symbolp}、@code{integerp}、@code{stringp}、@code{vectorp}、@code{atom}が含まれる。"
 
 #. type: item
-#: original_texis/edebug.texi:1352
+#: original_texis/edebug.texi:1353
 #, no-wrap
 msgid "[@var{elements}@dots{}]"
 msgstr "[@var{elements}@dots{}]"
 
 #. type: cindex
-#: original_texis/edebug.texi:1353
+#: original_texis/edebug.texi:1354
 #, no-wrap
 msgid "[@dots{}] (Edebug)"
 msgstr "[@dots{}] (Edebug)"
 
 #. type: table
-#: original_texis/edebug.texi:1356
+#: original_texis/edebug.texi:1357
 msgid "A vector of elements groups the elements into a single @dfn{group specification}.  Its meaning has nothing to do with vectors."
 msgstr "要素のベクターは要素を単一の@dfn{グループ仕様(group specification)}にグループ化する。このグループ仕様はベクター自体には何も行わない。"
 
 #. type: item
-#: original_texis/edebug.texi:1357
+#: original_texis/edebug.texi:1358
 #, no-wrap
 msgid "\"@var{string}\""
 msgstr "\"@var{string}\""
 
 #. type: table
-#: original_texis/edebug.texi:1361
+#: original_texis/edebug.texi:1362
 msgid "The argument should be a symbol named @var{string}.  This specification is equivalent to the quoted symbol, @code{'@var{symbol}}, where the name of @var{symbol} is the @var{string}, but the string form is preferred."
 msgstr "引数は@var{string}という名前のシンボルである。この仕様は@var{symbol}の名前が@var{string}であるようなクォートされたシンボル@code{'@var{symbol}}と等価だが、文字列形式のほうが好ましい。"
 
 #. type: item
-#: original_texis/edebug.texi:1362
+#: original_texis/edebug.texi:1363
 #, no-wrap
 msgid "(vector @var{elements}@dots{})"
 msgstr "(vector @var{elements}@dots{})"
 
 #. type: table
-#: original_texis/edebug.texi:1365
+#: original_texis/edebug.texi:1366
 msgid "The argument should be a vector whose elements must match the @var{elements} in the specification.  See the backquote example."
 msgstr "引数は要素が仕様内の@var{elements}にマッチするようなベクターである。バッククォートの例を参照のこと。"
 
 #. type: item
-#: original_texis/edebug.texi:1366
+#: original_texis/edebug.texi:1367
 #, no-wrap
 msgid "(@var{elements}@dots{})"
 msgstr "(@var{elements}@dots{})"
 
 #. type: table
-#: original_texis/edebug.texi:1369
+#: original_texis/edebug.texi:1370
 msgid "Any other list is a @dfn{sublist specification} and the argument must be a list whose elements match the specification @var{elements}."
 msgstr "他のリストは@dfn{部分リスト仕様(sublist specification)}であり、引数は要素が仕様の@var{elements}にマッチするリストでなければならない。"
 
 #. type: cindex
-#: original_texis/edebug.texi:1370
+#: original_texis/edebug.texi:1371
 #, no-wrap
 msgid "dotted lists (Edebug)"
 msgstr "dotted lists (Edebug)"
 
 #. type: table
-#: original_texis/edebug.texi:1379
+#: original_texis/edebug.texi:1380
 msgid "A sublist specification may be a dotted list and the corresponding list argument may then be a dotted list.  Alternatively, the last @sc{cdr} of a dotted list specification may be another sublist specification (via a grouping or an indirect specification, e.g., @code{(spec .  [(more specs@dots{})])}) whose elements match the non-dotted list arguments.  This is useful in recursive specifications such as in the backquote example.  Also see the description of a @code{nil} specification above for terminating such recursion."
 msgstr "部分リスト仕様はドットリスト(dotted list)かもしれず、その場合対応するリスト引数はドットリストである。かわりにドットリスト仕様の最後の@sc{cdr}が、(グループ化やインダイレクト仕様による)他の部分リスト仕様かもしれない(たとえば要素が非ドットリストにマッチする@code{(spec . [(more specs@dots{})])}))。これはバッククォートの例のような再帰仕様に有用。このような再帰を終了させるには上述の@code{nil}仕様も参照のこと。"
 
 #. type: table
-#: original_texis/edebug.texi:1384
+#: original_texis/edebug.texi:1385
 msgid "Note that a sublist specification written as @code{(specs .  nil)} is equivalent to @code{(specs)}, and @code{(specs .  (sublist-elements@dots{}))} is equivalent to @code{(specs sublist-elements@dots{})}."
 msgstr "@code{(specs .  nil)}のように記述された部分リスト仕様は@code{(specs)}、@code{(specs .  (sublist-elements@dots{}))}は@code{(specs sublist-elements@dots{})}と等価であることに注意。"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1390
+#: original_texis/edebug.texi:1391
 msgid "Here is a list of additional specifications that may appear only after @code{&define}.  See the @code{defun} example."
 msgstr "以下は@code{&define}の後だけに出現する追加仕様のリストです。@code{defun}の例を参照してください。"
 
 #. type: item
-#: original_texis/edebug.texi:1392
+#: original_texis/edebug.texi:1393
 #, no-wrap
 msgid "name"
 msgstr "name"
 
 #. type: table
-#: original_texis/edebug.texi:1394
+#: original_texis/edebug.texi:1395
 msgid "The argument, a symbol, is the name of the defining form."
 msgstr "引数(シンボル)は定義フォームの名前。"
 
 #. type: table
-#: original_texis/edebug.texi:1397
+#: original_texis/edebug.texi:1398
 msgid "A defining form is not required to have a name field; and it may have multiple name fields."
 msgstr "定義フォームは名前フィールドをもつ必要はなく、複数の名前フィールドをもつかもしれない。"
 
 #. type: item
-#: original_texis/edebug.texi:1398
+#: original_texis/edebug.texi:1399
 #, no-wrap
 msgid ":name"
 msgstr ":name"
 
 #. type: table
-#: original_texis/edebug.texi:1404
+#: original_texis/edebug.texi:1405
 msgid "This construct does not actually match an argument.  The element following @code{:name} should be a symbol; it is used as an additional name component for the definition.  You can use this to add a unique, static component to the name of the definition.  It may be used more than once."
 msgstr "この構文は引数に実際のマッチは行わない。@code{:name}の後の要素はシンボルであり、その定義の追加の名前要素として使用される。定義名に一意で静的な要素を加えるためにこれを使用できる。複数回使用できる。"
 
 #. type: item
-#: original_texis/edebug.texi:1405
+#: original_texis/edebug.texi:1406
 #, no-wrap
 msgid "arg"
 msgstr "arg"
 
 #. type: table
-#: original_texis/edebug.texi:1409
+#: original_texis/edebug.texi:1410
 msgid "The argument, a symbol, is the name of an argument of the defining form.  However, lambda-list keywords (symbols starting with @samp{&})  are not allowed."
 msgstr "引数(シンボル)は定義フォームの引数の名前である。しかしlambda-listキーワード(@samp{&}で始まるシンボル)は許されない。"
 
 #. type: item
-#: original_texis/edebug.texi:1410
+#: original_texis/edebug.texi:1411
 #, no-wrap
 msgid "lambda-list"
 msgstr "lambda-list"
 
 #. type: cindex
-#: original_texis/edebug.texi:1411
+#: original_texis/edebug.texi:1412
 #, no-wrap
 msgid "lambda-list (Edebug)"
 msgstr "lambda-list (Edebug)"
 
 #. type: table
-#: original_texis/edebug.texi:1413
+#: original_texis/edebug.texi:1414
 msgid "This matches a lambda list---the argument list of a lambda expression."
 msgstr "これはラムダリスト(ラムダ式の引数リスト)にマッチする。"
 
 #. type: item
-#: original_texis/edebug.texi:1414
+#: original_texis/edebug.texi:1415
 #, no-wrap
 msgid "def-body"
 msgstr "def-body"
 
 #. type: table
-#: original_texis/edebug.texi:1420
+#: original_texis/edebug.texi:1421
 msgid "The argument is the body of code in a definition.  This is like @code{body}, described above, but a definition body must be instrumented with a different Edebug call that looks up information associated with the definition.  Use @code{def-body} for the highest level list of forms within the definition."
 msgstr "引数は定義内のコードのbodyである。これは上述の@code{body}と似ているが、定義のbodyはその定義に関連する情報を照会する別のEdebug呼び出しでインストルメントされていなければならない。定義内のより高位レベルのフォームリストには@code{def-body}を使用する。"
 
 #. type: item
-#: original_texis/edebug.texi:1421
+#: original_texis/edebug.texi:1422
 #, no-wrap
 msgid "def-form"
 msgstr "def-form"
 
 #. type: table
-#: original_texis/edebug.texi:1427
+#: original_texis/edebug.texi:1428
 msgid "The argument is a single, highest-level form in a definition.  This is like @code{def-body}, except it is used to match a single form rather than a list of forms.  As a special case, @code{def-form} also means that tracing information is not output when the form is executed.  See the @code{interactive} example."
 msgstr "引数は定義内のもっとも高位レベルの単一フォームである。これは@code{def-body}と似ているが、フォームリストではなく単一フォームのマッチに使用される。特別なケースとして@code{def-form}はフォームが実行されるときトレース情報を出力しないことも意味する。@code{interactive}の例を参照のこと。"
 
 #. type: subsubsection
-#: original_texis/edebug.texi:1430
+#: original_texis/edebug.texi:1431
 #, no-wrap
 msgid "Backtracking in Specifications"
 msgstr "Backtracking in Specifications"
 
 #. type: cindex
-#: original_texis/edebug.texi:1432
+#: original_texis/edebug.texi:1433
 #, no-wrap
 msgid "backtracking"
 msgstr "backtracking"
 
 #. type: cindex
-#: original_texis/edebug.texi:1433
+#: original_texis/edebug.texi:1434
 #, no-wrap
 msgid "syntax error (Edebug)"
 msgstr "syntax error (Edebug)"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1440
+#: original_texis/edebug.texi:1441
 msgid "If a specification fails to match at some point, this does not necessarily mean a syntax error will be signaled; instead, @dfn{backtracking} will take place until all alternatives have been exhausted.  Eventually every element of the argument list must be matched by some element in the specification, and every required element in the specification must match some argument."
 msgstr "あるポイント位置で仕様がマッチに失敗しても、構文エラーがシグナルされるとは限りません。そのかわり@dfn{バックトラッッキング(backtracking)}が開始されます。バックトラックはすべての選択肢をマッチングするまで行なわれます。最終的に引数リストのすべての要素は仕様内の要素のいずれかとマッチしなければならず、仕様内の必須要素は引数のいずれかとマッチしなければなりません。"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1451
+#: original_texis/edebug.texi:1452
 msgid "When a syntax error is detected, it might not be reported until much later, after higher-level alternatives have been exhausted, and with the point positioned further from the real error.  But if backtracking is disabled when an error occurs, it can be reported immediately.  Note that backtracking is also reenabled automatically in several situations; when a new alternative is established by @code{&optional}, @code{&rest}, or @code{&or}, or at the start of processing a sublist, group, or indirect specification.  The effect of enabling or disabling backtracking is limited to the remainder of the level currently being processed and lower levels."
 msgstr "構文エラーが検出されてもその時点では報告されず、より高位レベルの選択肢のマッチングが終わった後、実際のエラー箇所から離れたポイント位置でエラーが報告されるかもしれません。しかしエラー発生時にバックトラックが無効ならエラーは即座に報告されるでしょう。ある状況ではバックトラックも自動的に再有効化されることに注意してください。@code{&optional}、@code{&rest}、@code{&or}により新たな選択肢が設定されたとき、または部分リスト、グループ、インダイレクト仕様が開始されたときはバックトラックが自動的に有効になります。バックトラックを有効、または無効にした場合の影響は、現在処理中のレベルの残り要素と低位レベルに限定されます。"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1456
+#: original_texis/edebug.texi:1457
 msgid "Backtracking is disabled while matching any of the form specifications (that is, @code{form}, @code{body}, @code{def-form}, and @code{def-body}).  These specifications will match any form so any error must be in the form itself rather than at a higher level."
 msgstr "何らかのフォーム仕様(すなわち@code{form}、@code{body}、@code{def-form}、@code{def-body})をマッチングする間、バックトラックは無効になっています。これらの仕様は任意のフォームにマッチするので、何らかのエラーが発生するとしたらそれは高位レベルではなく、そのフォーム自体の内部でなければなりません。"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1463
+#: original_texis/edebug.texi:1464
 msgid "Backtracking is also disabled after successfully matching a quoted symbol or string specification, since this usually indicates a recognized construct.  But if you have a set of alternative constructs that all begin with the same symbol, you can usually work around this constraint by factoring the symbol out of the alternatives, e.g., @code{[\"foo\" &or [first case] [second case] ...]}."
 msgstr "バックトラックはクォートされたシンボルや文字列仕様とのマッチに成功した後にも無効になります。なぜなら通常これは構文成が認識されたことを示すからです。しかし同じシンボルで始まる一連の選択肢構文がある場合には、たとえば@code{[\"foo\" &or [first case] [second case] ...]}のように、通常は選択肢の外部にそのシンボルをファクタリングすることによりこの制約に対処できます。"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1469
+#: original_texis/edebug.texi:1470
 msgid "Most needs are satisfied by these two ways that backtracking is automatically disabled, but occasionally it is useful to explicitly disable backtracking by using the @code{gate} specification.  This is useful when you know that no higher alternatives could apply.  See the example of the @code{let} specification."
 msgstr "ほとんどのニーズは、バックトラックを自動的に無効にする、これら2つの方法で満足させることができますが、@code{gate}仕様を使用して明示的にバックトラックを無効にするほうが便利なときもあります。これは高位に適用可能な選択肢が存在しないことが分かっている場合に有用です。@code{let}仕様の例を参照してください。"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1475
+#: original_texis/edebug.texi:1476
 msgid "It may be easier to understand Edebug specifications by studying the examples provided here."
 msgstr "以下で提供する例から学ぶことにより、Edebug仕様の理解が容易になるでしょう。"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1480
+#: original_texis/edebug.texi:1481
 msgid "A @code{let} special form has a sequence of bindings and a body.  Each of the bindings is either a symbol or a sublist with a symbol and optional expression.  In the specification below, notice the @code{gate} inside of the sublist to prevent backtracking once a sublist is found."
 msgstr "スペシャルフォーム@code{let}は、バインディングとbodyのシーケンスをもちます。各バインディングはそシンボル、またはシンボルとオプションの部分リストです。以下の仕様では部分リストを見つけたらバックトラックを抑止するために、部分リスト内の@code{gate}があることに注目してください。"
 
 #. type: example
-#: original_texis/edebug.texi:1495
+#: original_texis/edebug.texi:1496
 #, no-wrap
 msgid ""
 "(def-edebug-spec let\n"
@@ -2468,12 +2457,12 @@ msgstr ""
 "   body))\n"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1503
+#: original_texis/edebug.texi:1504
 msgid "Edebug uses the following specifications for @code{defun} and the associated argument list and @code{interactive} specifications.  It is necessary to handle interactive forms specially since an expression argument is actually evaluated outside of the function body.  (The specification for @code{defmacro} is very similar to that for @code{defun}, but allows for the @code{declare} statement.)"
 msgstr "Edebugは@code{defun}および関連する引数リスト、@code{interactive}仕様にたいして以下の仕様を使用します。式の引数はその関数bodyの外部で実際に評価されるので、interactiveフォームは特別に処理する必要があります。(@code{defmacro}にたいする仕様は@code{defun}にたいする仕様と酷似するが@code{declare}命令文が許される)"
 
 #. type: smallexample
-#: original_texis/edebug.texi:1510
+#: original_texis/edebug.texi:1511
 #, no-wrap
 msgid ""
 "(def-edebug-spec defun\n"
@@ -2491,7 +2480,7 @@ msgstr ""
 "\n"
 
 #. type: smallexample
-#: original_texis/edebug.texi:1516
+#: original_texis/edebug.texi:1517
 #, no-wrap
 msgid ""
 "(def-edebug-spec lambda-list\n"
@@ -2509,7 +2498,7 @@ msgstr ""
 "\n"
 
 #. type: smallexample
-#: original_texis/edebug.texi:1519
+#: original_texis/edebug.texi:1520
 #, no-wrap
 msgid ""
 "(def-edebug-spec interactive\n"
@@ -2519,12 +2508,12 @@ msgstr ""
 "  (&optional &or stringp def-form))    ; @r{@code{def-form}に注目}\n"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1527
+#: original_texis/edebug.texi:1528
 msgid "The specification for backquote below illustrates how to match dotted lists and use @code{nil} to terminate recursion.  It also illustrates how components of a vector may be matched.  (The actual specification defined by Edebug is a little different, and does not support dotted lists because doing so causes very deep recursion that could fail.)"
 msgstr "以下のバッククォートにたいする仕様はドットリストにマッチさせる方法と、@code{nil}を使用して再帰を終了させる方法を説明するための例です。またベクターのコンポーネントをマッチさせる方法も示しています(Edebugにより定義される実際の仕様は少し異なり、失敗するかもしれない非常に深い再帰を引き起こすためドットリストについてはサポートしない)。"
 
 #. type: smallexample
-#: original_texis/edebug.texi:1530
+#: original_texis/edebug.texi:1531
 #, no-wrap
 msgid ""
 "(def-edebug-spec \\` (backquote-form))   ; @r{Alias just for clarity.}\n"
@@ -2534,7 +2523,7 @@ msgstr ""
 "\n"
 
 #. type: smallexample
-#: original_texis/edebug.texi:1536
+#: original_texis/edebug.texi:1537
 #, no-wrap
 msgid ""
 "(def-edebug-spec backquote-form\n"
@@ -2550,194 +2539,188 @@ msgstr ""
 "       sexp))\n"
 
 #. type: subsection
-#: original_texis/edebug.texi:1539 original_texis/edebug.texi:1540
+#: original_texis/edebug.texi:1540 original_texis/edebug.texi:1541
 #, no-wrap
 msgid "Edebug Options"
 msgstr "Edebug Options"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1546
+#: original_texis/edebug.texi:1547
 msgid "These options affect the behavior of Edebug:"
 msgstr "以下のオプションはEdebugの動作に影響を与えます:"
 
 #. type: defopt
-#: original_texis/edebug.texi:1547
+#: original_texis/edebug.texi:1548
 #, no-wrap
 msgid "edebug-setup-hook"
 msgstr "edebug-setup-hook"
 
 #. type: defopt
-#: original_texis/edebug.texi:1554
+#: original_texis/edebug.texi:1555
 msgid "Functions to call before Edebug is used.  Each time it is set to a new value, Edebug will call those functions once and then reset @code{edebug-setup-hook} to @code{nil}.  You could use this to load up Edebug specifications associated with a package you are using, but only when you also use Edebug.  @xref{Instrumenting}."
 msgstr "Edebugが使用される前に呼び出される関数。この関数は毎回新たな値をセットする。Edebugはこれらの関数を一度呼び出したら、その後に@code{edebug-setup-hook}を@code{nil}にリセットする。使用するパッケージに関係するEdebug仕様をロードするために使用でｄきるがそれはEdebugを使用するときだけである。@ref{Instrumenting}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1556
+#: original_texis/edebug.texi:1557
 #, no-wrap
 msgid "edebug-all-defs"
 msgstr "edebug-all-defs"
 
 #. type: defopt
-#: original_texis/edebug.texi:1561
+#: original_texis/edebug.texi:1562
 msgid "If this is non-@code{nil}, normal evaluation of defining forms such as @code{defun} and @code{defmacro} instruments them for Edebug.  This applies to @code{eval-defun}, @code{eval-region}, @code{eval-buffer}, and @code{eval-current-buffer}."
 msgstr "これが非@code{nil}の場合に@code{defun}や@code{defmacro}のような定義フォームの普通に評価すると、Edebug用にインストルメントされる。これは@code{eval-defun}、@code{eval-region}、@code{eval-buffer}、and @code{eval-current-buffer}に適用される。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1564
+#: original_texis/edebug.texi:1565
 msgid "Use the command @kbd{M-x edebug-all-defs} to toggle the value of this option.  @xref{Instrumenting}."
 msgstr "このオプションの切り替えにはコマンド@kbd{M-x edebug-all-defs}を使用する。@ref{Instrumenting}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1566
+#: original_texis/edebug.texi:1567
 #, no-wrap
 msgid "edebug-all-forms"
 msgstr "edebug-all-forms"
 
 #. type: defopt
-#: original_texis/edebug.texi:1571
+#: original_texis/edebug.texi:1572
 msgid "If this is non-@code{nil}, the commands @code{eval-defun}, @code{eval-region}, @code{eval-buffer}, and @code{eval-current-buffer} instrument all forms, even those that don't define anything.  This doesn't apply to loading or evaluations in the minibuffer."
 msgstr "これが非@code{nil}の場合には@code{eval-defun}、@code{eval-region}、@code{eval-buffer}、@code{eval-current-buffer}はたとえフォームが何も定義していなくても、すべてのフォームをインストルメントする。これはロードとミニバッファー内の評価には適用されない。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1574
+#: original_texis/edebug.texi:1575
 msgid "Use the command @kbd{M-x edebug-all-forms} to toggle the value of this option.  @xref{Instrumenting}."
 msgstr "このオプションの切り替えにはコマンド@kbd{M-x edebug-all-forms}を使用する。@ref{Instrumenting}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1582
+#: original_texis/edebug.texi:1583
 msgid "When this is non-@code{nil}, all macro arguments will be instrumented in the generated code.  For any macro, an @code{edebug-form-spec} overrides this option.  So to specify exceptions for macros that have some arguments evaluated and some not, use @code{def-edebug-spec} to specify an @code{edebug-form-spec}."
-msgstr ""
+msgstr "これが非@code{nil}なら、生成されるコード内のすべてのマクロ引数がインストルメントされる。@code{edebug-form-spec}はすべてのマクロにたいして、このオプションをオーバーライドする。ある引数を評価して他の引数を評価しないマクロにたいする例外を指定するためには、@code{edebug-form-spec}を指定するために@code{def-edebug-spec}を使用すること。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1584
+#: original_texis/edebug.texi:1585
 #, no-wrap
 msgid "edebug-save-windows"
 msgstr "edebug-save-windows"
 
 #. type: defopt
-#: original_texis/edebug.texi:1589
+#: original_texis/edebug.texi:1590
 msgid "If this is non-@code{nil}, Edebug saves and restores the window configuration.  That takes some time, so if your program does not care what happens to the window configurations, it is better to set this variable to @code{nil}."
 msgstr "これが非@code{nil}なら、Edebugはウィンドウ構成の保存とリストアを行なう。これにはある程度の時間を要するので、ウィンドウ構成に何が起こってもプログラムに関係なければ、この変数を@code{nil}にセットしたほうがよい。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1592
+#: original_texis/edebug.texi:1593
 msgid "If the value is a list, only the listed windows are saved and restored."
 msgstr "値がリストならリストされたウィンドウだけが保存およびリストアされる。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1595
+#: original_texis/edebug.texi:1596
 msgid "You can use the @kbd{W} command in Edebug to change this variable interactively.  @xref{Edebug Display Update}."
 msgstr "Edebug内ではこの変数をインタラクティブに変更するために@kbd{W}コマンドを使用できる。@ref{Edebug Display Update}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1597
+#: original_texis/edebug.texi:1598
 #, no-wrap
 msgid "edebug-save-displayed-buffer-points"
 msgstr "edebug-save-displayed-buffer-points"
 
 #. type: defopt
-#: original_texis/edebug.texi:1600
+#: original_texis/edebug.texi:1601
 msgid "If this is non-@code{nil}, Edebug saves and restores point in all displayed buffers."
 msgstr "これが非@code{nil}ならEdebugは表示されているすべてのバッファー内のポイントを保存およびリストアする。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1605
+#: original_texis/edebug.texi:1606
 msgid "Saving and restoring point in other buffers is necessary if you are debugging code that changes the point of a buffer that is displayed in a non-selected window.  If Edebug or the user then selects the window, point in that buffer will move to the window's value of point."
 msgstr "選択されていないウィンドウ内に表示されているバッファーのポイントを変更するコードをデバッグしている場合は、他のバッファーのポイントを保存およびリストアする必要がある。その後にEdebugまたはユーザーがそのウィンドウを選択した場合は、そのバッファー内のポイントはそのウィンドウのポイント値に移動される。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1609
+#: original_texis/edebug.texi:1610
 msgid "Saving and restoring point in all buffers is expensive, since it requires selecting each window twice, so enable this only if you need it.  @xref{Edebug Display Update}."
 msgstr "すべてのバッファー内のポイントの保存とリストアは、それぞれのウィンドウを2回選択する必要があり高価な処理なので、必要なときだけ有効にする。@ref{Edebug Display Update}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1611
+#: original_texis/edebug.texi:1612
 #, no-wrap
 msgid "edebug-initial-mode"
 msgstr "edebug-initial-mode"
 
 #. type: defopt
-#: original_texis/edebug.texi:1616
+#: original_texis/edebug.texi:1617
 msgid "If this variable is non-@code{nil}, it specifies the initial execution mode for Edebug when it is first activated.  Possible values are @code{step}, @code{next}, @code{go}, @code{Go-nonstop}, @code{trace}, @code{Trace-fast}, @code{continue}, and @code{Continue-fast}."
 msgstr "この変数が非@code{nil}なら、Edebugが最初にアクティブになったときのEdebugの最初の実行モードを指定する。指定できる値は@code{step}、@code{next}、@code{go}、@code{Go-nonstop}、@code{trace}、@code{Trace-fast}、@code{continue}、@code{Continue-fast}。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1620
+#: original_texis/edebug.texi:1621
 msgid "The default value is @code{step}.  This variable can be set interactively with @kbd{C-x C-a C-m} (@code{edebug-set-initial-mode}).  @xref{Edebug Execution Modes}."
 msgstr "デフォルト値は@code{step}。この変数は@kbd{C-x C-a C-m}でインタラクティブにセットできる。@ref{Edebug Execution Modes}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1622
+#: original_texis/edebug.texi:1623
 #, no-wrap
 msgid "edebug-trace"
 msgstr "edebug-trace"
 
 #. type: defopt
-#: original_texis/edebug.texi:1626
+#: original_texis/edebug.texi:1627
 msgid "If this is non-@code{nil}, trace each function entry and exit.  Tracing output is displayed in a buffer named @file{*edebug-trace*}, one function entry or exit per line, indented by the recursion level."
 msgstr "これが非@code{nil}なら各関数のエントリーとexitをトレースする。トレース出力は関数のエントリーとexitを行ごとに、再帰レベルにしたがって@file{*edebug-trace*}という名前のバッファーに表示される。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1628
+#: original_texis/edebug.texi:1629
 msgid "Also see @code{edebug-tracing}, in @ref{Trace Buffer}."
 msgstr "@ref{Trace Buffer}の@code{edebug-tracing}も参照されたい。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1630
+#: original_texis/edebug.texi:1631
 #, no-wrap
 msgid "edebug-test-coverage"
 msgstr "edebug-test-coverage"
 
 #. type: defopt
-#: original_texis/edebug.texi:1633
+#: original_texis/edebug.texi:1634
 msgid "If non-@code{nil}, Edebug tests coverage of all expressions debugged.  @xref{Coverage Testing}."
 msgstr "非@code{nil}ならEdebugはデバッグされるすべての式のカバレッジをテストする。@ref{Coverage Testing}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1635
+#: original_texis/edebug.texi:1636
 #, no-wrap
 msgid "edebug-continue-kbd-macro"
 msgstr "edebug-continue-kbd-macro"
 
 #. type: defopt
-#: original_texis/edebug.texi:1640
+#: original_texis/edebug.texi:1641
 msgid "If non-@code{nil}, continue defining or executing any keyboard macro that is executing outside of Edebug.  Use this with caution since it is not debugged.  @xref{Edebug Execution Modes}."
 msgstr "非@code{nil}ならEdebug外部で実行されている任意のキーボードマクロの定義または実行を継続する。これはデバッグされないので慎重に使用すること。@ref{Edebug Execution Modes}を参照されたい。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1645
-#, fuzzy
-#| msgid "If non-@code{nil}, Edebug binds @code{print-length} to this value while printing results.  The default value is @code{50}."
+#: original_texis/edebug.texi:1646
 msgid "If non-@code{nil}, the default value of @code{print-length} for printing results in Edebug.  @xref{Output Variables}."
-msgstr "非@code{nil}の場合は、結果をプリントするときEdebugは@code{print-length}をこの値にバインドする。デフォルト値は@code{50}。"
+msgstr "非@code{nil}なら、それはEdebugでの結果プリントにおける@code{print-length}のデフォルト値。@ref{Output Variables}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1650
-#, fuzzy
-#| msgid "If non-@code{nil}, Edebug binds @code{print-level} to this value while printing results.  The default value is @code{50}."
+#: original_texis/edebug.texi:1651
 msgid "If non-@code{nil}, the default value of @code{print-level} for printing results in Edebug.  @xref{Output Variables}."
-msgstr "非@code{nil}の場合は、結果をプリントするときEdebugは@code{print-level}をこの値にバインドする。デフォルト値は@code{50}。"
+msgstr "非@code{nil}なら、それはEdebugでの結果プリントにおける@code{print-level}のデフォルト値。@ref{Output Variables}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1655
-#, fuzzy
-#| msgid "If non-@code{nil}, Edebug binds @code{print-circle} to this value while printing results.  The default value is @code{t}."
+#: original_texis/edebug.texi:1656
 msgid "If non-@code{nil}, the default value of @code{print-circle} for printing results in Edebug.  @xref{Output Variables}."
-msgstr "非@code{nil}の場合は、結果をプリントするときEdebugは@code{print-circle}をこの値にバインドする。デフォルト値は@code{t}。"
+msgstr "非@code{nil}なら、それはEdebugでの結果プリントにおける@code{print-circle}のデフォルト値。@ref{Output Variables}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1657
+#: original_texis/edebug.texi:1658
 #, no-wrap
 msgid "edebug-unwrap-results"
 msgstr "edebug-unwrap-results"
 
 #. type: defopt
-#: original_texis/edebug.texi:1664
+#: original_texis/edebug.texi:1665
 msgid "If non-@code{nil}, Edebug tries to remove any of its own instrumentation when showing the results of expressions.  This is relevant when debugging macros where the results of expressions are themselves instrumented expressions.  As a very artificial example, suppose that the example function @code{fac} has been instrumented, and consider a macro of the form:"
 msgstr "非@code{nil}ならEdebugは式の結果を表示するときに、その式自体のインストルメント結果の削除を試みる。マクロをデバッグするときは、式の結果自体がインストルメントされた式になるということに関連するオプションである。実際的な例ではないが、サンプル例の関数@code{fac}がインストルメントされたとき、そのフォームのマクロを考えてみるとよい。"
 
 #. type: smallexample
-#: original_texis/edebug.texi:1670
+#: original_texis/edebug.texi:1671
 #, no-wrap
 msgid ""
 "(defmacro test () \"Edebug example.\"\n"
@@ -2749,61 +2732,60 @@ msgstr ""
 "      @dots{}))\n"
 
 #. type: defopt
-#: original_texis/edebug.texi:1678
+#: original_texis/edebug.texi:1679
 msgid "If you instrument the @code{test} macro and step through it, then by default the result of the @code{symbol-function} call has numerous @code{edebug-after} and @code{edebug-before} forms, which can make it difficult to see the actual result.  If @code{edebug-unwrap-results} is non-@code{nil}, Edebug tries to remove these forms from the result."
 msgstr "@code{test}マクロをインストルメントしてステップ実行すると、デフォルトでは@code{symbol-function}呼び出しは多数の@code{edebug-after}フォームと@code{edebug-before}フォームをもつことになり、それにより実際の結果の確認が難しくなり得る。@code{edebug-unwrap-results}が非@code{nil}ならEdebugは結果からこれらのフォームの削除を試みる。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1680
+#: original_texis/edebug.texi:1681
 #, no-wrap
 msgid "edebug-on-error"
 msgstr "edebug-on-error"
 
 #. type: defopt
-#: original_texis/edebug.texi:1684
+#: original_texis/edebug.texi:1685
 msgid "Edebug binds @code{debug-on-error} to this value, if @code{debug-on-error} was previously @code{nil}.  @xref{Trapping Errors}."
 msgstr "@code{debug-on-error}が以前@code{nil}だったら、Edebugは@code{debug-on-error}をこの値にバインドする。@ref{Trapping Errors}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1686
+#: original_texis/edebug.texi:1687
 #, no-wrap
 msgid "edebug-on-quit"
 msgstr "edebug-on-quit"
 
 #. type: defopt
-#: original_texis/edebug.texi:1690
+#: original_texis/edebug.texi:1691
 msgid "Edebug binds @code{debug-on-quit} to this value, if @code{debug-on-quit} was previously @code{nil}.  @xref{Trapping Errors}."
 msgstr "@code{debug-on-quit}の以前の値が@code{nil}なら、Edebugは@code{debug-on-quit}にこの値をバインドする。@ref{Trapping Errors}を参照のこと。"
 
 #. type: Plain text
-#: original_texis/edebug.texi:1697
+#: original_texis/edebug.texi:1698
 msgid "If you change the values of @code{edebug-on-error} or @code{edebug-on-quit} while Edebug is active, their values won't be used until the @emph{next} time Edebug is invoked via a new command."
 msgstr "Edebugがアクティブな間に@code{edebug-on-error}か@code{edebug-on-quit}の値を変更したら、@emph{次回}に新たなコマンドを通じてEdebugが呼び出されるまでこれらの値は使用されない。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1698
+#: original_texis/edebug.texi:1699
 #, no-wrap
 msgid "edebug-global-break-condition"
 msgstr "edebug-global-break-condition"
 
 #. type: defopt
-#: original_texis/edebug.texi:1702
+#: original_texis/edebug.texi:1703
 msgid "If non-@code{nil}, an expression to test for at every stop point.  If the result is non-@code{nil}, then break.  Errors are ignored.  @xref{Global Break Condition}."
 msgstr "非@code{nil}なら、値はすべてのステップポイントでテストされる式である。式の結果が@code{nil}ならbreakする。エラーは無視される。@ref{Global Break Condition}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1707
+#: original_texis/edebug.texi:1708
 msgid "Number of seconds to pause when a breakpoint is reached and the execution mode is trace or continue.  @xref{Edebug Execution Modes}."
-msgstr ""
+msgstr "実行モードがtraceかcontinueでbreakpointに達した際に一時停止する秒数。@ref{Edebug Execution Modes}を参照のこと。"
 
 #. type: defopt
-#: original_texis/edebug.texi:1709
-#, fuzzy, no-wrap
-#| msgid "edebug-sit-for-seconds"
+#: original_texis/edebug.texi:1710
+#, no-wrap
 msgid "edebug-sit-on-break"
-msgstr "edebug-sit-for-seconds"
+msgstr "edebug-sit-on-break"
 
 #. type: defopt
-#: original_texis/edebug.texi:1713
+#: original_texis/edebug.texi:1714
 msgid "Whether or not to pause for @code{edebug-sit-for-seconds} on reaching a breakpoint.  Set to @code{nil} to prevent the pause, non-@code{nil} to allow it."
-msgstr ""
+msgstr "breakpointに達したときに@code{edebug-sit-for-seconds}の間、一時停止するかどうか。@code{nil}で一時停止の抑止、非@code{nil}なら一時停止を許可。"
