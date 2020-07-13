@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-06-14 22:38+0900\n"
-"PO-Revision-Date: 2020-06-15 17:44+0900\n"
+"PO-Revision-Date: 2020-07-13 19:42+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -403,13 +403,13 @@ msgstr "symbol evaluation"
 #: original_texis/eval.texi:183
 #, no-wrap
 msgid "symbol forms"
-msgstr ""
+msgstr "symbol forms"
 
 #. type: cindex
 #: original_texis/eval.texi:184
 #, no-wrap
 msgid "forms, symbol"
-msgstr ""
+msgstr "forms, symbol"
 
 #. type: Plain text
 #: original_texis/eval.texi:190
@@ -472,7 +472,7 @@ msgstr "list form evaluation"
 #: original_texis/eval.texi:221
 #, no-wrap
 msgid "forms, list"
-msgstr ""
+msgstr "forms, list"
 
 #. type: Plain text
 #: original_texis/eval.texi:228
@@ -706,10 +706,9 @@ msgstr "function call"
 
 #. type: cindex
 #: original_texis/eval.texi:356
-#, fuzzy, no-wrap
-#| msgid "function call"
+#, no-wrap
 msgid "forms, function call"
-msgstr "function call"
+msgstr "forms, function call"
 
 #. type: Plain text
 #: original_texis/eval.texi:362
@@ -743,7 +742,7 @@ msgstr "macro call evaluation"
 #: original_texis/eval.texi:380
 #, no-wrap
 msgid "forms, macro call"
-msgstr ""
+msgstr "forms, macro call"
 
 #. type: Plain text
 #: original_texis/eval.texi:391
@@ -806,7 +805,7 @@ msgstr "special forms"
 #: original_texis/eval.texi:427
 #, no-wrap
 msgid "forms, special"
-msgstr ""
+msgstr "forms, special"
 
 #. type: cindex
 #: original_texis/eval.texi:428
@@ -1094,7 +1093,7 @@ msgstr "@dfn{オートロード(autoload)}機能により、まだ関数定義�
 #: original_texis/eval.texi:549
 #, no-wrap
 msgid "forms, quote"
-msgstr ""
+msgstr "forms, quote"
 
 #. type: Plain text
 #: original_texis/eval.texi:556
@@ -1225,10 +1224,9 @@ msgstr "`"
 
 #. type: cindex
 #: original_texis/eval.texi:609
-#, fuzzy, no-wrap
-#| msgid "Backquote"
+#, no-wrap
 msgid "forms, backquote"
-msgstr "Backquote"
+msgstr "forms, backquote"
 
 #. type: Plain text
 #: original_texis/eval.texi:614
