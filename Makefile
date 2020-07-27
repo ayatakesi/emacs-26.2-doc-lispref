@@ -39,6 +39,7 @@ customize.texi \
 hash.texi \
 macros.texi \
 sequences.texi \
+records.texi \
 variables.texi \
 eval.texi \
 intro.texi \
@@ -103,8 +104,10 @@ clean:
 	then \
 		JA_TEXI=$$(printf "%s%s%s" $* ${JA_SUFFIX} .texi); \
 		./_convert.sh; \
-		po4a-translate -f texinfo -k 0 -M utf8 -m original_texis/$@ -p $@.po -l $${JA_TEXI}; \
-		./replace.sh $${JA_TEXI}; \
+		po4a-translate -f texinfo -k 0 -M utf8 -m original_texis/$@ -p $@.po -l $${JA_TEXI}.1; \
+		msgfmt -o TITLES/ja/LC_MESSAGES/$@.mo TITLES/ja/LC_MESSAGES/$@.po; \
+		cat $${JA_TEXI}.1 | LANGUAGE=ja perl TITLES/src/$@.pl >$${JA_TEXI}; \
+		rm -f $${JA_TEXI}.1; \
 	else \
 		cp -pf original_texis/$@ $@; \
 	fi; \
