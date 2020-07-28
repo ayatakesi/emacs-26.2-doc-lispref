@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 02:27+0900\n"
-"PO-Revision-Date: 2020-07-27 20:18+0900\n"
+"PO-Revision-Date: 2020-07-28 21:37+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -69,39 +69,32 @@ msgid "@section Switching to a Buffer in a Window"
 msgstr "@section ウィンドウ内のバッファーへの切り替え"
 
 #: TITLES/src/windows.texi.pl:18
-#, fuzzy
 msgid "@section Displaying a Buffer in a Suitable Window"
-msgstr "@subsection サイドウィンドウへのバッファーの表示"
+msgstr "@section 適切なウィンドウへのバッファーの表示"
 
 #: TITLES/src/windows.texi.pl:19
-#, fuzzy
 msgid "@subsection Choosing a Window for Displaying a Buffer"
-msgstr "@section 表示するウィンドウの選択"
+msgstr "@subsection バッファーを表示するウィンドウの選択"
 
 #: TITLES/src/windows.texi.pl:20
-#, fuzzy
 msgid "@subsection Action Functions for Buffer Display"
-msgstr "@section @code{display-buffer}にたいするアクション関数"
+msgstr "@subsection バッファー表示用のアクション関数"
 
 #: TITLES/src/windows.texi.pl:21
-#, fuzzy
 msgid "@subsection Action Alists for Buffer Display"
-msgstr "@section @code{display-buffer}にたいするアクション関数"
+msgstr "@subsection バッファー表示用のアクションalist"
 
 #: TITLES/src/windows.texi.pl:22
-#, fuzzy
 msgid "@subsection Additional Options for Displaying Buffers"
-msgstr "@section バッファー表示の追加オプション"
+msgstr "@subsection バッファー表示の追加オプション"
 
 #: TITLES/src/windows.texi.pl:23
-#, fuzzy
 msgid "@subsection Precedence of Action Functions"
-msgstr "@subsection サイドウィンドウのオプションと関数"
+msgstr "@subsection アクション関数の優先順"
 
 #: TITLES/src/windows.texi.pl:24
-#, fuzzy
 msgid "@subsection The Zen of Buffer Display"
-msgstr "@section 表示するウィンドウの選択"
+msgstr "@section バッファー表示の思想"
 
 #: TITLES/src/windows.texi.pl:25
 msgid "@section Window History"
