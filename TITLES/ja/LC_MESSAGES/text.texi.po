@@ -3,240 +3,239 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 02:27+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-07-27 21:53+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: TITLES/src/text.texi.pl:5
 msgid "@chapter Text"
-msgstr ""
+msgstr "@chapter テキスト"
 
 #: TITLES/src/text.texi.pl:6
 msgid "@section Examining Text Near Point"
-msgstr ""
+msgstr "@section ポイント近傍のテキストを調べる"
 
 #: TITLES/src/text.texi.pl:7
 msgid "@section Examining Buffer Contents"
-msgstr ""
+msgstr "@section バッファーのコンテンツを調べる"
 
 #: TITLES/src/text.texi.pl:8
 msgid "@section Comparing Text"
-msgstr ""
+msgstr "@section テキストの比較"
 
 #: TITLES/src/text.texi.pl:9
 msgid "@section Inserting Text"
-msgstr ""
+msgstr "@section テキストの挿入"
 
 #: TITLES/src/text.texi.pl:10
 msgid "@section User-Level Insertion Commands"
-msgstr ""
+msgstr "@section ユーザーレベルの挿入コマンド"
 
 #: TITLES/src/text.texi.pl:11
 msgid "@section Deleting Text"
-msgstr ""
+msgstr "@section テキストの削除"
 
 #: TITLES/src/text.texi.pl:12
 msgid "@section User-Level Deletion Commands"
-msgstr ""
+msgstr "@section ユーザーレベルの削除コマンド"
 
 #: TITLES/src/text.texi.pl:13
 msgid "@section The Kill Ring"
-msgstr ""
+msgstr "@section killリング"
 
 #: TITLES/src/text.texi.pl:14
 msgid "@subsection Kill Ring Concepts"
-msgstr ""
+msgstr "@subsection killリングの概念"
 
 #: TITLES/src/text.texi.pl:15
 msgid "@subsection Functions for Killing"
-msgstr ""
+msgstr "@subsection kill用の関数"
 
 #: TITLES/src/text.texi.pl:16
 msgid "@subsection Yanking"
-msgstr ""
+msgstr "@subsection yank"
 
 #: TITLES/src/text.texi.pl:17
 msgid "@subsection Functions for Yanking"
-msgstr ""
+msgstr "@subsection yank用の関数"
 
 #: TITLES/src/text.texi.pl:18
 msgid "@subsection Low-Level Kill Ring"
-msgstr ""
+msgstr "@subsection 低レベルのkillリング"
 
 #: TITLES/src/text.texi.pl:19
 msgid "@subsection Internals of the Kill Ring"
-msgstr ""
+msgstr "@subsection killリングの内部"
 
 #: TITLES/src/text.texi.pl:20
 msgid "@section Undo"
-msgstr ""
+msgstr "@section アンドゥ"
 
 #: TITLES/src/text.texi.pl:21
 msgid "@section Maintaining Undo Lists"
-msgstr ""
+msgstr "@section アンドゥリストの保守"
 
 #: TITLES/src/text.texi.pl:22
 msgid "@section Filling"
-msgstr ""
+msgstr "@section fill"
 
 #: TITLES/src/text.texi.pl:23
 msgid "@section Margins for Filling"
-msgstr ""
+msgstr "@section fillのマージン"
 
 #: TITLES/src/text.texi.pl:24
 msgid "@section Adaptive Fill Mode"
-msgstr ""
+msgstr "@section Adaptive Fillモード"
 
 #: TITLES/src/text.texi.pl:25
 msgid "@section Auto Filling"
-msgstr ""
+msgstr "@section オートfill"
 
 #: TITLES/src/text.texi.pl:26
 msgid "@section Sorting Text"
-msgstr ""
+msgstr "@section テキストのソート"
 
 #: TITLES/src/text.texi.pl:27
 msgid "@section Counting Columns"
-msgstr ""
+msgstr "@section 列を数える"
 
 #: TITLES/src/text.texi.pl:28
 msgid "@section Indentation"
-msgstr ""
+msgstr "@section インデント"
 
 #: TITLES/src/text.texi.pl:29
 msgid "@subsection Indentation Primitives"
-msgstr ""
+msgstr "@subsection インデント用のプリミティブ"
 
 #: TITLES/src/text.texi.pl:30
 msgid "@subsection Indentation Controlled by Major Mode"
-msgstr ""
+msgstr "@subsection メジャーモードが制御するインデント"
 
 #: TITLES/src/text.texi.pl:31
 msgid "@subsection Indenting an Entire Region"
-msgstr ""
+msgstr "@subsection リージョン全体のインデント"
 
 #: TITLES/src/text.texi.pl:32
 msgid "@subsection Indentation Relative to Previous Lines"
-msgstr ""
+msgstr "@subsection 前行に相対的なインデント"
 
 #: TITLES/src/text.texi.pl:33
 msgid "@subsection Adjustable Tab Stops"
-msgstr ""
+msgstr "@subsection 調整可能なタブストップ"
 
 #: TITLES/src/text.texi.pl:34
 msgid "@subsection Indentation-Based Motion Commands"
-msgstr ""
+msgstr "@subsection インデントにもとづくモーションコマンド"
 
 #: TITLES/src/text.texi.pl:35
 msgid "@section Case Changes"
-msgstr ""
+msgstr "@section 大文字小文字の変更"
 
 #: TITLES/src/text.texi.pl:36
 msgid "@section Text Properties"
-msgstr ""
+msgstr "@section テキストのプロパティ"
 
 #: TITLES/src/text.texi.pl:37
 msgid "@subsection Examining Text Properties"
-msgstr ""
+msgstr "@subsection テキストプロパティを調べる"
 
 #: TITLES/src/text.texi.pl:38
 msgid "@subsection Changing Text Properties"
-msgstr ""
+msgstr "@subsection テキストプロパティの変更"
 
 #: TITLES/src/text.texi.pl:39
 msgid "@subsection Text Property Search Functions"
-msgstr ""
+msgstr "@subsection テキストプロパティの検索関数"
 
 #: TITLES/src/text.texi.pl:40
 msgid "@subsection Properties with Special Meanings"
-msgstr ""
+msgstr "@subsection 特殊な意味をもつプロパティ"
 
 #: TITLES/src/text.texi.pl:41
 msgid "@subsection Formatted Text Properties"
-msgstr ""
+msgstr "@subsection フォーマットされたテキストのプロパティ"
 
 #: TITLES/src/text.texi.pl:42
 msgid "@subsection Stickiness of Text Properties"
-msgstr ""
+msgstr "@subsection テキストプロパティの粘着性"
 
 #: TITLES/src/text.texi.pl:43
 msgid "@subsection Lazy Computation of Text Properties"
-msgstr ""
+msgstr "@subsection テキストプロパティのlazyな計算"
 
 #: TITLES/src/text.texi.pl:44
 msgid "@subsection Defining Clickable Text"
-msgstr ""
+msgstr "@subsection クリック可能なテキストの定義"
 
 #: TITLES/src/text.texi.pl:45
 msgid "@subsection Defining and Using Fields"
-msgstr ""
+msgstr "@subsection フィールドの定義と使用"
 
 #: TITLES/src/text.texi.pl:46
 msgid "@subsection Why Text Properties are not Intervals"
-msgstr ""
+msgstr "@subsection なぜテキストプロパティはインターバルではないのか"
 
 #: TITLES/src/text.texi.pl:47
 msgid "@section Substituting for a Character Code"
-msgstr ""
+msgstr "@section 文字コードの置き換え"
 
 #: TITLES/src/text.texi.pl:48
 msgid "@section Registers"
-msgstr ""
+msgstr "@section レジスター"
 
 #: TITLES/src/text.texi.pl:49
 msgid "@section Transposition of Text"
-msgstr ""
+msgstr "@section テキストの交換"
 
 #: TITLES/src/text.texi.pl:50
 msgid "@section Replacing Buffer Text"
-msgstr ""
+msgstr "@section バッファーテキストの置換"
 
 #: TITLES/src/text.texi.pl:51
 msgid "@section Dealing With Compressed Data"
-msgstr ""
+msgstr "@section 圧縮されたデータの処理"
 
 #: TITLES/src/text.texi.pl:52
 msgid "@section Base 64 Encoding"
-msgstr ""
+msgstr "@section Base 64エンコーディング"
 
 #: TITLES/src/text.texi.pl:53
 msgid "@section Checksum/Hash"
-msgstr ""
+msgstr "@section チェックサムとハッシュ"
 
 #: TITLES/src/text.texi.pl:54
 msgid "@section GnuTLS Cryptography"
-msgstr ""
+msgstr "@section GnuTLS暗号化"
 
 #: TITLES/src/text.texi.pl:55
 msgid "@subsection Format of GnuTLS Cryptography Inputs"
-msgstr ""
+msgstr "@subsection GnuTLS暗号化入力のフォーマット"
 
 #: TITLES/src/text.texi.pl:56
 msgid "@subsection GnuTLS Cryptographic Functions"
-msgstr ""
+msgstr "@subsection GnuTLS暗号化関数"
 
 #: TITLES/src/text.texi.pl:57
 msgid "@section Parsing HTML and XML"
-msgstr ""
+msgstr "@section HTMLとXMLの解析"
 
 #: TITLES/src/text.texi.pl:58
 msgid "@subsection Document Object Model"
-msgstr ""
+msgstr "@subsection ドキュメントオブジェクトモデル"
 
 #: TITLES/src/text.texi.pl:59
 msgid "@section Atomic Change Groups"
-msgstr ""
+msgstr "@section グループのアトミックな変更"
 
 #: TITLES/src/text.texi.pl:60
 msgid "@section Change Hooks"
-msgstr ""
+msgstr "@section フックの変更"

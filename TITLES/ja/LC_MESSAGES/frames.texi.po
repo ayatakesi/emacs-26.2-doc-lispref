@@ -3,196 +3,195 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 02:27+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-07-27 20:30+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: TITLES/src/frames.texi.pl:5
 msgid "@chapter Frames"
-msgstr ""
+msgstr "@chapter フレーム"
 
 #: TITLES/src/frames.texi.pl:6
 msgid "@section Creating Frames"
-msgstr ""
+msgstr "@section フレームの作成"
 
 #: TITLES/src/frames.texi.pl:7
 msgid "@section Multiple Terminals"
-msgstr ""
+msgstr "@section 複数の端末"
 
 #: TITLES/src/frames.texi.pl:8
 msgid "@section Frame Geometry"
-msgstr ""
+msgstr "@section フレームのジオメトリー"
 
 #: TITLES/src/frames.texi.pl:9
 msgid "@subsection Frame Layout"
-msgstr ""
+msgstr "@subsection フレームのレイアウト"
 
 #: TITLES/src/frames.texi.pl:10
 msgid "@subsection Frame Font"
-msgstr ""
+msgstr "@subsection フレームのフォント"
 
 #: TITLES/src/frames.texi.pl:11
 msgid "@subsection Frame Position"
-msgstr ""
+msgstr "@subsection フレームの位置"
 
 #: TITLES/src/frames.texi.pl:12
 msgid "@subsection Frame Size"
-msgstr ""
+msgstr "@subsection フレームのサイズ"
 
 #: TITLES/src/frames.texi.pl:13
 msgid "@subsection Implied Frame Resizing"
-msgstr ""
+msgstr "@subsection フレームの暗黙的なリサイズ"
 
 #: TITLES/src/frames.texi.pl:14
 msgid "@section Frame Parameters"
-msgstr ""
+msgstr "@section フレームのパラメーター"
 
 #: TITLES/src/frames.texi.pl:15
 msgid "@subsection Access to Frame Parameters"
-msgstr ""
+msgstr "@subsection フレームパラメーターへのアクセス"
 
 #: TITLES/src/frames.texi.pl:16
 msgid "@subsection Initial Frame Parameters"
-msgstr ""
+msgstr "@subsection フレームの初期パラメーター"
 
 #: TITLES/src/frames.texi.pl:17
 msgid "@subsection Window Frame Parameters"
-msgstr ""
+msgstr "@subsection ウィンドウフレームパラメーター"
 
 #: TITLES/src/frames.texi.pl:18
 msgid "@subsubsection Basic Parameters"
-msgstr ""
+msgstr "@subsubsection 基本パラメーター"
 
 #: TITLES/src/frames.texi.pl:19
 msgid "@subsubsection Position Parameters"
-msgstr ""
+msgstr "@subsubsection 位置のパラメーター"
 
 #: TITLES/src/frames.texi.pl:20
 msgid "@subsubsection Size Parameters"
-msgstr ""
+msgstr "@subsubsection サイズのパラメーター"
 
 #: TITLES/src/frames.texi.pl:21
 msgid "@subsubsection Layout Parameters"
-msgstr ""
+msgstr "@subsubsection レイアウトのパラメーター"
 
 #: TITLES/src/frames.texi.pl:22
 msgid "@subsubsection Buffer Parameters"
-msgstr ""
+msgstr "@subsubsection バッファーのパラメーター"
 
 #: TITLES/src/frames.texi.pl:23
 msgid "@subsubsection Frame Interaction Parameters"
-msgstr ""
+msgstr "@subsubsection フレームとの相互作用のためのパラメーター"
 
 #: TITLES/src/frames.texi.pl:24
 msgid "@subsubsection Mouse Dragging Parameters"
-msgstr ""
+msgstr "@subsubsection マウスドラッグのパラメーター"
 
 #: TITLES/src/frames.texi.pl:25
 msgid "@subsubsection Window Management Parameters"
-msgstr ""
+msgstr "@subsubsection ウィンドウ管理のパラメーター"
 
 #: TITLES/src/frames.texi.pl:26
 msgid "@subsubsection Cursor Parameters"
-msgstr ""
+msgstr "@subsubsection カーソルのパラメーター"
 
 #: TITLES/src/frames.texi.pl:27
 msgid "@subsubsection Font and Color Parameters"
-msgstr ""
+msgstr "@subsubsection フォントとカラーのパラメーター"
 
 #: TITLES/src/frames.texi.pl:28
 msgid "@subsection Geometry"
-msgstr ""
+msgstr "@subsection ジオメトリー"
 
 #: TITLES/src/frames.texi.pl:29
 msgid "@section Terminal Parameters"
-msgstr ""
+msgstr "@section 端末のパラメーター"
 
 #: TITLES/src/frames.texi.pl:30
 msgid "@section Frame Titles"
-msgstr ""
+msgstr "@section フレームのタイトル"
 
 #: TITLES/src/frames.texi.pl:31
 msgid "@section Deleting Frames"
-msgstr ""
+msgstr "@section フレームの削除"
 
 #: TITLES/src/frames.texi.pl:32
 msgid "@section Finding All Frames"
-msgstr ""
+msgstr "@section すべてのフレームを探す"
 
 #: TITLES/src/frames.texi.pl:33
 msgid "@section Minibuffers and Frames"
-msgstr ""
+msgstr "@section ミニバッファーとフレーム"
 
 #: TITLES/src/frames.texi.pl:34
 msgid "@section Input Focus"
-msgstr ""
+msgstr "@section 入力のフォーカス"
 
 #: TITLES/src/frames.texi.pl:35
 msgid "@section Visibility of Frames"
-msgstr ""
+msgstr "@section フレームの可視性"
 
 #: TITLES/src/frames.texi.pl:36
 msgid "@section Raising, Lowering and Restacking Frames"
-msgstr ""
+msgstr "@section フレームのraise、lower、re-stack"
 
 #: TITLES/src/frames.texi.pl:37
 msgid "@section Frame Configurations"
-msgstr ""
+msgstr "@section フレーム構成"
 
 #: TITLES/src/frames.texi.pl:38
 msgid "@section Child Frames"
-msgstr ""
+msgstr "@section 子フレーム"
 
 #: TITLES/src/frames.texi.pl:39
 msgid "@section Mouse Tracking"
-msgstr ""
+msgstr "@section マウスの追跡"
 
 #: TITLES/src/frames.texi.pl:40
 msgid "@section Mouse Position"
-msgstr ""
+msgstr "@section マウスの位置"
 
 #: TITLES/src/frames.texi.pl:41
 msgid "@section Pop-Up Menus"
-msgstr ""
+msgstr "@section ポップアップメニュー"
 
 #: TITLES/src/frames.texi.pl:42
 msgid "@section Dialog Boxes"
-msgstr ""
+msgstr "@section ダイアログボックス"
 
 #: TITLES/src/frames.texi.pl:43
 msgid "@section Pointer Shape"
-msgstr ""
+msgstr "@section ポインターの形状"
 
 #: TITLES/src/frames.texi.pl:44
 msgid "@section Window System Selections"
-msgstr ""
+msgstr "@section ウィンドウシステムによる選択"
 
 #: TITLES/src/frames.texi.pl:45
 msgid "@section Drag and Drop"
-msgstr ""
+msgstr "@section ドラッグアンドドロップ"
 
 #: TITLES/src/frames.texi.pl:46
 msgid "@section Color Names"
-msgstr ""
+msgstr "@section カラー名"
 
 #: TITLES/src/frames.texi.pl:47
 msgid "@section Text Terminal Colors"
-msgstr ""
+msgstr "@section テキスト端末のカラー"
 
 #: TITLES/src/frames.texi.pl:48
 msgid "@section X Resources"
-msgstr ""
+msgstr "@section Xリソース"
 
 #: TITLES/src/frames.texi.pl:49
 msgid "@section Display Feature Testing"
-msgstr ""
+msgstr "@section ディスプレー機能のテスト"

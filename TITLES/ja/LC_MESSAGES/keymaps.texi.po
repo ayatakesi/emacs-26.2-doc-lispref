@@ -9,134 +9,134 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 02:27+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-07-27 01:41+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: TITLES/src/keymaps.texi.pl:5
 msgid "@chapter Keymaps"
-msgstr ""
+msgstr "@chapter キーマップ"
 
 #: TITLES/src/keymaps.texi.pl:6
 msgid "@section Key Sequences"
-msgstr ""
+msgstr "@section キーシーケンス"
 
 #: TITLES/src/keymaps.texi.pl:7
 msgid "@section Keymap Basics"
-msgstr ""
+msgstr "@section キーマップの基礎"
 
 #: TITLES/src/keymaps.texi.pl:8
 msgid "@section Format of Keymaps"
-msgstr ""
+msgstr "@section キーマップのフォーマット"
 
 #: TITLES/src/keymaps.texi.pl:9
 msgid "@section Creating Keymaps"
-msgstr ""
+msgstr "@section キーマップの作成"
 
 #: TITLES/src/keymaps.texi.pl:10
 msgid "@section Inheritance and Keymaps"
-msgstr ""
+msgstr "@section 継承とキーマップ"
 
 #: TITLES/src/keymaps.texi.pl:11
 msgid "@section Prefix Keys"
-msgstr ""
+msgstr "@section プレフィクスキー"
 
 #: TITLES/src/keymaps.texi.pl:12
 msgid "@section Active Keymaps"
-msgstr ""
+msgstr "@section アクティブなキーマップ"
 
 #: TITLES/src/keymaps.texi.pl:13
 msgid "@section Searching the Active Keymaps"
-msgstr ""
+msgstr "@section アクティブなキーマップの検索"
 
 #: TITLES/src/keymaps.texi.pl:14
 msgid "@section Controlling the Active Keymaps"
-msgstr ""
+msgstr "@section アクティブなキーマップの制御"
 
 #: TITLES/src/keymaps.texi.pl:15
 msgid "@section Key Lookup"
-msgstr ""
+msgstr "@section キーの照合"
 
 #: TITLES/src/keymaps.texi.pl:16
 msgid "@section Functions for Key Lookup"
-msgstr ""
+msgstr "@section キー照合のための関数"
 
 #: TITLES/src/keymaps.texi.pl:17
 msgid "@section Changing Key Bindings"
-msgstr ""
+msgstr "@section キーバインディングの変更"
 
 #: TITLES/src/keymaps.texi.pl:18
 msgid "@section Remapping Commands"
-msgstr ""
+msgstr "@section コマンドのリマップ"
 
 #: TITLES/src/keymaps.texi.pl:19
 msgid "@section Keymaps for Translating Sequences of Events"
-msgstr ""
+msgstr "@section イベントシーケンス変換のためのキーマップ"
 
 #: TITLES/src/keymaps.texi.pl:20
 msgid "@subsection Interaction with normal keymaps"
-msgstr ""
+msgstr "@subsection 通常のキーマップとの対話"
 
 #: TITLES/src/keymaps.texi.pl:21
 msgid "@section Commands for Binding Keys"
-msgstr ""
+msgstr "@section キーのバインドのためのコマンド"
 
 #: TITLES/src/keymaps.texi.pl:22
 msgid "@section Scanning Keymaps"
-msgstr ""
+msgstr "@section キーマップのスキャン"
 
 #: TITLES/src/keymaps.texi.pl:23
 msgid "@section Menu Keymaps"
-msgstr ""
+msgstr "@section メニューキーアップ"
 
 #: TITLES/src/keymaps.texi.pl:24
 msgid "@subsection Defining Menus"
-msgstr ""
+msgstr "@subsection メニューの定義"
 
 #: TITLES/src/keymaps.texi.pl:25
 msgid "@subsubsection Simple Menu Items"
-msgstr ""
+msgstr "@subsubsection 単純なメニューアイテム"
 
 #: TITLES/src/keymaps.texi.pl:26
 msgid "@subsubsection Extended Menu Items"
-msgstr ""
+msgstr "@subsubsection 拡張メニューアイテム"
 
 #: TITLES/src/keymaps.texi.pl:27
 msgid "@subsubsection Menu Separators"
-msgstr ""
+msgstr "@subsubsection メニューセパレーター"
 
 #: TITLES/src/keymaps.texi.pl:28
 msgid "@subsubsection Alias Menu Items"
-msgstr ""
+msgstr "@subsubsection メニューアイテムのエイリアス"
 
 #: TITLES/src/keymaps.texi.pl:29
 msgid "@subsection Menus and the Mouse"
-msgstr ""
+msgstr "@subsection メニューとマウス"
 
 #: TITLES/src/keymaps.texi.pl:30
 msgid "@subsection Menus and the Keyboard"
-msgstr ""
+msgstr "@subsection メニューとキーボード"
 
 #: TITLES/src/keymaps.texi.pl:31
 msgid "@subsection Menu Example"
-msgstr ""
+msgstr "@subsection メニューの例"
 
 #: TITLES/src/keymaps.texi.pl:32
 msgid "@subsection The Menu Bar"
-msgstr ""
+msgstr "@subsection メニューバー"
 
 #: TITLES/src/keymaps.texi.pl:33
 msgid "@subsection Tool bars"
-msgstr ""
+msgstr "@subsection ツールバー"
 
 #: TITLES/src/keymaps.texi.pl:34
 msgid "@subsection Modifying Menus"
-msgstr ""
+msgstr "@subsection メニューの変更"
 
 #: TITLES/src/keymaps.texi.pl:35
 msgid "@subsection Easy Menu"
-msgstr ""
+msgstr "@subsection easy-menu"

@@ -3,353 +3,352 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 02:27+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-07-28 00:51+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: TITLES/src/display.texi.pl:5
 msgid "@chapter Emacs Display"
-msgstr ""
+msgstr "@chapter Emacsのディスプレー表示"
 
 #: TITLES/src/display.texi.pl:6
 msgid "@section Refreshing the Screen"
-msgstr ""
+msgstr "@section スクリーンのリフレッシュ"
 
 #: TITLES/src/display.texi.pl:7
 msgid "@section Forcing Redisplay"
-msgstr ""
+msgstr "@section 強制的な再表示"
 
 #: TITLES/src/display.texi.pl:8
 msgid "@section Truncation"
-msgstr ""
+msgstr "@section 切り詰め"
 
 #: TITLES/src/display.texi.pl:9
 msgid "@section The Echo Area"
-msgstr ""
+msgstr "@section エコーエリア"
 
 #: TITLES/src/display.texi.pl:10
 msgid "@subsection Displaying Messages in the Echo Area"
-msgstr ""
+msgstr "@subsection エコーエリアへのメッセージの表示"
 
 #: TITLES/src/display.texi.pl:11
 msgid "@subsection Reporting Operation Progress"
-msgstr ""
+msgstr "@subsection 処理の進捗レポート"
 
 #: TITLES/src/display.texi.pl:12
 msgid "@subsection Logging Messages in @file{*Messages*}"
-msgstr ""
+msgstr "@subsection @file{*Messages*}へのメッセージのロギング"
 
 #: TITLES/src/display.texi.pl:13
 msgid "@subsection Echo Area Customization"
-msgstr ""
+msgstr "@subsection エコーエリアのカスタマイズ"
 
 #: TITLES/src/display.texi.pl:14
 msgid "@section Reporting Warnings"
-msgstr ""
+msgstr "@section 警告のレポート"
 
 #: TITLES/src/display.texi.pl:15
 msgid "@subsection Warning Basics"
-msgstr ""
+msgstr "@subsection 警告の基礎"
 
 #: TITLES/src/display.texi.pl:16
 msgid "@subsection Warning Variables"
-msgstr ""
+msgstr "@subsection 警告のための変数"
 
 #: TITLES/src/display.texi.pl:17
 msgid "@subsection Warning Options"
-msgstr ""
+msgstr "@subsection 警告のためのオプション"
 
 #: TITLES/src/display.texi.pl:18
 msgid "@subsection Delayed Warnings"
-msgstr ""
+msgstr "@subsection 遅延された警告"
 
 #: TITLES/src/display.texi.pl:19
 msgid "@section Invisible Text"
-msgstr ""
+msgstr "@section 不可視のテキスト"
 
 #: TITLES/src/display.texi.pl:20
 msgid "@section Selective Display"
-msgstr ""
+msgstr "@section 選択的な表示"
 
 #: TITLES/src/display.texi.pl:21
 msgid "@section Temporary Displays"
-msgstr ""
+msgstr "@section 一時的な表示"
 
 #: TITLES/src/display.texi.pl:22
 msgid "@section Overlays"
-msgstr ""
+msgstr "@section オーバーレイ"
 
 #: TITLES/src/display.texi.pl:23
 msgid "@subsection Managing Overlays"
-msgstr ""
+msgstr "@subsection オーバーレイの管理"
 
 #: TITLES/src/display.texi.pl:24
 msgid "@subsection Overlay Properties"
-msgstr ""
+msgstr "@subsection オーバーレイのプロパティ"
 
 #: TITLES/src/display.texi.pl:25
 msgid "@subsection Searching for Overlays"
-msgstr ""
+msgstr "@subsection オーバーレイにたいする検索"
 
 #: TITLES/src/display.texi.pl:26
 msgid "@section Size of Displayed Text"
-msgstr ""
+msgstr "@section 表示されるテキストのサイズ"
 
 #: TITLES/src/display.texi.pl:27
 msgid "@section Line Height"
-msgstr ""
+msgstr "@section 行の高さ"
 
 #: TITLES/src/display.texi.pl:28
 msgid "@section Faces"
-msgstr ""
+msgstr "@section フェイス"
 
 #: TITLES/src/display.texi.pl:29
 msgid "@subsection Face Attributes"
-msgstr ""
+msgstr "@subsection フェイスの属性"
 
 #: TITLES/src/display.texi.pl:30
 msgid "@subsection Defining Faces"
-msgstr ""
+msgstr "@subsection フェイスの定義"
 
 #: TITLES/src/display.texi.pl:31
 msgid "@subsection Face Attribute Functions"
-msgstr ""
+msgstr "@subsection フェイス属性のための関数"
 
 #: TITLES/src/display.texi.pl:32
 msgid "@subsection Displaying Faces"
-msgstr ""
+msgstr "@subsection フェイスの表示"
 
 #: TITLES/src/display.texi.pl:33
 msgid "@subsection Face Remapping"
-msgstr ""
+msgstr "@subsection フェイスのリマップ"
 
 #: TITLES/src/display.texi.pl:34
 msgid "@subsection Functions for Working with Faces"
-msgstr ""
+msgstr "@subsection フェイスを処理するための関数"
 
 #: TITLES/src/display.texi.pl:35
 msgid "@subsection Automatic Face Assignment"
-msgstr ""
+msgstr "@subsection フェイスの自動割り当て"
 
 #: TITLES/src/display.texi.pl:36
 msgid "@subsection Basic Faces"
-msgstr ""
+msgstr "@subsection 基本的なフェイス"
 
 #: TITLES/src/display.texi.pl:37
 msgid "@subsection Font Selection"
-msgstr ""
+msgstr "@subsection フォントの選択"
 
 #: TITLES/src/display.texi.pl:38
 msgid "@subsection Looking Up Fonts"
-msgstr ""
+msgstr "@subsection フォントの照会"
 
 #: TITLES/src/display.texi.pl:39
 msgid "@subsection Fontsets"
-msgstr ""
+msgstr "@subsection フォントセット"
 
 #: TITLES/src/display.texi.pl:40
 msgid "@subsection Low-Level Font Representation"
-msgstr ""
+msgstr "@subsection 低レベルのフォント表現"
 
 #: TITLES/src/display.texi.pl:41
 msgid "@section Fringes"
-msgstr ""
+msgstr "@section フリンジ"
 
 #: TITLES/src/display.texi.pl:42
 msgid "@subsection Fringe Size and Position"
-msgstr ""
+msgstr "@subsection フリンジのサイズと位置"
 
 #: TITLES/src/display.texi.pl:43
 msgid "@subsection Fringe Indicators"
-msgstr ""
+msgstr "@subsection フリンジのインジケーター"
 
 #: TITLES/src/display.texi.pl:44
 msgid "@subsection Fringe Cursors"
-msgstr ""
+msgstr "@subsection フリンジのカーソルFrin"
 
 #: TITLES/src/display.texi.pl:45
 msgid "@subsection Fringe Bitmaps"
-msgstr ""
+msgstr "@subsection フリンジのビットマップ"
 
 #: TITLES/src/display.texi.pl:46
 msgid "@subsection Customizing Fringe Bitmaps"
-msgstr ""
+msgstr "@subsection フリンジビットマップのカスタマイズ"
 
 #: TITLES/src/display.texi.pl:47
 msgid "@subsection The Overlay Arrow"
-msgstr ""
+msgstr "@subsection オーバーレイ矢印"
 
 #: TITLES/src/display.texi.pl:48
 msgid "@section Scroll Bars"
-msgstr ""
+msgstr "@section スクロールバー"
 
 #: TITLES/src/display.texi.pl:49
 msgid "@section Window Dividers"
-msgstr ""
+msgstr "@section ウィンドウディバイダー"
 
 #: TITLES/src/display.texi.pl:50
 #, perl-brace-format
 msgid "@section The @code{display} Property"
-msgstr ""
+msgstr "@section @code{display}プロパティ"
 
 #: TITLES/src/display.texi.pl:51
 msgid "@subsection Display Specs That Replace The Text"
-msgstr ""
+msgstr "@subsection テキストを置換するディスプレー仕様"
 
 #: TITLES/src/display.texi.pl:52
 msgid "@subsection Specified Spaces"
-msgstr ""
+msgstr "@subsection スペースの指定"
 
 #: TITLES/src/display.texi.pl:53
 msgid "@subsection Pixel Specification for Spaces"
-msgstr ""
+msgstr "@subsection スペースにたいするピクセル指定"
 
 #: TITLES/src/display.texi.pl:54
 msgid "@subsection Other Display Specifications"
-msgstr ""
+msgstr "@subsection その他のディスプレー仕様"
 
 #: TITLES/src/display.texi.pl:55
 msgid "@subsection Displaying in the Margins"
-msgstr ""
+msgstr "@subsection マージン内への表示"
 
 #: TITLES/src/display.texi.pl:56
 msgid "@section Images"
-msgstr ""
+msgstr "@section イメージ"
 
 #: TITLES/src/display.texi.pl:57
 msgid "@subsection Image Formats"
-msgstr ""
+msgstr "@subsection イメージのフォーマット"
 
 #: TITLES/src/display.texi.pl:58
 msgid "@subsection Image Descriptors"
-msgstr ""
+msgstr "@subsection イメージのディスクリプタ"
 
 #: TITLES/src/display.texi.pl:59
 msgid "@subsection XBM Images"
-msgstr ""
+msgstr "@subsection XBMイメージ"
 
 #: TITLES/src/display.texi.pl:60
 msgid "@subsection XPM Images"
-msgstr ""
+msgstr "@subsection XPMイメージ"
 
 #: TITLES/src/display.texi.pl:61
 msgid "@subsection ImageMagick Images"
-msgstr ""
+msgstr "@subsection ImageMagickイメージ"
 
 #: TITLES/src/display.texi.pl:62
 msgid "@subsection SVG Images"
-msgstr ""
+msgstr "@subsection SVGイメージ"
 
 #: TITLES/src/display.texi.pl:63
 msgid "@subsection Other Image Types"
-msgstr ""
+msgstr "@subsection その他のイメージタイプ"
 
 #: TITLES/src/display.texi.pl:64
 msgid "@subsection Defining Images"
-msgstr ""
+msgstr "@subsection イメージの定義"
 
 #: TITLES/src/display.texi.pl:65
 msgid "@subsection Showing Images"
-msgstr ""
+msgstr "@subsection イメージの表示"
 
 #: TITLES/src/display.texi.pl:66
 msgid "@subsection Multi-Frame Images"
-msgstr ""
+msgstr "@subsection マルチフレームのイメージ"
 
 #: TITLES/src/display.texi.pl:67
 msgid "@subsection Image Cache"
-msgstr ""
+msgstr "@subsection イメージキャッシュ"
 
 #: TITLES/src/display.texi.pl:68
 msgid "@section Embedded Native Widgets"
-msgstr ""
+msgstr "@section 埋め込みネイティブウィジェット"
 
 #: TITLES/src/display.texi.pl:69
 msgid "@section Buttons"
-msgstr ""
+msgstr "@section ボタン"
 
 #: TITLES/src/display.texi.pl:70
 msgid "@subsection Button Properties"
-msgstr ""
+msgstr "@subsection ボタンのプロパティ"
 
 #: TITLES/src/display.texi.pl:71
 msgid "@subsection Button Types"
-msgstr ""
+msgstr "@subsection ボタンのタイプ"
 
 #: TITLES/src/display.texi.pl:72
 msgid "@subsection Making Buttons"
-msgstr ""
+msgstr "@subsection ボタンの作成"
 
 #: TITLES/src/display.texi.pl:73
 msgid "@subsection Manipulating Buttons"
-msgstr ""
+msgstr "@subsection ボタンの操作"
 
 #: TITLES/src/display.texi.pl:74
 msgid "@subsection Button Buffer Commands"
-msgstr ""
+msgstr "@subsection ボタンのためのバッファーコマンド"
 
 #: TITLES/src/display.texi.pl:75
 msgid "@section Abstract Display"
-msgstr ""
+msgstr "@section 抽象的なディスプレー"
 
 #: TITLES/src/display.texi.pl:76
 msgid "@subsection Abstract Display Functions"
-msgstr ""
+msgstr "@subsection 抽象ディスプレーの関数"
 
 #: TITLES/src/display.texi.pl:77
 msgid "@subsection Abstract Display Example"
-msgstr ""
+msgstr "@subsection 抽象ディスプレーの例"
 
 #: TITLES/src/display.texi.pl:78
 msgid "@section Blinking Parentheses"
-msgstr ""
+msgstr "@section カッコの点滅"
 
 #: TITLES/src/display.texi.pl:79
 msgid "@section Character Display"
-msgstr ""
+msgstr "@section 文字の表示"
 
 #: TITLES/src/display.texi.pl:80
 msgid "@subsection Usual Display Conventions"
-msgstr ""
+msgstr "@subsection 通常の表示の慣習"
 
 #: TITLES/src/display.texi.pl:81
 msgid "@subsection Display Tables"
-msgstr ""
+msgstr "@subsection ディスプレーテーブル"
 
 #: TITLES/src/display.texi.pl:82
 msgid "@subsection Active Display Table"
-msgstr ""
+msgstr "@subsection アクティブなディスプレーテーブル"
 
 #: TITLES/src/display.texi.pl:83
 msgid "@subsection Glyphs"
-msgstr ""
+msgstr "@subsection グリフ"
 
 #: TITLES/src/display.texi.pl:84
 msgid "@subsection Glyphless Character Display"
-msgstr ""
+msgstr "@subsection グリフなし文字の表示"
 
 #: TITLES/src/display.texi.pl:85
 msgid "@section Beeping"
-msgstr ""
+msgstr "@section ビープ"
 
 #: TITLES/src/display.texi.pl:86
 msgid "@section Window Systems"
-msgstr ""
+msgstr "@section ウィンドウシステム"
 
 #: TITLES/src/display.texi.pl:87
 msgid "@section Tooltips"
-msgstr ""
+msgstr "@section ツールチップ"
 
 #: TITLES/src/display.texi.pl:88
 msgid "@section Bidirectional Display"
-msgstr ""
+msgstr "@section 双方向テキストの表示"
