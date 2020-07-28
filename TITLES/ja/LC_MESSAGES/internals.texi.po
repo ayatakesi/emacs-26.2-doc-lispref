@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 02:27+0900\n"
-"PO-Revision-Date: 2020-07-28 02:05+0900\n"
+"PO-Revision-Date: 2020-07-28 21:29+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -50,29 +50,27 @@ msgstr "@section Emacsプリミティブの記述"
 
 #: TITLES/src/internals.texi.pl:13
 msgid "@section Writing Dynamically-Loaded Modules"
-msgstr ""
+msgstr "@section 動的にロードされるモジュールの記述"
 
 #: TITLES/src/internals.texi.pl:14
-#, fuzzy
 msgid "@subsection Module Initialization Code"
-msgstr "@subsection バッファーの内部"
+msgstr "@subsection モジュールの初期化コード"
 
 #: TITLES/src/internals.texi.pl:15
-#, fuzzy
 msgid "@subsection Writing Module Functions"
-msgstr "@subsection ウィンドウの内部"
+msgstr "@subsection モジュール関数の記述"
 
 #: TITLES/src/internals.texi.pl:16
 msgid "@subsection Conversion Between Lisp and Module Values"
-msgstr ""
+msgstr "@subsection Lisp・モジュール間の値変換"
 
 #: TITLES/src/internals.texi.pl:17
 msgid "@subsection Miscellaneous Convenience Functions for Modules"
-msgstr ""
+msgstr "@subsection その他の便利なモジュール用関数"
 
 #: TITLES/src/internals.texi.pl:18
 msgid "@subsection Nonlocal Exits in Modules"
-msgstr ""
+msgstr "@subsection モジュールでの非ローカル脱出"
 
 #: TITLES/src/internals.texi.pl:19
 msgid "@section Object Internals"
