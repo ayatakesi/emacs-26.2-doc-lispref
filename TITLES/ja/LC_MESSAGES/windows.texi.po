@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 02:27+0900\n"
-"PO-Revision-Date: 2020-07-28 21:37+0900\n"
+"PO-Revision-Date: 2020-07-28 23:43+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -94,7 +94,7 @@ msgstr "@subsection アクション関数の優先順"
 
 #: TITLES/src/windows.texi.pl:24
 msgid "@subsection The Zen of Buffer Display"
-msgstr "@section バッファー表示の思想"
+msgstr "@subsection バッファー表示の思想"
 
 #: TITLES/src/windows.texi.pl:25
 msgid "@section Window History"
