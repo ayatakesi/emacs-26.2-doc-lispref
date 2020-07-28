@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 02:27+0900\n"
-"PO-Revision-Date: 2020-07-26 05:48+0900\n"
+"PO-Revision-Date: 2020-07-28 21:23+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -33,28 +33,27 @@ msgid "@section Constructs for Combining Conditions"
 msgstr "@section 組み合わせ条件の構築"
 
 #: TITLES/src/control.texi.pl:9
-#, fuzzy
 msgid "@section Pattern-Matching Conditional"
-msgstr "@section 条件"
+msgstr "@section パターンマッチングによる条件"
 
 #: TITLES/src/control.texi.pl:10
-#, fuzzy, perl-brace-format
+#, perl-brace-format
 msgid "@subsection The @code{pcase} macro"
-msgstr "@subsection @code{catch}と@code{throw}の例"
+msgstr "@subsection @code{pcase}マクロ"
 
 #: TITLES/src/control.texi.pl:11
 #, perl-brace-format
 msgid "@subsection Extending @code{pcase}"
-msgstr ""
+msgstr "@subsection @code{pcase}の拡張"
 
 #: TITLES/src/control.texi.pl:12
 msgid "@subsection Backquote-Style Patterns"
-msgstr ""
+msgstr "@subsection バッククォートスタイルパターン"
 
 #: TITLES/src/control.texi.pl:13
-#, fuzzy, perl-brace-format
+#, perl-brace-format
 msgid "@subsection Destructuring with @code{pcase} Patterns"
-msgstr "@subsection パターンマッチングによるcase文"
+msgstr "@subsection @code{pcase}パターンによる分解"
 
 #: TITLES/src/control.texi.pl:14
 msgid "@section Iteration"
